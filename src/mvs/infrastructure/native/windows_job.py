@@ -1,6 +1,7 @@
 """挂起创建的 Windows 子进程先加入 Job，再恢复主线程，避免后代抢先脱离。"""
 
 import ctypes
+import sys
 from ctypes import wintypes
 from typing import Any
 
@@ -53,7 +54,11 @@ class WindowsJob:
             win32job.AssignProcessToJobObject(self.handle, process)
         finally:
             process.Close()
-        kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+        kernel: Any
+        if sys.platform == "win32":
+            kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+        else:
+            raise OSError("Windows Job仅支持Windows平台")
         kernel.CreateToolhelp32Snapshot.argtypes = [wintypes.DWORD, wintypes.DWORD]
         kernel.CreateToolhelp32Snapshot.restype = wintypes.HANDLE
         kernel.Thread32First.argtypes = [wintypes.HANDLE, ctypes.POINTER(ThreadEntry)]

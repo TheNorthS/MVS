@@ -3,6 +3,7 @@ on: [push, pull_request]
 jobs:
   test:
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         python: ['3.12', '3.13']
@@ -49,10 +50,15 @@ jobs:
         working-directory: web
       - run: |
           uv run mvs init --home .tools/console-ui
-          uv run mvs serve --home .tools/console-ui --port 8123 > /tmp/mvs-console.log 2>&1 &
+          .venv/bin/mvs serve --home .tools/console-ui --port 8123 > /tmp/mvs-console.log 2>&1 &
+          echo $! > /tmp/mvs-console.pid
           for i in $(seq 1 30); do curl -fsS http://127.0.0.1:8123/api/v1/health/live && break; sleep 1; done
       - run: npm test
         working-directory: web
+      - name: 停止测试后台
+        if: always()
+        run: |
+          if [ -f /tmp/mvs-console.pid ]; then kill "$(cat /tmp/mvs-console.pid)" || true; fi
       - run: uv build --wheel
       - uses: actions/upload-artifact@v4
         with:

@@ -16,11 +16,13 @@ docker info
 uv sync --locked --all-extras
 docker pull redis:7-alpine
 docker pull postgres:16-alpine
-docker pull minio/minio:RELEASE.2024-12-18T13-15-44Z
+docker build -f deploy/minio-test.Dockerfile -t mvs-test-minio:0.0.1 deploy
 docker pull python:3.12-slim
 ```
 
 镜像需预先下载。原生命令沙箱只使用已经存在的镜像，调用过程中不会自动下载镜像。
+MinIO测试镜像改从固定上游源码构建，避免依赖已无法匿名获取的旧镜像；首次需要下载Go工具链
+和依赖。该镜像仅用于集成测试，上游许可文件随镜像保留，不打入MVS的PyPI分发包。
 部署时建议将管理员批准的镜像固定到 digest；修改镜像、程序和挂载配置都应经过审查。
 
 ## 2. 一条命令启动并验收

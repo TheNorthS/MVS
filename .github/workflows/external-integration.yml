@@ -12,8 +12,8 @@ jobs:
       - run: |
           docker pull redis:7-alpine
           docker pull postgres:16-alpine
-          docker pull minio/minio:RELEASE.2024-12-18T13-15-44Z
           docker pull python:3.12-slim
+      - run: docker build -f deploy/minio-test.Dockerfile -t mvs-test-minio:0.0.1 deploy
       - run: uv run python scripts/test_docker.py
       - uses: actions/upload-artifact@v4
         if: always()

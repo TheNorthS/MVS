@@ -25,7 +25,7 @@ def docker(*args: str) -> str:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--minio-image", default="minio/minio:RELEASE.2024-12-18T13-15-44Z")
+    parser.add_argument("--minio-image", default="mvs-test-minio:0.0.1")
     parser.add_argument("--sandbox-image", default="python:3.12-slim")
     parser.add_argument("--report", default=".tools/docker-acceptance.xml")
     parser.add_argument("--coverage", action="store_true", help="采集本次测试的行/分支覆盖率")
