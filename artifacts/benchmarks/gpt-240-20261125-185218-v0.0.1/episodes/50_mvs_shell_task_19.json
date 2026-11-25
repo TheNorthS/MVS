@@ -1,0 +1,308 @@
+{
+  "episode_id": "50_mvs_shell_task_19",
+  "size": 50,
+  "mode": "mvs_shell",
+  "task_id": "task_19",
+  "prompt": "Fetch support tickets by a list of IDs. Use current data, not archives. Parameters: {\"ids\": [\"T-191\", \"T-782\"], \"include_closed\": false}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "tickets",
+  "expected_arguments": {
+    "ids": [
+      "T-191",
+      "T-782"
+    ],
+    "include_closed": false
+  },
+  "expected_code": "v_c62c33dab29356a0af4d",
+  "final_answer": "v_c62c33dab29356a0af4d",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 3539,
+    "output_tokens": 117,
+    "total_tokens": 3656,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 4,
+  "tool_selection_attempts": [
+    {
+      "tool": "tickets",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "tickets",
+      "arguments": {
+        "ids": [
+          "T-191",
+          "T-782"
+        ],
+        "include_closed": false
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    291,
+    816,
+    1076,
+    1356
+  ],
+  "context_growth_tokens": 1065,
+  "latency_ms": 13136.247599963099,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_028e181b60539425016b06be59ad4487d08bf8643e4b127184",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 291,
+        "output_tokens": 24,
+        "total_tokens": 315,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 1086,
+      "model_latency_ms": 3429.9726000754163,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_028e181b60539425016b06be5baa7c87d0aad038c137327d28",
+          "call_id": "call_80835b69d3cb4269a2773f0548ef40a7",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"ls /mcp/bench/tools\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "7aad74a80a6441b0a5e1a6e265bc2c35",
+            "session_id": "932363d822c346f7b3bf14454c9eb07c",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "appointments\narchive1_appointments\narchive1_capacity\narchive1_customer\narchive1_documents\narchive1_employee\narchive1_exchange\narchive1_health\narchive1_invoice\narchive1_loyalty\narchive1_order\narchive1_price\narchive1_repository\narchive1_route\narchive1_shipment\narchive1_stock\narchive1_subscription\narchive1_tax\narchive1_tickets\narchive1_usage\narchive1_weather\narchive2_customer\narchive2_employee\narchive2_exchange\narchive2_invoice\narchive2_order\narchive2_price\narchive2_repository\narchive2_shipment\narchive2_stock\narchive2_weather\ncapacity\ncustomer\ndocuments\nemployee\nexchange\nhealth\ninvoice\nloyalty\norder\nprice\nrepository\nroute\nshipment\nstock\nsubscription\ntax\ntickets\nusage\nweather",
+            "stderr": "",
+            "data": [
+              "appointments",
+              "archive1_appointments",
+              "archive1_capacity",
+              "archive1_customer",
+              "archive1_documents",
+              "archive1_employee",
+              "archive1_exchange",
+              "archive1_health",
+              "archive1_invoice",
+              "archive1_loyalty",
+              "archive1_order",
+              "archive1_price",
+              "archive1_repository",
+              "archive1_route",
+              "archive1_shipment",
+              "archive1_stock",
+              "archive1_subscription",
+              "archive1_tax",
+              "archive1_tickets",
+              "archive1_usage",
+              "archive1_weather",
+              "archive2_customer",
+              "archive2_employee",
+              "archive2_exchange",
+              "archive2_invoice",
+              "archive2_order",
+              "archive2_price",
+              "archive2_repository",
+              "archive2_shipment",
+              "archive2_stock",
+              "archive2_weather",
+              "capacity",
+              "customer",
+              "documents",
+              "employee",
+              "exchange",
+              "health",
+              "invoice",
+              "loyalty",
+              "order",
+              "price",
+              "repository",
+              "route",
+              "shipment",
+              "stock",
+              "subscription",
+              "tax",
+              "tickets",
+              "usage",
+              "weather"
+            ],
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_028e181b60539425016b06be5d1b1887d09bc06cb87af990ec",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 816,
+        "output_tokens": 26,
+        "total_tokens": 842,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 3419,
+      "model_latency_ms": 2682.104600011371,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_028e181b60539425016b06be5e66f887d0a4fbdd85c6ae0fc3",
+          "call_id": "call_da001a86ab1c46eda2dc501b1683a802",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"help /mcp/bench/tools/tickets\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "5b6c86dad83047b4962c6ff3ad777b90",
+            "session_id": "932363d822c346f7b3bf14454c9eb07c",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "tickets\nFetch support tickets by a list of IDs\n--params-json <JSON object>\n--ids {\"type\": \"array\", \"items\": {\"type\": \"string\"}} required\n--include_closed {\"type\": \"boolean\"} required",
+            "stderr": "",
+            "data": {
+              "input_schema": {
+                "type": "object",
+                "properties": {
+                  "ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "include_closed": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "ids",
+                  "include_closed"
+                ],
+                "additionalProperties": false
+              },
+              "untrusted": true,
+              "backend": "mcp"
+            },
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "resp_028e181b60539425016b06be5fc8e487d08418b5653532e825",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1076,
+        "output_tokens": 50,
+        "total_tokens": 1126,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 4578,
+      "model_latency_ms": 3175.2251000143588,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_028e181b60539425016b06be61200087d09f8b616a7877b45b",
+          "call_id": "call_0a5c17fa6e3e471a9dcc182601fccea0",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"run /mcp/bench/tools/tickets --params-json '{\\\"ids\\\":[\\\"T-191\\\",\\\"T-782\\\"],\\\"include_closed\\\":false}'\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "f11fcf124ade45699bc0cea751112221",
+            "session_id": "932363d822c346f7b3bf14454c9eb07c",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_c62c33dab29356a0af4d\", \"source_tool\": \"tickets\", \"data\": {\"ids\": [\"T-191\", \"T-782\"], \"include_closed\": false}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_c62c33dab29356a0af4d",
+              "source_tool": "tickets",
+              "data": {
+                "ids": [
+                  "T-191",
+                  "T-782"
+                ],
+                "include_closed": false
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/feb7a511dfe0485abd7654704a545034",
+            "truncated": false,
+            "duration_ms": 359,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "resp_028e181b60539425016b06be6354cc87d09c6a3777eb93bfa0",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1356,
+        "output_tokens": 17,
+        "total_tokens": 1373,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 5731,
+      "model_latency_ms": 2856.8803999805823,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_028e181b60539425016b06be64c30487d084106b54702a8556",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_c62c33dab29356a0af4d",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

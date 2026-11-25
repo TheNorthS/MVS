@@ -1,0 +1,448 @@
+{
+  "episode_id": "50_json_gateway_task_16",
+  "size": 50,
+  "mode": "json_gateway",
+  "task_id": "task_16",
+  "prompt": "Read current service health in a region. Use current data, not archives. Parameters: {\"service\": \"checkout\", \"region\": \"ap-east\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "health",
+  "expected_arguments": {
+    "service": "checkout",
+    "region": "ap-east"
+  },
+  "expected_code": "v_3fbcb2c0c09debe826b8",
+  "final_answer": "v_3fbcb2c0c09debe826b8",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 6384,
+    "output_tokens": 245,
+    "total_tokens": 6629,
+    "cached_input_tokens": 4480,
+    "reasoning_output_tokens": 26
+  },
+  "interaction_rounds": 4,
+  "tool_selection_attempts": [
+    {
+      "tool": "health",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "health",
+      "arguments": {
+        "service": "checkout",
+        "region": "ap-east"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    445,
+    1764,
+    1918,
+    2257
+  ],
+  "context_growth_tokens": 1812,
+  "latency_ms": 7737.640100065619,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "f3195b04-2115-46de-bb5a-7e16dd4d4802",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 445,
+        "output_tokens": 59,
+        "total_tokens": 504,
+        "cached_input_tokens": 384,
+        "reasoning_output_tokens": 12
+      },
+      "context_bytes": 1075,
+      "model_latency_ms": 2047.0949999289587,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "217df7b9-d88f-4f5c-9baa-8807c3a5ae1c",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "I need to discover the tools available via MCP gateway."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "f3195b04-2115-46de-bb5a-7e16dd4d4802-0"
+        },
+        {
+          "type": "function_call",
+          "id": "351667ec-5029-48c2-bd22-8c9a6e2f57d5",
+          "status": "completed",
+          "arguments": "{\"action\": \"list\"}",
+          "call_id": "call_00_Wq6OSDdkGZHAH8Ldfob29445",
+          "name": "mcp_gateway"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": [
+            {
+              "name": "archive1_exchange",
+              "description": "Historical snapshot batch 1, NOT current data. Convert a monetary amount between currencies"
+            },
+            {
+              "name": "archive1_shipment",
+              "description": "Historical snapshot batch 1, NOT current data. Track a shipment by tracking ID"
+            },
+            {
+              "name": "tickets",
+              "description": "Fetch support tickets by a list of IDs"
+            },
+            {
+              "name": "subscription",
+              "description": "Read subscription status"
+            },
+            {
+              "name": "invoice",
+              "description": "Get outstanding invoice balance"
+            },
+            {
+              "name": "archive2_exchange",
+              "description": "Historical snapshot batch 2, NOT current data. Convert a monetary amount between currencies"
+            },
+            {
+              "name": "archive1_weather",
+              "description": "Historical snapshot batch 1, NOT current data. Fetch weather for a city and date"
+            },
+            {
+              "name": "customer",
+              "description": "Look up a customer account"
+            },
+            {
+              "name": "archive1_customer",
+              "description": "Historical snapshot batch 1, NOT current data. Look up a customer account"
+            },
+            {
+              "name": "health",
+              "description": "Read current service health in a region"
+            },
+            {
+              "name": "archive1_subscription",
+              "description": "Historical snapshot batch 1, NOT current data. Read subscription status"
+            },
+            {
+              "name": "archive1_price",
+              "description": "Historical snapshot batch 1, NOT current data. Look up current product price in a currency"
+            },
+            {
+              "name": "tax",
+              "description": "Calculate invoice tax from net amount and rate"
+            },
+            {
+              "name": "shipment",
+              "description": "Track a shipment by tracking ID"
+            },
+            {
+              "name": "archive1_tickets",
+              "description": "Historical snapshot batch 1, NOT current data. Fetch support tickets by a list of IDs"
+            },
+            {
+              "name": "archive1_documents",
+              "description": "Historical snapshot batch 1, NOT current data. Search documents using a nested filter"
+            },
+            {
+              "name": "usage",
+              "description": "Summarize API usage for a project and month"
+            },
+            {
+              "name": "archive1_invoice",
+              "description": "Historical snapshot batch 1, NOT current data. Get outstanding invoice balance"
+            },
+            {
+              "name": "archive1_capacity",
+              "description": "Historical snapshot batch 1, NOT current data. Get current available capacity of a warehouse"
+            },
+            {
+              "name": "stock",
+              "description": "Check current warehouse stock"
+            },
+            {
+              "name": "archive2_shipment",
+              "description": "Historical snapshot batch 2, NOT current data. Track a shipment by tracking ID"
+            },
+            {
+              "name": "documents",
+              "description": "Search documents using a nested filter"
+            },
+            {
+              "name": "archive1_route",
+              "description": "Historical snapshot batch 1, NOT current data. Find route distance between two cities"
+            },
+            {
+              "name": "archive2_repository",
+              "description": "Historical snapshot batch 2, NOT current data. Search software repositories by topic and minimum stars"
+            },
+            {
+              "name": "archive2_price",
+              "description": "Historical snapshot batch 2, NOT current data. Look up current product price in a currency"
+            },
+            {
+              "name": "archive1_usage",
+              "description": "Historical snapshot batch 1, NOT current data. Summarize API usage for a project and month"
+            },
+            {
+              "name": "archive1_repository",
+              "description": "Historical snapshot batch 1, NOT current data. Search software repositories by topic and minimum stars"
+            },
+            {
+              "name": "archive1_stock",
+              "description": "Historical snapshot batch 1, NOT current data. Check current warehouse stock"
+            },
+            {
+              "name": "archive1_order",
+              "description": "Historical snapshot batch 1, NOT current data. Fetch current order status"
+            },
+            {
+              "name": "archive2_order",
+              "description": "Historical snapshot batch 2, NOT current data. Fetch current order status"
+            },
+            {
+              "name": "archive2_weather",
+              "description": "Historical snapshot batch 2, NOT current data. Fetch weather for a city and date"
+            },
+            {
+              "name": "archive1_health",
+              "description": "Historical snapshot batch 1, NOT current data. Read current service health in a region"
+            },
+            {
+              "name": "archive1_tax",
+              "description": "Historical snapshot batch 1, NOT current data. Calculate invoice tax from net amount and rate"
+            },
+            {
+              "name": "archive2_invoice",
+              "description": "Historical snapshot batch 2, NOT current data. Get outstanding invoice balance"
+            },
+            {
+              "name": "route",
+              "description": "Find route distance between two cities"
+            },
+            {
+              "name": "archive2_customer",
+              "description": "Historical snapshot batch 2, NOT current data. Look up a customer account"
+            },
+            {
+              "name": "archive2_employee",
+              "description": "Historical snapshot batch 2, NOT current data. Look up employee directory details"
+            },
+            {
+              "name": "order",
+              "description": "Fetch current order status"
+            },
+            {
+              "name": "archive1_employee",
+              "description": "Historical snapshot batch 1, NOT current data. Look up employee directory details"
+            },
+            {
+              "name": "archive1_appointments",
+              "description": "Historical snapshot batch 1, NOT current data. List free appointment slots for a doctor"
+            },
+            {
+              "name": "exchange",
+              "description": "Convert a monetary amount between currencies"
+            },
+            {
+              "name": "archive1_loyalty",
+              "description": "Historical snapshot batch 1, NOT current data. Read customer loyalty balance"
+            },
+            {
+              "name": "weather",
+              "description": "Fetch weather for a city and date"
+            },
+            {
+              "name": "repository",
+              "description": "Search software repositories by topic and minimum stars"
+            },
+            {
+              "name": "loyalty",
+              "description": "Read customer loyalty balance"
+            },
+            {
+              "name": "capacity",
+              "description": "Get current available capacity of a warehouse"
+            },
+            {
+              "name": "appointments",
+              "description": "List free appointment slots for a doctor"
+            },
+            {
+              "name": "price",
+              "description": "Look up current product price in a currency"
+            },
+            {
+              "name": "employee",
+              "description": "Look up employee directory details"
+            },
+            {
+              "name": "archive2_stock",
+              "description": "Historical snapshot batch 2, NOT current data. Check current warehouse stock"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "275957ff-39e8-454c-a625-0b47d695987a",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1764,
+        "output_tokens": 77,
+        "total_tokens": 1841,
+        "cached_input_tokens": 384,
+        "reasoning_output_tokens": 14
+      },
+      "context_bytes": 7560,
+      "model_latency_ms": 1629.231799975969,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "437ed908-c5d0-44d6-b72c-417e058048b8",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "The current health tool is \"health\". Let me check its schema."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "275957ff-39e8-454c-a625-0b47d695987a-0"
+        },
+        {
+          "type": "function_call",
+          "id": "97553619-549b-4119-bc25-405822b28593",
+          "status": "completed",
+          "arguments": "{\"action\": \"help\", \"tool\": \"health\"}",
+          "call_id": "call_00_MCe2Rr4RK4iXOmaiUYxo9471",
+          "name": "mcp_gateway"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": {
+            "name": "health",
+            "description": "Read current service health in a region",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "service": {
+                  "type": "string"
+                },
+                "region": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "service",
+                "region"
+              ],
+              "additionalProperties": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "c2dc3006-6bba-4a7a-a78a-12ef491bb015",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1918,
+        "output_tokens": 92,
+        "total_tokens": 2010,
+        "cached_input_tokens": 1792,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 8459,
+      "model_latency_ms": 1601.090700016357,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "d94cf0e7-1622-4836-a266-3bbcdf42472a",
+          "status": "completed",
+          "arguments": "{\"action\": \"call\", \"tool\": \"health\", \"arguments\": {\"service\": \"checkout\", \"region\": \"ap-east\"}}",
+          "call_id": "call_00_ET_EysFf1Wqc93lVlanpTGd1372",
+          "name": "mcp_gateway"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": {
+            "request_id": "c36e397131924107a48ed35fa0cffa85",
+            "session_id": "4fb13916d4554d71982b3c1402e1e1c1",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_3fbcb2c0c09debe826b8\", \"source_tool\": \"health\", \"data\": {\"service\": \"checkout\", \"region\": \"ap-east\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_3fbcb2c0c09debe826b8",
+              "source_tool": "health",
+              "data": {
+                "service": "checkout",
+                "region": "ap-east"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/7396d2f18ea74144ab7d4e53a1963e03",
+            "truncated": false,
+            "duration_ms": 390,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "d949b75f-619b-430c-9643-65872d8cd52d",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 2257,
+        "output_tokens": 17,
+        "total_tokens": 2274,
+        "cached_input_tokens": 1920,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 9549,
+      "model_latency_ms": 1930.1362000405788,
+      "output": [
+        {
+          "type": "message",
+          "id": "a198f321-3ffe-46c1-b2b8-dd033fe784a3",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_3fbcb2c0c09debe826b8"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

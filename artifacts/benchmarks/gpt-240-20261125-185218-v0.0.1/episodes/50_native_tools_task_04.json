@@ -1,0 +1,135 @@
+{
+  "episode_id": "50_native_tools_task_04",
+  "size": 50,
+  "mode": "native_tools",
+  "task_id": "task_04",
+  "prompt": "Get outstanding invoice balance. Use current data, not archives. Parameters: {\"invoice_id\": \"INV-208\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "invoice",
+  "expected_arguments": {
+    "invoice_id": "INV-208"
+  },
+  "expected_code": "v_d48d3e91734d9cc81066",
+  "final_answer": "v_d48d3e91734d9cc81066",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 3804,
+    "output_tokens": 37,
+    "total_tokens": 3841,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "invoice",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "invoice",
+      "arguments": {
+        "invoice_id": "INV-208"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    1785,
+    2019
+  ],
+  "context_growth_tokens": 234,
+  "latency_ms": 7961.440999992192,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_0458893fa63fde33016b06beef701487d2ac0e2c183baff732",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1785,
+        "output_tokens": 20,
+        "total_tokens": 1805,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 16966,
+      "model_latency_ms": 4461.825100006536,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0458893fa63fde33016b06bef16ab487d2bcde9103f65aced9",
+          "call_id": "call_05edb0daddd54642a285eed4ccb2e5f7",
+          "name": "invoice",
+          "arguments": "{\"invoice_id\":\"INV-208\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "invoice",
+          "result": {
+            "request_id": "7c2eb0c596884079aa6f9022c33128ea",
+            "session_id": "cf8770fef2a54b199390d732068c25b4",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_d48d3e91734d9cc81066\", \"source_tool\": \"invoice\", \"data\": {\"invoice_id\": \"INV-208\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_d48d3e91734d9cc81066",
+              "source_tool": "invoice",
+              "data": {
+                "invoice_id": "INV-208"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/2cec22309a504b35b353662a6d63cf84",
+            "truncated": false,
+            "duration_ms": 359,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_0458893fa63fde33016b06bef3cc9887d2846495bbdb8c89b1",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 2019,
+        "output_tokens": 17,
+        "total_tokens": 2036,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 17936,
+      "model_latency_ms": 3004.2684000218287,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_0458893fa63fde33016b06bef4ad1c87d2bbdfe3889ad26930",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_d48d3e91734d9cc81066",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

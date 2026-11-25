@@ -1,0 +1,318 @@
+{
+  "episode_id": "50_mvs_shell_task_18",
+  "size": 50,
+  "mode": "mvs_shell",
+  "task_id": "task_18",
+  "prompt": "Search documents using a nested filter. Use current data, not archives. Parameters: {\"query\": \"deployment\", \"filter\": {\"language\": \"zh\", \"published\": true}}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "documents",
+  "expected_arguments": {
+    "query": "deployment",
+    "filter": {
+      "language": "zh",
+      "published": true
+    }
+  },
+  "expected_code": "v_a4a2a150a29303c4f65d",
+  "final_answer": "v_a4a2a150a29303c4f65d",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 3651,
+    "output_tokens": 115,
+    "total_tokens": 3766,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 4,
+  "tool_selection_attempts": [
+    {
+      "tool": "documents",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "documents",
+      "arguments": {
+        "query": "deployment",
+        "filter": {
+          "language": "zh",
+          "published": true
+        }
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    291,
+    813,
+    1129,
+    1418
+  ],
+  "context_growth_tokens": 1127,
+  "latency_ms": 34980.53569998592,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_0fd4c975624b0529016b06bfda792487d09d7fa90a6e07558f",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 291,
+        "output_tokens": 24,
+        "total_tokens": 315,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 1110,
+      "model_latency_ms": 9448.748199967667,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0fd4c975624b0529016b06bfe281cc87d0adc0cc5a6c92cc8a",
+          "call_id": "call_e56b8eee4622451c8f05478541c84a49",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"ls /mcp/bench/tools\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "fbe9585155564bd49ddfe8520334d7b9",
+            "session_id": "39c7fa07ff124a3a84a56dd14376b3e4",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "appointments\narchive1_appointments\narchive1_capacity\narchive1_customer\narchive1_documents\narchive1_employee\narchive1_exchange\narchive1_health\narchive1_invoice\narchive1_loyalty\narchive1_order\narchive1_price\narchive1_repository\narchive1_route\narchive1_shipment\narchive1_stock\narchive1_subscription\narchive1_tax\narchive1_tickets\narchive1_usage\narchive1_weather\narchive2_customer\narchive2_employee\narchive2_exchange\narchive2_invoice\narchive2_order\narchive2_price\narchive2_repository\narchive2_shipment\narchive2_stock\narchive2_weather\ncapacity\ncustomer\ndocuments\nemployee\nexchange\nhealth\ninvoice\nloyalty\norder\nprice\nrepository\nroute\nshipment\nstock\nsubscription\ntax\ntickets\nusage\nweather",
+            "stderr": "",
+            "data": [
+              "appointments",
+              "archive1_appointments",
+              "archive1_capacity",
+              "archive1_customer",
+              "archive1_documents",
+              "archive1_employee",
+              "archive1_exchange",
+              "archive1_health",
+              "archive1_invoice",
+              "archive1_loyalty",
+              "archive1_order",
+              "archive1_price",
+              "archive1_repository",
+              "archive1_route",
+              "archive1_shipment",
+              "archive1_stock",
+              "archive1_subscription",
+              "archive1_tax",
+              "archive1_tickets",
+              "archive1_usage",
+              "archive1_weather",
+              "archive2_customer",
+              "archive2_employee",
+              "archive2_exchange",
+              "archive2_invoice",
+              "archive2_order",
+              "archive2_price",
+              "archive2_repository",
+              "archive2_shipment",
+              "archive2_stock",
+              "archive2_weather",
+              "capacity",
+              "customer",
+              "documents",
+              "employee",
+              "exchange",
+              "health",
+              "invoice",
+              "loyalty",
+              "order",
+              "price",
+              "repository",
+              "route",
+              "shipment",
+              "stock",
+              "subscription",
+              "tax",
+              "tickets",
+              "usage",
+              "weather"
+            ],
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_0fd4c975624b0529016b06bfe3e12487d09749a7519f76bfa4",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 813,
+        "output_tokens": 26,
+        "total_tokens": 839,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 3443,
+      "model_latency_ms": 7894.006600021385,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0fd4c975624b0529016b06bfea562087d09b23081265f033ae",
+          "call_id": "call_86445a60ad194582b41cb95687f6fef6",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"help /mcp/bench/tools/documents\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "079a0188d2de4dd79e0b42ad80764c8c",
+            "session_id": "39c7fa07ff124a3a84a56dd14376b3e4",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "documents\nSearch documents using a nested filter\n--params-json <JSON object>\n--query {\"type\": \"string\"} required\n--filter {\"type\": \"object\", \"properties\": {\"language\": {\"type\": \"string\"}, \"published\": {\"type\": \"boolean\"}}, \"required\": [\"language\", \"published\"], \"additionalProperties\": false} required",
+            "stderr": "",
+            "data": {
+              "input_schema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string"
+                  },
+                  "filter": {
+                    "type": "object",
+                    "properties": {
+                      "language": {
+                        "type": "string"
+                      },
+                      "published": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "language",
+                      "published"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "query",
+                  "filter"
+                ],
+                "additionalProperties": false
+              },
+              "untrusted": true,
+              "backend": "mcp"
+            },
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "resp_0fd4c975624b0529016b06bfebe77887d0b877b90a6852acb1",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1129,
+        "output_tokens": 46,
+        "total_tokens": 1175,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 4898,
+      "model_latency_ms": 7705.114400014281,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0fd4c975624b0529016b06bff15b0087d0a5242dfdb4bb5a85",
+          "call_id": "call_bc740480a2b342cc968c28a71aac9f90",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"run /mcp/bench/tools/documents --params-json '{\\\"query\\\":\\\"deployment\\\",\\\"filter\\\":{\\\"language\\\":\\\"zh\\\",\\\"published\\\":true}}'\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "00c27f47e27540919b018a91b966a6a9",
+            "session_id": "39c7fa07ff124a3a84a56dd14376b3e4",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_a4a2a150a29303c4f65d\", \"source_tool\": \"documents\", \"data\": {\"query\": \"deployment\", \"filter\": {\"language\": \"zh\", \"published\": true}}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_a4a2a150a29303c4f65d",
+              "source_tool": "documents",
+              "data": {
+                "query": "deployment",
+                "filter": {
+                  "language": "zh",
+                  "published": true
+                }
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/9d125acac8144386acc58fbae4bc653a",
+            "truncated": false,
+            "duration_ms": 437,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "resp_0fd4c975624b0529016b06bff3e7fc87d085090d5a76e9c5f8",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1418,
+        "output_tokens": 19,
+        "total_tokens": 1437,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 6143,
+      "model_latency_ms": 9394.34210001491,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_0fd4c975624b0529016b06bffc0d6c87d081cf1aa717a10749",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_a4a2a150a29303c4f65d",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

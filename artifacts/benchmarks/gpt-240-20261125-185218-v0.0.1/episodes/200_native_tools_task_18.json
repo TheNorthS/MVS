@@ -1,0 +1,147 @@
+{
+  "episode_id": "200_native_tools_task_18",
+  "size": 200,
+  "mode": "native_tools",
+  "task_id": "task_18",
+  "prompt": "Search documents using a nested filter. Use current data, not archives. Parameters: {\"query\": \"deployment\", \"filter\": {\"language\": \"zh\", \"published\": true}}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "documents",
+  "expected_arguments": {
+    "query": "deployment",
+    "filter": {
+      "language": "zh",
+      "published": true
+    }
+  },
+  "expected_code": "v_a4a2a150a29303c4f65d",
+  "final_answer": "v_a4a2a150a29303c4f65d",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 14937,
+    "output_tokens": 46,
+    "total_tokens": 14983,
+    "cached_input_tokens": 14208,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "documents",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "documents",
+      "arguments": {
+        "filter": {
+          "language": "zh",
+          "published": true
+        },
+        "query": "deployment"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    7332,
+    7605
+  ],
+  "context_growth_tokens": 273,
+  "latency_ms": 26396.740399999544,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_0c242f5de06a97d9016b06c034fb9c87d099add65aae031118",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 7332,
+        "output_tokens": 27,
+        "total_tokens": 7359,
+        "cached_input_tokens": 7040,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 70151,
+      "model_latency_ms": 14820.271399919875,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0c242f5de06a97d9016b06c04023f087d083c1677932949dd5",
+          "call_id": "call_0f43775928004749bf75490ed9ccae0f",
+          "name": "documents",
+          "arguments": "{\"filter\":{\"language\":\"zh\",\"published\":true},\"query\":\"deployment\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "documents",
+          "result": {
+            "request_id": "7278981a9fd14d30945f6a9fb2560abd",
+            "session_id": "282a998cc3ab44099fa0b14f6b5a8dd2",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_a4a2a150a29303c4f65d\", \"source_tool\": \"documents\", \"data\": {\"filter\": {\"language\": \"zh\", \"published\": true}, \"query\": \"deployment\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_a4a2a150a29303c4f65d",
+              "source_tool": "documents",
+              "data": {
+                "filter": {
+                  "language": "zh",
+                  "published": true
+                },
+                "query": "deployment"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/6679fc4f514e4067a8719a2446e2c0ec",
+            "truncated": false,
+            "duration_ms": 390,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_0c242f5de06a97d9016b06c043a1e087d0bc472a3f826aa6a7",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 7605,
+        "output_tokens": 19,
+        "total_tokens": 7624,
+        "cached_input_tokens": 7168,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 71303,
+      "model_latency_ms": 10288.742899894714,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_0c242f5de06a97d9016b06c04a77b887d0ad91731e622e3beb",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_a4a2a150a29303c4f65d",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "episode_id": "20_native_tools_task_11",
+  "size": 20,
+  "mode": "native_tools",
+  "task_id": "task_11",
+  "prompt": "Read subscription status. Use current data, not archives. Parameters: {\"subscription_id\": \"SUB-873\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "subscription",
+  "expected_arguments": {
+    "subscription_id": "SUB-873"
+  },
+  "expected_code": "v_fcc66aed0cc985487652",
+  "final_answer": "v_fcc66aed0cc985487652",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 3573,
+    "output_tokens": 71,
+    "total_tokens": 3644,
+    "cached_input_tokens": 3200,
+    "reasoning_output_tokens": 11
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "subscription",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "subscription",
+      "arguments": {
+        "subscription_id": "SUB-873"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    1642,
+    1931
+  ],
+  "context_growth_tokens": 289,
+  "latency_ms": 3719.6004999568686,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "c2141ba5-a06a-4878-817f-9d8bc66e7971",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1642,
+        "output_tokens": 59,
+        "total_tokens": 1701,
+        "cached_input_tokens": 1536,
+        "reasoning_output_tokens": 11
+      },
+      "context_bytes": 6538,
+      "model_latency_ms": 1791.2379999179393,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "67617be2-4e63-45a7-81c1-149b63d24223",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "Let me call the subscription tool with the given ID."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "c2141ba5-a06a-4878-817f-9d8bc66e7971-0"
+        },
+        {
+          "type": "function_call",
+          "id": "14767ba2-a4f3-4885-b345-7440be14fb90",
+          "status": "completed",
+          "arguments": "{\"subscription_id\": \"SUB-873\"}",
+          "call_id": "call_00_n0U6JN16bMUKt4VaGdRr8709",
+          "name": "subscription"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "subscription",
+          "result": {
+            "request_id": "e1058b4e47da40ae86e6ee2080a8a33a",
+            "session_id": "54c667ebad35420eb2da387739b3cccb",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_fcc66aed0cc985487652\", \"source_tool\": \"subscription\", \"data\": {\"subscription_id\": \"SUB-873\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_fcc66aed0cc985487652",
+              "source_tool": "subscription",
+              "data": {
+                "subscription_id": "SUB-873"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/cd8b820d4d4c4bc7897d655821c5922e",
+            "truncated": false,
+            "duration_ms": 375,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "5a6f77b7-7ae8-4642-bd63-9b63b13c554b",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1931,
+        "output_tokens": 12,
+        "total_tokens": 1943,
+        "cached_input_tokens": 1664,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 7787,
+      "model_latency_ms": 1518.1590999709442,
+      "output": [
+        {
+          "type": "message",
+          "id": "9c402be2-1058-4102-bcce-1a9c3211d142",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_fcc66aed0cc985487652"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

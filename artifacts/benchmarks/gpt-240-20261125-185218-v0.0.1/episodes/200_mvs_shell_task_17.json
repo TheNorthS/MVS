@@ -1,0 +1,453 @@
+{
+  "episode_id": "200_mvs_shell_task_17",
+  "size": 200,
+  "mode": "mvs_shell",
+  "task_id": "task_17",
+  "prompt": "List free appointment slots for a doctor. Use current data, not archives. Parameters: {\"doctor_id\": \"DOC-912\", \"date\": \"2026-11-21\", \"limit\": 3}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "appointments",
+  "expected_arguments": {
+    "doctor_id": "DOC-912",
+    "date": "2026-11-21",
+    "limit": 3
+  },
+  "expected_code": "v_6f8a2fecd1b3cc8ba719",
+  "final_answer": "v_6f8a2fecd1b3cc8ba719",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 7851,
+    "output_tokens": 121,
+    "total_tokens": 7972,
+    "cached_input_tokens": 2048,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 4,
+  "tool_selection_attempts": [
+    {
+      "tool": "appointments",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "appointments",
+      "arguments": {
+        "doctor_id": "DOC-912",
+        "date": "2026-11-21",
+        "limit": 3
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    297,
+    2244,
+    2505,
+    2805
+  ],
+  "context_growth_tokens": 2508,
+  "latency_ms": 19302.281399955973,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_08c7375cc60edcfe016b06c217700887d0956332a4a8256632",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 297,
+        "output_tokens": 24,
+        "total_tokens": 321,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 1096,
+      "model_latency_ms": 4326.518999994732,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_08c7375cc60edcfe016b06c219baa887d0a7215053a1815187",
+          "call_id": "call_1e308f9087584f4d9a6a60879bbe178f",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"ls /mcp/bench/tools\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "6021cdbc2a9140d28dad329d78e1329b",
+            "session_id": "ba47158f078944109f0ffadbf3d11031",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "appointments\narchive1_appointments\narchive1_capacity\narchive1_customer\narchive1_documents\narchive1_employee\narchive1_exchange\narchive1_health\narchive1_invoice\narchive1_loyalty\narchive1_order\narchive1_price\narchive1_repository\narchive1_route\narchive1_shipment\narchive1_stock\narchive1_subscription\narchive1_tax\narchive1_tickets\narchive1_usage\narchive1_weather\narchive2_appointments\narchive2_capacity\narchive2_customer\narchive2_documents\narchive2_employee\narchive2_exchange\narchive2_health\narchive2_invoice\narchive2_loyalty\narchive2_order\narchive2_price\narchive2_repository\narchive2_route\narchive2_shipment\narchive2_stock\narchive2_subscription\narchive2_tax\narchive2_tickets\narchive2_usage\narchive2_weather\narchive3_appointments\narchive3_capacity\narchive3_customer\narchive3_documents\narchive3_employee\narchive3_exchange\narchive3_health\narchive3_invoice\narchive3_loyalty\narchive3_order\narchive3_price\narchive3_repository\narchive3_route\narchive3_shipment\narchive3_stock\narchive3_subscription\narchive3_tax\narchive3_tickets\narchive3_usage\narchive3_weather\narchive4_appointments\narchive4_capacity\narchive4_customer\narchive4_documents\narchive4_employee\narchive4_exchange\narchive4_health\narchive4_invoice\narchive4_loyalty\narchive4_order\narchive4_price\narchive4_repository\narchive4_route\narchive4_shipment\narchive4_stock\narchive4_subscription\narchive4_tax\narchive4_tickets\narchive4_usage\narchive4_weather\narchive5_appointments\narchive5_capacity\narchive5_customer\narchive5_documents\narchive5_employee\narchive5_exchange\narchive5_health\narchive5_invoice\narchive5_loyalty\narchive5_order\narchive5_price\narchive5_repository\narchive5_route\narchive5_shipment\narchive5_stock\narchive5_subscription\narchive5_tax\narchive5_tickets\narchive5_usage\narchive5_weather\narchive6_appointments\narchive6_capacity\narchive6_customer\narchive6_documents\narchive6_employee\narchive6_exchange\narchive6_health\narchive6_invoice\narchive6_loyalty\narchive6_order\narchive6_price\narchive6_repository\narchive6_route\narchive6_shipment\narchive6_stock\narchive6_subscription\narchive6_tax\narchive6_tickets\narchive6_usage\narchive6_weather\narchive7_appointments\narchive7_capacity\narchive7_customer\narchive7_documents\narchive7_employee\narchive7_exchange\narchive7_health\narchive7_invoice\narchive7_loyalty\narchive7_order\narchive7_price\narchive7_repository\narchive7_route\narchive7_shipment\narchive7_stock\narchive7_subscription\narchive7_tax\narchive7_tickets\narchive7_usage\narchive7_weather\narchive8_appointments\narchive8_capacity\narchive8_customer\narchive8_documents\narchive8_employee\narchive8_exchange\narchive8_health\narchive8_invoice\narchive8_loyalty\narchive8_order\narchive8_price\narchive8_repository\narchive8_route\narchive8_shipment\narchive8_stock\narchive8_subscription\narchive8_tax\narchive8_tickets\narchive8_usage\narchive8_weather\narchive9_appointments\narchive9_capacity\narchive9_customer\narchive9_documents\narchive9_employee\narchive9_exchange\narchive9_health\narchive9_invoice\narchive9_loyalty\narchive9_order\narchive9_price\narchive9_repository\narchive9_route\narchive9_shipment\narchive9_stock\narchive9_subscription\narchive9_tax\narchive9_tickets\narchive9_usage\narchive9_weather\ncapacity\ncustomer\ndocuments\nemployee\nexchange\nhealth\ninvoice\nloyalty\norder\nprice\nrepository\nroute\nshipment\nstock\nsubscription\ntax\ntickets\nusage\nweather",
+            "stderr": "",
+            "data": [
+              "appointments",
+              "archive1_appointments",
+              "archive1_capacity",
+              "archive1_customer",
+              "archive1_documents",
+              "archive1_employee",
+              "archive1_exchange",
+              "archive1_health",
+              "archive1_invoice",
+              "archive1_loyalty",
+              "archive1_order",
+              "archive1_price",
+              "archive1_repository",
+              "archive1_route",
+              "archive1_shipment",
+              "archive1_stock",
+              "archive1_subscription",
+              "archive1_tax",
+              "archive1_tickets",
+              "archive1_usage",
+              "archive1_weather",
+              "archive2_appointments",
+              "archive2_capacity",
+              "archive2_customer",
+              "archive2_documents",
+              "archive2_employee",
+              "archive2_exchange",
+              "archive2_health",
+              "archive2_invoice",
+              "archive2_loyalty",
+              "archive2_order",
+              "archive2_price",
+              "archive2_repository",
+              "archive2_route",
+              "archive2_shipment",
+              "archive2_stock",
+              "archive2_subscription",
+              "archive2_tax",
+              "archive2_tickets",
+              "archive2_usage",
+              "archive2_weather",
+              "archive3_appointments",
+              "archive3_capacity",
+              "archive3_customer",
+              "archive3_documents",
+              "archive3_employee",
+              "archive3_exchange",
+              "archive3_health",
+              "archive3_invoice",
+              "archive3_loyalty",
+              "archive3_order",
+              "archive3_price",
+              "archive3_repository",
+              "archive3_route",
+              "archive3_shipment",
+              "archive3_stock",
+              "archive3_subscription",
+              "archive3_tax",
+              "archive3_tickets",
+              "archive3_usage",
+              "archive3_weather",
+              "archive4_appointments",
+              "archive4_capacity",
+              "archive4_customer",
+              "archive4_documents",
+              "archive4_employee",
+              "archive4_exchange",
+              "archive4_health",
+              "archive4_invoice",
+              "archive4_loyalty",
+              "archive4_order",
+              "archive4_price",
+              "archive4_repository",
+              "archive4_route",
+              "archive4_shipment",
+              "archive4_stock",
+              "archive4_subscription",
+              "archive4_tax",
+              "archive4_tickets",
+              "archive4_usage",
+              "archive4_weather",
+              "archive5_appointments",
+              "archive5_capacity",
+              "archive5_customer",
+              "archive5_documents",
+              "archive5_employee",
+              "archive5_exchange",
+              "archive5_health",
+              "archive5_invoice",
+              "archive5_loyalty",
+              "archive5_order",
+              "archive5_price",
+              "archive5_repository",
+              "archive5_route",
+              "archive5_shipment",
+              "archive5_stock",
+              "archive5_subscription",
+              "archive5_tax",
+              "archive5_tickets",
+              "archive5_usage",
+              "archive5_weather",
+              "archive6_appointments",
+              "archive6_capacity",
+              "archive6_customer",
+              "archive6_documents",
+              "archive6_employee",
+              "archive6_exchange",
+              "archive6_health",
+              "archive6_invoice",
+              "archive6_loyalty",
+              "archive6_order",
+              "archive6_price",
+              "archive6_repository",
+              "archive6_route",
+              "archive6_shipment",
+              "archive6_stock",
+              "archive6_subscription",
+              "archive6_tax",
+              "archive6_tickets",
+              "archive6_usage",
+              "archive6_weather",
+              "archive7_appointments",
+              "archive7_capacity",
+              "archive7_customer",
+              "archive7_documents",
+              "archive7_employee",
+              "archive7_exchange",
+              "archive7_health",
+              "archive7_invoice",
+              "archive7_loyalty",
+              "archive7_order",
+              "archive7_price",
+              "archive7_repository",
+              "archive7_route",
+              "archive7_shipment",
+              "archive7_stock",
+              "archive7_subscription",
+              "archive7_tax",
+              "archive7_tickets",
+              "archive7_usage",
+              "archive7_weather",
+              "archive8_appointments",
+              "archive8_capacity",
+              "archive8_customer",
+              "archive8_documents",
+              "archive8_employee",
+              "archive8_exchange",
+              "archive8_health",
+              "archive8_invoice",
+              "archive8_loyalty",
+              "archive8_order",
+              "archive8_price",
+              "archive8_repository",
+              "archive8_route",
+              "archive8_shipment",
+              "archive8_stock",
+              "archive8_subscription",
+              "archive8_tax",
+              "archive8_tickets",
+              "archive8_usage",
+              "archive8_weather",
+              "archive9_appointments",
+              "archive9_capacity",
+              "archive9_customer",
+              "archive9_documents",
+              "archive9_employee",
+              "archive9_exchange",
+              "archive9_health",
+              "archive9_invoice",
+              "archive9_loyalty",
+              "archive9_order",
+              "archive9_price",
+              "archive9_repository",
+              "archive9_route",
+              "archive9_shipment",
+              "archive9_stock",
+              "archive9_subscription",
+              "archive9_tax",
+              "archive9_tickets",
+              "archive9_usage",
+              "archive9_weather",
+              "capacity",
+              "customer",
+              "documents",
+              "employee",
+              "exchange",
+              "health",
+              "invoice",
+              "loyalty",
+              "order",
+              "price",
+              "repository",
+              "route",
+              "shipment",
+              "stock",
+              "subscription",
+              "tax",
+              "tickets",
+              "usage",
+              "weather"
+            ],
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 15,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_08c7375cc60edcfe016b06c21b2dcc87d08fdec89a26d48ee5",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 2244,
+        "output_tokens": 26,
+        "total_tokens": 2270,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 9658,
+      "model_latency_ms": 3528.2192999729887,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_08c7375cc60edcfe016b06c21d405c87d080939b3c68b15e74",
+          "call_id": "call_fdcbc0d555654dad97a79731d8ec37f1",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"help /mcp/bench/tools/appointments\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "d7ed6a740088440680e2c2e3949b00ba",
+            "session_id": "ba47158f078944109f0ffadbf3d11031",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "appointments\nList free appointment slots for a doctor\n--params-json <JSON object>\n--doctor_id {\"type\": \"string\"} required\n--date {\"type\": \"string\"} required\n--limit {\"type\": \"integer\"} required",
+            "stderr": "",
+            "data": {
+              "input_schema": {
+                "type": "object",
+                "properties": {
+                  "doctor_id": {
+                    "type": "string"
+                  },
+                  "date": {
+                    "type": "string"
+                  },
+                  "limit": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "doctor_id",
+                  "date",
+                  "limit"
+                ],
+                "additionalProperties": false
+              },
+              "untrusted": true,
+              "backend": "mcp"
+            },
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 16,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "resp_08c7375cc60edcfe016b06c21eb26487d09fce5410621aa399",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 2505,
+        "output_tokens": 51,
+        "total_tokens": 2556,
+        "cached_input_tokens": 2048,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 10834,
+      "model_latency_ms": 4150.999200064689,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_08c7375cc60edcfe016b06c220aa1487d092821626ee5b2940",
+          "call_id": "call_d9085742d09a47819dad39ed10502bd0",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"run /mcp/bench/tools/appointments --params-json '{\\\"doctor_id\\\":\\\"DOC-912\\\",\\\"date\\\":\\\"2026-11-21\\\",\\\"limit\\\":3}'\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "b37494eac621471598fc31647253cfd4",
+            "session_id": "ba47158f078944109f0ffadbf3d11031",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_6f8a2fecd1b3cc8ba719\", \"source_tool\": \"appointments\", \"data\": {\"doctor_id\": \"DOC-912\", \"date\": \"2026-11-21\", \"limit\": 3}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_6f8a2fecd1b3cc8ba719",
+              "source_tool": "appointments",
+              "data": {
+                "doctor_id": "DOC-912",
+                "date": "2026-11-21",
+                "limit": 3
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/148f799cd82849b1a582c07452fcb25a",
+            "truncated": false,
+            "duration_ms": 484,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "resp_08c7375cc60edcfe016b06c223558487d083632ff83fff6a9c",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 2805,
+        "output_tokens": 20,
+        "total_tokens": 2825,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 12033,
+      "model_latency_ms": 6506.588299991563,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_08c7375cc60edcfe016b06c228863c87d092343d74ca180d14",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_6f8a2fecd1b3cc8ba719",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

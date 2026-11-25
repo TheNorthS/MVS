@@ -1,0 +1,422 @@
+{
+  "episode_id": "50_json_gateway_task_12",
+  "size": 50,
+  "mode": "json_gateway",
+  "task_id": "task_12",
+  "prompt": "Calculate invoice tax from net amount and rate. Use current data, not archives. Parameters: {\"net_amount\": 1200.5, \"rate\": 0.13}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "tax",
+  "expected_arguments": {
+    "net_amount": 1200.5,
+    "rate": 0.13
+  },
+  "expected_code": "v_2fb6bce006e8debe7c24",
+  "final_answer": "v_2fb6bce006e8debe7c24",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 5348,
+    "output_tokens": 100,
+    "total_tokens": 5448,
+    "cached_input_tokens": 2944,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 4,
+  "tool_selection_attempts": [
+    {
+      "tool": "tax",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "tax",
+      "arguments": {
+        "net_amount": 1200.5,
+        "rate": 0.13
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    276,
+    1530,
+    1633,
+    1909
+  ],
+  "context_growth_tokens": 1633,
+  "latency_ms": 48137.933299993165,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_0a024181a77fe5e6016b06c085180c87d08861485c54953261",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 276,
+        "output_tokens": 19,
+        "total_tokens": 295,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 1070,
+      "model_latency_ms": 9088.520999997854,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0a024181a77fe5e6016b06c08cc1ac87d0b87ec22ca356288b",
+          "call_id": "call_aae6d1f63d24426a974f1450c8a9eb3e",
+          "name": "mcp_gateway",
+          "arguments": "{\"action\":\"list\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": [
+            {
+              "name": "archive1_exchange",
+              "description": "Historical snapshot batch 1, NOT current data. Convert a monetary amount between currencies"
+            },
+            {
+              "name": "archive1_shipment",
+              "description": "Historical snapshot batch 1, NOT current data. Track a shipment by tracking ID"
+            },
+            {
+              "name": "tickets",
+              "description": "Fetch support tickets by a list of IDs"
+            },
+            {
+              "name": "subscription",
+              "description": "Read subscription status"
+            },
+            {
+              "name": "invoice",
+              "description": "Get outstanding invoice balance"
+            },
+            {
+              "name": "archive2_exchange",
+              "description": "Historical snapshot batch 2, NOT current data. Convert a monetary amount between currencies"
+            },
+            {
+              "name": "archive1_weather",
+              "description": "Historical snapshot batch 1, NOT current data. Fetch weather for a city and date"
+            },
+            {
+              "name": "customer",
+              "description": "Look up a customer account"
+            },
+            {
+              "name": "archive1_customer",
+              "description": "Historical snapshot batch 1, NOT current data. Look up a customer account"
+            },
+            {
+              "name": "health",
+              "description": "Read current service health in a region"
+            },
+            {
+              "name": "archive1_subscription",
+              "description": "Historical snapshot batch 1, NOT current data. Read subscription status"
+            },
+            {
+              "name": "archive1_price",
+              "description": "Historical snapshot batch 1, NOT current data. Look up current product price in a currency"
+            },
+            {
+              "name": "tax",
+              "description": "Calculate invoice tax from net amount and rate"
+            },
+            {
+              "name": "shipment",
+              "description": "Track a shipment by tracking ID"
+            },
+            {
+              "name": "archive1_tickets",
+              "description": "Historical snapshot batch 1, NOT current data. Fetch support tickets by a list of IDs"
+            },
+            {
+              "name": "archive1_documents",
+              "description": "Historical snapshot batch 1, NOT current data. Search documents using a nested filter"
+            },
+            {
+              "name": "usage",
+              "description": "Summarize API usage for a project and month"
+            },
+            {
+              "name": "archive1_invoice",
+              "description": "Historical snapshot batch 1, NOT current data. Get outstanding invoice balance"
+            },
+            {
+              "name": "archive1_capacity",
+              "description": "Historical snapshot batch 1, NOT current data. Get current available capacity of a warehouse"
+            },
+            {
+              "name": "stock",
+              "description": "Check current warehouse stock"
+            },
+            {
+              "name": "archive2_shipment",
+              "description": "Historical snapshot batch 2, NOT current data. Track a shipment by tracking ID"
+            },
+            {
+              "name": "documents",
+              "description": "Search documents using a nested filter"
+            },
+            {
+              "name": "archive1_route",
+              "description": "Historical snapshot batch 1, NOT current data. Find route distance between two cities"
+            },
+            {
+              "name": "archive2_repository",
+              "description": "Historical snapshot batch 2, NOT current data. Search software repositories by topic and minimum stars"
+            },
+            {
+              "name": "archive2_price",
+              "description": "Historical snapshot batch 2, NOT current data. Look up current product price in a currency"
+            },
+            {
+              "name": "archive1_usage",
+              "description": "Historical snapshot batch 1, NOT current data. Summarize API usage for a project and month"
+            },
+            {
+              "name": "archive1_repository",
+              "description": "Historical snapshot batch 1, NOT current data. Search software repositories by topic and minimum stars"
+            },
+            {
+              "name": "archive1_stock",
+              "description": "Historical snapshot batch 1, NOT current data. Check current warehouse stock"
+            },
+            {
+              "name": "archive1_order",
+              "description": "Historical snapshot batch 1, NOT current data. Fetch current order status"
+            },
+            {
+              "name": "archive2_order",
+              "description": "Historical snapshot batch 2, NOT current data. Fetch current order status"
+            },
+            {
+              "name": "archive2_weather",
+              "description": "Historical snapshot batch 2, NOT current data. Fetch weather for a city and date"
+            },
+            {
+              "name": "archive1_health",
+              "description": "Historical snapshot batch 1, NOT current data. Read current service health in a region"
+            },
+            {
+              "name": "archive1_tax",
+              "description": "Historical snapshot batch 1, NOT current data. Calculate invoice tax from net amount and rate"
+            },
+            {
+              "name": "archive2_invoice",
+              "description": "Historical snapshot batch 2, NOT current data. Get outstanding invoice balance"
+            },
+            {
+              "name": "route",
+              "description": "Find route distance between two cities"
+            },
+            {
+              "name": "archive2_customer",
+              "description": "Historical snapshot batch 2, NOT current data. Look up a customer account"
+            },
+            {
+              "name": "archive2_employee",
+              "description": "Historical snapshot batch 2, NOT current data. Look up employee directory details"
+            },
+            {
+              "name": "order",
+              "description": "Fetch current order status"
+            },
+            {
+              "name": "archive1_employee",
+              "description": "Historical snapshot batch 1, NOT current data. Look up employee directory details"
+            },
+            {
+              "name": "archive1_appointments",
+              "description": "Historical snapshot batch 1, NOT current data. List free appointment slots for a doctor"
+            },
+            {
+              "name": "exchange",
+              "description": "Convert a monetary amount between currencies"
+            },
+            {
+              "name": "archive1_loyalty",
+              "description": "Historical snapshot batch 1, NOT current data. Read customer loyalty balance"
+            },
+            {
+              "name": "weather",
+              "description": "Fetch weather for a city and date"
+            },
+            {
+              "name": "repository",
+              "description": "Search software repositories by topic and minimum stars"
+            },
+            {
+              "name": "loyalty",
+              "description": "Read customer loyalty balance"
+            },
+            {
+              "name": "capacity",
+              "description": "Get current available capacity of a warehouse"
+            },
+            {
+              "name": "appointments",
+              "description": "List free appointment slots for a doctor"
+            },
+            {
+              "name": "price",
+              "description": "Look up current product price in a currency"
+            },
+            {
+              "name": "employee",
+              "description": "Look up employee directory details"
+            },
+            {
+              "name": "archive2_stock",
+              "description": "Historical snapshot batch 2, NOT current data. Check current warehouse stock"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_0a024181a77fe5e6016b06c08e138c87d0a8c223b4815558c6",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1530,
+        "output_tokens": 23,
+        "total_tokens": 1553,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 7303,
+      "model_latency_ms": 11512.674800003879,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0a024181a77fe5e6016b06c097e26c87d0a834a17f63a7e6dd",
+          "call_id": "call_f69c69b2308d4e3ea9344a98489fc25f",
+          "name": "mcp_gateway",
+          "arguments": "{\"action\":\"help\",\"tool\":\"tax\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": {
+            "name": "tax",
+            "description": "Calculate invoice tax from net amount and rate",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "net_amount": {
+                  "type": "number"
+                },
+                "rate": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "net_amount",
+                "rate"
+              ],
+              "additionalProperties": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "resp_0a024181a77fe5e6016b06c0999fb487d0b40d4326d93d0c63",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1633,
+        "output_tokens": 39,
+        "total_tokens": 1672,
+        "cached_input_tokens": 1408,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 7943,
+      "model_latency_ms": 17430.766699952073,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0a024181a77fe5e6016b06c0a93c3887d0b5ac41d13377e7b3",
+          "call_id": "call_e7f40b31273f4af8baf48729ecf7ac17",
+          "name": "mcp_gateway",
+          "arguments": "{\"action\":\"call\",\"tool\":\"tax\",\"arguments\":{\"net_amount\":1200.5,\"rate\":0.13}}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": {
+            "request_id": "7de6c92ffa9647ce97ec344dafd65c30",
+            "session_id": "b251199002ed4085b3ee8a60a3b49728",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_2fb6bce006e8debe7c24\", \"source_tool\": \"tax\", \"data\": {\"net_amount\": 1200.5, \"rate\": 0.13}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_2fb6bce006e8debe7c24",
+              "source_tool": "tax",
+              "data": {
+                "net_amount": 1200.5,
+                "rate": 0.13
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/ade83db1efcc4bcd8eac29ac76d46634",
+            "truncated": false,
+            "duration_ms": 422,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "resp_0a024181a77fe5e6016b06c0ab64d487d0ab9c0b81114fb685",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1909,
+        "output_tokens": 19,
+        "total_tokens": 1928,
+        "cached_input_tokens": 1536,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 8993,
+      "model_latency_ms": 9605.250000022352,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_0a024181a77fe5e6016b06c0b3b39087d082caebb8a326a24c",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_2fb6bce006e8debe7c24",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

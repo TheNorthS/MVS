@@ -1,0 +1,57 @@
+[
+  {
+    "name": "button",
+    "source": "https://ui.shadcn.com/r/styles/new-york/button.json",
+    "dependencies": [
+      "@radix-ui/react-slot"
+    ]
+  },
+  {
+    "name": "input",
+    "source": "https://ui.shadcn.com/r/styles/new-york/input.json",
+    "dependencies": []
+  },
+  {
+    "name": "card",
+    "source": "https://ui.shadcn.com/r/styles/new-york/card.json",
+    "dependencies": []
+  },
+  {
+    "name": "badge",
+    "source": "https://ui.shadcn.com/r/styles/new-york/badge.json",
+    "dependencies": [
+      "@radix-ui/react-slot"
+    ]
+  },
+  {
+    "name": "dialog",
+    "source": "https://ui.shadcn.com/r/styles/new-york/dialog.json",
+    "dependencies": [
+      "@radix-ui/react-dialog"
+    ]
+  },
+  {
+    "name": "textarea",
+    "source": "https://ui.shadcn.com/r/styles/new-york/textarea.json",
+    "dependencies": []
+  },
+  {
+    "name": "table",
+    "source": "https://ui.shadcn.com/r/styles/new-york/table.json",
+    "dependencies": []
+  },
+  {
+    "name": "switch",
+    "source": "https://ui.shadcn.com/r/styles/new-york/switch.json",
+    "dependencies": [
+      "@radix-ui/react-switch"
+    ]
+  },
+  {
+    "name": "checkbox",
+    "source": "https://ui.shadcn.com/r/styles/new-york/checkbox.json",
+    "dependencies": [
+      "@radix-ui/react-checkbox"
+    ]
+  }
+]

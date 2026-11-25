@@ -1,0 +1,1029 @@
+{
+  "episode_id": "200_json_gateway_task_13",
+  "size": 200,
+  "mode": "json_gateway",
+  "task_id": "task_13",
+  "prompt": "Find route distance between two cities. Use current data, not archives. Parameters: {\"origin\": \"Shanghai\", \"destination\": \"Nanjing\", \"mode\": \"rail\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "route",
+  "expected_arguments": {
+    "origin": "Shanghai",
+    "destination": "Nanjing",
+    "mode": "rail"
+  },
+  "expected_code": "v_a2e106cb052e7830549a",
+  "final_answer": "v_a2e106cb052e7830549a",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 18613,
+    "output_tokens": 97,
+    "total_tokens": 18710,
+    "cached_input_tokens": 5760,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 4,
+  "tool_selection_attempts": [
+    {
+      "tool": "route",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "route",
+      "arguments": {
+        "origin": "Shanghai",
+        "destination": "Nanjing",
+        "mode": "rail"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    277,
+    5947,
+    6058,
+    6331
+  ],
+  "context_growth_tokens": 6054,
+  "latency_ms": 13739.531700033695,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_096e27f640a0e637016b06bfa12c2887d2befcbd6c6495f9f8",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 277,
+        "output_tokens": 19,
+        "total_tokens": 296,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 1098,
+      "model_latency_ms": 2770.5437999684364,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_096e27f640a0e637016b06bfa28c7487d2835ed017ac5b928a",
+          "call_id": "call_85d8f5bb87e44148adc7b43fba9cc8f2",
+          "name": "mcp_gateway",
+          "arguments": "{\"action\":\"list\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": [
+            {
+              "name": "archive3_weather",
+              "description": "Historical snapshot batch 3, NOT current data. Fetch weather for a city and date"
+            },
+            {
+              "name": "archive9_employee",
+              "description": "Historical snapshot batch 9, NOT current data. Look up employee directory details"
+            },
+            {
+              "name": "archive5_price",
+              "description": "Historical snapshot batch 5, NOT current data. Look up current product price in a currency"
+            },
+            {
+              "name": "archive9_route",
+              "description": "Historical snapshot batch 9, NOT current data. Find route distance between two cities"
+            },
+            {
+              "name": "archive5_subscription",
+              "description": "Historical snapshot batch 5, NOT current data. Read subscription status"
+            },
+            {
+              "name": "archive6_price",
+              "description": "Historical snapshot batch 6, NOT current data. Look up current product price in a currency"
+            },
+            {
+              "name": "route",
+              "description": "Find route distance between two cities"
+            },
+            {
+              "name": "order",
+              "description": "Fetch current order status"
+            },
+            {
+              "name": "archive3_invoice",
+              "description": "Historical snapshot batch 3, NOT current data. Get outstanding invoice balance"
+            },
+            {
+              "name": "archive2_invoice",
+              "description": "Historical snapshot batch 2, NOT current data. Get outstanding invoice balance"
+            },
+            {
+              "name": "archive6_health",
+              "description": "Historical snapshot batch 6, NOT current data. Read current service health in a region"
+            },
+            {
+              "name": "archive8_usage",
+              "description": "Historical snapshot batch 8, NOT current data. Summarize API usage for a project and month"
+            },
+            {
+              "name": "archive6_repository",
+              "description": "Historical snapshot batch 6, NOT current data. Search software repositories by topic and minimum stars"
+            },
+            {
+              "name": "archive3_health",
+              "description": "Historical snapshot batch 3, NOT current data. Read current service health in a region"
+            },
+            {
+              "name": "archive7_documents",
+              "description": "Historical snapshot batch 7, NOT current data. Search documents using a nested filter"
+            },
+            {
+              "name": "archive8_employee",
+              "description": "Historical snapshot batch 8, NOT current data. Look up employee directory details"
+            },
+            {
+              "name": "archive2_exchange",
+              "description": "Historical snapshot batch 2, NOT current data. Convert a monetary amount between currencies"
+            },
+            {
+              "name": "archive6_usage",
+              "description": "Historical snapshot batch 6, NOT current data. Summarize API usage for a project and month"
+            },
+            {
+              "name": "archive1_usage",
+              "description": "Historical snapshot batch 1, NOT current data. Summarize API usage for a project and month"
+            },
+            {
+              "name": "shipment",
+              "description": "Track a shipment by tracking ID"
+            },
+            {
+              "name": "archive7_tickets",
+              "description": "Historical snapshot batch 7, NOT current data. Fetch support tickets by a list of IDs"
+            },
+            {
+              "name": "capacity",
+              "description": "Get current available capacity of a warehouse"
+            },
+            {
+              "name": "archive2_order",
+              "description": "Historical snapshot batch 2, NOT current data. Fetch current order status"
+            },
+            {
+              "name": "archive6_weather",
+              "description": "Historical snapshot batch 6, NOT current data. Fetch weather for a city and date"
+            },
+            {
+              "name": "archive9_weather",
+              "description": "Historical snapshot batch 9, NOT current data. Fetch weather for a city and date"
+            },
+            {
+              "name": "archive8_order",
+              "description": "Historical snapshot batch 8, NOT current data. Fetch current order status"
+            },
+            {
+              "name": "archive2_employee",
+              "description": "Historical snapshot batch 2, NOT current data. Look up employee directory details"
+            },
+            {
+              "name": "archive5_usage",
+              "description": "Historical snapshot batch 5, NOT current data. Summarize API usage for a project and month"
+            },
+            {
+              "name": "exchange",
+              "description": "Convert a monetary amount between currencies"
+            },
+            {
+              "name": "archive9_loyalty",
+              "description": "Historical snapshot batch 9, NOT current data. Read customer loyalty balance"
+            },
+            {
+              "name": "archive1_appointments",
+              "description": "Historical snapshot batch 1, NOT current data. List free appointment slots for a doctor"
+            },
+            {
+              "name": "archive6_order",
+              "description": "Historical snapshot batch 6, NOT current data. Fetch current order status"
+            },
+            {
+              "name": "tax",
+              "description": "Calculate invoice tax from net amount and rate"
+            },
+            {
+              "name": "archive1_health",
+              "description": "Historical snapshot batch 1, NOT current data. Read current service health in a region"
+            },
+            {
+              "name": "archive7_route",
+              "description": "Historical snapshot batch 7, NOT current data. Find route distance between two cities"
+            },
+            {
+              "name": "archive3_customer",
+              "description": "Historical snapshot batch 3, NOT current data. Look up a customer account"
+            },
+            {
+              "name": "archive3_price",
+              "description": "Historical snapshot batch 3, NOT current data. Look up current product price in a currency"
+            },
+            {
+              "name": "archive9_capacity",
+              "description": "Historical snapshot batch 9, NOT current data. Get current available capacity of a warehouse"
+            },
+            {
+              "name": "archive1_tax",
+              "description": "Historical snapshot batch 1, NOT current data. Calculate invoice tax from net amount and rate"
+            },
+            {
+              "name": "archive8_tax",
+              "description": "Historical snapshot batch 8, NOT current data. Calculate invoice tax from net amount and rate"
+            },
+            {
+              "name": "archive8_subscription",
+              "description": "Historical snapshot batch 8, NOT current data. Read subscription status"
+            },
+            {
+              "name": "archive3_stock",
+              "description": "Historical snapshot batch 3, NOT current data. Check current warehouse stock"
+            },
+            {
+              "name": "usage",
+              "description": "Summarize API usage for a project and month"
+            },
+            {
+              "name": "archive7_invoice",
+              "description": "Historical snapshot batch 7, NOT current data. Get outstanding invoice balance"
+            },
+            {
+              "name": "archive8_stock",
+              "description": "Historical snapshot batch 8, NOT current data. Check current warehouse stock"
+            },
+            {
+              "name": "archive2_tax",
+              "description": "Historical snapshot batch 2, NOT current data. Calculate invoice tax from net amount and rate"
+            },
+            {
+              "name": "archive6_exchange",
+              "description": "Historical snapshot batch 6, NOT current data. Convert a monetary amount between currencies"
+            },
+            {
+              "name": "archive5_weather",
+              "description": "Historical snapshot batch 5, NOT current data. Fetch weather for a city and date"
+            },
+            {
+              "name": "archive3_route",
+              "description": "Historical snapshot batch 3, NOT current data. Find route distance between two cities"
+            },
+            {
+              "name": "archive5_route",
+              "description": "Historical snapshot batch 5, NOT current data. Find route distance between two cities"
+            },
+            {
+              "name": "archive5_exchange",
+              "description": "Historical snapshot batch 5, NOT current data. Convert a monetary amount between currencies"
+            },
+            {
+              "name": "archive4_capacity",
+              "description": "Historical snapshot batch 4, NOT current data. Get current available capacity of a warehouse"
+            },
+            {
+              "name": "archive5_shipment",
+              "description": "Historical snapshot batch 5, NOT current data. Track a shipment by tracking ID"
+            },
+            {
+              "name": "archive7_exchange",
+              "description": "Historical snapshot batch 7, NOT current data. Convert a monetary amount between currencies"
+            },
+            {
+              "name": "archive2_shipment",
+              "description": "Historical snapshot batch 2, NOT current data. Track a shipment by tracking ID"
+            },
+            {
+              "name": "stock",
+              "description": "Check current warehouse stock"
+            },
+            {
+              "name": "archive8_price",
+              "description": "Historical snapshot batch 8, NOT current data. Look up current product price in a currency"
+            },
+            {
+              "name": "archive9_tax",
+              "description": "Historical snapshot batch 9, NOT current data. Calculate invoice tax from net amount and rate"
+            },
+            {
+              "name": "health",
+              "description": "Read current service health in a region"
+            },
+            {
+              "name": "archive4_stock",
+              "description": "Historical snapshot batch 4, NOT current data. Check current warehouse stock"
+            },
+            {
+              "name": "archive5_order",
+              "description": "Historical snapshot batch 5, NOT current data. Fetch current order status"
+            },
+            {
+              "name": "archive1_documents",
+              "description": "Historical snapshot batch 1, NOT current data. Search documents using a nested filter"
+            },
+            {
+              "name": "archive7_health",
+              "description": "Historical snapshot batch 7, NOT current data. Read current service health in a region"
+            },
+            {
+              "name": "archive8_health",
+              "description": "Historical snapshot batch 8, NOT current data. Read current service health in a region"
+            },
+            {
+              "name": "archive6_capacity",
+              "description": "Historical snapshot batch 6, NOT current data. Get current available capacity of a warehouse"
+            },
+            {
+              "name": "archive3_documents",
+              "description": "Historical snapshot batch 3, NOT current data. Search documents using a nested filter"
+            },
+            {
+              "name": "archive5_capacity",
+              "description": "Historical snapshot batch 5, NOT current data. Get current available capacity of a warehouse"
+            },
+            {
+              "name": "tickets",
+              "description": "Fetch support tickets by a list of IDs"
+            },
+            {
+              "name": "loyalty",
+              "description": "Read customer loyalty balance"
+            },
+            {
+              "name": "archive8_appointments",
+              "description": "Historical snapshot batch 8, NOT current data. List free appointment slots for a doctor"
+            },
+            {
+              "name": "archive7_weather",
+              "description": "Historical snapshot batch 7, NOT current data. Fetch weather for a city and date"
+            },
+            {
+              "name": "archive8_tickets",
+              "description": "Historical snapshot batch 8, NOT current data. Fetch support tickets by a list of IDs"
+            },
+            {
+              "name": "archive3_exchange",
+              "description": "Historical snapshot batch 3, NOT current data. Convert a monetary amount between currencies"
+            },
+            {
+              "name": "archive4_invoice",
+              "description": "Historical snapshot batch 4, NOT current data. Get outstanding invoice balance"
+            },
+            {
+              "name": "archive8_exchange",
+              "description": "Historical snapshot batch 8, NOT current data. Convert a monetary amount between currencies"
+            },
+            {
+              "name": "archive2_weather",
+              "description": "Historical snapshot batch 2, NOT current data. Fetch weather for a city and date"
+            },
+            {
+              "name": "archive5_invoice",
+              "description": "Historical snapshot batch 5, NOT current data. Get outstanding invoice balance"
+            },
+            {
+              "name": "archive3_tickets",
+              "description": "Historical snapshot batch 3, NOT current data. Fetch support tickets by a list of IDs"
+            },
+            {
+              "name": "archive2_loyalty",
+              "description": "Historical snapshot batch 2, NOT current data. Read customer loyalty balance"
+            },
+            {
+              "name": "archive9_health",
+              "description": "Historical snapshot batch 9, NOT current data. Read current service health in a region"
+            },
+            {
+              "name": "archive4_exchange",
+              "description": "Historical snapshot batch 4, NOT current data. Convert a monetary amount between currencies"
+            },
+            {
+              "name": "archive5_documents",
+              "description": "Historical snapshot batch 5, NOT current data. Search documents using a nested filter"
+            },
+            {
+              "name": "archive5_customer",
+              "description": "Historical snapshot batch 5, NOT current data. Look up a customer account"
+            },
+            {
+              "name": "archive6_route",
+              "description": "Historical snapshot batch 6, NOT current data. Find route distance between two cities"
+            },
+            {
+              "name": "archive7_order",
+              "description": "Historical snapshot batch 7, NOT current data. Fetch current order status"
+            },
+            {
+              "name": "archive1_route",
+              "description": "Historical snapshot batch 1, NOT current data. Find route distance between two cities"
+            },
+            {
+              "name": "documents",
+              "description": "Search documents using a nested filter"
+            },
+            {
+              "name": "archive7_stock",
+              "description": "Historical snapshot batch 7, NOT current data. Check current warehouse stock"
+            },
+            {
+              "name": "archive6_shipment",
+              "description": "Historical snapshot batch 6, NOT current data. Track a shipment by tracking ID"
+            },
+            {
+              "name": "archive8_capacity",
+              "description": "Historical snapshot batch 8, NOT current data. Get current available capacity of a warehouse"
+            },
+            {
+              "name": "archive3_shipment",
+              "description": "Historical snapshot batch 3, NOT current data. Track a shipment by tracking ID"
+            },
+            {
+              "name": "archive4_shipment",
+              "description": "Historical snapshot batch 4, NOT current data. Track a shipment by tracking ID"
+            },
+            {
+              "name": "archive7_repository",
+              "description": "Historical snapshot batch 7, NOT current data. Search software repositories by topic and minimum stars"
+            },
+            {
+              "name": "archive5_stock",
+              "description": "Historical snapshot batch 5, NOT current data. Check current warehouse stock"
+            },
+            {
+              "name": "archive7_capacity",
+              "description": "Historical snapshot batch 7, NOT current data. Get current available capacity of a warehouse"
+            },
+            {
+              "name": "archive3_tax",
+              "description": "Historical snapshot batch 3, NOT current data. Calculate invoice tax from net amount and rate"
+            },
+            {
+              "name": "archive1_employee",
+              "description": "Historical snapshot batch 1, NOT current data. Look up employee directory details"
+            },
+            {
+              "name": "archive9_invoice",
+              "description": "Historical snapshot batch 9, NOT current data. Get outstanding invoice balance"
+            },
+            {
+              "name": "archive5_tax",
+              "description": "Historical snapshot batch 5, NOT current data. Calculate invoice tax from net amount and rate"
+            },
+            {
+              "name": "archive2_subscription",
+              "description": "Historical snapshot batch 2, NOT current data. Read subscription status"
+            },
+            {
+              "name": "archive8_loyalty",
+              "description": "Historical snapshot batch 8, NOT current data. Read customer loyalty balance"
+            },
+            {
+              "name": "invoice",
+              "description": "Get outstanding invoice balance"
+            },
+            {
+              "name": "archive1_customer",
+              "description": "Historical snapshot batch 1, NOT current data. Look up a customer account"
+            },
+            {
+              "name": "archive9_shipment",
+              "description": "Historical snapshot batch 9, NOT current data. Track a shipment by tracking ID"
+            },
+            {
+              "name": "archive4_tickets",
+              "description": "Historical snapshot batch 4, NOT current data. Fetch support tickets by a list of IDs"
+            },
+            {
+              "name": "archive4_documents",
+              "description": "Historical snapshot batch 4, NOT current data. Search documents using a nested filter"
+            },
+            {
+              "name": "archive6_subscription",
+              "description": "Historical snapshot batch 6, NOT current data. Read subscription status"
+            },
+            {
+              "name": "archive6_invoice",
+              "description": "Historical snapshot batch 6, NOT current data. Get outstanding invoice balance"
+            },
+            {
+              "name": "archive9_documents",
+              "description": "Historical snapshot batch 9, NOT current data. Search documents using a nested filter"
+            },
+            {
+              "name": "archive6_loyalty",
+              "description": "Historical snapshot batch 6, NOT current data. Read customer loyalty balance"
+            },
+            {
+              "name": "archive8_documents",
+              "description": "Historical snapshot batch 8, NOT current data. Search documents using a nested filter"
+            },
+            {
+              "name": "archive6_stock",
+              "description": "Historical snapshot batch 6, NOT current data. Check current warehouse stock"
+            },
+            {
+              "name": "archive1_loyalty",
+              "description": "Historical snapshot batch 1, NOT current data. Read customer loyalty balance"
+            },
+            {
+              "name": "archive2_repository",
+              "description": "Historical snapshot batch 2, NOT current data. Search software repositories by topic and minimum stars"
+            },
+            {
+              "name": "archive8_customer",
+              "description": "Historical snapshot batch 8, NOT current data. Look up a customer account"
+            },
+            {
+              "name": "archive6_documents",
+              "description": "Historical snapshot batch 6, NOT current data. Search documents using a nested filter"
+            },
+            {
+              "name": "archive7_customer",
+              "description": "Historical snapshot batch 7, NOT current data. Look up a customer account"
+            },
+            {
+              "name": "archive6_tax",
+              "description": "Historical snapshot batch 6, NOT current data. Calculate invoice tax from net amount and rate"
+            },
+            {
+              "name": "archive6_employee",
+              "description": "Historical snapshot batch 6, NOT current data. Look up employee directory details"
+            },
+            {
+              "name": "archive1_price",
+              "description": "Historical snapshot batch 1, NOT current data. Look up current product price in a currency"
+            },
+            {
+              "name": "archive4_price",
+              "description": "Historical snapshot batch 4, NOT current data. Look up current product price in a currency"
+            },
+            {
+              "name": "archive3_appointments",
+              "description": "Historical snapshot batch 3, NOT current data. List free appointment slots for a doctor"
+            },
+            {
+              "name": "customer",
+              "description": "Look up a customer account"
+            },
+            {
+              "name": "archive4_order",
+              "description": "Historical snapshot batch 4, NOT current data. Fetch current order status"
+            },
+            {
+              "name": "archive8_invoice",
+              "description": "Historical snapshot batch 8, NOT current data. Get outstanding invoice balance"
+            },
+            {
+              "name": "archive5_tickets",
+              "description": "Historical snapshot batch 5, NOT current data. Fetch support tickets by a list of IDs"
+            },
+            {
+              "name": "archive4_customer",
+              "description": "Historical snapshot batch 4, NOT current data. Look up a customer account"
+            },
+            {
+              "name": "archive3_repository",
+              "description": "Historical snapshot batch 3, NOT current data. Search software repositories by topic and minimum stars"
+            },
+            {
+              "name": "archive2_route",
+              "description": "Historical snapshot batch 2, NOT current data. Find route distance between two cities"
+            },
+            {
+              "name": "archive4_usage",
+              "description": "Historical snapshot batch 4, NOT current data. Summarize API usage for a project and month"
+            },
+            {
+              "name": "archive4_loyalty",
+              "description": "Historical snapshot batch 4, NOT current data. Read customer loyalty balance"
+            },
+            {
+              "name": "archive2_price",
+              "description": "Historical snapshot batch 2, NOT current data. Look up current product price in a currency"
+            },
+            {
+              "name": "archive4_route",
+              "description": "Historical snapshot batch 4, NOT current data. Find route distance between two cities"
+            },
+            {
+              "name": "archive5_health",
+              "description": "Historical snapshot batch 5, NOT current data. Read current service health in a region"
+            },
+            {
+              "name": "archive9_tickets",
+              "description": "Historical snapshot batch 9, NOT current data. Fetch support tickets by a list of IDs"
+            },
+            {
+              "name": "archive7_appointments",
+              "description": "Historical snapshot batch 7, NOT current data. List free appointment slots for a doctor"
+            },
+            {
+              "name": "archive1_exchange",
+              "description": "Historical snapshot batch 1, NOT current data. Convert a monetary amount between currencies"
+            },
+            {
+              "name": "archive9_stock",
+              "description": "Historical snapshot batch 9, NOT current data. Check current warehouse stock"
+            },
+            {
+              "name": "archive7_employee",
+              "description": "Historical snapshot batch 7, NOT current data. Look up employee directory details"
+            },
+            {
+              "name": "archive3_loyalty",
+              "description": "Historical snapshot batch 3, NOT current data. Read customer loyalty balance"
+            },
+            {
+              "name": "archive2_documents",
+              "description": "Historical snapshot batch 2, NOT current data. Search documents using a nested filter"
+            },
+            {
+              "name": "archive7_tax",
+              "description": "Historical snapshot batch 7, NOT current data. Calculate invoice tax from net amount and rate"
+            },
+            {
+              "name": "appointments",
+              "description": "List free appointment slots for a doctor"
+            },
+            {
+              "name": "archive2_customer",
+              "description": "Historical snapshot batch 2, NOT current data. Look up a customer account"
+            },
+            {
+              "name": "archive4_tax",
+              "description": "Historical snapshot batch 4, NOT current data. Calculate invoice tax from net amount and rate"
+            },
+            {
+              "name": "archive3_capacity",
+              "description": "Historical snapshot batch 3, NOT current data. Get current available capacity of a warehouse"
+            },
+            {
+              "name": "archive7_price",
+              "description": "Historical snapshot batch 7, NOT current data. Look up current product price in a currency"
+            },
+            {
+              "name": "archive1_stock",
+              "description": "Historical snapshot batch 1, NOT current data. Check current warehouse stock"
+            },
+            {
+              "name": "archive4_health",
+              "description": "Historical snapshot batch 4, NOT current data. Read current service health in a region"
+            },
+            {
+              "name": "archive1_subscription",
+              "description": "Historical snapshot batch 1, NOT current data. Read subscription status"
+            },
+            {
+              "name": "archive6_appointments",
+              "description": "Historical snapshot batch 6, NOT current data. List free appointment slots for a doctor"
+            },
+            {
+              "name": "archive5_appointments",
+              "description": "Historical snapshot batch 5, NOT current data. List free appointment slots for a doctor"
+            },
+            {
+              "name": "subscription",
+              "description": "Read subscription status"
+            },
+            {
+              "name": "archive3_employee",
+              "description": "Historical snapshot batch 3, NOT current data. Look up employee directory details"
+            },
+            {
+              "name": "archive4_repository",
+              "description": "Historical snapshot batch 4, NOT current data. Search software repositories by topic and minimum stars"
+            },
+            {
+              "name": "archive4_subscription",
+              "description": "Historical snapshot batch 4, NOT current data. Read subscription status"
+            },
+            {
+              "name": "archive1_invoice",
+              "description": "Historical snapshot batch 1, NOT current data. Get outstanding invoice balance"
+            },
+            {
+              "name": "archive4_appointments",
+              "description": "Historical snapshot batch 4, NOT current data. List free appointment slots for a doctor"
+            },
+            {
+              "name": "archive9_order",
+              "description": "Historical snapshot batch 9, NOT current data. Fetch current order status"
+            },
+            {
+              "name": "archive9_usage",
+              "description": "Historical snapshot batch 9, NOT current data. Summarize API usage for a project and month"
+            },
+            {
+              "name": "archive4_weather",
+              "description": "Historical snapshot batch 4, NOT current data. Fetch weather for a city and date"
+            },
+            {
+              "name": "archive9_price",
+              "description": "Historical snapshot batch 9, NOT current data. Look up current product price in a currency"
+            },
+            {
+              "name": "archive1_tickets",
+              "description": "Historical snapshot batch 1, NOT current data. Fetch support tickets by a list of IDs"
+            },
+            {
+              "name": "archive8_repository",
+              "description": "Historical snapshot batch 8, NOT current data. Search software repositories by topic and minimum stars"
+            },
+            {
+              "name": "archive4_employee",
+              "description": "Historical snapshot batch 4, NOT current data. Look up employee directory details"
+            },
+            {
+              "name": "archive9_exchange",
+              "description": "Historical snapshot batch 9, NOT current data. Convert a monetary amount between currencies"
+            },
+            {
+              "name": "archive2_stock",
+              "description": "Historical snapshot batch 2, NOT current data. Check current warehouse stock"
+            },
+            {
+              "name": "price",
+              "description": "Look up current product price in a currency"
+            },
+            {
+              "name": "archive3_subscription",
+              "description": "Historical snapshot batch 3, NOT current data. Read subscription status"
+            },
+            {
+              "name": "archive7_usage",
+              "description": "Historical snapshot batch 7, NOT current data. Summarize API usage for a project and month"
+            },
+            {
+              "name": "archive5_loyalty",
+              "description": "Historical snapshot batch 5, NOT current data. Read customer loyalty balance"
+            },
+            {
+              "name": "archive2_health",
+              "description": "Historical snapshot batch 2, NOT current data. Read current service health in a region"
+            },
+            {
+              "name": "archive5_employee",
+              "description": "Historical snapshot batch 5, NOT current data. Look up employee directory details"
+            },
+            {
+              "name": "archive9_subscription",
+              "description": "Historical snapshot batch 9, NOT current data. Read subscription status"
+            },
+            {
+              "name": "archive8_weather",
+              "description": "Historical snapshot batch 8, NOT current data. Fetch weather for a city and date"
+            },
+            {
+              "name": "archive2_usage",
+              "description": "Historical snapshot batch 2, NOT current data. Summarize API usage for a project and month"
+            },
+            {
+              "name": "archive7_shipment",
+              "description": "Historical snapshot batch 7, NOT current data. Track a shipment by tracking ID"
+            },
+            {
+              "name": "archive9_appointments",
+              "description": "Historical snapshot batch 9, NOT current data. List free appointment slots for a doctor"
+            },
+            {
+              "name": "archive7_loyalty",
+              "description": "Historical snapshot batch 7, NOT current data. Read customer loyalty balance"
+            },
+            {
+              "name": "archive6_customer",
+              "description": "Historical snapshot batch 6, NOT current data. Look up a customer account"
+            },
+            {
+              "name": "archive2_tickets",
+              "description": "Historical snapshot batch 2, NOT current data. Fetch support tickets by a list of IDs"
+            },
+            {
+              "name": "archive2_capacity",
+              "description": "Historical snapshot batch 2, NOT current data. Get current available capacity of a warehouse"
+            },
+            {
+              "name": "archive1_shipment",
+              "description": "Historical snapshot batch 1, NOT current data. Track a shipment by tracking ID"
+            },
+            {
+              "name": "employee",
+              "description": "Look up employee directory details"
+            },
+            {
+              "name": "repository",
+              "description": "Search software repositories by topic and minimum stars"
+            },
+            {
+              "name": "archive5_repository",
+              "description": "Historical snapshot batch 5, NOT current data. Search software repositories by topic and minimum stars"
+            },
+            {
+              "name": "archive7_subscription",
+              "description": "Historical snapshot batch 7, NOT current data. Read subscription status"
+            },
+            {
+              "name": "archive1_order",
+              "description": "Historical snapshot batch 1, NOT current data. Fetch current order status"
+            },
+            {
+              "name": "archive6_tickets",
+              "description": "Historical snapshot batch 6, NOT current data. Fetch support tickets by a list of IDs"
+            },
+            {
+              "name": "archive8_route",
+              "description": "Historical snapshot batch 8, NOT current data. Find route distance between two cities"
+            },
+            {
+              "name": "archive1_weather",
+              "description": "Historical snapshot batch 1, NOT current data. Fetch weather for a city and date"
+            },
+            {
+              "name": "archive9_repository",
+              "description": "Historical snapshot batch 9, NOT current data. Search software repositories by topic and minimum stars"
+            },
+            {
+              "name": "archive1_capacity",
+              "description": "Historical snapshot batch 1, NOT current data. Get current available capacity of a warehouse"
+            },
+            {
+              "name": "archive2_appointments",
+              "description": "Historical snapshot batch 2, NOT current data. List free appointment slots for a doctor"
+            },
+            {
+              "name": "archive3_order",
+              "description": "Historical snapshot batch 3, NOT current data. Fetch current order status"
+            },
+            {
+              "name": "archive3_usage",
+              "description": "Historical snapshot batch 3, NOT current data. Summarize API usage for a project and month"
+            },
+            {
+              "name": "archive9_customer",
+              "description": "Historical snapshot batch 9, NOT current data. Look up a customer account"
+            },
+            {
+              "name": "weather",
+              "description": "Fetch weather for a city and date"
+            },
+            {
+              "name": "archive1_repository",
+              "description": "Historical snapshot batch 1, NOT current data. Search software repositories by topic and minimum stars"
+            },
+            {
+              "name": "archive8_shipment",
+              "description": "Historical snapshot batch 8, NOT current data. Track a shipment by tracking ID"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_096e27f640a0e637016b06bfa43de887d28ccf549949097fb0",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 5947,
+        "output_tokens": 23,
+        "total_tokens": 5970,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 28474,
+      "model_latency_ms": 3986.167300026864,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_096e27f640a0e637016b06bfa6760487d2931479a7013f73a6",
+          "call_id": "call_31e1061dad354b8dafd5563e8076acc4",
+          "name": "mcp_gateway",
+          "arguments": "{\"action\":\"help\",\"tool\":\"route\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": {
+            "name": "route",
+            "description": "Find route distance between two cities",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "origin": {
+                  "type": "string"
+                },
+                "destination": {
+                  "type": "string"
+                },
+                "mode": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "origin",
+                "destination",
+                "mode"
+              ],
+              "additionalProperties": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "resp_096e27f640a0e637016b06bfa82ddc87d2b9ca0b9f29069152",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 6058,
+        "output_tokens": 39,
+        "total_tokens": 6097,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 29160,
+      "model_latency_ms": 3309.177799965255,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_096e27f640a0e637016b06bfa94a5087d2a7405aabb864c532",
+          "call_id": "call_79363a9840134910a82aae6643f3d250",
+          "name": "mcp_gateway",
+          "arguments": "{\"action\":\"call\",\"tool\":\"route\",\"arguments\":{\"origin\":\"Shanghai\",\"destination\":\"Nanjing\",\"mode\":\"rail\"}}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": {
+            "request_id": "befc07009fb14033bc64785f9f372868",
+            "session_id": "ef4a33f03f364818a404a24c097bacb3",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_a2e106cb052e7830549a\", \"source_tool\": \"route\", \"data\": {\"origin\": \"Shanghai\", \"destination\": \"Nanjing\", \"mode\": \"rail\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_a2e106cb052e7830549a",
+              "source_tool": "route",
+              "data": {
+                "origin": "Shanghai",
+                "destination": "Nanjing",
+                "mode": "rail"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/e1fe378e6142493cbadb3c8ff7030b4d",
+            "truncated": false,
+            "duration_ms": 405,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "resp_096e27f640a0e637016b06bfabe8bc87d28f9a253064943b6e",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 6331,
+        "output_tokens": 16,
+        "total_tokens": 6347,
+        "cached_input_tokens": 5760,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 30338,
+      "model_latency_ms": 2908.2535000052303,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_096e27f640a0e637016b06bfad229087d288550941ec305ac5",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_a2e106cb052e7830549a",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

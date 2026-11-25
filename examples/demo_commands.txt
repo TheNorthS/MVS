@@ -1,0 +1,11 @@
+pwd
+ls /mcp
+ls /mcp/demo/tools
+help /mcp/demo/tools/add
+run /mcp/demo/tools/add --a 10 --b 20
+/mcp/demo/tools/add --a 10 --b 20
+cd /mcp/demo/tools
+run add --a -3 --b 5
+run echo --text "hello world"
+run add --a abc --b 2
+exit

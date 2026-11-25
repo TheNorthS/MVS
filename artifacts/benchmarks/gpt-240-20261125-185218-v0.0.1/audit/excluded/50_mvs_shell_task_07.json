@@ -1,0 +1,134 @@
+{
+  "episode_id": "50_mvs_shell_task_07",
+  "size": 50,
+  "mode": "mvs_shell",
+  "task_id": "task_07",
+  "prompt": "Look up employee directory details. Use current data, not archives. Parameters: {\"employee_id\": \"EMP-619\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "employee",
+  "expected_arguments": {
+    "employee_id": "EMP-619"
+  },
+  "expected_code": "v_944564e4a7670cd2e52e",
+  "final_answer": "",
+  "success": false,
+  "failure": {
+    "code": "provider_http_error",
+    "http_status": 502
+  },
+  "usage_complete": false,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 279,
+    "output_tokens": 24,
+    "total_tokens": 303,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 1,
+  "tool_selection_attempts": [],
+  "mcp_calls": [],
+  "mcp_call_count": 0,
+  "context_input_tokens": [
+    279
+  ],
+  "context_growth_tokens": 0,
+  "latency_ms": 6169.829100021161,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_015d5dc0a378a93f016b06c13d49b087d0956b518f12888d23",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 279,
+        "output_tokens": 24,
+        "total_tokens": 303,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 1052,
+      "model_latency_ms": 3087.9144000355154,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_015d5dc0a378a93f016b06c13eccc487d0b836dbf5db00a8fc",
+          "call_id": "call_a9579cce2db54547a2e57934cdbc3ebb",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"ls /mcp/bench/tools\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "a4309908201143df9dd10906e7fd4efb",
+            "session_id": "fc2dd710f3034504accfd090ce89b302",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "appointments\narchive1_appointments\narchive1_capacity\narchive1_customer\narchive1_documents\narchive1_employee\narchive1_exchange\narchive1_health\narchive1_invoice\narchive1_loyalty\narchive1_order\narchive1_price\narchive1_repository\narchive1_route\narchive1_shipment\narchive1_stock\narchive1_subscription\narchive1_tax\narchive1_tickets\narchive1_usage\narchive1_weather\narchive2_customer\narchive2_employee\narchive2_exchange\narchive2_invoice\narchive2_order\narchive2_price\narchive2_repository\narchive2_shipment\narchive2_stock\narchive2_weather\ncapacity\ncustomer\ndocuments\nemployee\nexchange\nhealth\ninvoice\nloyalty\norder\nprice\nrepository\nroute\nshipment\nstock\nsubscription\ntax\ntickets\nusage\nweather",
+            "stderr": "",
+            "data": [
+              "appointments",
+              "archive1_appointments",
+              "archive1_capacity",
+              "archive1_customer",
+              "archive1_documents",
+              "archive1_employee",
+              "archive1_exchange",
+              "archive1_health",
+              "archive1_invoice",
+              "archive1_loyalty",
+              "archive1_order",
+              "archive1_price",
+              "archive1_repository",
+              "archive1_route",
+              "archive1_shipment",
+              "archive1_stock",
+              "archive1_subscription",
+              "archive1_tax",
+              "archive1_tickets",
+              "archive1_usage",
+              "archive1_weather",
+              "archive2_customer",
+              "archive2_employee",
+              "archive2_exchange",
+              "archive2_invoice",
+              "archive2_order",
+              "archive2_price",
+              "archive2_repository",
+              "archive2_shipment",
+              "archive2_stock",
+              "archive2_weather",
+              "capacity",
+              "customer",
+              "documents",
+              "employee",
+              "exchange",
+              "health",
+              "invoice",
+              "loyalty",
+              "order",
+              "price",
+              "repository",
+              "route",
+              "shipment",
+              "stock",
+              "subscription",
+              "tax",
+              "tickets",
+              "usage",
+              "weather"
+            ],
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "episode_id": "50_native_tools_task_11",
+  "size": 50,
+  "mode": "native_tools",
+  "task_id": "task_11",
+  "prompt": "Read subscription status. Use current data, not archives. Parameters: {\"subscription_id\": \"SUB-873\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "subscription",
+  "expected_arguments": {
+    "subscription_id": "SUB-873"
+  },
+  "expected_code": "v_fcc66aed0cc985487652",
+  "final_answer": "v_fcc66aed0cc985487652",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 8210,
+    "output_tokens": 91,
+    "total_tokens": 8301,
+    "cached_input_tokens": 7808,
+    "reasoning_output_tokens": 31
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "subscription",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "subscription",
+      "arguments": {
+        "subscription_id": "SUB-873"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    3950,
+    4260
+  ],
+  "context_growth_tokens": 310,
+  "latency_ms": 4944.656900013797,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "a2871b29-0c8b-46e3-aa31-afc4f234e254",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 3950,
+        "output_tokens": 79,
+        "total_tokens": 4029,
+        "cached_input_tokens": 3840,
+        "reasoning_output_tokens": 31
+      },
+      "context_bytes": 16964,
+      "model_latency_ms": 1987.3506999574602,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "2152a43e-9563-4f5f-8930-4ffed1a5fc7b",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "The task is clear: read subscription status using current data tool, not archive. The tool is \"subscription\" with subscription_id \"SUB-873\"."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "a2871b29-0c8b-46e3-aa31-afc4f234e254-0"
+        },
+        {
+          "type": "function_call",
+          "id": "12cbfece-cb80-4c63-adec-6819db61858d",
+          "status": "completed",
+          "arguments": "{\"subscription_id\": \"SUB-873\"}",
+          "call_id": "call_00_1GNZll5DL2IuhPkcDiBh5102",
+          "name": "subscription"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "subscription",
+          "result": {
+            "request_id": "512460648e414b74b3d492c37372fd0d",
+            "session_id": "cc6b5e45b8b1431fa9f1cf52a3a3cfc6",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_fcc66aed0cc985487652\", \"source_tool\": \"subscription\", \"data\": {\"subscription_id\": \"SUB-873\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_fcc66aed0cc985487652",
+              "source_tool": "subscription",
+              "data": {
+                "subscription_id": "SUB-873"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/f2316c2657334d57aaf4ca9b64622084",
+            "truncated": false,
+            "duration_ms": 390,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "d31da29c-bb5a-4567-8261-37fd6d05dc17",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 4260,
+        "output_tokens": 12,
+        "total_tokens": 4272,
+        "cached_input_tokens": 3968,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 18305,
+      "model_latency_ms": 1499.0693000145257,
+      "output": [
+        {
+          "type": "message",
+          "id": "9be9d1f3-3317-487d-b1d9-681eeef0560d",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_fcc66aed0cc985487652"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

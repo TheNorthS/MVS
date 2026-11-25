@@ -1,0 +1,141 @@
+{
+  "episode_id": "200_native_tools_task_17",
+  "size": 200,
+  "mode": "native_tools",
+  "task_id": "task_17",
+  "prompt": "List free appointment slots for a doctor. Use current data, not archives. Parameters: {\"doctor_id\": \"DOC-912\", \"date\": \"2026-11-21\", \"limit\": 3}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "appointments",
+  "expected_arguments": {
+    "doctor_id": "DOC-912",
+    "date": "2026-11-21",
+    "limit": 3
+  },
+  "expected_code": "v_6f8a2fecd1b3cc8ba719",
+  "final_answer": "v_6f8a2fecd1b3cc8ba719",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 31899,
+    "output_tokens": 101,
+    "total_tokens": 32000,
+    "cached_input_tokens": 23296,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "appointments",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "appointments",
+      "arguments": {
+        "doctor_id": "DOC-912",
+        "date": "2026-11-21",
+        "limit": 3
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    15773,
+    16126
+  ],
+  "context_growth_tokens": 353,
+  "latency_ms": 5786.239499924704,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "3c5a1daa-893f-4acc-9b9e-0d32672321e3",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 15773,
+        "output_tokens": 84,
+        "total_tokens": 15857,
+        "cached_input_tokens": 7552,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 70137,
+      "model_latency_ms": 2608.5155999753624,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "2d52acf1-b907-429d-a477-b608b44a5188",
+          "status": "completed",
+          "arguments": "{\"doctor_id\": \"DOC-912\", \"date\": \"2026-11-21\", \"limit\": 3}",
+          "call_id": "call_00_ET_A7N7ckyKJehMG9OOvLl36019",
+          "name": "appointments"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "appointments",
+          "result": {
+            "request_id": "684c534b742c45c7bc98fdd171ef1744",
+            "session_id": "e218f278bbcf4608822cf3c71906f7e2",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_6f8a2fecd1b3cc8ba719\", \"source_tool\": \"appointments\", \"data\": {\"doctor_id\": \"DOC-912\", \"date\": \"2026-11-21\", \"limit\": 3}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_6f8a2fecd1b3cc8ba719",
+              "source_tool": "appointments",
+              "data": {
+                "doctor_id": "DOC-912",
+                "date": "2026-11-21",
+                "limit": 3
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/d67e4f13ac5743cbbdbb0d4f74a60636",
+            "truncated": false,
+            "duration_ms": 297,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "35797971-afb7-48b9-a4e6-cd638727385c",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 16126,
+        "output_tokens": 17,
+        "total_tokens": 16143,
+        "cached_input_tokens": 15744,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 71231,
+      "model_latency_ms": 1256.1688999412581,
+      "output": [
+        {
+          "type": "message",
+          "id": "80a1ea96-cc41-44c0-937c-f276f5ccd7e6",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_6f8a2fecd1b3cc8ba719"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+servers:
+  - id: demo
+    transport: stdio
+    command: python
+    args: ["-m", "mvs.infrastructure.mcp.demo_server"]
+    enabled: true
+    trust_level: trusted
+    allowed_tools: [add, echo]
+    allowed_resources: ["demo://info", "demo://greeting/{name}"]
+    allowed_prompts: [welcome]
+    call_timeout_seconds: 15
+    max_concurrency: 2

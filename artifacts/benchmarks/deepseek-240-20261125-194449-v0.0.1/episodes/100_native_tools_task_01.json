@@ -1,0 +1,151 @@
+{
+  "episode_id": "100_native_tools_task_01",
+  "size": 100,
+  "mode": "native_tools",
+  "task_id": "task_01",
+  "prompt": "Look up current product price in a currency. Use current data, not archives. Parameters: {\"sku\": \"SKU-317\", \"currency\": \"EUR\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "price",
+  "expected_arguments": {
+    "sku": "SKU-317",
+    "currency": "EUR"
+  },
+  "expected_code": "v_670f2694ecabbcedfdfd",
+  "final_answer": "v_670f2694ecabbcedfdfd",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 16178,
+    "output_tokens": 109,
+    "total_tokens": 16287,
+    "cached_input_tokens": 15744,
+    "reasoning_output_tokens": 34
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "price",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "price",
+      "arguments": {
+        "sku": "SKU-317",
+        "currency": "EUR"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    7924,
+    8254
+  ],
+  "context_growth_tokens": 330,
+  "latency_ms": 5399.947199970484,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "4a74bf36-2312-4912-89e7-3944b81330ce",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 7924,
+        "output_tokens": 96,
+        "total_tokens": 8020,
+        "cached_input_tokens": 7808,
+        "reasoning_output_tokens": 34
+      },
+      "context_bytes": 34812,
+      "model_latency_ms": 1567.6439000526443,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "09d0965a-dde8-4eb2-ae3d-16092e692f35",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "The task is to look up current product price using the \"price\" tool (current data), not archives. Parameters: sku SKU-317, currency EUR."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "4a74bf36-2312-4912-89e7-3944b81330ce-0"
+        },
+        {
+          "type": "function_call",
+          "id": "eba6e403-e899-4412-b43b-e5d5741d4a1b",
+          "status": "completed",
+          "arguments": "{\"sku\": \"SKU-317\", \"currency\": \"EUR\"}",
+          "call_id": "call_00_6FAlomhqkRBqgmNvdqX09517",
+          "name": "price"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "price",
+          "result": {
+            "request_id": "5abfc63f7fda4faea1d8842931863138",
+            "session_id": "de76e3df79bd4ad3885874180990e521",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_670f2694ecabbcedfdfd\", \"source_tool\": \"price\", \"data\": {\"sku\": \"SKU-317\", \"currency\": \"EUR\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_670f2694ecabbcedfdfd",
+              "source_tool": "price",
+              "data": {
+                "sku": "SKU-317",
+                "currency": "EUR"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/6c416ea27578414b9377178d772a1fcc",
+            "truncated": false,
+            "duration_ms": 952,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "6ce9c2f4-3e77-48c4-85b5-1b013c0dee7d",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 8254,
+        "output_tokens": 13,
+        "total_tokens": 8267,
+        "cached_input_tokens": 7936,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 36167,
+      "model_latency_ms": 2048.5220999689773,
+      "output": [
+        {
+          "type": "message",
+          "id": "734e5bda-e397-418a-9210-17da6e6076a3",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_670f2694ecabbcedfdfd"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

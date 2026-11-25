@@ -1,0 +1,138 @@
+{
+  "episode_id": "200_native_tools_task_10",
+  "size": 200,
+  "mode": "native_tools",
+  "task_id": "task_10",
+  "prompt": "Summarize API usage for a project and month. Use current data, not archives. Parameters: {\"project\": \"atlas\", \"month\": \"2026-10\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "usage",
+  "expected_arguments": {
+    "project": "atlas",
+    "month": "2026-10"
+  },
+  "expected_code": "v_c083b2ff7ec20a4b8b8f",
+  "final_answer": "v_c083b2ff7ec20a4b8b8f",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 31844,
+    "output_tokens": 80,
+    "total_tokens": 31924,
+    "cached_input_tokens": 31360,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "usage",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "usage",
+      "arguments": {
+        "project": "atlas",
+        "month": "2026-10"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    15766,
+    16078
+  ],
+  "context_growth_tokens": 312,
+  "latency_ms": 5774.046599981375,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "fa9ca993-8deb-41c9-a0f0-fa6d168371db",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 15766,
+        "output_tokens": 63,
+        "total_tokens": 15829,
+        "cached_input_tokens": 15616,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 70120,
+      "model_latency_ms": 2383.939699968323,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "6bbb48ba-8f95-420b-b469-3721ad556e16",
+          "status": "completed",
+          "arguments": "{\"project\": \"atlas\", \"month\": \"2026-10\"}",
+          "call_id": "call_00_ET_LHs5J3JR4aC7MQAKrcwP8804",
+          "name": "usage"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "usage",
+          "result": {
+            "request_id": "ef93ab3493434ac392b01da0dab20bda",
+            "session_id": "0706f394ff714fe2913253a9ec2c6bb9",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_c083b2ff7ec20a4b8b8f\", \"source_tool\": \"usage\", \"data\": {\"project\": \"atlas\", \"month\": \"2026-10\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_c083b2ff7ec20a4b8b8f",
+              "source_tool": "usage",
+              "data": {
+                "project": "atlas",
+                "month": "2026-10"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/67056dd0e6ff4b2c8c65a7d407578c04",
+            "truncated": false,
+            "duration_ms": 390,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "0d01f396-8563-459c-8f3f-def846736b75",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 16078,
+        "output_tokens": 17,
+        "total_tokens": 16095,
+        "cached_input_tokens": 15744,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 71129,
+      "model_latency_ms": 1951.3412000378594,
+      "output": [
+        {
+          "type": "message",
+          "id": "39435216-923e-49e7-b60b-d6ef4e73926c",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_c083b2ff7ec20a4b8b8f"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

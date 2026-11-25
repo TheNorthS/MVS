@@ -1,0 +1,138 @@
+{
+  "episode_id": "50_native_tools_task_16",
+  "size": 50,
+  "mode": "native_tools",
+  "task_id": "task_16",
+  "prompt": "Read current service health in a region. Use current data, not archives. Parameters: {\"service\": \"checkout\", \"region\": \"ap-east\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "health",
+  "expected_arguments": {
+    "service": "checkout",
+    "region": "ap-east"
+  },
+  "expected_code": "v_3fbcb2c0c09debe826b8",
+  "final_answer": "v_3fbcb2c0c09debe826b8",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 8221,
+    "output_tokens": 78,
+    "total_tokens": 8299,
+    "cached_input_tokens": 7808,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "health",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "health",
+      "arguments": {
+        "service": "checkout",
+        "region": "ap-east"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    3958,
+    4263
+  ],
+  "context_growth_tokens": 305,
+  "latency_ms": 3865.137500106357,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "5745ca58-147c-4766-9e97-6408f3e6047e",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 3958,
+        "output_tokens": 61,
+        "total_tokens": 4019,
+        "cached_input_tokens": 3840,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 16997,
+      "model_latency_ms": 1364.0398000134155,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "13e942f5-2ef6-4703-b6e9-7884e9ab9249",
+          "status": "completed",
+          "arguments": "{\"service\": \"checkout\", \"region\": \"ap-east\"}",
+          "call_id": "call_00_ET_IdrTXAxW8WhhhQ6pMfwE1422",
+          "name": "health"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "health",
+          "result": {
+            "request_id": "22da8fb8f39b4a2e899c529fa5e0cdfe",
+            "session_id": "df85c47c350941ccbac8ac0a586280eb",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_3fbcb2c0c09debe826b8\", \"source_tool\": \"health\", \"data\": {\"service\": \"checkout\", \"region\": \"ap-east\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_3fbcb2c0c09debe826b8",
+              "source_tool": "health",
+              "data": {
+                "service": "checkout",
+                "region": "ap-east"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/cdc15126578645dd9da3660b9f0d9765",
+            "truncated": false,
+            "duration_ms": 657,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "d2a91fc5-6d9d-46e5-81c1-a58335d15b1b",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 4263,
+        "output_tokens": 17,
+        "total_tokens": 4280,
+        "cached_input_tokens": 3968,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 18021,
+      "model_latency_ms": 1749.7855999972671,
+      "output": [
+        {
+          "type": "message",
+          "id": "a3248a0f-53ce-402e-9e58-5e636e2fc41c",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_3fbcb2c0c09debe826b8"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

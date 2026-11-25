@@ -1,0 +1,138 @@
+{
+  "episode_id": "200_native_tools_task_00",
+  "size": 200,
+  "mode": "native_tools",
+  "task_id": "task_00",
+  "prompt": "Check current warehouse stock. Use current data, not archives. Parameters: {\"sku\": \"SKU-482\", \"warehouse\": \"north\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "stock",
+  "expected_arguments": {
+    "sku": "SKU-482",
+    "warehouse": "north"
+  },
+  "expected_code": "v_f96ab48f3ca0ac56bfb8",
+  "final_answer": "v_f96ab48f3ca0ac56bfb8",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 14896,
+    "output_tokens": 41,
+    "total_tokens": 14937,
+    "cached_input_tokens": 14080,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "stock",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "stock",
+      "arguments": {
+        "sku": "SKU-482",
+        "warehouse": "north"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    7324,
+    7572
+  ],
+  "context_growth_tokens": 248,
+  "latency_ms": 29307.27200000547,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_0f97e2ba69fdd702016b06c05012b087d19ae54d71f870ee8d",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 7324,
+        "output_tokens": 23,
+        "total_tokens": 7347,
+        "cached_input_tokens": 7040,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 70106,
+      "model_latency_ms": 13826.527599943802,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0f97e2ba69fdd702016b06c0599eb887d1963cb2e7913530ac",
+          "call_id": "call_9885b0aa78bd4f71b110faf341d3c300",
+          "name": "stock",
+          "arguments": "{\"sku\":\"SKU-482\",\"warehouse\":\"north\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "stock",
+          "result": {
+            "request_id": "a6c01536799846c98c95bf277d69f5df",
+            "session_id": "a43855beded64d57a7c035993e1655fe",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_f96ab48f3ca0ac56bfb8\", \"source_tool\": \"stock\", \"data\": {\"sku\": \"SKU-482\", \"warehouse\": \"north\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_f96ab48f3ca0ac56bfb8",
+              "source_tool": "stock",
+              "data": {
+                "sku": "SKU-482",
+                "warehouse": "north"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/a7d0430704314e2caf68e22979e694e3",
+            "truncated": false,
+            "duration_ms": 437,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_0f97e2ba69fdd702016b06c05d206487d1a039478cd70cf87f",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 7572,
+        "output_tokens": 18,
+        "total_tokens": 7590,
+        "cached_input_tokens": 7040,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 71133,
+      "model_latency_ms": 14677.463399944827,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_0f97e2ba69fdd702016b06c06897b887d18e85dae2c6ec76b7",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_f96ab48f3ca0ac56bfb8",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

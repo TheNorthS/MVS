@@ -1,0 +1,154 @@
+{
+  "episode_id": "200_native_tools_task_05",
+  "size": 200,
+  "mode": "native_tools",
+  "task_id": "task_05",
+  "prompt": "Convert a monetary amount between currencies. Use current data, not archives. Parameters: {\"amount\": 123.45, \"source\": \"USD\", \"target\": \"EUR\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "exchange",
+  "expected_arguments": {
+    "amount": 123.45,
+    "source": "USD",
+    "target": "EUR"
+  },
+  "expected_code": "v_e73abbdf62bde8db6e05",
+  "final_answer": "v_e73abbdf62bde8db6e05",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 31895,
+    "output_tokens": 117,
+    "total_tokens": 32012,
+    "cached_input_tokens": 31360,
+    "reasoning_output_tokens": 26
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "exchange",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "exchange",
+      "arguments": {
+        "amount": 123.45,
+        "source": "USD",
+        "target": "EUR"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    15767,
+    16128
+  ],
+  "context_growth_tokens": 361,
+  "latency_ms": 4206.250400049612,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "96d406b3-659d-4ffe-8dab-e505880539bd",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 15767,
+        "output_tokens": 103,
+        "total_tokens": 15870,
+        "cached_input_tokens": 15616,
+        "reasoning_output_tokens": 26
+      },
+      "context_bytes": 70135,
+      "model_latency_ms": 1914.771500043571,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "0fd98ed1-1ae6-4a5a-9fb5-5edcb8856b2e",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "The task is to convert monetary amount between currencies using current data. The tool is \"exchange\" with amount, source, target."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "96d406b3-659d-4ffe-8dab-e505880539bd-0"
+        },
+        {
+          "type": "function_call",
+          "id": "eefd48a4-1df3-4ef1-99db-b91ebff8254b",
+          "status": "completed",
+          "arguments": "{\"amount\": 123.45, \"source\": \"USD\", \"target\": \"EUR\"}",
+          "call_id": "call_00_sIWJ41b7qnDI1JVdc40M0066",
+          "name": "exchange"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "exchange",
+          "result": {
+            "request_id": "34e7d4cd720a41f49ebf8c1e1f549884",
+            "session_id": "399697f46d8e485e82d5d3b4b3f13b32",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_e73abbdf62bde8db6e05\", \"source_tool\": \"exchange\", \"data\": {\"amount\": 123.45, \"source\": \"USD\", \"target\": \"EUR\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_e73abbdf62bde8db6e05",
+              "source_tool": "exchange",
+              "data": {
+                "amount": 123.45,
+                "source": "USD",
+                "target": "EUR"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/2ff1f9b513b3493bb1b0514a532d7365",
+            "truncated": false,
+            "duration_ms": 437,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "9fde7ef3-7492-4d69-87e4-a65e6db12a6c",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 16128,
+        "output_tokens": 14,
+        "total_tokens": 16142,
+        "cached_input_tokens": 15744,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 71547,
+      "model_latency_ms": 1387.6327000325546,
+      "output": [
+        {
+          "type": "message",
+          "id": "addde458-1316-4afc-b563-01d048413e3a",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_e73abbdf62bde8db6e05"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

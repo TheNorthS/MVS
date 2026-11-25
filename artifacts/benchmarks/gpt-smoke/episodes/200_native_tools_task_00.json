@@ -1,0 +1,138 @@
+{
+  "episode_id": "200_native_tools_task_00",
+  "size": 200,
+  "mode": "native_tools",
+  "task_id": "task_00",
+  "prompt": "Check current warehouse stock. Use current data, not archives. Parameters: {\"sku\": \"SKU-482\", \"warehouse\": \"north\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "stock",
+  "expected_arguments": {
+    "sku": "SKU-482",
+    "warehouse": "north"
+  },
+  "expected_code": "v_f96ab48f3ca0ac56bfb8",
+  "final_answer": "v_f96ab48f3ca0ac56bfb8",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 14900,
+    "output_tokens": 41,
+    "total_tokens": 14941,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "stock",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "stock",
+      "arguments": {
+        "sku": "SKU-482",
+        "warehouse": "north"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    7324,
+    7576
+  ],
+  "context_growth_tokens": 252,
+  "latency_ms": 10269.841699991957,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_00116b9c372ce7e4016af86a6a8ee887d081dcd5ee16f7bffc",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 7324,
+        "output_tokens": 23,
+        "total_tokens": 7347,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 70106,
+      "model_latency_ms": 4972.920000000158,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_00116b9c372ce7e4016af86a6c12f487d0ba3e3aa23c1a9983",
+          "call_id": "call_7f8ca00156d54b7a8f9f551b65ab1d90",
+          "name": "stock",
+          "arguments": "{\"sku\":\"SKU-482\",\"warehouse\":\"north\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "stock",
+          "result": {
+            "request_id": "12b2e96ba6d543ba9ffc440098201c36",
+            "session_id": "0e7e87959b4b48a584ebd2e6c7d00dc3",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_f96ab48f3ca0ac56bfb8\", \"source_tool\": \"stock\", \"data\": {\"sku\": \"SKU-482\", \"warehouse\": \"north\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_f96ab48f3ca0ac56bfb8",
+              "source_tool": "stock",
+              "data": {
+                "sku": "SKU-482",
+                "warehouse": "north"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/4d605365dd4645738786b90da764c00e",
+            "truncated": false,
+            "duration_ms": 296,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_00116b9c372ce7e4016af86a6f351c87d0a613b09c98c94505",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 7576,
+        "output_tokens": 18,
+        "total_tokens": 7594,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 71133,
+      "model_latency_ms": 4312.223000000813,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_00116b9c372ce7e4016af86a70a9f887d08bf35b39039e3731",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_f96ab48f3ca0ac56bfb8",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

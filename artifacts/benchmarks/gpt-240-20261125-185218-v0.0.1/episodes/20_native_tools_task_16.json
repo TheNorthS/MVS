@@ -1,0 +1,138 @@
+{
+  "episode_id": "20_native_tools_task_16",
+  "size": 20,
+  "mode": "native_tools",
+  "task_id": "task_16",
+  "prompt": "Read current service health in a region. Use current data, not archives. Parameters: {\"service\": \"checkout\", \"region\": \"ap-east\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "health",
+  "expected_arguments": {
+    "service": "checkout",
+    "region": "ap-east"
+  },
+  "expected_code": "v_3fbcb2c0c09debe826b8",
+  "final_answer": "v_3fbcb2c0c09debe826b8",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 1655,
+    "output_tokens": 41,
+    "total_tokens": 1696,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "health",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "health",
+      "arguments": {
+        "region": "ap-east",
+        "service": "checkout"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    702,
+    953
+  ],
+  "context_growth_tokens": 251,
+  "latency_ms": 7090.976299950853,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_07c6e8d3c427beb6016b06bfa9ad2487d08a91e2399974d946",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 702,
+        "output_tokens": 22,
+        "total_tokens": 724,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 6571,
+      "model_latency_ms": 2822.1874999580905,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_07c6e8d3c427beb6016b06bfaac09c87d0b0b9d6f13e59b495",
+          "call_id": "call_4c38e05456df48b994497a053b7f4976",
+          "name": "health",
+          "arguments": "{\"region\":\"ap-east\",\"service\":\"checkout\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "health",
+          "result": {
+            "request_id": "743fb5d420334236b4e1f8fb2a096010",
+            "session_id": "692147c4bad84c5f87c7803196ca14b9",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_3fbcb2c0c09debe826b8\", \"source_tool\": \"health\", \"data\": {\"region\": \"ap-east\", \"service\": \"checkout\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_3fbcb2c0c09debe826b8",
+              "source_tool": "health",
+              "data": {
+                "region": "ap-east",
+                "service": "checkout"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/7bc060e7c92d45dc86c2c3fd761c7714",
+            "truncated": false,
+            "duration_ms": 327,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_07c6e8d3c427beb6016b06bfad02ac87d0859e7f497dd2ee8f",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 953,
+        "output_tokens": 19,
+        "total_tokens": 972,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 7613,
+      "model_latency_ms": 3908.1158000044525,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_07c6e8d3c427beb6016b06bfaf242887d0819c0f3ca83f7335",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_3fbcb2c0c09debe826b8",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

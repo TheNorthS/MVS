@@ -1,0 +1,138 @@
+{
+  "episode_id": "100_native_tools_task_06",
+  "size": 100,
+  "mode": "native_tools",
+  "task_id": "task_06",
+  "prompt": "Fetch weather for a city and date. Use current data, not archives. Parameters: {\"city\": \"Hangzhou\", \"date\": \"2026-11-20\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "weather",
+  "expected_arguments": {
+    "city": "Hangzhou",
+    "date": "2026-11-20"
+  },
+  "expected_code": "v_d6deb39c1cc7369c30ca",
+  "final_answer": "v_d6deb39c1cc7369c30ca",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 7554,
+    "output_tokens": 44,
+    "total_tokens": 7598,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "weather",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "weather",
+      "arguments": {
+        "city": "Hangzhou",
+        "date": "2026-11-20"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    3651,
+    3903
+  ],
+  "context_growth_tokens": 252,
+  "latency_ms": 7879.784999997355,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_052d00d9ff986294016b06be1d70e487d09eca9c0aa1482294",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 3651,
+        "output_tokens": 27,
+        "total_tokens": 3678,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 34807,
+      "model_latency_ms": 4223.685900098644,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_052d00d9ff986294016b06be1e6f2487d0b650466847e3f6fa",
+          "call_id": "call_c71b71130228492caad99fbc45639039",
+          "name": "weather",
+          "arguments": "{\"city\":\"Hangzhou\",\"date\":\"2026-11-20\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "weather",
+          "result": {
+            "request_id": "50692886d49949a09eef1100def2ef82",
+            "session_id": "35a168bc234a42dfb21803587dfcf378",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_d6deb39c1cc7369c30ca\", \"source_tool\": \"weather\", \"data\": {\"city\": \"Hangzhou\", \"date\": \"2026-11-20\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_d6deb39c1cc7369c30ca",
+              "source_tool": "weather",
+              "data": {
+                "city": "Hangzhou",
+                "date": "2026-11-20"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/08609a98040c486b8526578e9290a857",
+            "truncated": false,
+            "duration_ms": 156,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_052d00d9ff986294016b06be20caac87d0b9c77645001ea568",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 3903,
+        "output_tokens": 17,
+        "total_tokens": 3920,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 35846,
+      "model_latency_ms": 3344.2863000091165,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_052d00d9ff986294016b06be21ebcc87d09b0bec50c3f2f72b",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_d6deb39c1cc7369c30ca",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

@@ -1,0 +1,328 @@
+{
+  "episode_id": "20_json_gateway_task_00",
+  "size": 20,
+  "mode": "json_gateway",
+  "task_id": "task_00",
+  "prompt": "Check current warehouse stock. Use current data, not archives. Parameters: {\"sku\": \"SKU-482\", \"warehouse\": \"north\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "stock",
+  "expected_arguments": {
+    "sku": "SKU-482",
+    "warehouse": "north"
+  },
+  "expected_code": "v_f96ab48f3ca0ac56bfb8",
+  "final_answer": "v_f96ab48f3ca0ac56bfb8",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 3671,
+    "output_tokens": 241,
+    "total_tokens": 3912,
+    "cached_input_tokens": 2560,
+    "reasoning_output_tokens": 21
+  },
+  "interaction_rounds": 4,
+  "tool_selection_attempts": [
+    {
+      "tool": "stock",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "stock",
+      "arguments": {
+        "sku": "SKU-482",
+        "warehouse": "north"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    445,
+    859,
+    1014,
+    1353
+  ],
+  "context_growth_tokens": 908,
+  "latency_ms": 7083.739600027911,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "9170f803-76f9-4338-b477-47f80268815d",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 445,
+        "output_tokens": 52,
+        "total_tokens": 497,
+        "cached_input_tokens": 384,
+        "reasoning_output_tokens": 5
+      },
+      "context_bytes": 1061,
+      "model_latency_ms": 1542.8150999359787,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "d5495fcf-f500-4cce-8958-a8a319a7d7f9",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "Let me discover tools."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "9170f803-76f9-4338-b477-47f80268815d-0"
+        },
+        {
+          "type": "function_call",
+          "id": "06c23418-6d17-4b8b-9ea4-913c5912a55d",
+          "status": "completed",
+          "arguments": "{\"action\": \"list\"}",
+          "call_id": "call_00_Ma0vQQ4C4rnR4wHlmscU3730",
+          "name": "mcp_gateway"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": [
+            {
+              "name": "tickets",
+              "description": "Fetch support tickets by a list of IDs"
+            },
+            {
+              "name": "exchange",
+              "description": "Convert a monetary amount between currencies"
+            },
+            {
+              "name": "loyalty",
+              "description": "Read customer loyalty balance"
+            },
+            {
+              "name": "invoice",
+              "description": "Get outstanding invoice balance"
+            },
+            {
+              "name": "customer",
+              "description": "Look up a customer account"
+            },
+            {
+              "name": "route",
+              "description": "Find route distance between two cities"
+            },
+            {
+              "name": "capacity",
+              "description": "Get current available capacity of a warehouse"
+            },
+            {
+              "name": "documents",
+              "description": "Search documents using a nested filter"
+            },
+            {
+              "name": "weather",
+              "description": "Fetch weather for a city and date"
+            },
+            {
+              "name": "tax",
+              "description": "Calculate invoice tax from net amount and rate"
+            },
+            {
+              "name": "appointments",
+              "description": "List free appointment slots for a doctor"
+            },
+            {
+              "name": "usage",
+              "description": "Summarize API usage for a project and month"
+            },
+            {
+              "name": "price",
+              "description": "Look up current product price in a currency"
+            },
+            {
+              "name": "subscription",
+              "description": "Read subscription status"
+            },
+            {
+              "name": "order",
+              "description": "Fetch current order status"
+            },
+            {
+              "name": "health",
+              "description": "Read current service health in a region"
+            },
+            {
+              "name": "employee",
+              "description": "Look up employee directory details"
+            },
+            {
+              "name": "repository",
+              "description": "Search software repositories by topic and minimum stars"
+            },
+            {
+              "name": "stock",
+              "description": "Check current warehouse stock"
+            },
+            {
+              "name": "shipment",
+              "description": "Track a shipment by tracking ID"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "5493d06e-1c11-4b2f-922e-a7df72c548dc",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 859,
+        "output_tokens": 79,
+        "total_tokens": 938,
+        "cached_input_tokens": 384,
+        "reasoning_output_tokens": 16
+      },
+      "context_bytes": 3303,
+      "model_latency_ms": 1374.8974000336602,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "37a79302-cb62-46b8-b0a5-7e3e5f00f413",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "The tool \"stock\" checks current warehouse stock. Let me get its help."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "5493d06e-1c11-4b2f-922e-a7df72c548dc-0"
+        },
+        {
+          "type": "function_call",
+          "id": "8521bda7-d011-4ba9-b171-ab05327b3364",
+          "status": "completed",
+          "arguments": "{\"action\": \"help\", \"tool\": \"stock\"}",
+          "call_id": "call_00_EQF1n6ZjDSCvLG4tbCYD4839",
+          "name": "mcp_gateway"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": {
+            "name": "stock",
+            "description": "Check current warehouse stock",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                },
+                "warehouse": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku",
+                "warehouse"
+              ],
+              "additionalProperties": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "9fd0dc30-266d-4881-bcac-9e4e086cc7ef",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1014,
+        "output_tokens": 95,
+        "total_tokens": 1109,
+        "cached_input_tokens": 768,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 4196,
+      "model_latency_ms": 2389.718500082381,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "72069306-e483-4d69-8304-f9044d39a568",
+          "status": "completed",
+          "arguments": "{\"action\": \"call\", \"tool\": \"stock\", \"arguments\": {\"sku\": \"SKU-482\", \"warehouse\": \"north\"}}",
+          "call_id": "call_00_ET_95x8R4dF5usOtiHJdxxk9316",
+          "name": "mcp_gateway"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": {
+            "request_id": "9ad9b258fa2d4b079064442a5bfff293",
+            "session_id": "9af2dcaeb5a343c19fdc149515d67373",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_f96ab48f3ca0ac56bfb8\", \"source_tool\": \"stock\", \"data\": {\"sku\": \"SKU-482\", \"warehouse\": \"north\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_f96ab48f3ca0ac56bfb8",
+              "source_tool": "stock",
+              "data": {
+                "sku": "SKU-482",
+                "warehouse": "north"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/af18693dc5a748ab8ab3761c6603c137",
+            "truncated": false,
+            "duration_ms": 390,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "b6cda5a4-b8ec-4e1a-9980-3d65e9965c4a",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1353,
+        "output_tokens": 15,
+        "total_tokens": 1368,
+        "cached_input_tokens": 1024,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 5271,
+      "model_latency_ms": 1199.6100000105798,
+      "output": [
+        {
+          "type": "message",
+          "id": "2c58fd98-967f-4084-acaf-5784f2072846",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_f96ab48f3ca0ac56bfb8"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

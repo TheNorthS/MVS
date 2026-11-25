@@ -1,0 +1,302 @@
+{
+  "episode_id": "20_json_gateway_task_12",
+  "size": 20,
+  "mode": "json_gateway",
+  "task_id": "task_12",
+  "prompt": "Calculate invoice tax from net amount and rate. Use current data, not archives. Parameters: {\"net_amount\": 1200.5, \"rate\": 0.13}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "tax",
+  "expected_arguments": {
+    "net_amount": 1200.5,
+    "rate": 0.13
+  },
+  "expected_code": "v_2fb6bce006e8debe7c24",
+  "final_answer": "v_2fb6bce006e8debe7c24",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 2720,
+    "output_tokens": 100,
+    "total_tokens": 2820,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 4,
+  "tool_selection_attempts": [
+    {
+      "tool": "tax",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "tax",
+      "arguments": {
+        "net_amount": 1200.5,
+        "rate": 0.13
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    276,
+    654,
+    757,
+    1033
+  ],
+  "context_growth_tokens": 757,
+  "latency_ms": 12769.632899900898,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_0aa82c6da07177c7016b06bf2b7c3487d08667ccfba6d98d54",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 276,
+        "output_tokens": 19,
+        "total_tokens": 295,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 1070,
+      "model_latency_ms": 3425.4978999961168,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0aa82c6da07177c7016b06bf2d081487d0b29280a9b86157b9",
+          "call_id": "call_280f98e592414d7aa6f5b4ff6092f2d3",
+          "name": "mcp_gateway",
+          "arguments": "{\"action\":\"list\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": [
+            {
+              "name": "tickets",
+              "description": "Fetch support tickets by a list of IDs"
+            },
+            {
+              "name": "exchange",
+              "description": "Convert a monetary amount between currencies"
+            },
+            {
+              "name": "loyalty",
+              "description": "Read customer loyalty balance"
+            },
+            {
+              "name": "invoice",
+              "description": "Get outstanding invoice balance"
+            },
+            {
+              "name": "customer",
+              "description": "Look up a customer account"
+            },
+            {
+              "name": "route",
+              "description": "Find route distance between two cities"
+            },
+            {
+              "name": "capacity",
+              "description": "Get current available capacity of a warehouse"
+            },
+            {
+              "name": "documents",
+              "description": "Search documents using a nested filter"
+            },
+            {
+              "name": "weather",
+              "description": "Fetch weather for a city and date"
+            },
+            {
+              "name": "tax",
+              "description": "Calculate invoice tax from net amount and rate"
+            },
+            {
+              "name": "appointments",
+              "description": "List free appointment slots for a doctor"
+            },
+            {
+              "name": "usage",
+              "description": "Summarize API usage for a project and month"
+            },
+            {
+              "name": "price",
+              "description": "Look up current product price in a currency"
+            },
+            {
+              "name": "subscription",
+              "description": "Read subscription status"
+            },
+            {
+              "name": "order",
+              "description": "Fetch current order status"
+            },
+            {
+              "name": "health",
+              "description": "Read current service health in a region"
+            },
+            {
+              "name": "employee",
+              "description": "Look up employee directory details"
+            },
+            {
+              "name": "repository",
+              "description": "Search software repositories by topic and minimum stars"
+            },
+            {
+              "name": "stock",
+              "description": "Check current warehouse stock"
+            },
+            {
+              "name": "shipment",
+              "description": "Track a shipment by tracking ID"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_0aa82c6da07177c7016b06bf2e3e8c87d0a3fa9eb082856e0c",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 654,
+        "output_tokens": 23,
+        "total_tokens": 677,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 3093,
+      "model_latency_ms": 2761.135899927467,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0aa82c6da07177c7016b06bf2fb02487d091fdfcda11fcab7e",
+          "call_id": "call_ecf98070309147fab7f84bb20f2a1a7f",
+          "name": "mcp_gateway",
+          "arguments": "{\"action\":\"help\",\"tool\":\"tax\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": {
+            "name": "tax",
+            "description": "Calculate invoice tax from net amount and rate",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "net_amount": {
+                  "type": "number"
+                },
+                "rate": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "net_amount",
+                "rate"
+              ],
+              "additionalProperties": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "resp_0aa82c6da07177c7016b06bf31174087d0b2bb35fa6bb916dd",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 757,
+        "output_tokens": 39,
+        "total_tokens": 796,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 3733,
+      "model_latency_ms": 3329.2447000276297,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0aa82c6da07177c7016b06bf32950c87d09dcc8e07b7f77999",
+          "call_id": "call_cb4c30145a47402db9dbce44af75cf7f",
+          "name": "mcp_gateway",
+          "arguments": "{\"action\":\"call\",\"tool\":\"tax\",\"arguments\":{\"net_amount\":1200.5,\"rate\":0.13}}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": {
+            "request_id": "565a5dab71d04794a7345cb4d0f372b5",
+            "session_id": "41dfb188420942399efeeb362e77e5ea",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_2fb6bce006e8debe7c24\", \"source_tool\": \"tax\", \"data\": {\"net_amount\": 1200.5, \"rate\": 0.13}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_2fb6bce006e8debe7c24",
+              "source_tool": "tax",
+              "data": {
+                "net_amount": 1200.5,
+                "rate": 0.13
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/e69774ac0ac24f9a9928de84f83c4eab",
+            "truncated": false,
+            "duration_ms": 359,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "resp_0aa82c6da07177c7016b06bf34cb6487d0becd4c17e7ed8911",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1033,
+        "output_tokens": 19,
+        "total_tokens": 1052,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 4783,
+      "model_latency_ms": 2851.977700018324,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_0aa82c6da07177c7016b06bf364df087d087b8543590b086f4",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_2fb6bce006e8debe7c24",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

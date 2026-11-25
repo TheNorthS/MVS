@@ -1,0 +1,60 @@
+name: checks
+on: [push, pull_request]
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python: ['3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: ${{ matrix.python }}
+      - run: uv sync --locked --all-extras
+      - run: uv run python scripts/project_metadata.py
+      - run: uv run python scripts/check_repository.py
+      - run: uv venv .tools/legacy
+      - if: runner.os == 'Windows'
+        run: uv pip install --python .tools/legacy/Scripts/python.exe mcp==1.30.0
+      - if: runner.os != 'Windows'
+        run: uv pip install --python .tools/legacy/bin/python mcp==1.30.0
+      - run: uv venv .tools/git-mcp
+      - if: runner.os == 'Windows'
+        run: uv pip install --python .tools/git-mcp/Scripts/python.exe mcp-server-git==2026.11.11
+      - if: runner.os != 'Windows'
+        run: uv pip install --python .tools/git-mcp/bin/python mcp-server-git==2026.11.11
+      - run: uv run ruff check .
+      - run: uv run mypy
+      - run: uv run pytest --cov=src/mvs --cov-report=term-missing
+  console:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: uv sync --locked --all-extras
+      - run: npm ci
+        working-directory: web
+      - run: npm run build
+        working-directory: web
+      - run: npx playwright install --with-deps chromium
+        working-directory: web
+      - run: |
+          uv run mvs init --home .tools/console-ui
+          uv run mvs serve --home .tools/console-ui --port 8123 > /tmp/mvs-console.log 2>&1 &
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:8123/api/v1/health/live && break; sleep 1; done
+      - run: npm test
+        working-directory: web
+      - run: uv build --wheel
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mvs-console-wheel
+          path: dist/*.whl

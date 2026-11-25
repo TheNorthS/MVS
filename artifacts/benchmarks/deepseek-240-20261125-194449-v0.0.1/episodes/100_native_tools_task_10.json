@@ -1,0 +1,151 @@
+{
+  "episode_id": "100_native_tools_task_10",
+  "size": 100,
+  "mode": "native_tools",
+  "task_id": "task_10",
+  "prompt": "Summarize API usage for a project and month. Use current data, not archives. Parameters: {\"project\": \"atlas\", \"month\": \"2026-10\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "usage",
+  "expected_arguments": {
+    "project": "atlas",
+    "month": "2026-10"
+  },
+  "expected_code": "v_c083b2ff7ec20a4b8b8f",
+  "final_answer": "v_c083b2ff7ec20a4b8b8f",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 16189,
+    "output_tokens": 110,
+    "total_tokens": 16299,
+    "cached_input_tokens": 15744,
+    "reasoning_output_tokens": 30
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "usage",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "usage",
+      "arguments": {
+        "project": "atlas",
+        "month": "2026-10"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    7926,
+    8263
+  ],
+  "context_growth_tokens": 337,
+  "latency_ms": 3076.078400015831,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "44b04a4e-520f-4fe7-ad2f-4de904bc4c0e",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 7926,
+        "output_tokens": 93,
+        "total_tokens": 8019,
+        "cached_input_tokens": 7808,
+        "reasoning_output_tokens": 30
+      },
+      "context_bytes": 34815,
+      "model_latency_ms": 1919.2377000581473,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "f420672b-23a7-4a92-bf6a-fe84533865a1",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "The task asks to summarize API usage for project \"atlas\", month \"2026-10\" using current data. The tool is \"usage\"."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "44b04a4e-520f-4fe7-ad2f-4de904bc4c0e-0"
+        },
+        {
+          "type": "function_call",
+          "id": "627b39a3-8c6b-4153-b252-27d0b9d7a484",
+          "status": "completed",
+          "arguments": "{\"project\": \"atlas\", \"month\": \"2026-10\"}",
+          "call_id": "call_00_KynQfUaIxzDQdsrOBuc74120",
+          "name": "usage"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "usage",
+          "result": {
+            "request_id": "d28a3c17b6d34dc7b0ec957556967cad",
+            "session_id": "7aa4801598724afb82637dac841731d5",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_c083b2ff7ec20a4b8b8f\", \"source_tool\": \"usage\", \"data\": {\"project\": \"atlas\", \"month\": \"2026-10\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_c083b2ff7ec20a4b8b8f",
+              "source_tool": "usage",
+              "data": {
+                "project": "atlas",
+                "month": "2026-10"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/b60ba62422e34774abc4ba3ba4227ca8",
+            "truncated": false,
+            "duration_ms": 405,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "91bb4826-1512-4fbc-9cf0-38b87f7698e9",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 8263,
+        "output_tokens": 17,
+        "total_tokens": 8280,
+        "cached_input_tokens": 7936,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 36161,
+      "model_latency_ms": 598.7888999516144,
+      "output": [
+        {
+          "type": "message",
+          "id": "d7f871ef-e57e-4851-b13e-06815bfb0161",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_c083b2ff7ec20a4b8b8f"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

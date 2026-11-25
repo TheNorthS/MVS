@@ -1,0 +1,151 @@
+{
+  "episode_id": "20_native_tools_task_01",
+  "size": 20,
+  "mode": "native_tools",
+  "task_id": "task_01",
+  "prompt": "Look up current product price in a currency. Use current data, not archives. Parameters: {\"sku\": \"SKU-317\", \"currency\": \"EUR\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "price",
+  "expected_arguments": {
+    "sku": "SKU-317",
+    "currency": "EUR"
+  },
+  "expected_code": "v_670f2694ecabbcedfdfd",
+  "final_answer": "v_670f2694ecabbcedfdfd",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 3625,
+    "output_tokens": 93,
+    "total_tokens": 3718,
+    "cached_input_tokens": 3200,
+    "reasoning_output_tokens": 18
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "price",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "price",
+      "arguments": {
+        "sku": "SKU-317",
+        "currency": "EUR"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    1652,
+    1973
+  ],
+  "context_growth_tokens": 321,
+  "latency_ms": 3253.5702999448404,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "d331df51-f606-4e2e-9670-651bd6fa59c4",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1652,
+        "output_tokens": 80,
+        "total_tokens": 1732,
+        "cached_input_tokens": 1536,
+        "reasoning_output_tokens": 18
+      },
+      "context_bytes": 6568,
+      "model_latency_ms": 1566.9013999868184,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "8904ad5a-511c-4a4a-bee7-225ec52d3837",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "I need to call the price tool with sku SKU-317 and currency EUR."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "d331df51-f606-4e2e-9670-651bd6fa59c4-0"
+        },
+        {
+          "type": "function_call",
+          "id": "4ccec918-1701-497c-8abc-e276fa88f27d",
+          "status": "completed",
+          "arguments": "{\"sku\": \"SKU-317\", \"currency\": \"EUR\"}",
+          "call_id": "call_00_AZP3ljIws2FfYVGyvJKg3562",
+          "name": "price"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "price",
+          "result": {
+            "request_id": "801db2fc395f4dfc8a6b05c0966081bc",
+            "session_id": "b94adcec6f5142ddb432fe95c3f7a68d",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_670f2694ecabbcedfdfd\", \"source_tool\": \"price\", \"data\": {\"sku\": \"SKU-317\", \"currency\": \"EUR\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_670f2694ecabbcedfdfd",
+              "source_tool": "price",
+              "data": {
+                "sku": "SKU-317",
+                "currency": "EUR"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/abe3fd3ec0a34dedbbdcded8192c1659",
+            "truncated": false,
+            "duration_ms": 390,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "0010d5d0-8947-4b7f-9f43-351ab756c4f8",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1973,
+        "output_tokens": 13,
+        "total_tokens": 1986,
+        "cached_input_tokens": 1664,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 7849,
+      "model_latency_ms": 1249.7512999689206,
+      "output": [
+        {
+          "type": "message",
+          "id": "c78c8060-fd1b-4502-9549-32019213800f",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_670f2694ecabbcedfdfd"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

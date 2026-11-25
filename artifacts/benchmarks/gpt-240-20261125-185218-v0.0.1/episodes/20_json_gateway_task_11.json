@@ -1,0 +1,295 @@
+{
+  "episode_id": "20_json_gateway_task_11",
+  "size": 20,
+  "mode": "json_gateway",
+  "task_id": "task_11",
+  "prompt": "Read subscription status. Use current data, not archives. Parameters: {\"subscription_id\": \"SUB-873\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "subscription",
+  "expected_arguments": {
+    "subscription_id": "SUB-873"
+  },
+  "expected_code": "v_fcc66aed0cc985487652",
+  "final_answer": "v_fcc66aed0cc985487652",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 2599,
+    "output_tokens": 88,
+    "total_tokens": 2687,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 4,
+  "tool_selection_attempts": [
+    {
+      "tool": "subscription",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "subscription",
+      "arguments": {
+        "subscription_id": "SUB-873"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    263,
+    641,
+    727,
+    968
+  ],
+  "context_growth_tokens": 705,
+  "latency_ms": 32478.96359988954,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_06081a367f7a8b61016b06c0b84d3087d2a233c0aebf5c7242",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 263,
+        "output_tokens": 19,
+        "total_tokens": 282,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 1042,
+      "model_latency_ms": 8693.905899999663,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_06081a367f7a8b61016b06c0bfb3e887d289d1b3fd9d0b381a",
+          "call_id": "call_ea69a516b25849d39113f34568de7233",
+          "name": "mcp_gateway",
+          "arguments": "{\"action\":\"list\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": [
+            {
+              "name": "tickets",
+              "description": "Fetch support tickets by a list of IDs"
+            },
+            {
+              "name": "exchange",
+              "description": "Convert a monetary amount between currencies"
+            },
+            {
+              "name": "loyalty",
+              "description": "Read customer loyalty balance"
+            },
+            {
+              "name": "invoice",
+              "description": "Get outstanding invoice balance"
+            },
+            {
+              "name": "customer",
+              "description": "Look up a customer account"
+            },
+            {
+              "name": "route",
+              "description": "Find route distance between two cities"
+            },
+            {
+              "name": "capacity",
+              "description": "Get current available capacity of a warehouse"
+            },
+            {
+              "name": "documents",
+              "description": "Search documents using a nested filter"
+            },
+            {
+              "name": "weather",
+              "description": "Fetch weather for a city and date"
+            },
+            {
+              "name": "tax",
+              "description": "Calculate invoice tax from net amount and rate"
+            },
+            {
+              "name": "appointments",
+              "description": "List free appointment slots for a doctor"
+            },
+            {
+              "name": "usage",
+              "description": "Summarize API usage for a project and month"
+            },
+            {
+              "name": "price",
+              "description": "Look up current product price in a currency"
+            },
+            {
+              "name": "subscription",
+              "description": "Read subscription status"
+            },
+            {
+              "name": "order",
+              "description": "Fetch current order status"
+            },
+            {
+              "name": "health",
+              "description": "Read current service health in a region"
+            },
+            {
+              "name": "employee",
+              "description": "Look up employee directory details"
+            },
+            {
+              "name": "repository",
+              "description": "Search software repositories by topic and minimum stars"
+            },
+            {
+              "name": "stock",
+              "description": "Check current warehouse stock"
+            },
+            {
+              "name": "shipment",
+              "description": "Track a shipment by tracking ID"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_06081a367f7a8b61016b06c0c0f72087d2b14766ac10b0ed70",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 641,
+        "output_tokens": 23,
+        "total_tokens": 664,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 3065,
+      "model_latency_ms": 8747.60439991951,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_06081a367f7a8b61016b06c0c8574887d28ac489a50d8250f0",
+          "call_id": "call_c6b61f61303448c390497d1bf5304707",
+          "name": "mcp_gateway",
+          "arguments": "{\"action\":\"help\",\"tool\":\"subscription\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": {
+            "name": "subscription",
+            "description": "Read subscription status",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "subscription_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "subscription_id"
+              ],
+              "additionalProperties": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "resp_06081a367f7a8b61016b06c0ca01f087d29abcb59b66831928",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 727,
+        "output_tokens": 32,
+        "total_tokens": 759,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 3667,
+      "model_latency_ms": 6239.229100057855,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_06081a367f7a8b61016b06c0ce62d887d2af82fbaa94652486",
+          "call_id": "call_f84ebcafbc8e44a7a21753fa2bfdd5f6",
+          "name": "mcp_gateway",
+          "arguments": "{\"action\":\"call\",\"tool\":\"subscription\",\"arguments\":{\"subscription_id\":\"SUB-873\"}}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": {
+            "request_id": "960db28345684760a470c6fe7694f3e2",
+            "session_id": "391a5eebed0247f7908c66772877217c",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_fcc66aed0cc985487652\", \"source_tool\": \"subscription\", \"data\": {\"subscription_id\": \"SUB-873\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_fcc66aed0cc985487652",
+              "source_tool": "subscription",
+              "data": {
+                "subscription_id": "SUB-873"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/cd191720aa014710a5e44c7857b87a7d",
+            "truncated": false,
+            "duration_ms": 312,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "resp_06081a367f7a8b61016b06c0d079a487d299627e0fc941fd7c",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 968,
+        "output_tokens": 14,
+        "total_tokens": 982,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 4728,
+      "model_latency_ms": 8365.360300056636,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_06081a367f7a8b61016b06c0d7207087d28c3dcfb49c391657",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_fcc66aed0cc985487652",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

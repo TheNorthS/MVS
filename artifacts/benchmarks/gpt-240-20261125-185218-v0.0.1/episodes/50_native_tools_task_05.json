@@ -1,0 +1,141 @@
+{
+  "episode_id": "50_native_tools_task_05",
+  "size": 50,
+  "mode": "native_tools",
+  "task_id": "task_05",
+  "prompt": "Convert a monetary amount between currencies. Use current data, not archives. Parameters: {\"amount\": 123.45, \"source\": \"USD\", \"target\": \"EUR\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "exchange",
+  "expected_arguments": {
+    "amount": 123.45,
+    "source": "USD",
+    "target": "EUR"
+  },
+  "expected_code": "v_e73abbdf62bde8db6e05",
+  "final_answer": "v_e73abbdf62bde8db6e05",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 3861,
+    "output_tokens": 44,
+    "total_tokens": 3905,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "exchange",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "exchange",
+      "arguments": {
+        "amount": 123.45,
+        "source": "USD",
+        "target": "EUR"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    1798,
+    2063
+  ],
+  "context_growth_tokens": 265,
+  "latency_ms": 9995.681999949738,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_07c957f6ee76d65d016b06bf6adf4087d29ec434a1d0e38c5c",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1798,
+        "output_tokens": 27,
+        "total_tokens": 1825,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 17012,
+      "model_latency_ms": 5255.280299927108,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_07c957f6ee76d65d016b06bf6d6be087d2b4196974a913b2b2",
+          "call_id": "call_3dc16762323a4f40b37231dfb9e7cf91",
+          "name": "exchange",
+          "arguments": "{\"amount\":123.45,\"source\":\"USD\",\"target\":\"EUR\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "exchange",
+          "result": {
+            "request_id": "2adb4c7c549f4917823c543b63d1fdff",
+            "session_id": "7aa51747d12c4b2596e2d5e4eb7c29a3",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_e73abbdf62bde8db6e05\", \"source_tool\": \"exchange\", \"data\": {\"amount\": 123.45, \"source\": \"USD\", \"target\": \"EUR\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_e73abbdf62bde8db6e05",
+              "source_tool": "exchange",
+              "data": {
+                "amount": 123.45,
+                "source": "USD",
+                "target": "EUR"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/afea64dfa266449eaca532a688728518",
+            "truncated": false,
+            "duration_ms": 390,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_07c957f6ee76d65d016b06bf70b3dc87d2bab1495551b36c00",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 2063,
+        "output_tokens": 17,
+        "total_tokens": 2080,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 18092,
+      "model_latency_ms": 4280.632100068033,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_07c957f6ee76d65d016b06bf722dcc87d28b6b288807afc03f",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_e73abbdf62bde8db6e05",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

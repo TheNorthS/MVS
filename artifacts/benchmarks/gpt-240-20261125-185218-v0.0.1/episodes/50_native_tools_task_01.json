@@ -1,0 +1,138 @@
+{
+  "episode_id": "50_native_tools_task_01",
+  "size": 50,
+  "mode": "native_tools",
+  "task_id": "task_01",
+  "prompt": "Look up current product price in a currency. Use current data, not archives. Parameters: {\"sku\": \"SKU-317\", \"currency\": \"EUR\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "price",
+  "expected_arguments": {
+    "sku": "SKU-317",
+    "currency": "EUR"
+  },
+  "expected_code": "v_670f2694ecabbcedfdfd",
+  "final_answer": "v_670f2694ecabbcedfdfd",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 3840,
+    "output_tokens": 39,
+    "total_tokens": 3879,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "price",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "price",
+      "arguments": {
+        "currency": "EUR",
+        "sku": "SKU-317"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    1794,
+    2046
+  ],
+  "context_growth_tokens": 252,
+  "latency_ms": 7728.9171000011265,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_0e0d06fdbac67693016b06be5e7b0087d0830845192cc5238d",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1794,
+        "output_tokens": 23,
+        "total_tokens": 1817,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 16994,
+      "model_latency_ms": 3128.355999942869,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0e0d06fdbac67693016b06be5fb28887d0af8725c2d711a4bf",
+          "call_id": "call_3859ab01639741928e997b24bfb6ecb6",
+          "name": "price",
+          "arguments": "{\"currency\":\"EUR\",\"sku\":\"SKU-317\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "price",
+          "result": {
+            "request_id": "49f5ce2c97b04d19bc118f1298691c1f",
+            "session_id": "452d4a4a32af4b5dac4aa8c324f84b8f",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_670f2694ecabbcedfdfd\", \"source_tool\": \"price\", \"data\": {\"currency\": \"EUR\", \"sku\": \"SKU-317\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_670f2694ecabbcedfdfd",
+              "source_tool": "price",
+              "data": {
+                "currency": "EUR",
+                "sku": "SKU-317"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/d1235be12b8644d9ad4a440e76523cd5",
+            "truncated": false,
+            "duration_ms": 217,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_0e0d06fdbac67693016b06be61c30887d0925aaaf115916e05",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 2046,
+        "output_tokens": 16,
+        "total_tokens": 2062,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 18012,
+      "model_latency_ms": 4304.685699986294,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_0e0d06fdbac67693016b06be6361a087d0a4e9718bf8a29f7b",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_670f2694ecabbcedfdfd",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

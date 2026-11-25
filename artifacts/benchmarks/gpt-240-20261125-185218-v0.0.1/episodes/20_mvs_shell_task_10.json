@@ -1,0 +1,266 @@
+{
+  "episode_id": "20_mvs_shell_task_10",
+  "size": 20,
+  "mode": "mvs_shell",
+  "task_id": "task_10",
+  "prompt": "Summarize API usage for a project and month. Use current data, not archives. Parameters: {\"project\": \"atlas\", \"month\": \"2026-10\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "usage",
+  "expected_arguments": {
+    "project": "atlas",
+    "month": "2026-10"
+  },
+  "expected_code": "v_c083b2ff7ec20a4b8b8f",
+  "final_answer": "v_c083b2ff7ec20a4b8b8f",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 2629,
+    "output_tokens": 113,
+    "total_tokens": 2742,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 4,
+  "tool_selection_attempts": [
+    {
+      "tool": "usage",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "usage",
+      "arguments": {
+        "project": "atlas",
+        "month": "2026-10"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    290,
+    530,
+    766,
+    1043
+  ],
+  "context_growth_tokens": 753,
+  "latency_ms": 14875.674300012179,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_0c0d0e7e9f77a821016b06c20959c887d0aaf5973ce2028248",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 290,
+        "output_tokens": 24,
+        "total_tokens": 314,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 1079,
+      "model_latency_ms": 3816.257099970244,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0c0d0e7e9f77a821016b06c20ac6bc87d0a2fa85e589407132",
+          "call_id": "call_7815f05be4c1420a93f308737d954817",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"ls /mcp/bench/tools\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "93de0e16323545e58faf4a6c0ef30cf7",
+            "session_id": "33698ef7c2f84492ae32a257520f8de8",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "appointments\ncapacity\ncustomer\ndocuments\nemployee\nexchange\nhealth\ninvoice\nloyalty\norder\nprice\nrepository\nroute\nshipment\nstock\nsubscription\ntax\ntickets\nusage\nweather",
+            "stderr": "",
+            "data": [
+              "appointments",
+              "capacity",
+              "customer",
+              "documents",
+              "employee",
+              "exchange",
+              "health",
+              "invoice",
+              "loyalty",
+              "order",
+              "price",
+              "repository",
+              "route",
+              "shipment",
+              "stock",
+              "subscription",
+              "tax",
+              "tickets",
+              "usage",
+              "weather"
+            ],
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_0c0d0e7e9f77a821016b06c20c910487d0bc17725afda4d6df",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 530,
+        "output_tokens": 26,
+        "total_tokens": 556,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 2170,
+      "model_latency_ms": 2902.041199966334,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0c0d0e7e9f77a821016b06c20dd93887d084eb509cb211db78",
+          "call_id": "call_9fde98cd253f48c89f16707edf9fad89",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"help /mcp/bench/tools/usage\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "503756b73ae44fe88344192b6ad99da6",
+            "session_id": "33698ef7c2f84492ae32a257520f8de8",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "usage\nSummarize API usage for a project and month\n--params-json <JSON object>\n--project {\"type\": \"string\"} required\n--month {\"type\": \"string\"} required",
+            "stderr": "",
+            "data": {
+              "input_schema": {
+                "type": "object",
+                "properties": {
+                  "project": {
+                    "type": "string"
+                  },
+                  "month": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "project",
+                  "month"
+                ],
+                "additionalProperties": false
+              },
+              "untrusted": true,
+              "backend": "mcp"
+            },
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "resp_0c0d0e7e9f77a821016b06c20f81a087d0bafcacf46359e827",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 766,
+        "output_tokens": 43,
+        "total_tokens": 809,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 3233,
+      "model_latency_ms": 3603.053400060162,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0c0d0e7e9f77a821016b06c21159ac87d0b8cea263af1ff393",
+          "call_id": "call_7395cacbf6a24b13994e39b09a2be195",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"run /mcp/bench/tools/usage --params-json '{\\\"project\\\":\\\"atlas\\\",\\\"month\\\":\\\"2026-10\\\"}'\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "4f3f8ad06908441ba126a7ffe2c267c5",
+            "session_id": "33698ef7c2f84492ae32a257520f8de8",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_c083b2ff7ec20a4b8b8f\", \"source_tool\": \"usage\", \"data\": {\"project\": \"atlas\", \"month\": \"2026-10\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_c083b2ff7ec20a4b8b8f",
+              "source_tool": "usage",
+              "data": {
+                "project": "atlas",
+                "month": "2026-10"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/091ba125dda449e996cc63e9e9b531a9",
+            "truncated": false,
+            "duration_ms": 484,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "resp_0c0d0e7e9f77a821016b06c213a53c87d08082737ae4b399d4",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1043,
+        "output_tokens": 20,
+        "total_tokens": 1063,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 4345,
+      "model_latency_ms": 2954.4009999372065,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_0c0d0e7e9f77a821016b06c214d48087d09996e6396f1667d7",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_c083b2ff7ec20a4b8b8f",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

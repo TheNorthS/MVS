@@ -1,0 +1,135 @@
+{
+  "episode_id": "50_native_tools_task_14",
+  "size": 50,
+  "mode": "native_tools",
+  "task_id": "task_14",
+  "prompt": "Read customer loyalty balance. Use current data, not archives. Parameters: {\"customer_id\": \"CUS-719\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "loyalty",
+  "expected_arguments": {
+    "customer_id": "CUS-719"
+  },
+  "expected_code": "v_daec3a1d7f7b87ddc921",
+  "final_answer": "v_daec3a1d7f7b87ddc921",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 3820,
+    "output_tokens": 41,
+    "total_tokens": 3861,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "loyalty",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "loyalty",
+      "arguments": {
+        "customer_id": "CUS-719"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    1785,
+    2035
+  ],
+  "context_growth_tokens": 250,
+  "latency_ms": 21795.291999937035,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_06350ad0d6951133016b06c04f8d3087d087c154030071e7e4",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1785,
+        "output_tokens": 22,
+        "total_tokens": 1807,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 16965,
+      "model_latency_ms": 11675.39729992859,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_06350ad0d6951133016b06c058b78087d08d659074d0a9d6d3",
+          "call_id": "call_7ba635945e334d3b83a788913b1b29c1",
+          "name": "loyalty",
+          "arguments": "{\"customer_id\":\"CUS-719\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "loyalty",
+          "result": {
+            "request_id": "5566c1491e1d41adbad96a3bbfb9b5bd",
+            "session_id": "27a1d37bd40a4748b61a1cc150c19b24",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_daec3a1d7f7b87ddc921\", \"source_tool\": \"loyalty\", \"data\": {\"customer_id\": \"CUS-719\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_daec3a1d7f7b87ddc921",
+              "source_tool": "loyalty",
+              "data": {
+                "customer_id": "CUS-719"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/2e5b0eeafa24457ea04323cd46a032ea",
+            "truncated": false,
+            "duration_ms": 422,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_06350ad0d6951133016b06c05b1f2887d096fd06937858a3b6",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 2035,
+        "output_tokens": 19,
+        "total_tokens": 2054,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 17938,
+      "model_latency_ms": 9601.479599950835,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_06350ad0d6951133016b06c062dbf887d0a5378de8e30f9b8c",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_daec3a1d7f7b87ddc921",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

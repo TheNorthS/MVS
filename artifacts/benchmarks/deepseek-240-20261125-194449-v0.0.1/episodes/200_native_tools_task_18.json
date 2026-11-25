@@ -1,0 +1,160 @@
+{
+  "episode_id": "200_native_tools_task_18",
+  "size": 200,
+  "mode": "native_tools",
+  "task_id": "task_18",
+  "prompt": "Search documents using a nested filter. Use current data, not archives. Parameters: {\"query\": \"deployment\", \"filter\": {\"language\": \"zh\", \"published\": true}}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "documents",
+  "expected_arguments": {
+    "query": "deployment",
+    "filter": {
+      "language": "zh",
+      "published": true
+    }
+  },
+  "expected_code": "v_a4a2a150a29303c4f65d",
+  "final_answer": "v_a4a2a150a29303c4f65d",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 31883,
+    "output_tokens": 104,
+    "total_tokens": 31987,
+    "cached_input_tokens": 31360,
+    "reasoning_output_tokens": 18
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "documents",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "documents",
+      "arguments": {
+        "query": "deployment",
+        "filter": {
+          "language": "zh",
+          "published": true
+        }
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    15767,
+    16116
+  ],
+  "context_growth_tokens": 349,
+  "latency_ms": 4182.727399980649,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "a1c7e090-093a-40b0-9725-8d872edd504a",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 15767,
+        "output_tokens": 88,
+        "total_tokens": 15855,
+        "cached_input_tokens": 15616,
+        "reasoning_output_tokens": 18
+      },
+      "context_bytes": 70151,
+      "model_latency_ms": 1954.9865000881255,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "1fd703bc-9732-4082-876e-0205cbffaee8",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "I need to search documents using the current \"documents\" tool with the given parameters."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "a1c7e090-093a-40b0-9725-8d872edd504a-0"
+        },
+        {
+          "type": "function_call",
+          "id": "bb8ae105-6aa7-42a4-9de8-ca038d0e6dd1",
+          "status": "completed",
+          "arguments": "{\"query\": \"deployment\", \"filter\": {\"language\": \"zh\", \"published\": true}}",
+          "call_id": "call_00_SA45gl7NjFIwaGwLJha71639",
+          "name": "documents"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "documents",
+          "result": {
+            "request_id": "3ef7921d2a524e46aba06423d0c71498",
+            "session_id": "e971d0c8c33a4e9ab65e84783038c89d",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_a4a2a150a29303c4f65d\", \"source_tool\": \"documents\", \"data\": {\"query\": \"deployment\", \"filter\": {\"language\": \"zh\", \"published\": true}}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_a4a2a150a29303c4f65d",
+              "source_tool": "documents",
+              "data": {
+                "query": "deployment",
+                "filter": {
+                  "language": "zh",
+                  "published": true
+                }
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/25e20f8eb82a468f8e7b66079798ea22",
+            "truncated": false,
+            "duration_ms": 640,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "c607e536-2d2e-4ade-9630-cfaddf9fe399",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 16116,
+        "output_tokens": 16,
+        "total_tokens": 16132,
+        "cached_input_tokens": 15744,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 71595,
+      "model_latency_ms": 1205.7280000299215,
+      "output": [
+        {
+          "type": "message",
+          "id": "abd8a7a4-fb8b-4cd1-8915-52cf716d9684",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_a4a2a150a29303c4f65d"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

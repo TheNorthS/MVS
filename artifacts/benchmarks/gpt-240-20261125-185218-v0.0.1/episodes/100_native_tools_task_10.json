@@ -1,0 +1,138 @@
+{
+  "episode_id": "100_native_tools_task_10",
+  "size": 100,
+  "mode": "native_tools",
+  "task_id": "task_10",
+  "prompt": "Summarize API usage for a project and month. Use current data, not archives. Parameters: {\"project\": \"atlas\", \"month\": \"2026-10\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "usage",
+  "expected_arguments": {
+    "project": "atlas",
+    "month": "2026-10"
+  },
+  "expected_code": "v_c083b2ff7ec20a4b8b8f",
+  "final_answer": "v_c083b2ff7ec20a4b8b8f",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 7566,
+    "output_tokens": 45,
+    "total_tokens": 7611,
+    "cached_input_tokens": 3456,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "usage",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "usage",
+      "arguments": {
+        "month": "2026-10",
+        "project": "atlas"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    3651,
+    3915
+  ],
+  "context_growth_tokens": 264,
+  "latency_ms": 10267.55009999033,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_0d2f414293ca174d016b06bf8b61a487d0a6f09700de324721",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 3651,
+        "output_tokens": 25,
+        "total_tokens": 3676,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 34815,
+      "model_latency_ms": 5527.6589000131935,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0d2f414293ca174d016b06bf8d86c887d0846444bacaf8fc58",
+          "call_id": "call_d34d378b62884b39ae8ea94f3c971ee0",
+          "name": "usage",
+          "arguments": "{\"month\":\"2026-10\",\"project\":\"atlas\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "usage",
+          "result": {
+            "request_id": "6c4e1cc7747d4d0886d007d417034ed5",
+            "session_id": "ab629c8f15584bd8abc2ad2e7aee1a66",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_c083b2ff7ec20a4b8b8f\", \"source_tool\": \"usage\", \"data\": {\"month\": \"2026-10\", \"project\": \"atlas\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_c083b2ff7ec20a4b8b8f",
+              "source_tool": "usage",
+              "data": {
+                "month": "2026-10",
+                "project": "atlas"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/017a91aa8d764acc9b99c8df91f7b230",
+            "truncated": false,
+            "duration_ms": 375,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_0d2f414293ca174d016b06bf91647087d085f8f772b536c529",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 3915,
+        "output_tokens": 20,
+        "total_tokens": 3935,
+        "cached_input_tokens": 3456,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 35842,
+      "model_latency_ms": 4183.485400048085,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_0d2f414293ca174d016b06bf9293bc87d099411c322e5abe6f",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_c083b2ff7ec20a4b8b8f",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

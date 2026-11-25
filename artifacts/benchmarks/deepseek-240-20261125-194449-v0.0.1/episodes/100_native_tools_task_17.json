@@ -1,0 +1,154 @@
+{
+  "episode_id": "100_native_tools_task_17",
+  "size": 100,
+  "mode": "native_tools",
+  "task_id": "task_17",
+  "prompt": "List free appointment slots for a doctor. Use current data, not archives. Parameters: {\"doctor_id\": \"DOC-912\", \"date\": \"2026-11-21\", \"limit\": 3}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "appointments",
+  "expected_arguments": {
+    "doctor_id": "DOC-912",
+    "date": "2026-11-21",
+    "limit": 3
+  },
+  "expected_code": "v_6f8a2fecd1b3cc8ba719",
+  "final_answer": "v_6f8a2fecd1b3cc8ba719",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 16250,
+    "output_tokens": 129,
+    "total_tokens": 16379,
+    "cached_input_tokens": 15744,
+    "reasoning_output_tokens": 28
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "appointments",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "appointments",
+      "arguments": {
+        "doctor_id": "DOC-912",
+        "date": "2026-11-21",
+        "limit": 3
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    7933,
+    8317
+  ],
+  "context_growth_tokens": 384,
+  "latency_ms": 4070.952699985355,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "70abd88e-2197-4231-a386-f34730dc1112",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 7933,
+        "output_tokens": 112,
+        "total_tokens": 8045,
+        "cached_input_tokens": 7808,
+        "reasoning_output_tokens": 28
+      },
+      "context_bytes": 34832,
+      "model_latency_ms": 1946.0167000070214,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "ae4f8d7a-144d-43e8-911d-bd44e8797f7c",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "The task asks to list free appointment slots for a doctor using current data. The appropriate tool is \"appointments\" (not archive versions)."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "70abd88e-2197-4231-a386-f34730dc1112-0"
+        },
+        {
+          "type": "function_call",
+          "id": "dde0891d-5ea9-4240-b7c9-049bb1953a98",
+          "status": "completed",
+          "arguments": "{\"doctor_id\": \"DOC-912\", \"date\": \"2026-11-21\", \"limit\": 3}",
+          "call_id": "call_00_La65FVNLMJuF4ORqRCrV6536",
+          "name": "appointments"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "appointments",
+          "result": {
+            "request_id": "bc4cfc2c9cad4bb4bd93cbbc93be07d0",
+            "session_id": "dfbe55a40bac4a9eabcab18c874f85f7",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_6f8a2fecd1b3cc8ba719\", \"source_tool\": \"appointments\", \"data\": {\"doctor_id\": \"DOC-912\", \"date\": \"2026-11-21\", \"limit\": 3}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_6f8a2fecd1b3cc8ba719",
+              "source_tool": "appointments",
+              "data": {
+                "doctor_id": "DOC-912",
+                "date": "2026-11-21",
+                "limit": 3
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/94ecc3c90302436694ec3d47be2c15a7",
+            "truncated": false,
+            "duration_ms": 405,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "306ac19c-89da-4cc8-8b12-70e99d6ada69",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 8317,
+        "output_tokens": 17,
+        "total_tokens": 8334,
+        "cached_input_tokens": 7936,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 36285,
+      "model_latency_ms": 1562.486600014381,
+      "output": [
+        {
+          "type": "message",
+          "id": "8cb5cee5-280c-417f-b1a0-ad80b8cf6605",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_6f8a2fecd1b3cc8ba719"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

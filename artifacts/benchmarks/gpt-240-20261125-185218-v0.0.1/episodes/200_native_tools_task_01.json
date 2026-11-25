@@ -1,0 +1,138 @@
+{
+  "episode_id": "200_native_tools_task_01",
+  "size": 200,
+  "mode": "native_tools",
+  "task_id": "task_01",
+  "prompt": "Look up current product price in a currency. Use current data, not archives. Parameters: {\"sku\": \"SKU-317\", \"currency\": \"EUR\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "price",
+  "expected_arguments": {
+    "sku": "SKU-317",
+    "currency": "EUR"
+  },
+  "expected_code": "v_670f2694ecabbcedfdfd",
+  "final_answer": "v_670f2694ecabbcedfdfd",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 14908,
+    "output_tokens": 39,
+    "total_tokens": 14947,
+    "cached_input_tokens": 14080,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "price",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "price",
+      "arguments": {
+        "currency": "EUR",
+        "sku": "SKU-317"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    7328,
+    7580
+  ],
+  "context_growth_tokens": 252,
+  "latency_ms": 14730.23640003521,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_00cb5c92b8a8cb82016b06bf5c4c5487d0a33867f7939052ed",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 7328,
+        "output_tokens": 23,
+        "total_tokens": 7351,
+        "cached_input_tokens": 7040,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 70117,
+      "model_latency_ms": 5970.822999952361,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_00cb5c92b8a8cb82016b06bf5efb6487d0ac7d9ab072cef1ad",
+          "call_id": "call_835abe79ddcf4030a1f64d6eb54aedcc",
+          "name": "price",
+          "arguments": "{\"currency\":\"EUR\",\"sku\":\"SKU-317\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "price",
+          "result": {
+            "request_id": "842a38100bce4f2888f20fcd39d1ebf9",
+            "session_id": "149c69ab07f74c5594c9261b9cecb8d9",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_670f2694ecabbcedfdfd\", \"source_tool\": \"price\", \"data\": {\"currency\": \"EUR\", \"sku\": \"SKU-317\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_670f2694ecabbcedfdfd",
+              "source_tool": "price",
+              "data": {
+                "currency": "EUR",
+                "sku": "SKU-317"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/0b177fe3aa2e4746b6b5c24b646ad143",
+            "truncated": false,
+            "duration_ms": 342,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_00cb5c92b8a8cb82016b06bf647e4c87d0a4ff544a565ef28c",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 7580,
+        "output_tokens": 16,
+        "total_tokens": 7596,
+        "cached_input_tokens": 7040,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 71135,
+      "model_latency_ms": 8117.964699980803,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_00cb5c92b8a8cb82016b06bf66dc5887d09294a9df86a5d2c3",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_670f2694ecabbcedfdfd",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

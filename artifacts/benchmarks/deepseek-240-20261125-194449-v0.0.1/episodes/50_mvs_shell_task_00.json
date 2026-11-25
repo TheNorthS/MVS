@@ -1,0 +1,386 @@
+{
+  "episode_id": "50_mvs_shell_task_00",
+  "size": 50,
+  "mode": "mvs_shell",
+  "task_id": "task_00",
+  "prompt": "Check current warehouse stock. Use current data, not archives. Parameters: {\"sku\": \"SKU-482\", \"warehouse\": \"north\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "stock",
+  "expected_arguments": {
+    "sku": "SKU-482",
+    "warehouse": "north"
+  },
+  "expected_code": "v_f96ab48f3ca0ac56bfb8",
+  "final_answer": "v_f96ab48f3ca0ac56bfb8",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 6242,
+    "output_tokens": 388,
+    "total_tokens": 6630,
+    "cached_input_tokens": 4736,
+    "reasoning_output_tokens": 147
+  },
+  "interaction_rounds": 5,
+  "tool_selection_attempts": [
+    {
+      "tool": "stock",
+      "correct_tool": true,
+      "arguments_valid": false,
+      "correct_arguments": false
+    },
+    {
+      "tool": "stock",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "stock",
+      "arguments": {
+        "sku": "SKU-482",
+        "warehouse": "north"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    450,
+    1067,
+    1277,
+    1536,
+    1912
+  ],
+  "context_growth_tokens": 1462,
+  "latency_ms": 10754.867600044236,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "59f50715-8682-4653-908a-bbcbc054f7b3",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 450,
+        "output_tokens": 60,
+        "total_tokens": 510,
+        "cached_input_tokens": 384,
+        "reasoning_output_tokens": 8
+      },
+      "context_bytes": 1065,
+      "model_latency_ms": 1425.1724999630824,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "350aa09a-5936-4c14-875e-8c3abaa35b17",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "Let me look at the tools available."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "59f50715-8682-4653-908a-bbcbc054f7b3-0"
+        },
+        {
+          "type": "function_call",
+          "id": "6613af48-e7a8-4e76-88bf-fd45100018bc",
+          "status": "completed",
+          "arguments": "{\"command\": \"ls /mcp/bench/tools\"}",
+          "call_id": "call_00_ZbDDO4KwMkuueAZ5I0ZU2922",
+          "name": "virtual_shell"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "755b1b77f683454b9208f2d540ae81e1",
+            "session_id": "2ef23081bca84a5ea6b59072b5c02b91",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "appointments\narchive1_appointments\narchive1_capacity\narchive1_customer\narchive1_documents\narchive1_employee\narchive1_exchange\narchive1_health\narchive1_invoice\narchive1_loyalty\narchive1_order\narchive1_price\narchive1_repository\narchive1_route\narchive1_shipment\narchive1_stock\narchive1_subscription\narchive1_tax\narchive1_tickets\narchive1_usage\narchive1_weather\narchive2_customer\narchive2_employee\narchive2_exchange\narchive2_invoice\narchive2_order\narchive2_price\narchive2_repository\narchive2_shipment\narchive2_stock\narchive2_weather\ncapacity\ncustomer\ndocuments\nemployee\nexchange\nhealth\ninvoice\nloyalty\norder\nprice\nrepository\nroute\nshipment\nstock\nsubscription\ntax\ntickets\nusage\nweather",
+            "stderr": "",
+            "data": [
+              "appointments",
+              "archive1_appointments",
+              "archive1_capacity",
+              "archive1_customer",
+              "archive1_documents",
+              "archive1_employee",
+              "archive1_exchange",
+              "archive1_health",
+              "archive1_invoice",
+              "archive1_loyalty",
+              "archive1_order",
+              "archive1_price",
+              "archive1_repository",
+              "archive1_route",
+              "archive1_shipment",
+              "archive1_stock",
+              "archive1_subscription",
+              "archive1_tax",
+              "archive1_tickets",
+              "archive1_usage",
+              "archive1_weather",
+              "archive2_customer",
+              "archive2_employee",
+              "archive2_exchange",
+              "archive2_invoice",
+              "archive2_order",
+              "archive2_price",
+              "archive2_repository",
+              "archive2_shipment",
+              "archive2_stock",
+              "archive2_weather",
+              "capacity",
+              "customer",
+              "documents",
+              "employee",
+              "exchange",
+              "health",
+              "invoice",
+              "loyalty",
+              "order",
+              "price",
+              "repository",
+              "route",
+              "shipment",
+              "stock",
+              "subscription",
+              "tax",
+              "tickets",
+              "usage",
+              "weather"
+            ],
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "5da58149-de89-4899-b503-8fe8bb8655aa",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1067,
+        "output_tokens": 68,
+        "total_tokens": 1135,
+        "cached_input_tokens": 384,
+        "reasoning_output_tokens": 14
+      },
+      "context_bytes": 3630,
+      "model_latency_ms": 1914.772600051947,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "84124c28-f2c2-4968-ae32-bd5eed690864",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "There's a \"stock\" tool. Let me inspect its help."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "5da58149-de89-4899-b503-8fe8bb8655aa-0"
+        },
+        {
+          "type": "function_call",
+          "id": "c7b349cf-ef7c-48df-a708-26eb052776e1",
+          "status": "completed",
+          "arguments": "{\"command\": \"cat /mcp/bench/tools/stock\"}",
+          "call_id": "call_00_wqlsQb4nhR5BKj907TEr5572",
+          "name": "virtual_shell"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "d367c206eca44ce990ad869dcdc4cc7b",
+            "session_id": "2ef23081bca84a5ea6b59072b5c02b91",
+            "status": "error",
+            "exit_code": 1,
+            "stdout": "",
+            "stderr": "INVALID_PATH: Expected a resource or prompt node",
+            "data": null,
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": {
+              "code": "INVALID_PATH",
+              "message": "Expected a resource or prompt node"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "f76c2ade-f973-46fa-aa82-982791114adb",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1277,
+        "output_tokens": 112,
+        "total_tokens": 1389,
+        "cached_input_tokens": 1024,
+        "reasoning_output_tokens": 56
+      },
+      "context_bytes": 4635,
+      "model_latency_ms": 2178.547600051388,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "00e67f56-13fa-4104-84cc-43035da7b009",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "The instruction said \"inspect help /mcp/bench/tools/NAME\". Let me try run with help? Actually \"inspect help /mcp/bench/tools/NAME\". Maybe there's a help resource. Let me try running the tool with --help."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "f76c2ade-f973-46fa-aa82-982791114adb-0"
+        },
+        {
+          "type": "function_call",
+          "id": "33ab9718-2453-404f-b6f7-529027559fe1",
+          "status": "completed",
+          "arguments": "{\"command\": \"run /mcp/bench/tools/stock --help\"}",
+          "call_id": "call_00_0ZYeZagJDieonfRzlWDQ9597",
+          "name": "virtual_shell"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "f2da4e5d425740c7b9258c25d01df7a9",
+            "session_id": "2ef23081bca84a5ea6b59072b5c02b91",
+            "status": "error",
+            "exit_code": 1,
+            "stdout": "",
+            "stderr": "INVALID_ARGUMENT: Unknown option",
+            "data": null,
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": {
+              "code": "INVALID_ARGUMENT",
+              "message": "Unknown option",
+              "option": "help"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "2690fc20-a504-4c04-85f2-bed0db02885f",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1536,
+        "output_tokens": 133,
+        "total_tokens": 1669,
+        "cached_input_tokens": 1280,
+        "reasoning_output_tokens": 69
+      },
+      "context_bytes": 5794,
+      "model_latency_ms": 2505.5672000162303,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "9e27186c-6bac-4571-8b72-d0599db638da",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "Let me check the help resource. The instruction says \"inspect help /mcp/bench/tools/NAME\". Maybe there's a way via ls -la or something. Let me try to discover. Perhaps /mcp/bench/tools/stock has a help subnode. Let me try running the tool directly with the parameters."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "2690fc20-a504-4c04-85f2-bed0db02885f-0"
+        },
+        {
+          "type": "function_call",
+          "id": "29f77b6b-3f34-416a-9005-c820fbee36e5",
+          "status": "completed",
+          "arguments": "{\"command\": \"run /mcp/bench/tools/stock --sku SKU-482 --warehouse north\"}",
+          "call_id": "call_00_i6zKRNb469OcPWAF93xo1786",
+          "name": "virtual_shell"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "71d01dd8a8584026b09bb534b110eb11",
+            "session_id": "2ef23081bca84a5ea6b59072b5c02b91",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_f96ab48f3ca0ac56bfb8\", \"source_tool\": \"stock\", \"data\": {\"sku\": \"SKU-482\", \"warehouse\": \"north\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_f96ab48f3ca0ac56bfb8",
+              "source_tool": "stock",
+              "data": {
+                "sku": "SKU-482",
+                "warehouse": "north"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/1820218e66d54056824ac4dfad136120",
+            "truncated": false,
+            "duration_ms": 671,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "response_id": "5616b750-eeaa-4ae7-96fa-32c97d529ebe",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1912,
+        "output_tokens": 15,
+        "total_tokens": 1927,
+        "cached_input_tokens": 1664,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 7327,
+      "model_latency_ms": 1742.9810999892652,
+      "output": [
+        {
+          "type": "message",
+          "id": "e00107af-d70f-42d1-9f06-8887f069d94d",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_f96ab48f3ca0ac56bfb8"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

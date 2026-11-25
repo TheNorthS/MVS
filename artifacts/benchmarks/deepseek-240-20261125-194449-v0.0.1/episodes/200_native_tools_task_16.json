@@ -1,0 +1,151 @@
+{
+  "episode_id": "200_native_tools_task_16",
+  "size": 200,
+  "mode": "native_tools",
+  "task_id": "task_16",
+  "prompt": "Read current service health in a region. Use current data, not archives. Parameters: {\"service\": \"checkout\", \"region\": \"ap-east\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "health",
+  "expected_arguments": {
+    "service": "checkout",
+    "region": "ap-east"
+  },
+  "expected_code": "v_3fbcb2c0c09debe826b8",
+  "final_answer": "v_3fbcb2c0c09debe826b8",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 31840,
+    "output_tokens": 90,
+    "total_tokens": 31930,
+    "cached_input_tokens": 31360,
+    "reasoning_output_tokens": 12
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "health",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "health",
+      "arguments": {
+        "service": "checkout",
+        "region": "ap-east"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    15762,
+    16078
+  ],
+  "context_growth_tokens": 316,
+  "latency_ms": 4054.694800055586,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "8f76f754-0093-47f5-a4e1-ccb1c02b7872",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 15762,
+        "output_tokens": 73,
+        "total_tokens": 15835,
+        "cached_input_tokens": 15616,
+        "reasoning_output_tokens": 12
+      },
+      "context_bytes": 70120,
+      "model_latency_ms": 1398.5473000211641,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "431903a7-32b3-4e40-84f8-0978fb47876d",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "I need to use the current health tool, not archives."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "8f76f754-0093-47f5-a4e1-ccb1c02b7872-0"
+        },
+        {
+          "type": "function_call",
+          "id": "b5ffd3bc-fb4e-4c8e-b43a-63f5fa5ba626",
+          "status": "completed",
+          "arguments": "{\"service\": \"checkout\", \"region\": \"ap-east\"}",
+          "call_id": "call_00_47lERzpmlrZ98sRbtH5C6671",
+          "name": "health"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "health",
+          "result": {
+            "request_id": "bcb27e2e9cb4496a84ebe1c2dca85615",
+            "session_id": "f7ab91f5fc294d83ac49e99dd0412f81",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_3fbcb2c0c09debe826b8\", \"source_tool\": \"health\", \"data\": {\"service\": \"checkout\", \"region\": \"ap-east\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_3fbcb2c0c09debe826b8",
+              "source_tool": "health",
+              "data": {
+                "service": "checkout",
+                "region": "ap-east"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/21a4750759274105814341e4395e995c",
+            "truncated": false,
+            "duration_ms": 375,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "6a463dac-bad3-4712-b21a-51ab47fed7db",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 16078,
+        "output_tokens": 17,
+        "total_tokens": 16095,
+        "cached_input_tokens": 15744,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 71413,
+      "model_latency_ms": 1433.4827000275254,
+      "output": [
+        {
+          "type": "message",
+          "id": "74c02645-3efd-4f72-8d12-356391cc1024",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_3fbcb2c0c09debe826b8"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

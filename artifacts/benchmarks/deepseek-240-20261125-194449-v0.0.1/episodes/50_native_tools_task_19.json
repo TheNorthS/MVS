@@ -1,0 +1,147 @@
+{
+  "episode_id": "50_native_tools_task_19",
+  "size": 50,
+  "mode": "native_tools",
+  "task_id": "task_19",
+  "prompt": "Fetch support tickets by a list of IDs. Use current data, not archives. Parameters: {\"ids\": [\"T-191\", \"T-782\"], \"include_closed\": false}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "tickets",
+  "expected_arguments": {
+    "ids": [
+      "T-191",
+      "T-782"
+    ],
+    "include_closed": false
+  },
+  "expected_code": "v_c62c33dab29356a0af4d",
+  "final_answer": "v_c62c33dab29356a0af4d",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 8258,
+    "output_tokens": 86,
+    "total_tokens": 8344,
+    "cached_input_tokens": 7808,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "tickets",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "tickets",
+      "arguments": {
+        "ids": [
+          "T-191",
+          "T-782"
+        ],
+        "include_closed": false
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    3964,
+    4294
+  ],
+  "context_growth_tokens": 330,
+  "latency_ms": 2759.133300045505,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "f77826ba-7b85-4e41-992d-dd14e8b181a7",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 3964,
+        "output_tokens": 71,
+        "total_tokens": 4035,
+        "cached_input_tokens": 3840,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 17004,
+      "model_latency_ms": 1088.6673000641167,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "5e295e4b-72e1-4513-8df7-18b6ba8ba85c",
+          "status": "completed",
+          "arguments": "{\"ids\": [\"T-191\", \"T-782\"], \"include_closed\": false}",
+          "call_id": "call_00_ET_zXHuNS4EXM5yBQpxEfdg5355",
+          "name": "tickets"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "tickets",
+          "result": {
+            "request_id": "22aef326b66d4062a01c97af29156f71",
+            "session_id": "f1f75c5b0f5e4d6ba5aeda195d2f9c67",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_c62c33dab29356a0af4d\", \"source_tool\": \"tickets\", \"data\": {\"ids\": [\"T-191\", \"T-782\"], \"include_closed\": false}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_c62c33dab29356a0af4d",
+              "source_tool": "tickets",
+              "data": {
+                "ids": [
+                  "T-191",
+                  "T-782"
+                ],
+                "include_closed": false
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/023b0c32acf84503848c82a121bd23ac",
+            "truncated": false,
+            "duration_ms": 359,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "2b080692-b403-423f-8d0d-23132418ce92",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 4294,
+        "output_tokens": 15,
+        "total_tokens": 4309,
+        "cached_input_tokens": 3968,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 18055,
+      "model_latency_ms": 1231.708399951458,
+      "output": [
+        {
+          "type": "message",
+          "id": "304d2d22-a4be-4a9f-a44e-4dae996cd634",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_c62c33dab29356a0af4d"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

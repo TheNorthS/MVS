@@ -1,0 +1,140 @@
+{
+  "kind": "deterministic_in_process_mcp",
+  "llm_task_success_rate": null,
+  "llm_selection_accuracy": null,
+  "total_tokens": null,
+  "rows": [
+    {
+      "tools": 20,
+      "mode": "native_tools",
+      "calls": 20,
+      "scripted_success_rate": 1.0,
+      "median_ms": 1.3882500061299652,
+      "p95_ms": 2.1672000002581626,
+      "native_definition_bytes": 9050,
+      "total_tokens": null,
+      "interaction_rounds": 20
+    },
+    {
+      "tools": 20,
+      "mode": "json_gateway",
+      "calls": 20,
+      "scripted_success_rate": 1.0,
+      "median_ms": 1.3093500019749627,
+      "p95_ms": 1.9457999878795817,
+      "native_definition_bytes": 9050,
+      "total_tokens": null,
+      "interaction_rounds": 20
+    },
+    {
+      "tools": 20,
+      "mode": "mvs_shell",
+      "calls": 20,
+      "scripted_success_rate": 1.0,
+      "median_ms": 12.539700001070742,
+      "p95_ms": 15.308200003346428,
+      "native_definition_bytes": 9050,
+      "total_tokens": null,
+      "interaction_rounds": 20
+    },
+    {
+      "tools": 50,
+      "mode": "native_tools",
+      "calls": 20,
+      "scripted_success_rate": 1.0,
+      "median_ms": 1.3475999949150719,
+      "p95_ms": 1.6376999992644414,
+      "native_definition_bytes": 22640,
+      "total_tokens": null,
+      "interaction_rounds": 20
+    },
+    {
+      "tools": 50,
+      "mode": "json_gateway",
+      "calls": 20,
+      "scripted_success_rate": 1.0,
+      "median_ms": 1.3071000066702254,
+      "p95_ms": 1.6347000055247918,
+      "native_definition_bytes": 22640,
+      "total_tokens": null,
+      "interaction_rounds": 20
+    },
+    {
+      "tools": 50,
+      "mode": "mvs_shell",
+      "calls": 20,
+      "scripted_success_rate": 1.0,
+      "median_ms": 13.081600001896732,
+      "p95_ms": 14.367399999173358,
+      "native_definition_bytes": 22640,
+      "total_tokens": null,
+      "interaction_rounds": 20
+    },
+    {
+      "tools": 100,
+      "mode": "native_tools",
+      "calls": 20,
+      "scripted_success_rate": 1.0,
+      "median_ms": 3.638300004240591,
+      "p95_ms": 10.322100002667867,
+      "native_definition_bytes": 45290,
+      "total_tokens": null,
+      "interaction_rounds": 20
+    },
+    {
+      "tools": 100,
+      "mode": "json_gateway",
+      "calls": 20,
+      "scripted_success_rate": 1.0,
+      "median_ms": 2.8115999957663007,
+      "p95_ms": 3.9327999984379858,
+      "native_definition_bytes": 45290,
+      "total_tokens": null,
+      "interaction_rounds": 20
+    },
+    {
+      "tools": 100,
+      "mode": "mvs_shell",
+      "calls": 20,
+      "scripted_success_rate": 1.0,
+      "median_ms": 17.65904999774648,
+      "p95_ms": 23.726200000965036,
+      "native_definition_bytes": 45290,
+      "total_tokens": null,
+      "interaction_rounds": 20
+    },
+    {
+      "tools": 200,
+      "mode": "native_tools",
+      "calls": 20,
+      "scripted_success_rate": 1.0,
+      "median_ms": 1.4210000081220642,
+      "p95_ms": 2.1712000016123056,
+      "native_definition_bytes": 90690,
+      "total_tokens": null,
+      "interaction_rounds": 20
+    },
+    {
+      "tools": 200,
+      "mode": "json_gateway",
+      "calls": 20,
+      "scripted_success_rate": 1.0,
+      "median_ms": 1.4017499997862615,
+      "p95_ms": 2.311200005351566,
+      "native_definition_bytes": 90690,
+      "total_tokens": null,
+      "interaction_rounds": 20
+    },
+    {
+      "tools": 200,
+      "mode": "mvs_shell",
+      "calls": 20,
+      "scripted_success_rate": 1.0,
+      "median_ms": 21.050600007583853,
+      "p95_ms": 27.12250000331551,
+      "native_definition_bytes": 90690,
+      "total_tokens": null,
+      "interaction_rounds": 20
+    }
+  ]
+}

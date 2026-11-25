@@ -1,0 +1,417 @@
+{
+  "episode_id": "50_mvs_shell_task_18",
+  "size": 50,
+  "mode": "mvs_shell",
+  "task_id": "task_18",
+  "prompt": "Search documents using a nested filter. Use current data, not archives. Parameters: {\"query\": \"deployment\", \"filter\": {\"language\": \"zh\", \"published\": true}}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "documents",
+  "expected_arguments": {
+    "query": "deployment",
+    "filter": {
+      "language": "zh",
+      "published": true
+    }
+  },
+  "expected_code": "v_a4a2a150a29303c4f65d",
+  "final_answer": "v_a4a2a150a29303c4f65d",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 6463,
+    "output_tokens": 303,
+    "total_tokens": 6766,
+    "cached_input_tokens": 4864,
+    "reasoning_output_tokens": 51
+  },
+  "interaction_rounds": 5,
+  "tool_selection_attempts": [
+    {
+      "tool": "documents",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "documents",
+      "arguments": {
+        "query": "deployment",
+        "filter": {
+          "language": "zh",
+          "published": true
+        }
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    455,
+    1070,
+    1283,
+    1654,
+    2001
+  ],
+  "context_growth_tokens": 1546,
+  "latency_ms": 8446.454500081018,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "76681abc-512b-4b66-a45f-f837d8b52216",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 455,
+        "output_tokens": 57,
+        "total_tokens": 512,
+        "cached_input_tokens": 384,
+        "reasoning_output_tokens": 5
+      },
+      "context_bytes": 1110,
+      "model_latency_ms": 1813.9392000157386,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "fafdde3a-eacd-45ee-8309-db86e1b85f6f",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "Let me discover tools."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "76681abc-512b-4b66-a45f-f837d8b52216-0"
+        },
+        {
+          "type": "function_call",
+          "id": "94da4dad-b5c2-4101-a177-5df6172faa0e",
+          "status": "completed",
+          "arguments": "{\"command\": \"ls /mcp/bench/tools\"}",
+          "call_id": "call_00_6VExtVfUai1nI0Cgy7eY1014",
+          "name": "virtual_shell"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "70f2eba0699b43cbb23cb8cd446b8cf3",
+            "session_id": "a59fe2ee3cff4e4dae0d144226a7011f",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "appointments\narchive1_appointments\narchive1_capacity\narchive1_customer\narchive1_documents\narchive1_employee\narchive1_exchange\narchive1_health\narchive1_invoice\narchive1_loyalty\narchive1_order\narchive1_price\narchive1_repository\narchive1_route\narchive1_shipment\narchive1_stock\narchive1_subscription\narchive1_tax\narchive1_tickets\narchive1_usage\narchive1_weather\narchive2_customer\narchive2_employee\narchive2_exchange\narchive2_invoice\narchive2_order\narchive2_price\narchive2_repository\narchive2_shipment\narchive2_stock\narchive2_weather\ncapacity\ncustomer\ndocuments\nemployee\nexchange\nhealth\ninvoice\nloyalty\norder\nprice\nrepository\nroute\nshipment\nstock\nsubscription\ntax\ntickets\nusage\nweather",
+            "stderr": "",
+            "data": [
+              "appointments",
+              "archive1_appointments",
+              "archive1_capacity",
+              "archive1_customer",
+              "archive1_documents",
+              "archive1_employee",
+              "archive1_exchange",
+              "archive1_health",
+              "archive1_invoice",
+              "archive1_loyalty",
+              "archive1_order",
+              "archive1_price",
+              "archive1_repository",
+              "archive1_route",
+              "archive1_shipment",
+              "archive1_stock",
+              "archive1_subscription",
+              "archive1_tax",
+              "archive1_tickets",
+              "archive1_usage",
+              "archive1_weather",
+              "archive2_customer",
+              "archive2_employee",
+              "archive2_exchange",
+              "archive2_invoice",
+              "archive2_order",
+              "archive2_price",
+              "archive2_repository",
+              "archive2_shipment",
+              "archive2_stock",
+              "archive2_weather",
+              "capacity",
+              "customer",
+              "documents",
+              "employee",
+              "exchange",
+              "health",
+              "invoice",
+              "loyalty",
+              "order",
+              "price",
+              "repository",
+              "route",
+              "shipment",
+              "stock",
+              "subscription",
+              "tax",
+              "tickets",
+              "usage",
+              "weather"
+            ],
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "b3649417-8416-432b-b959-3bf2e17dbd1b",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1070,
+        "output_tokens": 68,
+        "total_tokens": 1138,
+        "cached_input_tokens": 512,
+        "reasoning_output_tokens": 14
+      },
+      "context_bytes": 3662,
+      "model_latency_ms": 1453.1152000417933,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "bb3b1482-a692-454e-b2e9-0a8c446ffe7b",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "The relevant tool is \"documents\". Let me inspect its help."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "b3649417-8416-432b-b959-3bf2e17dbd1b-0"
+        },
+        {
+          "type": "function_call",
+          "id": "c0fc46f6-f914-4f5a-a778-7ded4da1a3e2",
+          "status": "completed",
+          "arguments": "{\"command\": \"cat /mcp/bench/tools/documents\"}",
+          "call_id": "call_00_uBCojOWFfPTEzAEDmwKf3695",
+          "name": "virtual_shell"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "717e9efb2cdd470e8ed8ad6fb08471bf",
+            "session_id": "a59fe2ee3cff4e4dae0d144226a7011f",
+            "status": "error",
+            "exit_code": 1,
+            "stdout": "",
+            "stderr": "INVALID_PATH: Expected a resource or prompt node",
+            "data": null,
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": {
+              "code": "INVALID_PATH",
+              "message": "Expected a resource or prompt node"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "18bbc4fa-312d-406e-a79b-986d262e017c",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1283,
+        "output_tokens": 77,
+        "total_tokens": 1360,
+        "cached_input_tokens": 1024,
+        "reasoning_output_tokens": 23
+      },
+      "context_bytes": 4681,
+      "model_latency_ms": 1694.324899930507,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "5719cf96-4612-4c9f-9623-4dd652174f5b",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "The help command is \"help /mcp/bench/tools/NAME\". Let me try run with help."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "18bbc4fa-312d-406e-a79b-986d262e017c-0"
+        },
+        {
+          "type": "function_call",
+          "id": "861ce8b1-b97b-47a7-9854-e193d9a11ab1",
+          "status": "completed",
+          "arguments": "{\"command\": \"help /mcp/bench/tools/documents\"}",
+          "call_id": "call_00_4aWqg8CmdVdQm4nsRVAE8599",
+          "name": "virtual_shell"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "fe277541ef23451a81d90c950401bd4d",
+            "session_id": "a59fe2ee3cff4e4dae0d144226a7011f",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "documents\nSearch documents using a nested filter\n--params-json <JSON object>\n--query {\"type\": \"string\"} required\n--filter {\"type\": \"object\", \"properties\": {\"language\": {\"type\": \"string\"}, \"published\": {\"type\": \"boolean\"}}, \"required\": [\"language\", \"published\"], \"additionalProperties\": false} required",
+            "stderr": "",
+            "data": {
+              "input_schema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string"
+                  },
+                  "filter": {
+                    "type": "object",
+                    "properties": {
+                      "language": {
+                        "type": "string"
+                      },
+                      "published": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "language",
+                      "published"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "query",
+                  "filter"
+                ],
+                "additionalProperties": false
+              },
+              "untrusted": true,
+              "backend": "mcp"
+            },
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 16,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "55e040c7-a1cd-4ded-87cd-4212e47537cc",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1654,
+        "output_tokens": 85,
+        "total_tokens": 1739,
+        "cached_input_tokens": 1280,
+        "reasoning_output_tokens": 9
+      },
+      "context_bytes": 6411,
+      "model_latency_ms": 1912.3907999601215,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "0b40f90c-f6cb-44d3-aabb-b4ae458e32f0",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "Now run the documents tool with the parameters."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "55e040c7-a1cd-4ded-87cd-4212e47537cc-0"
+        },
+        {
+          "type": "function_call",
+          "id": "e6858dd9-3098-44af-b6b9-c585a07a70f8",
+          "status": "completed",
+          "arguments": "{\"command\": \"run /mcp/bench/tools/documents --params-json '{\\\"query\\\":\\\"deployment\\\",\\\"filter\\\":{\\\"language\\\":\\\"zh\\\",\\\"published\\\":true}}'\"}",
+          "call_id": "call_00_HLTpeJlZRGw6nE0zpE379160",
+          "name": "virtual_shell"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "d0e0aa513f00479fbc14fa37c9b91d07",
+            "session_id": "a59fe2ee3cff4e4dae0d144226a7011f",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_a4a2a150a29303c4f65d\", \"source_tool\": \"documents\", \"data\": {\"query\": \"deployment\", \"filter\": {\"language\": \"zh\", \"published\": true}}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_a4a2a150a29303c4f65d",
+              "source_tool": "documents",
+              "data": {
+                "query": "deployment",
+                "filter": {
+                  "language": "zh",
+                  "published": true
+                }
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/addd1432059d4c2c98a53b4381c47734",
+            "truncated": false,
+            "duration_ms": 344,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "response_id": "2a15b21b-13eb-4cd4-bdf3-4804964bc496",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 2001,
+        "output_tokens": 16,
+        "total_tokens": 2017,
+        "cached_input_tokens": 1664,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 7900,
+      "model_latency_ms": 1088.195399963297,
+      "output": [
+        {
+          "type": "message",
+          "id": "eb3b6150-378b-4f8e-b17d-aad022e5e8fd",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_a4a2a150a29303c4f65d"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

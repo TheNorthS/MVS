@@ -1,0 +1,138 @@
+{
+  "episode_id": "50_native_tools_task_15",
+  "size": 50,
+  "mode": "native_tools",
+  "task_id": "task_15",
+  "prompt": "Get current available capacity of a warehouse. Use current data, not archives. Parameters: {\"warehouse\": \"south\", \"unit\": \"pallet\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "capacity",
+  "expected_arguments": {
+    "warehouse": "south",
+    "unit": "pallet"
+  },
+  "expected_code": "v_efcc6c0f00fdd51486ac",
+  "final_answer": "v_efcc6c0f00fdd51486ac",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 8223,
+    "output_tokens": 77,
+    "total_tokens": 8300,
+    "cached_input_tokens": 7808,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "capacity",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "capacity",
+      "arguments": {
+        "warehouse": "south",
+        "unit": "pallet"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    3959,
+    4264
+  ],
+  "context_growth_tokens": 305,
+  "latency_ms": 2924.192399950698,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "34f3bc63-9575-413f-ba4f-1cdac9e55e98",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 3959,
+        "output_tokens": 62,
+        "total_tokens": 4021,
+        "cached_input_tokens": 3840,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 16999,
+      "model_latency_ms": 1046.0694000357762,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "d52742d6-0ac2-4ece-a682-2eb06ca5cdb3",
+          "status": "completed",
+          "arguments": "{\"warehouse\": \"south\", \"unit\": \"pallet\"}",
+          "call_id": "call_00_ET_cjKhknneR6gjCIE965p51670",
+          "name": "capacity"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "capacity",
+          "result": {
+            "request_id": "984e3a9bdd614931a5f6e1e997656b3d",
+            "session_id": "e739359ed8ac4100b4a867593408ed84",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_efcc6c0f00fdd51486ac\", \"source_tool\": \"capacity\", \"data\": {\"warehouse\": \"south\", \"unit\": \"pallet\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_efcc6c0f00fdd51486ac",
+              "source_tool": "capacity",
+              "data": {
+                "warehouse": "south",
+                "unit": "pallet"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/2e1d22907eea4f818f92200655b6038d",
+            "truncated": false,
+            "duration_ms": 405,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "77bb1a79-099a-4d55-b1cf-542e3d4db947",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 4264,
+        "output_tokens": 15,
+        "total_tokens": 4279,
+        "cached_input_tokens": 3968,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 18017,
+      "model_latency_ms": 1373.5563999507576,
+      "output": [
+        {
+          "type": "message",
+          "id": "25756bb3-352f-46fe-bf4e-4d3aa58e09e7",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_efcc6c0f00fdd51486ac"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

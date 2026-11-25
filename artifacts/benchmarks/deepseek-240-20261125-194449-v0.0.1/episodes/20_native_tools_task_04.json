@@ -1,0 +1,148 @@
+{
+  "episode_id": "20_native_tools_task_04",
+  "size": 20,
+  "mode": "native_tools",
+  "task_id": "task_04",
+  "prompt": "Get outstanding invoice balance. Use current data, not archives. Parameters: {\"invoice_id\": \"INV-208\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "invoice",
+  "expected_arguments": {
+    "invoice_id": "INV-208"
+  },
+  "expected_code": "v_d48d3e91734d9cc81066",
+  "final_answer": "v_d48d3e91734d9cc81066",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 3578,
+    "output_tokens": 75,
+    "total_tokens": 3653,
+    "cached_input_tokens": 3200,
+    "reasoning_output_tokens": 14
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "invoice",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "invoice",
+      "arguments": {
+        "invoice_id": "INV-208"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    1643,
+    1935
+  ],
+  "context_growth_tokens": 292,
+  "latency_ms": 3083.810399984941,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "309e6993-86bf-4144-a5d0-16b669ae9894",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1643,
+        "output_tokens": 61,
+        "total_tokens": 1704,
+        "cached_input_tokens": 1536,
+        "reasoning_output_tokens": 14
+      },
+      "context_bytes": 6540,
+      "model_latency_ms": 1714.664800092578,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "84a9a88e-0618-425f-a518-9d9b8cc8d0db",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "I need to call the invoice tool with invoice_id INV-208."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "309e6993-86bf-4144-a5d0-16b669ae9894-0"
+        },
+        {
+          "type": "function_call",
+          "id": "ed10b01f-472f-4087-a6e1-6b7479d32cc0",
+          "status": "completed",
+          "arguments": "{\"invoice_id\": \"INV-208\"}",
+          "call_id": "call_00_F7PX6fXLpoDLmrkRe0mg1350",
+          "name": "invoice"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "invoice",
+          "result": {
+            "request_id": "9ca2ebb21c9c4647afe8ef2b33b8a3ec",
+            "session_id": "3bdaa0c192204c49929881eba45454cb",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_d48d3e91734d9cc81066\", \"source_tool\": \"invoice\", \"data\": {\"invoice_id\": \"INV-208\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_d48d3e91734d9cc81066",
+              "source_tool": "invoice",
+              "data": {
+                "invoice_id": "INV-208"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/8868b2dc742a4474840e6d99596c3f46",
+            "truncated": false,
+            "duration_ms": 327,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "21f64c21-95ac-45f9-99a5-15acb34410fd",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1935,
+        "output_tokens": 14,
+        "total_tokens": 1949,
+        "cached_input_tokens": 1664,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 7763,
+      "model_latency_ms": 1011.9265000103042,
+      "output": [
+        {
+          "type": "message",
+          "id": "ef6a2105-d056-4192-b939-dd9ce9c67725",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_d48d3e91734d9cc81066"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

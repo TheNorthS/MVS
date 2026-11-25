@@ -1,0 +1,148 @@
+{
+  "episode_id": "200_native_tools_task_04",
+  "size": 200,
+  "mode": "native_tools",
+  "task_id": "task_04",
+  "prompt": "Get outstanding invoice balance. Use current data, not archives. Parameters: {\"invoice_id\": \"INV-208\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "invoice",
+  "expected_arguments": {
+    "invoice_id": "INV-208"
+  },
+  "expected_code": "v_d48d3e91734d9cc81066",
+  "final_answer": "v_d48d3e91734d9cc81066",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 31808,
+    "output_tokens": 85,
+    "total_tokens": 31893,
+    "cached_input_tokens": 31360,
+    "reasoning_output_tokens": 24
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "invoice",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "invoice",
+      "arguments": {
+        "invoice_id": "INV-208"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    15755,
+    16053
+  ],
+  "context_growth_tokens": 298,
+  "latency_ms": 5042.689500027336,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "354631bb-0b17-4bee-8f65-8cef5421e86e",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 15755,
+        "output_tokens": 71,
+        "total_tokens": 15826,
+        "cached_input_tokens": 15616,
+        "reasoning_output_tokens": 24
+      },
+      "context_bytes": 70089,
+      "model_latency_ms": 2248.991600004956,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "5cc7573e-c3be-47a6-b187-dc24467f6017",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "The task is to get outstanding invoice balance using current data. I should use the \"invoice\" tool (not archive)."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "354631bb-0b17-4bee-8f65-8cef5421e86e-0"
+        },
+        {
+          "type": "function_call",
+          "id": "7c8fc7b4-1036-4831-b719-59573b819eff",
+          "status": "completed",
+          "arguments": "{\"invoice_id\": \"INV-208\"}",
+          "call_id": "call_00_MZHztZdTOQ2DPOWVg3Ni9162",
+          "name": "invoice"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "invoice",
+          "result": {
+            "request_id": "44bb78cd513249a8818a7e23b5f6fa60",
+            "session_id": "0b9c35714d474a808391316352cc196f",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_d48d3e91734d9cc81066\", \"source_tool\": \"invoice\", \"data\": {\"invoice_id\": \"INV-208\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_d48d3e91734d9cc81066",
+              "source_tool": "invoice",
+              "data": {
+                "invoice_id": "INV-208"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/de8332417ddf4646b445aceb5dc77a3c",
+            "truncated": false,
+            "duration_ms": 469,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "9bf10e91-2550-414c-90f9-58875300200c",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 16053,
+        "output_tokens": 14,
+        "total_tokens": 16067,
+        "cached_input_tokens": 15744,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 71371,
+      "model_latency_ms": 1814.739500056021,
+      "output": [
+        {
+          "type": "message",
+          "id": "c60526c0-92d7-4388-b573-2ab813a4b101",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_d48d3e91734d9cc81066"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "episode_id": "100_native_tools_task_07",
+  "size": 100,
+  "mode": "native_tools",
+  "task_id": "task_07",
+  "prompt": "Look up employee directory details. Use current data, not archives. Parameters: {\"employee_id\": \"EMP-619\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "employee",
+  "expected_arguments": {
+    "employee_id": "EMP-619"
+  },
+  "expected_code": "v_944564e4a7670cd2e52e",
+  "final_answer": "v_944564e4a7670cd2e52e",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 7518,
+    "output_tokens": 38,
+    "total_tokens": 7556,
+    "cached_input_tokens": 6784,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "employee",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "employee",
+      "arguments": {
+        "employee_id": "EMP-619"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    3640,
+    3878
+  ],
+  "context_growth_tokens": 238,
+  "latency_ms": 10692.761199898086,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_056776d438e2d66f016b06bf9f2b9887d29a2c6db541c44660",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 3640,
+        "output_tokens": 20,
+        "total_tokens": 3660,
+        "cached_input_tokens": 3456,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 34788,
+      "model_latency_ms": 4275.231200037524,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_056776d438e2d66f016b06bfa0ad7887d28fb660cab8a4575a",
+          "call_id": "call_4c31627d482148f3bed50844225988fd",
+          "name": "employee",
+          "arguments": "{\"employee_id\":\"EMP-619\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "employee",
+          "result": {
+            "request_id": "cd7f1a11f6fd4ed5a87fe398167dd17b",
+            "session_id": "34a8c559a59b4713b944abd6a7556c30",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_944564e4a7670cd2e52e\", \"source_tool\": \"employee\", \"data\": {\"employee_id\": \"EMP-619\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_944564e4a7670cd2e52e",
+              "source_tool": "employee",
+              "data": {
+                "employee_id": "EMP-619"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/745e45dfeeb247b5afa16285baa860a3",
+            "truncated": false,
+            "duration_ms": 359,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_056776d438e2d66f016b06bfa3cc1087d2956d91361ce91342",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 3878,
+        "output_tokens": 18,
+        "total_tokens": 3896,
+        "cached_input_tokens": 3328,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 35764,
+      "model_latency_ms": 5882.138299988583,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_056776d438e2d66f016b06bfa7245487d28687700ea9c1321d",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_944564e4a7670cd2e52e",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

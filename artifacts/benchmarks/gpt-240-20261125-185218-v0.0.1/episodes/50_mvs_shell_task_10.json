@@ -1,0 +1,296 @@
+{
+  "episode_id": "50_mvs_shell_task_10",
+  "size": 50,
+  "mode": "mvs_shell",
+  "task_id": "task_10",
+  "prompt": "Summarize API usage for a project and month. Use current data, not archives. Parameters: {\"project\": \"atlas\", \"month\": \"2026-10\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "usage",
+  "expected_arguments": {
+    "project": "atlas",
+    "month": "2026-10"
+  },
+  "expected_code": "v_c083b2ff7ec20a4b8b8f",
+  "final_answer": "v_c083b2ff7ec20a4b8b8f",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 3471,
+    "output_tokens": 113,
+    "total_tokens": 3584,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 4,
+  "tool_selection_attempts": [
+    {
+      "tool": "usage",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "usage",
+      "arguments": {
+        "project": "atlas",
+        "month": "2026-10"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    290,
+    810,
+    1047,
+    1324
+  ],
+  "context_growth_tokens": 1034,
+  "latency_ms": 11595.738100004382,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_0565309bcdbebb0c016b06bf5736e087d0abf1fc55c97e6993",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 290,
+        "output_tokens": 24,
+        "total_tokens": 314,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 1079,
+      "model_latency_ms": 3114.018899970688,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0565309bcdbebb0c016b06bf58a28087d0908c2f551b346a41",
+          "call_id": "call_ef2709c901024577a6cf16f99839fdda",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"ls /mcp/bench/tools\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "9584ac2c8cff4914983a2ccbd7c3cada",
+            "session_id": "92f61111a55d4df0911655fa765fb1dc",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "appointments\narchive1_appointments\narchive1_capacity\narchive1_customer\narchive1_documents\narchive1_employee\narchive1_exchange\narchive1_health\narchive1_invoice\narchive1_loyalty\narchive1_order\narchive1_price\narchive1_repository\narchive1_route\narchive1_shipment\narchive1_stock\narchive1_subscription\narchive1_tax\narchive1_tickets\narchive1_usage\narchive1_weather\narchive2_customer\narchive2_employee\narchive2_exchange\narchive2_invoice\narchive2_order\narchive2_price\narchive2_repository\narchive2_shipment\narchive2_stock\narchive2_weather\ncapacity\ncustomer\ndocuments\nemployee\nexchange\nhealth\ninvoice\nloyalty\norder\nprice\nrepository\nroute\nshipment\nstock\nsubscription\ntax\ntickets\nusage\nweather",
+            "stderr": "",
+            "data": [
+              "appointments",
+              "archive1_appointments",
+              "archive1_capacity",
+              "archive1_customer",
+              "archive1_documents",
+              "archive1_employee",
+              "archive1_exchange",
+              "archive1_health",
+              "archive1_invoice",
+              "archive1_loyalty",
+              "archive1_order",
+              "archive1_price",
+              "archive1_repository",
+              "archive1_route",
+              "archive1_shipment",
+              "archive1_stock",
+              "archive1_subscription",
+              "archive1_tax",
+              "archive1_tickets",
+              "archive1_usage",
+              "archive1_weather",
+              "archive2_customer",
+              "archive2_employee",
+              "archive2_exchange",
+              "archive2_invoice",
+              "archive2_order",
+              "archive2_price",
+              "archive2_repository",
+              "archive2_shipment",
+              "archive2_stock",
+              "archive2_weather",
+              "capacity",
+              "customer",
+              "documents",
+              "employee",
+              "exchange",
+              "health",
+              "invoice",
+              "loyalty",
+              "order",
+              "price",
+              "repository",
+              "route",
+              "shipment",
+              "stock",
+              "subscription",
+              "tax",
+              "tickets",
+              "usage",
+              "weather"
+            ],
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 15,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_0565309bcdbebb0c016b06bf5a16a887d084428319616ac20e",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 810,
+        "output_tokens": 26,
+        "total_tokens": 836,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 3413,
+      "model_latency_ms": 2780.219499953091,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0565309bcdbebb0c016b06bf5b62bc87d096977261d8805c7e",
+          "call_id": "call_dbdd53c731024cf296f4cbe018d96e23",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"help /mcp/bench/tools/usage\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "58475e569d4c49ca82fcbb7038703c3a",
+            "session_id": "92f61111a55d4df0911655fa765fb1dc",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "usage\nSummarize API usage for a project and month\n--params-json <JSON object>\n--project {\"type\": \"string\"} required\n--month {\"type\": \"string\"} required",
+            "stderr": "",
+            "data": {
+              "input_schema": {
+                "type": "object",
+                "properties": {
+                  "project": {
+                    "type": "string"
+                  },
+                  "month": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "project",
+                  "month"
+                ],
+                "additionalProperties": false
+              },
+              "untrusted": true,
+              "backend": "mcp"
+            },
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 15,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "resp_0565309bcdbebb0c016b06bf5ce5d887d0b43c1415718f79cf",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1047,
+        "output_tokens": 43,
+        "total_tokens": 1090,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 4477,
+      "model_latency_ms": 2849.1696000564843,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0565309bcdbebb0c016b06bf5de5ac87d090e8f7ccab921993",
+          "call_id": "call_a2e31773e7b24617b92fd4fe99ad0e5a",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"run /mcp/bench/tools/usage --params-json '{\\\"project\\\":\\\"atlas\\\",\\\"month\\\":\\\"2026-10\\\"}'\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "621d2e3a57e04c018448a10a16e2917a",
+            "session_id": "92f61111a55d4df0911655fa765fb1dc",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_c083b2ff7ec20a4b8b8f\", \"source_tool\": \"usage\", \"data\": {\"project\": \"atlas\", \"month\": \"2026-10\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_c083b2ff7ec20a4b8b8f",
+              "source_tool": "usage",
+              "data": {
+                "project": "atlas",
+                "month": "2026-10"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/53ec77b32c204959bae46b42a1d69302",
+            "truncated": false,
+            "duration_ms": 344,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "resp_0565309bcdbebb0c016b06bf5ffc8087d0a93a01bd40df884c",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1324,
+        "output_tokens": 20,
+        "total_tokens": 1344,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 5589,
+      "model_latency_ms": 2304.5035999966785,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_0565309bcdbebb0c016b06bf60fe1487d08e0b90ad70269506",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_c083b2ff7ec20a4b8b8f",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

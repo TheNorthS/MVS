@@ -1,0 +1,155 @@
+{
+  "excluded_records": [
+    {
+      "episode_id": "100_json_gateway_task_10",
+      "path": "audit/excluded/100_json_gateway_task_10.json",
+      "reason": {
+        "code": "provider_http_error",
+        "http_status": 502
+      }
+    },
+    {
+      "episode_id": "200_mvs_shell_task_07",
+      "path": "audit/excluded/200_mvs_shell_task_07.json",
+      "reason": {
+        "code": "provider_http_error",
+        "http_status": 502
+      }
+    },
+    {
+      "episode_id": "20_mvs_shell_task_16",
+      "path": "audit/excluded/20_mvs_shell_task_16.json",
+      "reason": {
+        "code": "provider_http_error",
+        "http_status": 502
+      }
+    },
+    {
+      "episode_id": "50_mvs_shell_task_07",
+      "path": "audit/excluded/50_mvs_shell_task_07.json",
+      "reason": {
+        "code": "provider_http_error",
+        "http_status": 502
+      }
+    },
+    {
+      "episode_id": "50_mvs_shell_task_14",
+      "path": "audit/excluded/50_mvs_shell_task_14.json",
+      "reason": {
+        "code": "provider_http_error",
+        "http_status": 502
+      }
+    },
+    {
+      "episode_id": "50_native_tools_task_11",
+      "path": "audit/excluded/50_native_tools_task_11.json",
+      "reason": {
+        "code": "provider_timeout",
+        "http_status": null
+      }
+    }
+  ],
+  "recovery_probe": [
+    {
+      "time": "2026-11-25T11:09:25.085844+00:00",
+      "kind": "recovery_probe",
+      "included_in_240": false,
+      "note": "连续502熔断后检查接口恢复，不替换正式失败组",
+      "success": true,
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 15,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "cache_write_tokens_details": {
+            "ttl_30m_tokens": 0,
+            "ttl_12h_tokens": 0
+          }
+        },
+        "output_tokens": 5,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 20,
+        "attribution": {
+          "items": {
+            "msg_0d99def28afdd362016b06c1e5d4c487d19c088af41321ecb0": {
+              "input_tokens": 5,
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "output_tokens": 0,
+              "content": [
+                {
+                  "input_tokens": 5,
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "output_tokens": 0
+                }
+              ]
+            },
+            "msg_0d99def28afdd362016b06c1e7a33887d1b33104c205ae57d2": {
+              "input_tokens": 2,
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "output_tokens": 5,
+              "content": [
+                {
+                  "input_tokens": 2,
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "output_tokens": 5
+                }
+              ]
+            }
+          },
+          "request_fields": {
+            "instructions": {
+              "input_tokens": 8,
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "output_tokens": 0
+            }
+          }
+        }
+      }
+    }
+  ],
+  "execution_conditions": [
+    {
+      "kind": "explicit_502_retry",
+      "created_at": "2026-11-25T11:11:57.559673+00:00",
+      "base_manifest": "../metadata/manifest.json",
+      "concurrency": 4,
+      "selected_episodes": [
+        "100_json_gateway_task_10",
+        "200_mvs_shell_task_07",
+        "20_mvs_shell_task_16",
+        "50_mvs_shell_task_07",
+        "50_mvs_shell_task_14"
+      ],
+      "original_record_sha256": {
+        "100_json_gateway_task_10": "55b941f8bf2ab62bca34f170aa9a0717af94ea8a91d162e427df13ff31560917",
+        "200_mvs_shell_task_07": "40e903e74e4e170e7f65ce5ed05909a7b3852e79f81f0a7fd291abf93bb645d9",
+        "20_mvs_shell_task_16": "97365cc03e4f28aa0c8866717930437ee6bb692eab29fe57a67287cea19f6283",
+        "50_mvs_shell_task_07": "9ee3cac3e0ef47487dc5f166abb41eac2a4b01dcd516745bfdffa0efb4b723df",
+        "50_mvs_shell_task_14": "a9a9de1b6fcb8f501bccd95d033c29c540bcd83eb0e9d0370508228be162ac7e"
+      },
+      "reason": "用户明确要求重新测试502失败任务；首次记录保留，重测单独统计"
+    },
+    {
+      "kind": "explicit_timeout_retry",
+      "created_at": "2026-11-25T11:24:18.282903+00:00",
+      "base_manifest": "../metadata/manifest.json",
+      "concurrency": 1,
+      "selected_episodes": [
+        "50_native_tools_task_11"
+      ],
+      "original_record_sha256": {
+        "50_native_tools_task_11": "a5aa488a1cd0df6e465c660ae68127815ce0982432456ac5616fcdd5c9127491"
+      },
+      "reason": "用户明确要求重试剩余超时任务，最终合并为一份报告"
+    }
+  ]
+}

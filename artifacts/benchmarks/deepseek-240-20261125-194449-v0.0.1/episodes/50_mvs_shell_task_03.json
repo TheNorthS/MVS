@@ -1,0 +1,375 @@
+{
+  "episode_id": "50_mvs_shell_task_03",
+  "size": 50,
+  "mode": "mvs_shell",
+  "task_id": "task_03",
+  "prompt": "Track a shipment by tracking ID. Use current data, not archives. Parameters: {\"tracking_id\": \"TRK-627\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "shipment",
+  "expected_arguments": {
+    "tracking_id": "TRK-627"
+  },
+  "expected_code": "v_1c7275f6bf1fd60d0b23",
+  "final_answer": "v_1c7275f6bf1fd60d0b23",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 6251,
+    "output_tokens": 306,
+    "total_tokens": 6557,
+    "cached_input_tokens": 4480,
+    "reasoning_output_tokens": 55
+  },
+  "interaction_rounds": 5,
+  "tool_selection_attempts": [
+    {
+      "tool": "shipment",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "shipment",
+      "arguments": {
+        "tracking_id": "TRK-627"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    446,
+    1063,
+    1280,
+    1573,
+    1889
+  ],
+  "context_growth_tokens": 1443,
+  "latency_ms": 8461.565600009635,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "1dd134b6-dc8f-44b4-b4b4-fedeb7888ea9",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 446,
+        "output_tokens": 59,
+        "total_tokens": 505,
+        "cached_input_tokens": 384,
+        "reasoning_output_tokens": 7
+      },
+      "context_bytes": 1049,
+      "model_latency_ms": 1162.1244000270963,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "d6eafab5-0e40-4671-b86b-46309f82ae06",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "Let me discover the available tools."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "1dd134b6-dc8f-44b4-b4b4-fedeb7888ea9-0"
+        },
+        {
+          "type": "function_call",
+          "id": "d3b00a89-d398-4010-91c5-e8ba4ad529a6",
+          "status": "completed",
+          "arguments": "{\"command\": \"ls /mcp/bench/tools\"}",
+          "call_id": "call_00_fNGpcrWyWtegEBlo8TJY4921",
+          "name": "virtual_shell"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "6a810b6027c24d228885bc856c61a487",
+            "session_id": "38f9b4e971ea4a49bda2a6249b7bff7c",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "appointments\narchive1_appointments\narchive1_capacity\narchive1_customer\narchive1_documents\narchive1_employee\narchive1_exchange\narchive1_health\narchive1_invoice\narchive1_loyalty\narchive1_order\narchive1_price\narchive1_repository\narchive1_route\narchive1_shipment\narchive1_stock\narchive1_subscription\narchive1_tax\narchive1_tickets\narchive1_usage\narchive1_weather\narchive2_customer\narchive2_employee\narchive2_exchange\narchive2_invoice\narchive2_order\narchive2_price\narchive2_repository\narchive2_shipment\narchive2_stock\narchive2_weather\ncapacity\ncustomer\ndocuments\nemployee\nexchange\nhealth\ninvoice\nloyalty\norder\nprice\nrepository\nroute\nshipment\nstock\nsubscription\ntax\ntickets\nusage\nweather",
+            "stderr": "",
+            "data": [
+              "appointments",
+              "archive1_appointments",
+              "archive1_capacity",
+              "archive1_customer",
+              "archive1_documents",
+              "archive1_employee",
+              "archive1_exchange",
+              "archive1_health",
+              "archive1_invoice",
+              "archive1_loyalty",
+              "archive1_order",
+              "archive1_price",
+              "archive1_repository",
+              "archive1_route",
+              "archive1_shipment",
+              "archive1_stock",
+              "archive1_subscription",
+              "archive1_tax",
+              "archive1_tickets",
+              "archive1_usage",
+              "archive1_weather",
+              "archive2_customer",
+              "archive2_employee",
+              "archive2_exchange",
+              "archive2_invoice",
+              "archive2_order",
+              "archive2_price",
+              "archive2_repository",
+              "archive2_shipment",
+              "archive2_stock",
+              "archive2_weather",
+              "capacity",
+              "customer",
+              "documents",
+              "employee",
+              "exchange",
+              "health",
+              "invoice",
+              "loyalty",
+              "order",
+              "price",
+              "repository",
+              "route",
+              "shipment",
+              "stock",
+              "subscription",
+              "tax",
+              "tickets",
+              "usage",
+              "weather"
+            ],
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "f8fabf36-8098-453a-a61e-e9bef38bd961",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1063,
+        "output_tokens": 70,
+        "total_tokens": 1133,
+        "cached_input_tokens": 384,
+        "reasoning_output_tokens": 15
+      },
+      "context_bytes": 3615,
+      "model_latency_ms": 1954.988400102593,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "50c0b014-1e66-4db0-af39-bf16ab5dc696",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "There's a \"shipment\" tool. Let me inspect its help."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "f8fabf36-8098-453a-a61e-e9bef38bd961-0"
+        },
+        {
+          "type": "function_call",
+          "id": "55602d61-6f4c-458f-950a-ed5199c58586",
+          "status": "completed",
+          "arguments": "{\"command\": \"cat /mcp/bench/tools/shipment\"}",
+          "call_id": "call_00_gd8Iv44z9jZwFQAtLU554252",
+          "name": "virtual_shell"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "15cac5e2da0941dd95d0c32d91381283",
+            "session_id": "38f9b4e971ea4a49bda2a6249b7bff7c",
+            "status": "error",
+            "exit_code": 1,
+            "stdout": "",
+            "stderr": "INVALID_PATH: Expected a resource or prompt node",
+            "data": null,
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": {
+              "code": "INVALID_PATH",
+              "message": "Expected a resource or prompt node"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "03f6c0bd-1a86-42dc-b674-d7fe66f6116b",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1280,
+        "output_tokens": 88,
+        "total_tokens": 1368,
+        "cached_input_tokens": 1024,
+        "reasoning_output_tokens": 33
+      },
+      "context_bytes": 4626,
+      "model_latency_ms": 1338.6064000660554,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "47e08230-e549-4ee8-85ed-710aca2580ad",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "The help said \"inspect help /mcp/bench/tools/NAME\". Let me try \"help /mcp/bench/tools/shipment\"."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "03f6c0bd-1a86-42dc-b674-d7fe66f6116b-0"
+        },
+        {
+          "type": "function_call",
+          "id": "531973e7-5395-4fea-a3e2-33c855274cf4",
+          "status": "completed",
+          "arguments": "{\"command\": \"help /mcp/bench/tools/shipment\"}",
+          "call_id": "call_00_wEKKBygSIE3HHJ5xPvYE1536",
+          "name": "virtual_shell"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "6e2dadb313a94dc1b033a66c4bfb29d3",
+            "session_id": "38f9b4e971ea4a49bda2a6249b7bff7c",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "shipment\nTrack a shipment by tracking ID\n--params-json <JSON object>\n--tracking_id {\"type\": \"string\"} required",
+            "stderr": "",
+            "data": {
+              "input_schema": {
+                "type": "object",
+                "properties": {
+                  "tracking_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "tracking_id"
+                ],
+                "additionalProperties": false
+              },
+              "untrusted": true,
+              "backend": "mcp"
+            },
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "c85c773b-275e-43c7-b9e6-90cd60c05e66",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1573,
+        "output_tokens": 72,
+        "total_tokens": 1645,
+        "cached_input_tokens": 1152,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 5896,
+      "model_latency_ms": 2294.3334999727085,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "cb0a7aa7-d8a5-4068-a2a9-7ff9db6680b4",
+          "status": "completed",
+          "arguments": "{\"command\": \"run /mcp/bench/tools/shipment --params-json '{\\\"tracking_id\\\": \\\"TRK-627\\\"}'\"}",
+          "call_id": "call_00_ET_HwFdXdtEZAL8Wnswsygb5147",
+          "name": "virtual_shell"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "9a9669c8496045cb97b96e4513f799b6",
+            "session_id": "38f9b4e971ea4a49bda2a6249b7bff7c",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_1c7275f6bf1fd60d0b23\", \"source_tool\": \"shipment\", \"data\": {\"tracking_id\": \"TRK-627\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_1c7275f6bf1fd60d0b23",
+              "source_tool": "shipment",
+              "data": {
+                "tracking_id": "TRK-627"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/c744e118edc14540b03a70e8199212c6",
+            "truncated": false,
+            "duration_ms": 342,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "response_id": "29217284-9c08-466e-a5cd-d060f1e1b4c1",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1889,
+        "output_tokens": 17,
+        "total_tokens": 1906,
+        "cached_input_tokens": 1536,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 6930,
+      "model_latency_ms": 1278.571999981068,
+      "output": [
+        {
+          "type": "message",
+          "id": "8a008f7c-7ead-4ed3-902a-96bc34a7225f",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_1c7275f6bf1fd60d0b23"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

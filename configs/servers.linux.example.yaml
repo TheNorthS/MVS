@@ -1,0 +1,15 @@
+# Linux 教程配置：部署到 /opt/mvs，真实工作仓库位于 /srv/mvs/repos/project。
+# 由管理员编辑，路径和可执行文件不做环境变量替换。
+servers:
+  - id: gitrepo
+    transport: stdio
+    command: /opt/mvs/.mcp-git/bin/python
+    args: ["-m", "mcp_server_git", "--repository", "/srv/mvs/repos/project"]
+    enabled: true
+    trust_level: trusted
+    allowed_tools: [git_status, git_log, git_show, git_diff_unstaged, git_diff_staged]
+    connect_timeout_seconds: 30
+    discovery_timeout_seconds: 15
+    call_timeout_seconds: 20
+    max_concurrency: 2
+    refresh_ttl_seconds: 60

@@ -1,0 +1,296 @@
+{
+  "episode_id": "50_mvs_shell_task_16",
+  "size": 50,
+  "mode": "mvs_shell",
+  "task_id": "task_16",
+  "prompt": "Read current service health in a region. Use current data, not archives. Parameters: {\"service\": \"checkout\", \"region\": \"ap-east\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "health",
+  "expected_arguments": {
+    "service": "checkout",
+    "region": "ap-east"
+  },
+  "expected_code": "v_3fbcb2c0c09debe826b8",
+  "final_answer": "v_3fbcb2c0c09debe826b8",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 3452,
+    "output_tokens": 110,
+    "total_tokens": 3562,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 4,
+  "tool_selection_attempts": [
+    {
+      "tool": "health",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "health",
+      "arguments": {
+        "service": "checkout",
+        "region": "ap-east"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    285,
+    807,
+    1045,
+    1315
+  ],
+  "context_growth_tokens": 1030,
+  "latency_ms": 24097.694299998693,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_02242894037e15b9016b06c027ab1887d09f7c284d2158d3e1",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 285,
+        "output_tokens": 24,
+        "total_tokens": 309,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 1079,
+      "model_latency_ms": 5487.85959999077,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_02242894037e15b9016b06c02b696487d09be66cc20882e31d",
+          "call_id": "call_0b34bb1daca64d6bb17faba207ddb945",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"ls /mcp/bench/tools\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "f864a423901c46a091c7df856d134e3e",
+            "session_id": "2459cb6ab7c144a0b331c087033e1ab5",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "appointments\narchive1_appointments\narchive1_capacity\narchive1_customer\narchive1_documents\narchive1_employee\narchive1_exchange\narchive1_health\narchive1_invoice\narchive1_loyalty\narchive1_order\narchive1_price\narchive1_repository\narchive1_route\narchive1_shipment\narchive1_stock\narchive1_subscription\narchive1_tax\narchive1_tickets\narchive1_usage\narchive1_weather\narchive2_customer\narchive2_employee\narchive2_exchange\narchive2_invoice\narchive2_order\narchive2_price\narchive2_repository\narchive2_shipment\narchive2_stock\narchive2_weather\ncapacity\ncustomer\ndocuments\nemployee\nexchange\nhealth\ninvoice\nloyalty\norder\nprice\nrepository\nroute\nshipment\nstock\nsubscription\ntax\ntickets\nusage\nweather",
+            "stderr": "",
+            "data": [
+              "appointments",
+              "archive1_appointments",
+              "archive1_capacity",
+              "archive1_customer",
+              "archive1_documents",
+              "archive1_employee",
+              "archive1_exchange",
+              "archive1_health",
+              "archive1_invoice",
+              "archive1_loyalty",
+              "archive1_order",
+              "archive1_price",
+              "archive1_repository",
+              "archive1_route",
+              "archive1_shipment",
+              "archive1_stock",
+              "archive1_subscription",
+              "archive1_tax",
+              "archive1_tickets",
+              "archive1_usage",
+              "archive1_weather",
+              "archive2_customer",
+              "archive2_employee",
+              "archive2_exchange",
+              "archive2_invoice",
+              "archive2_order",
+              "archive2_price",
+              "archive2_repository",
+              "archive2_shipment",
+              "archive2_stock",
+              "archive2_weather",
+              "capacity",
+              "customer",
+              "documents",
+              "employee",
+              "exchange",
+              "health",
+              "invoice",
+              "loyalty",
+              "order",
+              "price",
+              "repository",
+              "route",
+              "shipment",
+              "stock",
+              "subscription",
+              "tax",
+              "tickets",
+              "usage",
+              "weather"
+            ],
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_02242894037e15b9016b06c02d8be887d0ac5d1195e823d82e",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 807,
+        "output_tokens": 26,
+        "total_tokens": 833,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 3412,
+      "model_latency_ms": 6728.638300090097,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_02242894037e15b9016b06c03230b887d099dbd3617274483a",
+          "call_id": "call_cc03ac10e01e466992d41d877e366fb4",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"help /mcp/bench/tools/health\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "8a62ba51d30d494b869f4ad7b4d41130",
+            "session_id": "2459cb6ab7c144a0b331c087033e1ab5",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "health\nRead current service health in a region\n--params-json <JSON object>\n--service {\"type\": \"string\"} required\n--region {\"type\": \"string\"} required",
+            "stderr": "",
+            "data": {
+              "input_schema": {
+                "type": "object",
+                "properties": {
+                  "service": {
+                    "type": "string"
+                  },
+                  "region": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "service",
+                  "region"
+                ],
+                "additionalProperties": false
+              },
+              "untrusted": true,
+              "backend": "mcp"
+            },
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "resp_02242894037e15b9016b06c033b18087d0ad50d460ebc107a3",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1045,
+        "output_tokens": 41,
+        "total_tokens": 1086,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 4476,
+      "model_latency_ms": 7107.537799980491,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_02242894037e15b9016b06c038e91887d0a362b0e68c13389f",
+          "call_id": "call_a6e2c1abb46e4ecc8d1163986da7564e",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"run /mcp/bench/tools/health --params-json '{\\\"service\\\":\\\"checkout\\\",\\\"region\\\":\\\"ap-east\\\"}'\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "1e9a27b5ab624d3bb1bd00218f37b736",
+            "session_id": "2459cb6ab7c144a0b331c087033e1ab5",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_3fbcb2c0c09debe826b8\", \"source_tool\": \"health\", \"data\": {\"service\": \"checkout\", \"region\": \"ap-east\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_3fbcb2c0c09debe826b8",
+              "source_tool": "health",
+              "data": {
+                "service": "checkout",
+                "region": "ap-east"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/02801a3db4a348618774610676293f3d",
+            "truncated": false,
+            "duration_ms": 406,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "resp_02242894037e15b9016b06c03b416487d082f91c84f1a90151",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1315,
+        "output_tokens": 19,
+        "total_tokens": 1334,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 5603,
+      "model_latency_ms": 4291.544700041413,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_02242894037e15b9016b06c03e03a087d092db63e1cda1e0dc",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_3fbcb2c0c09debe826b8",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

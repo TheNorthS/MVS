@@ -1,0 +1,148 @@
+{
+  "episode_id": "50_native_tools_task_04",
+  "size": 50,
+  "mode": "native_tools",
+  "task_id": "task_04",
+  "prompt": "Get outstanding invoice balance. Use current data, not archives. Parameters: {\"invoice_id\": \"INV-208\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "invoice",
+  "expected_arguments": {
+    "invoice_id": "INV-208"
+  },
+  "expected_code": "v_d48d3e91734d9cc81066",
+  "final_answer": "v_d48d3e91734d9cc81066",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 8221,
+    "output_tokens": 100,
+    "total_tokens": 8321,
+    "cached_input_tokens": 7808,
+    "reasoning_output_tokens": 39
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "invoice",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "invoice",
+      "arguments": {
+        "invoice_id": "INV-208"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    3951,
+    4270
+  ],
+  "context_growth_tokens": 319,
+  "latency_ms": 4078.8840000750497,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "489e020e-1524-48f5-8945-39843f23f17e",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 3951,
+        "output_tokens": 86,
+        "total_tokens": 4037,
+        "cached_input_tokens": 3840,
+        "reasoning_output_tokens": 39
+      },
+      "context_bytes": 16966,
+      "model_latency_ms": 1994.5965999504551,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "775a3ef9-b03a-4ea8-963c-500823cdbf62",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "The task says to get outstanding invoice balance using current data. Use the \"invoice\" tool (not archive). Parameters invoice_id INV-208. Then return verification_code.\n\nLet me call invoice."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "489e020e-1524-48f5-8945-39843f23f17e-0"
+        },
+        {
+          "type": "function_call",
+          "id": "b0a3e15f-28c4-4868-b8f6-3cf1523e16be",
+          "status": "completed",
+          "arguments": "{\"invoice_id\": \"INV-208\"}",
+          "call_id": "call_00_TdY3Z3fMXvzQAb59hVb91708",
+          "name": "invoice"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "invoice",
+          "result": {
+            "request_id": "96543cd8f72a4fb1a36029804504c50a",
+            "session_id": "e8274983b76841b1ac027d913ecc0872",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_d48d3e91734d9cc81066\", \"source_tool\": \"invoice\", \"data\": {\"invoice_id\": \"INV-208\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_d48d3e91734d9cc81066",
+              "source_tool": "invoice",
+              "data": {
+                "invoice_id": "INV-208"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/141d12a3ed7f4964a1b7ccf88ae2b2c0",
+            "truncated": false,
+            "duration_ms": 422,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "10f9392f-c19c-45df-88dd-26b405b2f897",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 4270,
+        "output_tokens": 14,
+        "total_tokens": 4284,
+        "cached_input_tokens": 3968,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 18327,
+      "model_latency_ms": 954.6712000155821,
+      "output": [
+        {
+          "type": "message",
+          "id": "79935abf-f305-4c43-9027-98b186002e7f",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_d48d3e91734d9cc81066"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

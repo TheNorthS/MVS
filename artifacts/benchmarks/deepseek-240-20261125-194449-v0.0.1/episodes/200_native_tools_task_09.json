@@ -1,0 +1,135 @@
+{
+  "episode_id": "200_native_tools_task_09",
+  "size": 200,
+  "mode": "native_tools",
+  "task_id": "task_09",
+  "prompt": "Look up a customer account. Use current data, not archives. Parameters: {\"customer_id\": \"CUS-325\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "customer",
+  "expected_arguments": {
+    "customer_id": "CUS-325"
+  },
+  "expected_code": "v_2e9a1ed3bc1d4368cebb",
+  "final_answer": "v_2e9a1ed3bc1d4368cebb",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 31798,
+    "output_tokens": 64,
+    "total_tokens": 31862,
+    "cached_input_tokens": 31360,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "customer",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "customer",
+      "arguments": {
+        "customer_id": "CUS-325"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    15756,
+    16042
+  ],
+  "context_growth_tokens": 286,
+  "latency_ms": 5394.214199972339,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "e79b0ea6-2ff9-4ce0-b760-bb98623dd0e7",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 15756,
+        "output_tokens": 47,
+        "total_tokens": 15803,
+        "cached_input_tokens": 15616,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 70085,
+      "model_latency_ms": 1928.2907999586314,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "08167b6d-418e-450b-8ebe-6c98ec950e74",
+          "status": "completed",
+          "arguments": "{\"customer_id\": \"CUS-325\"}",
+          "call_id": "call_00_ET_rVN0WJ7WavySZNnsCftp0296",
+          "name": "customer"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "customer",
+          "result": {
+            "request_id": "457012d7c7bc421697405b5b31e093ef",
+            "session_id": "ba294cfab9154c1399d93dbd7b9eda9d",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_2e9a1ed3bc1d4368cebb\", \"source_tool\": \"customer\", \"data\": {\"customer_id\": \"CUS-325\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_2e9a1ed3bc1d4368cebb",
+              "source_tool": "customer",
+              "data": {
+                "customer_id": "CUS-325"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/9530e2a9c30d4a9c852f3268b63aa13e",
+            "truncated": false,
+            "duration_ms": 328,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "4be5c500-eb85-47d2-86f5-0e76d4cb71f1",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 16042,
+        "output_tokens": 17,
+        "total_tokens": 16059,
+        "cached_input_tokens": 15744,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 71041,
+      "model_latency_ms": 2828.6832999438047,
+      "output": [
+        {
+          "type": "message",
+          "id": "a81cc191-63ff-41c7-b16a-a3fbf5bacd4b",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_2e9a1ed3bc1d4368cebb"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

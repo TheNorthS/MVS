@@ -1,0 +1,30 @@
+{
+  "episode_id": "20_mvs_shell_task_16",
+  "size": 20,
+  "mode": "mvs_shell",
+  "task_id": "task_16",
+  "prompt": "Read current service health in a region. Use current data, not archives. Parameters: {\"service\": \"checkout\", \"region\": \"ap-east\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "health",
+  "expected_arguments": {
+    "service": "checkout",
+    "region": "ap-east"
+  },
+  "expected_code": "v_3fbcb2c0c09debe826b8",
+  "final_answer": "",
+  "success": false,
+  "failure": {
+    "code": "provider_http_error",
+    "http_status": 502
+  },
+  "usage_complete": false,
+  "returned_models": [],
+  "usage": null,
+  "interaction_rounds": 0,
+  "tool_selection_attempts": [],
+  "mcp_calls": [],
+  "mcp_call_count": 0,
+  "context_input_tokens": [],
+  "context_growth_tokens": null,
+  "latency_ms": 3033.919000066817,
+  "rounds": []
+}

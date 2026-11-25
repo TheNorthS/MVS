@@ -1,0 +1,309 @@
+{
+  "episode_id": "20_json_gateway_task_05",
+  "size": 20,
+  "mode": "json_gateway",
+  "task_id": "task_05",
+  "prompt": "Convert a monetary amount between currencies. Use current data, not archives. Parameters: {\"amount\": 123.45, \"source\": \"USD\", \"target\": \"EUR\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "exchange",
+  "expected_arguments": {
+    "amount": 123.45,
+    "source": "USD",
+    "target": "EUR"
+  },
+  "expected_code": "v_e73abbdf62bde8db6e05",
+  "final_answer": "v_e73abbdf62bde8db6e05",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 2746,
+    "output_tokens": 98,
+    "total_tokens": 2844,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 4,
+  "tool_selection_attempts": [
+    {
+      "tool": "exchange",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "exchange",
+      "arguments": {
+        "amount": 123.45,
+        "source": "USD",
+        "target": "EUR"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    277,
+    655,
+    766,
+    1048
+  ],
+  "context_growth_tokens": 771,
+  "latency_ms": 33324.27340000868,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_018bbb9d869c4bba016b06c0400fb487d098256fdd7d47f4d0",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 277,
+        "output_tokens": 19,
+        "total_tokens": 296,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 1090,
+      "model_latency_ms": 11988.766900030896,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_018bbb9d869c4bba016b06c04a78c487d0a9bb13f6a3b378f8",
+          "call_id": "call_d6b4b7b29aca48bdbda6479de3c8bdb4",
+          "name": "mcp_gateway",
+          "arguments": "{\"action\":\"list\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": [
+            {
+              "name": "tickets",
+              "description": "Fetch support tickets by a list of IDs"
+            },
+            {
+              "name": "exchange",
+              "description": "Convert a monetary amount between currencies"
+            },
+            {
+              "name": "loyalty",
+              "description": "Read customer loyalty balance"
+            },
+            {
+              "name": "invoice",
+              "description": "Get outstanding invoice balance"
+            },
+            {
+              "name": "customer",
+              "description": "Look up a customer account"
+            },
+            {
+              "name": "route",
+              "description": "Find route distance between two cities"
+            },
+            {
+              "name": "capacity",
+              "description": "Get current available capacity of a warehouse"
+            },
+            {
+              "name": "documents",
+              "description": "Search documents using a nested filter"
+            },
+            {
+              "name": "weather",
+              "description": "Fetch weather for a city and date"
+            },
+            {
+              "name": "tax",
+              "description": "Calculate invoice tax from net amount and rate"
+            },
+            {
+              "name": "appointments",
+              "description": "List free appointment slots for a doctor"
+            },
+            {
+              "name": "usage",
+              "description": "Summarize API usage for a project and month"
+            },
+            {
+              "name": "price",
+              "description": "Look up current product price in a currency"
+            },
+            {
+              "name": "subscription",
+              "description": "Read subscription status"
+            },
+            {
+              "name": "order",
+              "description": "Fetch current order status"
+            },
+            {
+              "name": "health",
+              "description": "Read current service health in a region"
+            },
+            {
+              "name": "employee",
+              "description": "Look up employee directory details"
+            },
+            {
+              "name": "repository",
+              "description": "Search software repositories by topic and minimum stars"
+            },
+            {
+              "name": "stock",
+              "description": "Check current warehouse stock"
+            },
+            {
+              "name": "shipment",
+              "description": "Track a shipment by tracking ID"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_018bbb9d869c4bba016b06c04ce56c87d093574c5981bf2043",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 655,
+        "output_tokens": 23,
+        "total_tokens": 678,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 3113,
+      "model_latency_ms": 3370.458000106737,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_018bbb9d869c4bba016b06c04decac87d0b69641e674072cf1",
+          "call_id": "call_b8b663332f84454a8146e6e1abd8e9ea",
+          "name": "mcp_gateway",
+          "arguments": "{\"action\":\"help\",\"tool\":\"exchange\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": {
+            "name": "exchange",
+            "description": "Convert a monetary amount between currencies",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "amount": {
+                  "type": "number"
+                },
+                "source": {
+                  "type": "string"
+                },
+                "target": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "amount",
+                "source",
+                "target"
+              ],
+              "additionalProperties": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "resp_018bbb9d869c4bba016b06c04fcf0887d0a355ca085a9357fd",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 766,
+        "output_tokens": 39,
+        "total_tokens": 805,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 3805,
+      "model_latency_ms": 5028.595999930985,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_018bbb9d869c4bba016b06c052bb6087d0a31cf867e70bbe1e",
+          "call_id": "call_e1aefa17696a4cc0b923e3988c7f0f37",
+          "name": "mcp_gateway",
+          "arguments": "{\"action\":\"call\",\"tool\":\"exchange\",\"arguments\":{\"amount\":123.45,\"source\":\"USD\",\"target\":\"EUR\"}}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": {
+            "request_id": "35a023ece5b44d8ab12eaee1b3e6fdce",
+            "session_id": "ecd87e7d3baf4b3e96afe3fe59caadf6",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_e73abbdf62bde8db6e05\", \"source_tool\": \"exchange\", \"data\": {\"amount\": 123.45, \"source\": \"USD\", \"target\": \"EUR\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_e73abbdf62bde8db6e05",
+              "source_tool": "exchange",
+              "data": {
+                "amount": 123.45,
+                "source": "USD",
+                "target": "EUR"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/08de24336cab459f87b80d77884ee2c2",
+            "truncated": false,
+            "duration_ms": 405,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "resp_018bbb9d869c4bba016b06c054eeb487d0aaf9c11b736b0303",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1048,
+        "output_tokens": 17,
+        "total_tokens": 1065,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 4946,
+      "model_latency_ms": 12493.038499960676,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_018bbb9d869c4bba016b06c0600b1087d0a142d7edd6f78425",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_e73abbdf62bde8db6e05",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

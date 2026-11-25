@@ -1,0 +1,141 @@
+{
+  "episode_id": "100_native_tools_task_13",
+  "size": 100,
+  "mode": "native_tools",
+  "task_id": "task_13",
+  "prompt": "Find route distance between two cities. Use current data, not archives. Parameters: {\"origin\": \"Shanghai\", \"destination\": \"Nanjing\", \"mode\": \"rail\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "route",
+  "expected_arguments": {
+    "origin": "Shanghai",
+    "destination": "Nanjing",
+    "mode": "rail"
+  },
+  "expected_code": "v_a2e106cb052e7830549a",
+  "final_answer": "v_a2e106cb052e7830549a",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 7570,
+    "output_tokens": 43,
+    "total_tokens": 7613,
+    "cached_input_tokens": 3328,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "route",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "route",
+      "arguments": {
+        "destination": "Nanjing",
+        "mode": "rail",
+        "origin": "Shanghai"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    3652,
+    3918
+  ],
+  "context_growth_tokens": 266,
+  "latency_ms": 10238.925399957225,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_0eebf8343baabe3d016b06bf498e9087d1a766b5ceb33eecb5",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 3652,
+        "output_tokens": 27,
+        "total_tokens": 3679,
+        "cached_input_tokens": 3328,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 34838,
+      "model_latency_ms": 5128.22509999387,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0eebf8343baabe3d016b06bf4ae95487d1b2fb24c642d3355a",
+          "call_id": "call_21198952fc324e64b47644936d8fe026",
+          "name": "route",
+          "arguments": "{\"destination\":\"Nanjing\",\"mode\":\"rail\",\"origin\":\"Shanghai\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "route",
+          "result": {
+            "request_id": "ba74e7fd540045e59014087f5a929ccb",
+            "session_id": "69bc465b6d7b40ea9d6f300dd4ac479e",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_a2e106cb052e7830549a\", \"source_tool\": \"route\", \"data\": {\"destination\": \"Nanjing\", \"mode\": \"rail\", \"origin\": \"Shanghai\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_a2e106cb052e7830549a",
+              "source_tool": "route",
+              "data": {
+                "destination": "Nanjing",
+                "mode": "rail",
+                "origin": "Shanghai"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/54f8d8c6c90843ecafac75b5c9554e8e",
+            "truncated": false,
+            "duration_ms": 405,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_0eebf8343baabe3d016b06bf4ed28887d19e64193a30415146",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 3918,
+        "output_tokens": 16,
+        "total_tokens": 3934,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 35955,
+      "model_latency_ms": 4529.46420002263,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_0eebf8343baabe3d016b06bf501e4087d1a99f61026e2f6e03",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_a2e106cb052e7830549a",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

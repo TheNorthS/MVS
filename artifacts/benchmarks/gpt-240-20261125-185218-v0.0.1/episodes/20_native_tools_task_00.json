@@ -1,0 +1,138 @@
+{
+  "episode_id": "20_native_tools_task_00",
+  "size": 20,
+  "mode": "native_tools",
+  "task_id": "task_00",
+  "prompt": "Check current warehouse stock. Use current data, not archives. Parameters: {\"sku\": \"SKU-482\", \"warehouse\": \"north\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "stock",
+  "expected_arguments": {
+    "sku": "SKU-482",
+    "warehouse": "north"
+  },
+  "expected_code": "v_f96ab48f3ca0ac56bfb8",
+  "final_answer": "v_f96ab48f3ca0ac56bfb8",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 1652,
+    "output_tokens": 41,
+    "total_tokens": 1693,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "stock",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "stock",
+      "arguments": {
+        "sku": "SKU-482",
+        "warehouse": "north"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    700,
+    952
+  ],
+  "context_growth_tokens": 252,
+  "latency_ms": 6928.899199934676,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_088d56ce3dfebba1016b06bef09d0087d0991ae1fa03c72eef",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 700,
+        "output_tokens": 23,
+        "total_tokens": 723,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 6557,
+      "model_latency_ms": 2946.8120000092313,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_088d56ce3dfebba1016b06bef2289c87d089fc8f8cbef86df6",
+          "call_id": "call_10f7aedae07b4a488dad3c031fb1fed6",
+          "name": "stock",
+          "arguments": "{\"sku\":\"SKU-482\",\"warehouse\":\"north\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "stock",
+          "result": {
+            "request_id": "3e99c36ccaa64623867cecbcc6401c57",
+            "session_id": "3be18d4c9e9f4296b4d57233c96b20e1",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_f96ab48f3ca0ac56bfb8\", \"source_tool\": \"stock\", \"data\": {\"sku\": \"SKU-482\", \"warehouse\": \"north\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_f96ab48f3ca0ac56bfb8",
+              "source_tool": "stock",
+              "data": {
+                "sku": "SKU-482",
+                "warehouse": "north"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/795807c96fb241b1a3c296323cd677ba",
+            "truncated": false,
+            "duration_ms": 312,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_088d56ce3dfebba1016b06bef4024887d09aff9373dc590b84",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 952,
+        "output_tokens": 18,
+        "total_tokens": 970,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 7584,
+      "model_latency_ms": 3269.613999989815,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_088d56ce3dfebba1016b06bef5250887d0bf32189c90419fcb",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_f96ab48f3ca0ac56bfb8",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

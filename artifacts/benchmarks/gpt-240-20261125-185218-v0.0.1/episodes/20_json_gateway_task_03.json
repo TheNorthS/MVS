@@ -1,0 +1,295 @@
+{
+  "episode_id": "20_json_gateway_task_03",
+  "size": 20,
+  "mode": "json_gateway",
+  "task_id": "task_03",
+  "prompt": "Track a shipment by tracking ID. Use current data, not archives. Parameters: {\"tracking_id\": \"TRK-627\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "shipment",
+  "expected_arguments": {
+    "tracking_id": "TRK-627"
+  },
+  "expected_code": "v_1c7275f6bf1fd60d0b23",
+  "final_answer": "v_1c7275f6bf1fd60d0b23",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 2637,
+    "output_tokens": 95,
+    "total_tokens": 2732,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 4,
+  "tool_selection_attempts": [
+    {
+      "tool": "shipment",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "shipment",
+      "arguments": {
+        "tracking_id": "TRK-627"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    267,
+    645,
+    734,
+    991
+  ],
+  "context_growth_tokens": 724,
+  "latency_ms": 16646.589200012386,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_08a54405ae3c3a0b016b06c228549487d0819a21179b8ce95c",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 267,
+        "output_tokens": 19,
+        "total_tokens": 286,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 1045,
+      "model_latency_ms": 3235.5383000103757,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_08a54405ae3c3a0b016b06c229ec8c87d0a9ad2d5cd219d387",
+          "call_id": "call_99832f0ad1b74ae89227ab3bb5c6d07d",
+          "name": "mcp_gateway",
+          "arguments": "{\"action\":\"list\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": [
+            {
+              "name": "tickets",
+              "description": "Fetch support tickets by a list of IDs"
+            },
+            {
+              "name": "exchange",
+              "description": "Convert a monetary amount between currencies"
+            },
+            {
+              "name": "loyalty",
+              "description": "Read customer loyalty balance"
+            },
+            {
+              "name": "invoice",
+              "description": "Get outstanding invoice balance"
+            },
+            {
+              "name": "customer",
+              "description": "Look up a customer account"
+            },
+            {
+              "name": "route",
+              "description": "Find route distance between two cities"
+            },
+            {
+              "name": "capacity",
+              "description": "Get current available capacity of a warehouse"
+            },
+            {
+              "name": "documents",
+              "description": "Search documents using a nested filter"
+            },
+            {
+              "name": "weather",
+              "description": "Fetch weather for a city and date"
+            },
+            {
+              "name": "tax",
+              "description": "Calculate invoice tax from net amount and rate"
+            },
+            {
+              "name": "appointments",
+              "description": "List free appointment slots for a doctor"
+            },
+            {
+              "name": "usage",
+              "description": "Summarize API usage for a project and month"
+            },
+            {
+              "name": "price",
+              "description": "Look up current product price in a currency"
+            },
+            {
+              "name": "subscription",
+              "description": "Read subscription status"
+            },
+            {
+              "name": "order",
+              "description": "Fetch current order status"
+            },
+            {
+              "name": "health",
+              "description": "Read current service health in a region"
+            },
+            {
+              "name": "employee",
+              "description": "Look up employee directory details"
+            },
+            {
+              "name": "repository",
+              "description": "Search software repositories by topic and minimum stars"
+            },
+            {
+              "name": "stock",
+              "description": "Check current warehouse stock"
+            },
+            {
+              "name": "shipment",
+              "description": "Track a shipment by tracking ID"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_08a54405ae3c3a0b016b06c22b4e9c87d0b9238257b2291100",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 645,
+        "output_tokens": 23,
+        "total_tokens": 668,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 3068,
+      "model_latency_ms": 3933.290900080465,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_08a54405ae3c3a0b016b06c22dc4d087d08a99c80885c1487b",
+          "call_id": "call_1dd077038e2347f0a897c98249f5219e",
+          "name": "mcp_gateway",
+          "arguments": "{\"action\":\"help\",\"tool\":\"shipment\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": {
+            "name": "shipment",
+            "description": "Track a shipment by tracking ID",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "tracking_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "tracking_id"
+              ],
+              "additionalProperties": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "resp_08a54405ae3c3a0b016b06c22f810887d0bf475a7eba79f777",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 734,
+        "output_tokens": 33,
+        "total_tokens": 767,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 3661,
+      "model_latency_ms": 5801.836499944329,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_08a54405ae3c3a0b016b06c232d9dc87d09c6f1125637cc6b6",
+          "call_id": "call_937b8a33a16243f6ba1190dbe2ef5732",
+          "name": "mcp_gateway",
+          "arguments": "{\"action\":\"call\",\"tool\":\"shipment\",\"arguments\":{\"tracking_id\":\"TRK-627\"}}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": {
+            "request_id": "641a43f6d60d49cfa63d1d705bf0291b",
+            "session_id": "967481bc20364f50908324c68ca83994",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_1c7275f6bf1fd60d0b23\", \"source_tool\": \"shipment\", \"data\": {\"tracking_id\": \"TRK-627\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_1c7275f6bf1fd60d0b23",
+              "source_tool": "shipment",
+              "data": {
+                "tracking_id": "TRK-627"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/107c5b0ac32a4d97b30068efcae76874",
+            "truncated": false,
+            "duration_ms": 312,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "resp_08a54405ae3c3a0b016b06c235672087d087e467fb72c65378",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 991,
+        "output_tokens": 20,
+        "total_tokens": 1011,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 4698,
+      "model_latency_ms": 3315.307900076732,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_08a54405ae3c3a0b016b06c2375bf887d0a3c84b639f75c591",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_1c7275f6bf1fd60d0b23",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "episode_id": "200_native_tools_task_19",
+  "size": 200,
+  "mode": "native_tools",
+  "task_id": "task_19",
+  "prompt": "Fetch support tickets by a list of IDs. Use current data, not archives. Parameters: {\"ids\": [\"T-191\", \"T-782\"], \"include_closed\": false}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "tickets",
+  "expected_arguments": {
+    "ids": [
+      "T-191",
+      "T-782"
+    ],
+    "include_closed": false
+  },
+  "expected_code": "v_c62c33dab29356a0af4d",
+  "final_answer": "v_c62c33dab29356a0af4d",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 14939,
+    "output_tokens": 47,
+    "total_tokens": 14986,
+    "cached_input_tokens": 7040,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "tickets",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "tickets",
+      "arguments": {
+        "ids": [
+          "T-191",
+          "T-782"
+        ],
+        "include_closed": false
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    7332,
+    7607
+  ],
+  "context_growth_tokens": 275,
+  "latency_ms": 9205.815299996175,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_0469f220b2d64472016b06bf47ec8887d0b554861e2ef67c63",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 7332,
+        "output_tokens": 30,
+        "total_tokens": 7362,
+        "cached_input_tokens": 7040,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 70127,
+      "model_latency_ms": 4693.4737000847235,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0469f220b2d64472016b06bf4970c487d0ace79faf4f988be5",
+          "call_id": "call_03ebe842cb6040dcbea953f719b6fff3",
+          "name": "tickets",
+          "arguments": "{\"ids\":[\"T-191\",\"T-782\"],\"include_closed\":false}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "tickets",
+          "result": {
+            "request_id": "d42949c468c04e409a09a5c036f80fbf",
+            "session_id": "f5c52df227e843adbfc8d21f6bda9b1f",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_c62c33dab29356a0af4d\", \"source_tool\": \"tickets\", \"data\": {\"ids\": [\"T-191\", \"T-782\"], \"include_closed\": false}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_c62c33dab29356a0af4d",
+              "source_tool": "tickets",
+              "data": {
+                "ids": [
+                  "T-191",
+                  "T-782"
+                ],
+                "include_closed": false
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/6d36d2d222ff4c91b889b97d2f8c0856",
+            "truncated": false,
+            "duration_ms": 359,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_0469f220b2d64472016b06bf4c8c9887d0b107d7bca4c65de9",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 7607,
+        "output_tokens": 17,
+        "total_tokens": 7624,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 71195,
+      "model_latency_ms": 3872.046999982558,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_0469f220b2d64472016b06bf4dd9d087d09e0a64806116e109",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_c62c33dab29356a0af4d",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

@@ -1,0 +1,448 @@
+{
+  "episode_id": "50_mvs_shell_task_12",
+  "size": 50,
+  "mode": "mvs_shell",
+  "task_id": "task_12",
+  "prompt": "Calculate invoice tax from net amount and rate. Use current data, not archives. Parameters: {\"net_amount\": 1200.5, \"rate\": 0.13}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "tax",
+  "expected_arguments": {
+    "net_amount": 1200.5,
+    "rate": 0.13
+  },
+  "expected_code": "v_2fb6bce006e8debe7c24",
+  "final_answer": "v_2fb6bce006e8debe7c24",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 7315,
+    "output_tokens": 387,
+    "total_tokens": 7702,
+    "cached_input_tokens": 5376,
+    "reasoning_output_tokens": 63
+  },
+  "interaction_rounds": 5,
+  "tool_selection_attempts": [
+    {
+      "tool": "tax",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "tax",
+      "arguments": {
+        "net_amount": 1200.5,
+        "rate": 0.13
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    454,
+    1069,
+    1475,
+    2000,
+    2317
+  ],
+  "context_growth_tokens": 1863,
+  "latency_ms": 10940.14779990539,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "7e52744d-4c6e-4297-b09e-e0a302456253",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 454,
+        "output_tokens": 59,
+        "total_tokens": 513,
+        "cached_input_tokens": 384,
+        "reasoning_output_tokens": 7
+      },
+      "context_bytes": 1074,
+      "model_latency_ms": 2124.0799000952393,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "fece08bc-2e96-4319-8946-9627f550597e",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "Let me explore the tools available."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "7e52744d-4c6e-4297-b09e-e0a302456253-0"
+        },
+        {
+          "type": "function_call",
+          "id": "2b8d783d-4c30-4463-94ff-882e6c8873dc",
+          "status": "completed",
+          "arguments": "{\"command\": \"ls /mcp/bench/tools\"}",
+          "call_id": "call_00_5N2EJ8OqlXA6vdgfZIxG6637",
+          "name": "virtual_shell"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "455b6ff71f1044688b9cc4cb10e429a2",
+            "session_id": "3f64e48f453f48a7a47fa647f6260bab",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "appointments\narchive1_appointments\narchive1_capacity\narchive1_customer\narchive1_documents\narchive1_employee\narchive1_exchange\narchive1_health\narchive1_invoice\narchive1_loyalty\narchive1_order\narchive1_price\narchive1_repository\narchive1_route\narchive1_shipment\narchive1_stock\narchive1_subscription\narchive1_tax\narchive1_tickets\narchive1_usage\narchive1_weather\narchive2_customer\narchive2_employee\narchive2_exchange\narchive2_invoice\narchive2_order\narchive2_price\narchive2_repository\narchive2_shipment\narchive2_stock\narchive2_weather\ncapacity\ncustomer\ndocuments\nemployee\nexchange\nhealth\ninvoice\nloyalty\norder\nprice\nrepository\nroute\nshipment\nstock\nsubscription\ntax\ntickets\nusage\nweather",
+            "stderr": "",
+            "data": [
+              "appointments",
+              "archive1_appointments",
+              "archive1_capacity",
+              "archive1_customer",
+              "archive1_documents",
+              "archive1_employee",
+              "archive1_exchange",
+              "archive1_health",
+              "archive1_invoice",
+              "archive1_loyalty",
+              "archive1_order",
+              "archive1_price",
+              "archive1_repository",
+              "archive1_route",
+              "archive1_shipment",
+              "archive1_stock",
+              "archive1_subscription",
+              "archive1_tax",
+              "archive1_tickets",
+              "archive1_usage",
+              "archive1_weather",
+              "archive2_customer",
+              "archive2_employee",
+              "archive2_exchange",
+              "archive2_invoice",
+              "archive2_order",
+              "archive2_price",
+              "archive2_repository",
+              "archive2_shipment",
+              "archive2_stock",
+              "archive2_weather",
+              "capacity",
+              "customer",
+              "documents",
+              "employee",
+              "exchange",
+              "health",
+              "invoice",
+              "loyalty",
+              "order",
+              "price",
+              "repository",
+              "route",
+              "shipment",
+              "stock",
+              "subscription",
+              "tax",
+              "tickets",
+              "usage",
+              "weather"
+            ],
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "1e015148-4a9a-45ca-9e61-b87623912423",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1069,
+        "output_tokens": 127,
+        "total_tokens": 1196,
+        "cached_input_tokens": 512,
+        "reasoning_output_tokens": 33
+      },
+      "context_bytes": 3639,
+      "model_latency_ms": 2092.07889996469,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "5488cd03-568f-4da0-967b-61765a78ee55",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "There's a \"tax\" tool and \"invoice\" tool. The task: \"Calculate invoice tax from net amount and rate.\" Let me inspect the tax tool."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "1e015148-4a9a-45ca-9e61-b87623912423-0"
+        },
+        {
+          "type": "function_call",
+          "id": "031bdd10-d15c-4345-b52a-2f4a9d625d05",
+          "status": "completed",
+          "arguments": "{\"command\": \"cat /mcp/bench/tools/tax\"}",
+          "call_id": "call_00_bebwaiLz3lgV2DdmeTKg9771",
+          "name": "virtual_shell"
+        },
+        {
+          "type": "function_call",
+          "id": "af9b65e4-d369-4b35-9d3f-b51fac972ca1",
+          "status": "completed",
+          "arguments": "{\"command\": \"cat /mcp/bench/tools/invoice\"}",
+          "call_id": "call_01_w6nM0ENEclc8mnMuUT2x2277",
+          "name": "virtual_shell"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "a7bbc79005564661a8143ecd35dc113b",
+            "session_id": "3f64e48f453f48a7a47fa647f6260bab",
+            "status": "error",
+            "exit_code": 1,
+            "stdout": "",
+            "stderr": "INVALID_PATH: Expected a resource or prompt node",
+            "data": null,
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": {
+              "code": "INVALID_PATH",
+              "message": "Expected a resource or prompt node"
+            }
+          }
+        },
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "9a3e2bffd1b648eaabd9a047ded9fbcd",
+            "session_id": "3f64e48f453f48a7a47fa647f6260bab",
+            "status": "error",
+            "exit_code": 1,
+            "stdout": "",
+            "stderr": "INVALID_PATH: Expected a resource or prompt node",
+            "data": null,
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 15,
+            "error": {
+              "code": "INVALID_PATH",
+              "message": "Expected a resource or prompt node"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "b76693c9-70da-4005-ba6f-7f65e7587080",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1475,
+        "output_tokens": 117,
+        "total_tokens": 1592,
+        "cached_input_tokens": 1024,
+        "reasoning_output_tokens": 23
+      },
+      "context_bytes": 5462,
+      "model_latency_ms": 2664.2738000955433,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "694da28b-eea7-4e93-b985-1e9323199554",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "I should use \"help /mcp/bench/tools/NAME\" to inspect. Let me try help."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "b76693c9-70da-4005-ba6f-7f65e7587080-0"
+        },
+        {
+          "type": "function_call",
+          "id": "7eb52c8c-04ba-49ca-9cc0-7edda88774ad",
+          "status": "completed",
+          "arguments": "{\"command\": \"help /mcp/bench/tools/tax\"}",
+          "call_id": "call_00_O04cj11MRgLMMvScjD9a7217",
+          "name": "virtual_shell"
+        },
+        {
+          "type": "function_call",
+          "id": "7391f559-5891-41d4-9ef6-57605f9a7557",
+          "status": "completed",
+          "arguments": "{\"command\": \"help /mcp/bench/tools/invoice\"}",
+          "call_id": "call_01_C92awR9iZ8wAHCasl3i19900",
+          "name": "virtual_shell"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "41e7bd51887a4b1b87c054cff671dfbc",
+            "session_id": "3f64e48f453f48a7a47fa647f6260bab",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "tax\nCalculate invoice tax from net amount and rate\n--params-json <JSON object>\n--net_amount {\"type\": \"number\"} required\n--rate {\"type\": \"number\"} required",
+            "stderr": "",
+            "data": {
+              "input_schema": {
+                "type": "object",
+                "properties": {
+                  "net_amount": {
+                    "type": "number"
+                  },
+                  "rate": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "net_amount",
+                  "rate"
+                ],
+                "additionalProperties": false
+              },
+              "untrusted": true,
+              "backend": "mcp"
+            },
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        },
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "3f5223108699422baa46efe1cd9ec20f",
+            "session_id": "3f64e48f453f48a7a47fa647f6260bab",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "invoice\nGet outstanding invoice balance\n--params-json <JSON object>\n--invoice_id {\"type\": \"string\"} required",
+            "stderr": "",
+            "data": {
+              "input_schema": {
+                "type": "object",
+                "properties": {
+                  "invoice_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "invoice_id"
+                ],
+                "additionalProperties": false
+              },
+              "untrusted": true,
+              "backend": "mcp"
+            },
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 15,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "603a6034-8468-43f9-88bf-c9a1be75521c",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 2000,
+        "output_tokens": 68,
+        "total_tokens": 2068,
+        "cached_input_tokens": 1408,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 7742,
+      "model_latency_ms": 2842.7492000628263,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "2c5cfc7d-c257-4df4-8be4-7f73534479e2",
+          "status": "completed",
+          "arguments": "{\"command\": \"run /mcp/bench/tools/tax --net_amount 1200.5 --rate 0.13\"}",
+          "call_id": "call_00_ET_RLKTVuLCoNr3vgEgihx24907",
+          "name": "virtual_shell"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "6a8f00240c4d4f37aeef09702fbbb134",
+            "session_id": "3f64e48f453f48a7a47fa647f6260bab",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_2fb6bce006e8debe7c24\", \"source_tool\": \"tax\", \"data\": {\"net_amount\": 1200.5, \"rate\": 0.13}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_2fb6bce006e8debe7c24",
+              "source_tool": "tax",
+              "data": {
+                "net_amount": 1200.5,
+                "rate": 0.13
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/8dded7a847524537a03b316cbfaa02bf",
+            "truncated": false,
+            "duration_ms": 359,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "response_id": "26beecb1-3a63-4670-9144-5c2c45152f03",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 2317,
+        "output_tokens": 16,
+        "total_tokens": 2333,
+        "cached_input_tokens": 2048,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 8758,
+      "model_latency_ms": 710.9529000008479,
+      "output": [
+        {
+          "type": "message",
+          "id": "a019e8ce-d3c7-476e-9ef7-4479f2f5c739",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_2fb6bce006e8debe7c24"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

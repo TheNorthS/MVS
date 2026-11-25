@@ -1,0 +1,148 @@
+{
+  "episode_id": "100_native_tools_task_09",
+  "size": 100,
+  "mode": "native_tools",
+  "task_id": "task_09",
+  "prompt": "Look up a customer account. Use current data, not archives. Parameters: {\"customer_id\": \"CUS-325\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "customer",
+  "expected_arguments": {
+    "customer_id": "CUS-325"
+  },
+  "expected_code": "v_2e9a1ed3bc1d4368cebb",
+  "final_answer": "v_2e9a1ed3bc1d4368cebb",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 16146,
+    "output_tokens": 86,
+    "total_tokens": 16232,
+    "cached_input_tokens": 15744,
+    "reasoning_output_tokens": 22
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "customer",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "customer",
+      "arguments": {
+        "customer_id": "CUS-325"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    7916,
+    8230
+  ],
+  "context_growth_tokens": 314,
+  "latency_ms": 3121.8618999700993,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "29ed5980-7f41-4560-a763-2a7c1bb2635b",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 7916,
+        "output_tokens": 69,
+        "total_tokens": 7985,
+        "cached_input_tokens": 7808,
+        "reasoning_output_tokens": 22
+      },
+      "context_bytes": 34780,
+      "model_latency_ms": 1450.183399952948,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "49fa03c5-e33b-4904-884c-3a70f6166c3c",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "The customer tool is the current one (not archive). Call it with customer_id \"CUS-325\"."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "29ed5980-7f41-4560-a763-2a7c1bb2635b-0"
+        },
+        {
+          "type": "function_call",
+          "id": "e03e5e81-6ed0-44f7-870f-9b13aefca5e7",
+          "status": "completed",
+          "arguments": "{\"customer_id\": \"CUS-325\"}",
+          "call_id": "call_00_SIPDWLxNjtoObveTXEwn7752",
+          "name": "customer"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "customer",
+          "result": {
+            "request_id": "a8d990d60f68463e91896cf45a8dfa19",
+            "session_id": "f36a0b9c18994c7a9c9286b9b85c15d2",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_2e9a1ed3bc1d4368cebb\", \"source_tool\": \"customer\", \"data\": {\"customer_id\": \"CUS-325\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_2e9a1ed3bc1d4368cebb",
+              "source_tool": "customer",
+              "data": {
+                "customer_id": "CUS-325"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/0e9cf147e11e4455b78fc9b0fb9408e1",
+            "truncated": false,
+            "duration_ms": 358,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "4b24aa0a-ae87-47e4-af79-e67bc08bf3f1",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 8230,
+        "output_tokens": 17,
+        "total_tokens": 8247,
+        "cached_input_tokens": 7936,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 36042,
+      "model_latency_ms": 1163.8088000472635,
+      "output": [
+        {
+          "type": "message",
+          "id": "59ee5b9d-5c45-49ea-9c6e-e719f03925da",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_2e9a1ed3bc1d4368cebb"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

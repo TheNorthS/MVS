@@ -1,0 +1,135 @@
+{
+  "episode_id": "200_native_tools_task_11",
+  "size": 200,
+  "mode": "native_tools",
+  "task_id": "task_11",
+  "prompt": "Read subscription status. Use current data, not archives. Parameters: {\"subscription_id\": \"SUB-873\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "subscription",
+  "expected_arguments": {
+    "subscription_id": "SUB-873"
+  },
+  "expected_code": "v_fcc66aed0cc985487652",
+  "final_answer": "v_fcc66aed0cc985487652",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 14862,
+    "output_tokens": 34,
+    "total_tokens": 14896,
+    "cached_input_tokens": 7168,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "subscription",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "subscription",
+      "arguments": {
+        "subscription_id": "SUB-873"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    7318,
+    7544
+  ],
+  "context_growth_tokens": 226,
+  "latency_ms": 18736.00809997879,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_0a55935b33edb050016b06c03add1c87d0bdc35b6c8ce684ff",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 7318,
+        "output_tokens": 20,
+        "total_tokens": 7338,
+        "cached_input_tokens": 7168,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 70087,
+      "model_latency_ms": 9385.03949996084,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0a55935b33edb050016b06c040ef2087d096a37ab12632f345",
+          "call_id": "call_37de0c63c1144c2dbe21bbb679c3b082",
+          "name": "subscription",
+          "arguments": "{\"subscription_id\":\"SUB-873\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "subscription",
+          "result": {
+            "request_id": "06cd94191a5442af92627212dbf12a38",
+            "session_id": "c1f328e732184af384572eb4e4d5e47e",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_fcc66aed0cc985487652\", \"source_tool\": \"subscription\", \"data\": {\"subscription_id\": \"SUB-873\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_fcc66aed0cc985487652",
+              "source_tool": "subscription",
+              "data": {
+                "subscription_id": "SUB-873"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/afaaf81eedd044db8fa8d399eab419ce",
+            "truncated": false,
+            "duration_ms": 468,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_0a55935b33edb050016b06c044414887d0b91d836e03fe6aab",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 7544,
+        "output_tokens": 14,
+        "total_tokens": 7558,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 71087,
+      "model_latency_ms": 8593.440200085752,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_0a55935b33edb050016b06c04a1b6087d096cef58e0f19c06c",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_fcc66aed0cc985487652",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

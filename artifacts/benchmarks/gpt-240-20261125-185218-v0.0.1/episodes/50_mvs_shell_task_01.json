@@ -1,0 +1,296 @@
+{
+  "episode_id": "50_mvs_shell_task_01",
+  "size": 50,
+  "mode": "mvs_shell",
+  "task_id": "task_01",
+  "prompt": "Look up current product price in a currency. Use current data, not archives. Parameters: {\"sku\": \"SKU-317\", \"currency\": \"EUR\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "price",
+  "expected_arguments": {
+    "sku": "SKU-317",
+    "currency": "EUR"
+  },
+  "expected_code": "v_670f2694ecabbcedfdfd",
+  "final_answer": "v_670f2694ecabbcedfdfd",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 3470,
+    "output_tokens": 108,
+    "total_tokens": 3578,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 4,
+  "tool_selection_attempts": [
+    {
+      "tool": "price",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "price",
+      "arguments": {
+        "sku": "SKU-317",
+        "currency": "EUR"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    287,
+    812,
+    1051,
+    1320
+  ],
+  "context_growth_tokens": 1033,
+  "latency_ms": 11834.003500058316,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_0b52ac4432de5b2d016b06bf99ef4487d29f0b78ec9be22127",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 287,
+        "output_tokens": 24,
+        "total_tokens": 311,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 1076,
+      "model_latency_ms": 2431.727199931629,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0b52ac4432de5b2d016b06bf9af28887d2bb28acd45b5c8207",
+          "call_id": "call_8f928b37c3e64d27b4dbc2f6ed498a4a",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"ls /mcp/bench/tools\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "457d57da5c8a43efa4f04a358a8e813e",
+            "session_id": "066f07a407fa4878b7f27b1c1b4582ba",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "appointments\narchive1_appointments\narchive1_capacity\narchive1_customer\narchive1_documents\narchive1_employee\narchive1_exchange\narchive1_health\narchive1_invoice\narchive1_loyalty\narchive1_order\narchive1_price\narchive1_repository\narchive1_route\narchive1_shipment\narchive1_stock\narchive1_subscription\narchive1_tax\narchive1_tickets\narchive1_usage\narchive1_weather\narchive2_customer\narchive2_employee\narchive2_exchange\narchive2_invoice\narchive2_order\narchive2_price\narchive2_repository\narchive2_shipment\narchive2_stock\narchive2_weather\ncapacity\ncustomer\ndocuments\nemployee\nexchange\nhealth\ninvoice\nloyalty\norder\nprice\nrepository\nroute\nshipment\nstock\nsubscription\ntax\ntickets\nusage\nweather",
+            "stderr": "",
+            "data": [
+              "appointments",
+              "archive1_appointments",
+              "archive1_capacity",
+              "archive1_customer",
+              "archive1_documents",
+              "archive1_employee",
+              "archive1_exchange",
+              "archive1_health",
+              "archive1_invoice",
+              "archive1_loyalty",
+              "archive1_order",
+              "archive1_price",
+              "archive1_repository",
+              "archive1_route",
+              "archive1_shipment",
+              "archive1_stock",
+              "archive1_subscription",
+              "archive1_tax",
+              "archive1_tickets",
+              "archive1_usage",
+              "archive1_weather",
+              "archive2_customer",
+              "archive2_employee",
+              "archive2_exchange",
+              "archive2_invoice",
+              "archive2_order",
+              "archive2_price",
+              "archive2_repository",
+              "archive2_shipment",
+              "archive2_stock",
+              "archive2_weather",
+              "capacity",
+              "customer",
+              "documents",
+              "employee",
+              "exchange",
+              "health",
+              "invoice",
+              "loyalty",
+              "order",
+              "price",
+              "repository",
+              "route",
+              "shipment",
+              "stock",
+              "subscription",
+              "tax",
+              "tickets",
+              "usage",
+              "weather"
+            ],
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_0b52ac4432de5b2d016b06bf9cc69887d28c390705e8e9195a",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 812,
+        "output_tokens": 26,
+        "total_tokens": 838,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 3409,
+      "model_latency_ms": 3126.034100074321,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0b52ac4432de5b2d016b06bf9e10e087d282cb0103eb98a2e1",
+          "call_id": "call_1fe75d643b1946d39f3331d620183270",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"help /mcp/bench/tools/price\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "cd3dd569a3914ddaa3d2b25817b82b36",
+            "session_id": "066f07a407fa4878b7f27b1c1b4582ba",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "price\nLook up current product price in a currency\n--params-json <JSON object>\n--sku {\"type\": \"string\"} required\n--currency {\"type\": \"string\"} required",
+            "stderr": "",
+            "data": {
+              "input_schema": {
+                "type": "object",
+                "properties": {
+                  "sku": {
+                    "type": "string"
+                  },
+                  "currency": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "sku",
+                  "currency"
+                ],
+                "additionalProperties": false
+              },
+              "untrusted": true,
+              "backend": "mcp"
+            },
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 16,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "resp_0b52ac4432de5b2d016b06bf9fe48487d295aec452132f249e",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1051,
+        "output_tokens": 42,
+        "total_tokens": 1093,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 4470,
+      "model_latency_ms": 3516.873799962923,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0b52ac4432de5b2d016b06bfa0da6087d29d5cbfe0742e6ee1",
+          "call_id": "call_3dce2701d793494b92331d1c56173a25",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"run /mcp/bench/tools/price --params-json '{\\\"sku\\\":\\\"SKU-317\\\",\\\"currency\\\":\\\"EUR\\\"}'\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "a8b708510bfe492197dcd40823ce68c6",
+            "session_id": "066f07a407fa4878b7f27b1c1b4582ba",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_670f2694ecabbcedfdfd\", \"source_tool\": \"price\", \"data\": {\"sku\": \"SKU-317\", \"currency\": \"EUR\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_670f2694ecabbcedfdfd",
+              "source_tool": "price",
+              "data": {
+                "sku": "SKU-317",
+                "currency": "EUR"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/c80f81a685f7488ba84f7020ee0f3c0b",
+            "truncated": false,
+            "duration_ms": 327,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "resp_0b52ac4432de5b2d016b06bfa35afc87d2b7a9f693b5eb888b",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1320,
+        "output_tokens": 16,
+        "total_tokens": 1336,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 5573,
+      "model_latency_ms": 2347.3598998971283,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_0b52ac4432de5b2d016b06bfa4607487d28f55202e119a9f43",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_670f2694ecabbcedfdfd",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

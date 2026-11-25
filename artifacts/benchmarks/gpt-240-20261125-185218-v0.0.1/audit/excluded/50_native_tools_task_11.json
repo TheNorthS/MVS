@@ -1,0 +1,104 @@
+{
+  "episode_id": "50_native_tools_task_11",
+  "size": 50,
+  "mode": "native_tools",
+  "task_id": "task_11",
+  "prompt": "Read subscription status. Use current data, not archives. Parameters: {\"subscription_id\": \"SUB-873\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "subscription",
+  "expected_arguments": {
+    "subscription_id": "SUB-873"
+  },
+  "expected_code": "v_fcc66aed0cc985487652",
+  "final_answer": "",
+  "success": false,
+  "failure": {
+    "code": "provider_timeout",
+    "http_status": null
+  },
+  "usage_complete": false,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 1784,
+    "output_tokens": 20,
+    "total_tokens": 1804,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 1,
+  "tool_selection_attempts": [
+    {
+      "tool": "subscription",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "subscription",
+      "arguments": {
+        "subscription_id": "SUB-873"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    1784
+  ],
+  "context_growth_tokens": 0,
+  "latency_ms": 97661.37920005713,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_0b7d1a9b18a6a140016b06c1326c8487d08c6c1ee3ecacaeb8",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1784,
+        "output_tokens": 20,
+        "total_tokens": 1804,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 16964,
+      "model_latency_ms": 3464.240000001155,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0b7d1a9b18a6a140016b06c133edf087d0b0fbcbb37f03f999",
+          "call_id": "call_eaf54f0d4c6e45cfae37dec34140eaee",
+          "name": "subscription",
+          "arguments": "{\"subscription_id\":\"SUB-873\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "subscription",
+          "result": {
+            "request_id": "d0d65f9df4924d6282a56c61a2741f1e",
+            "session_id": "107f6f4391014417a12f5b3c9f6c83aa",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_fcc66aed0cc985487652\", \"source_tool\": \"subscription\", \"data\": {\"subscription_id\": \"SUB-873\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_fcc66aed0cc985487652",
+              "source_tool": "subscription",
+              "data": {
+                "subscription_id": "SUB-873"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/68703612f8da432491e635d630258608",
+            "truncated": false,
+            "duration_ms": 359,
+            "error": null
+          }
+        }
+      ]
+    }
+  ]
+}

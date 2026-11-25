@@ -1,0 +1,148 @@
+{
+  "episode_id": "100_native_tools_task_11",
+  "size": 100,
+  "mode": "native_tools",
+  "task_id": "task_11",
+  "prompt": "Read subscription status. Use current data, not archives. Parameters: {\"subscription_id\": \"SUB-873\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "subscription",
+  "expected_arguments": {
+    "subscription_id": "SUB-873"
+  },
+  "expected_code": "v_fcc66aed0cc985487652",
+  "final_answer": "v_fcc66aed0cc985487652",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 16138,
+    "output_tokens": 92,
+    "total_tokens": 16230,
+    "cached_input_tokens": 15744,
+    "reasoning_output_tokens": 32
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "subscription",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "subscription",
+      "arguments": {
+        "subscription_id": "SUB-873"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    7914,
+    8224
+  ],
+  "context_growth_tokens": 310,
+  "latency_ms": 3586.8937999475747,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "07215363-724e-49bb-91c4-02543b95c930",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 7914,
+        "output_tokens": 80,
+        "total_tokens": 7994,
+        "cached_input_tokens": 7808,
+        "reasoning_output_tokens": 32
+      },
+      "context_bytes": 34782,
+      "model_latency_ms": 1810.9812999609858,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "52fc7e26-6779-4eb8-92ca-da5dd6a1a09f",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "The task is to read subscription status using current data, with subscription_id \"SUB-873\". I should use the \"subscription\" tool (not archive)."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "07215363-724e-49bb-91c4-02543b95c930-0"
+        },
+        {
+          "type": "function_call",
+          "id": "d49086ef-f44c-42f2-ae2c-f946fbedc208",
+          "status": "completed",
+          "arguments": "{\"subscription_id\": \"SUB-873\"}",
+          "call_id": "call_00_8JKxuqBqCYD52PAk5FgY9460",
+          "name": "subscription"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "subscription",
+          "result": {
+            "request_id": "84b2baa3708a4a9bbc32de0db917e64f",
+            "session_id": "9728babd15234970872c5936b561698d",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_fcc66aed0cc985487652\", \"source_tool\": \"subscription\", \"data\": {\"subscription_id\": \"SUB-873\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_fcc66aed0cc985487652",
+              "source_tool": "subscription",
+              "data": {
+                "subscription_id": "SUB-873"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/e7ce4b6b0c0c47beba335ed00f1da0b6",
+            "truncated": false,
+            "duration_ms": 327,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "b7997fff-fa7d-4fbd-8139-3153d518911f",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 8224,
+        "output_tokens": 12,
+        "total_tokens": 8236,
+        "cached_input_tokens": 7936,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 36126,
+      "model_latency_ms": 1251.996299950406,
+      "output": [
+        {
+          "type": "message",
+          "id": "fc6ef705-664d-4597-9d45-2f85edd8c16f",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_fcc66aed0cc985487652"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

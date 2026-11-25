@@ -1,0 +1,138 @@
+{
+  "episode_id": "200_native_tools_task_01",
+  "size": 200,
+  "mode": "native_tools",
+  "task_id": "task_01",
+  "prompt": "Look up current product price in a currency. Use current data, not archives. Parameters: {\"sku\": \"SKU-317\", \"currency\": \"EUR\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "price",
+  "expected_arguments": {
+    "sku": "SKU-317",
+    "currency": "EUR"
+  },
+  "expected_code": "v_670f2694ecabbcedfdfd",
+  "final_answer": "v_670f2694ecabbcedfdfd",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 31824,
+    "output_tokens": 75,
+    "total_tokens": 31899,
+    "cached_input_tokens": 31360,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "price",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "price",
+      "arguments": {
+        "sku": "SKU-317",
+        "currency": "EUR"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    15764,
+    16060
+  ],
+  "context_growth_tokens": 296,
+  "latency_ms": 3445.2785999746993,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "061574f7-f8d8-46af-9965-e54aa40e5bd2",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 15764,
+        "output_tokens": 62,
+        "total_tokens": 15826,
+        "cached_input_tokens": 15616,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 70117,
+      "model_latency_ms": 1376.8428000621498,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "060f9e5c-6ac9-46c4-8c5a-8c5b48ef13e4",
+          "status": "completed",
+          "arguments": "{\"sku\": \"SKU-317\", \"currency\": \"EUR\"}",
+          "call_id": "call_00_ET_XFCRWiQtXW0to5TY0YFd8355",
+          "name": "price"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "price",
+          "result": {
+            "request_id": "ba5703603a9d44b08187340bd23be637",
+            "session_id": "85ae7ed40a214fe7a539ec0541d86ddf",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_670f2694ecabbcedfdfd\", \"source_tool\": \"price\", \"data\": {\"sku\": \"SKU-317\", \"currency\": \"EUR\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_670f2694ecabbcedfdfd",
+              "source_tool": "price",
+              "data": {
+                "sku": "SKU-317",
+                "currency": "EUR"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/a04b540ae84a4006ab82cb53f2da7030",
+            "truncated": false,
+            "duration_ms": 375,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "15aaafa9-29b4-443f-a9a0-5f036b965098",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 16060,
+        "output_tokens": 13,
+        "total_tokens": 16073,
+        "cached_input_tokens": 15744,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 71117,
+      "model_latency_ms": 1238.005599938333,
+      "output": [
+        {
+          "type": "message",
+          "id": "584c7604-eeec-4d4c-8ee0-26b118006c99",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_670f2694ecabbcedfdfd"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

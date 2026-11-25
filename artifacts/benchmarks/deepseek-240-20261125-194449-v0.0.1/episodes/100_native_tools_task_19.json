@@ -1,0 +1,160 @@
+{
+  "episode_id": "100_native_tools_task_19",
+  "size": 100,
+  "mode": "native_tools",
+  "task_id": "task_19",
+  "prompt": "Fetch support tickets by a list of IDs. Use current data, not archives. Parameters: {\"ids\": [\"T-191\", \"T-782\"], \"include_closed\": false}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "tickets",
+  "expected_arguments": {
+    "ids": [
+      "T-191",
+      "T-782"
+    ],
+    "include_closed": false
+  },
+  "expected_code": "v_c62c33dab29356a0af4d",
+  "final_answer": "v_c62c33dab29356a0af4d",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 16221,
+    "output_tokens": 118,
+    "total_tokens": 16339,
+    "cached_input_tokens": 15744,
+    "reasoning_output_tokens": 32
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "tickets",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "tickets",
+      "arguments": {
+        "ids": [
+          "T-191",
+          "T-782"
+        ],
+        "include_closed": false
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    7928,
+    8293
+  ],
+  "context_growth_tokens": 365,
+  "latency_ms": 4188.887600088492,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "1a28f2c1-6fec-4163-b8ed-cbffd67af30f",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 7928,
+        "output_tokens": 103,
+        "total_tokens": 8031,
+        "cached_input_tokens": 7808,
+        "reasoning_output_tokens": 32
+      },
+      "context_bytes": 34822,
+      "model_latency_ms": 2479.4615999562666,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "ede163cc-2b5b-49ca-9a0c-8a3471d8f8c1",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "The task asks to fetch support tickets using the current tool \"tickets\". Parameters ids [\"T-191\", \"T-782\"], include_closed false."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "1a28f2c1-6fec-4163-b8ed-cbffd67af30f-0"
+        },
+        {
+          "type": "function_call",
+          "id": "396743ea-a45f-4e98-b395-1d0d797af9d1",
+          "status": "completed",
+          "arguments": "{\"ids\": [\"T-191\", \"T-782\"], \"include_closed\": false}",
+          "call_id": "call_00_QP2CGP09woelbCPaxs5L7052",
+          "name": "tickets"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "tickets",
+          "result": {
+            "request_id": "7b8a5936fd274d769820fc79f1cd95e7",
+            "session_id": "61a27fc25e1d4e2fbf0d32e9b9554f98",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_c62c33dab29356a0af4d\", \"source_tool\": \"tickets\", \"data\": {\"ids\": [\"T-191\", \"T-782\"], \"include_closed\": false}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_c62c33dab29356a0af4d",
+              "source_tool": "tickets",
+              "data": {
+                "ids": [
+                  "T-191",
+                  "T-782"
+                ],
+                "include_closed": false
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/8a0edcd51a524747b86577b8b2d9df19",
+            "truncated": false,
+            "duration_ms": 328,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "729fecf3-606a-49cc-8991-b44008ba866e",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 8293,
+        "output_tokens": 15,
+        "total_tokens": 8308,
+        "cached_input_tokens": 7936,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 36225,
+      "model_latency_ms": 996.1275999667123,
+      "output": [
+        {
+          "type": "message",
+          "id": "f8bba8cd-e74b-465f-9960-2a42f8cb93d5",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_c62c33dab29356a0af4d"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

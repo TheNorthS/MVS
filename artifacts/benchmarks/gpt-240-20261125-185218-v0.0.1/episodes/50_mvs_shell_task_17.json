@@ -1,0 +1,303 @@
+{
+  "episode_id": "50_mvs_shell_task_17",
+  "size": 50,
+  "mode": "mvs_shell",
+  "task_id": "task_17",
+  "prompt": "List free appointment slots for a doctor. Use current data, not archives. Parameters: {\"doctor_id\": \"DOC-912\", \"date\": \"2026-11-21\", \"limit\": 3}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "appointments",
+  "expected_arguments": {
+    "doctor_id": "DOC-912",
+    "date": "2026-11-21",
+    "limit": 3
+  },
+  "expected_code": "v_6f8a2fecd1b3cc8ba719",
+  "final_answer": "v_6f8a2fecd1b3cc8ba719",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 3591,
+    "output_tokens": 121,
+    "total_tokens": 3712,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 4,
+  "tool_selection_attempts": [
+    {
+      "tool": "appointments",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "appointments",
+      "arguments": {
+        "doctor_id": "DOC-912",
+        "date": "2026-11-21",
+        "limit": 3
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    297,
+    820,
+    1085,
+    1389
+  ],
+  "context_growth_tokens": 1092,
+  "latency_ms": 24884.058800060302,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_0ec5ea5eca938c67016b06c0cabe7487d086285b84f180ca5d",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 297,
+        "output_tokens": 24,
+        "total_tokens": 321,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 1096,
+      "model_latency_ms": 8064.538199920207,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0ec5ea5eca938c67016b06c0d1666087d08d203f28b7665cfa",
+          "call_id": "call_85cd68f73f8b45438f8ad6fc99b365e6",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"ls /mcp/bench/tools\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "e84d025fd7c7494484c3f57c08405629",
+            "session_id": "ce2fa020e92c45d48eaf0b0af39103a3",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "appointments\narchive1_appointments\narchive1_capacity\narchive1_customer\narchive1_documents\narchive1_employee\narchive1_exchange\narchive1_health\narchive1_invoice\narchive1_loyalty\narchive1_order\narchive1_price\narchive1_repository\narchive1_route\narchive1_shipment\narchive1_stock\narchive1_subscription\narchive1_tax\narchive1_tickets\narchive1_usage\narchive1_weather\narchive2_customer\narchive2_employee\narchive2_exchange\narchive2_invoice\narchive2_order\narchive2_price\narchive2_repository\narchive2_shipment\narchive2_stock\narchive2_weather\ncapacity\ncustomer\ndocuments\nemployee\nexchange\nhealth\ninvoice\nloyalty\norder\nprice\nrepository\nroute\nshipment\nstock\nsubscription\ntax\ntickets\nusage\nweather",
+            "stderr": "",
+            "data": [
+              "appointments",
+              "archive1_appointments",
+              "archive1_capacity",
+              "archive1_customer",
+              "archive1_documents",
+              "archive1_employee",
+              "archive1_exchange",
+              "archive1_health",
+              "archive1_invoice",
+              "archive1_loyalty",
+              "archive1_order",
+              "archive1_price",
+              "archive1_repository",
+              "archive1_route",
+              "archive1_shipment",
+              "archive1_stock",
+              "archive1_subscription",
+              "archive1_tax",
+              "archive1_tickets",
+              "archive1_usage",
+              "archive1_weather",
+              "archive2_customer",
+              "archive2_employee",
+              "archive2_exchange",
+              "archive2_invoice",
+              "archive2_order",
+              "archive2_price",
+              "archive2_repository",
+              "archive2_shipment",
+              "archive2_stock",
+              "archive2_weather",
+              "capacity",
+              "customer",
+              "documents",
+              "employee",
+              "exchange",
+              "health",
+              "invoice",
+              "loyalty",
+              "order",
+              "price",
+              "repository",
+              "route",
+              "shipment",
+              "stock",
+              "subscription",
+              "tax",
+              "tickets",
+              "usage",
+              "weather"
+            ],
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_0ec5ea5eca938c67016b06c0d2cf5487d0952cb53851b69ab1",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 820,
+        "output_tokens": 26,
+        "total_tokens": 846,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 3429,
+      "model_latency_ms": 4606.5555000677705,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0ec5ea5eca938c67016b06c0d5fde087d086be282127665851",
+          "call_id": "call_119067e765b3405fab373ffa10bb6a33",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"help /mcp/bench/tools/appointments\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "3b8e84aa8e56495d821bb4b57a871129",
+            "session_id": "ce2fa020e92c45d48eaf0b0af39103a3",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "appointments\nList free appointment slots for a doctor\n--params-json <JSON object>\n--doctor_id {\"type\": \"string\"} required\n--date {\"type\": \"string\"} required\n--limit {\"type\": \"integer\"} required",
+            "stderr": "",
+            "data": {
+              "input_schema": {
+                "type": "object",
+                "properties": {
+                  "doctor_id": {
+                    "type": "string"
+                  },
+                  "date": {
+                    "type": "string"
+                  },
+                  "limit": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "doctor_id",
+                  "date",
+                  "limit"
+                ],
+                "additionalProperties": false
+              },
+              "untrusted": true,
+              "backend": "mcp"
+            },
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "resp_0ec5ea5eca938c67016b06c0d7aaf887d08f01f1c24d28363b",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1085,
+        "output_tokens": 51,
+        "total_tokens": 1136,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 4604,
+      "model_latency_ms": 4363.65559999831,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0ec5ea5eca938c67016b06c0d9bfe487d09fe1183a37ffb3d1",
+          "call_id": "call_d24ab69acc9844e9a301de893640ac98",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"run /mcp/bench/tools/appointments --params-json '{\\\"doctor_id\\\":\\\"DOC-912\\\",\\\"date\\\":\\\"2026-11-21\\\",\\\"limit\\\":3}'\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "26c570e3690246deb32777d4aa044872",
+            "session_id": "ce2fa020e92c45d48eaf0b0af39103a3",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_6f8a2fecd1b3cc8ba719\", \"source_tool\": \"appointments\", \"data\": {\"doctor_id\": \"DOC-912\", \"date\": \"2026-11-21\", \"limit\": 3}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_6f8a2fecd1b3cc8ba719",
+              "source_tool": "appointments",
+              "data": {
+                "doctor_id": "DOC-912",
+                "date": "2026-11-21",
+                "limit": 3
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/943b05108d68443c9328a61dfb886eb6",
+            "truncated": false,
+            "duration_ms": 577,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "resp_0ec5ea5eca938c67016b06c0dc5a3887d0a17ff9f2247261d5",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1389,
+        "output_tokens": 20,
+        "total_tokens": 1409,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 5803,
+      "model_latency_ms": 7183.907500002533,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_0ec5ea5eca938c67016b06c0e1dc0887d0937e28e5ac153a7e",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_6f8a2fecd1b3cc8ba719",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

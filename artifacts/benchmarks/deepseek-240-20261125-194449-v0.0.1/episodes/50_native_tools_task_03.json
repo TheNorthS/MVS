@@ -1,0 +1,135 @@
+{
+  "episode_id": "50_native_tools_task_03",
+  "size": 50,
+  "mode": "native_tools",
+  "task_id": "task_03",
+  "prompt": "Track a shipment by tracking ID. Use current data, not archives. Parameters: {\"tracking_id\": \"TRK-627\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "shipment",
+  "expected_arguments": {
+    "tracking_id": "TRK-627"
+  },
+  "expected_code": "v_1c7275f6bf1fd60d0b23",
+  "final_answer": "v_1c7275f6bf1fd60d0b23",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 8205,
+    "output_tokens": 66,
+    "total_tokens": 8271,
+    "cached_input_tokens": 7808,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "shipment",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "shipment",
+      "arguments": {
+        "tracking_id": "TRK-627"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    3954,
+    4251
+  ],
+  "context_growth_tokens": 297,
+  "latency_ms": 3657.3381000198424,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "3ffd315a-09a2-44af-b6ae-7857d1a3cac7",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 3954,
+        "output_tokens": 49,
+        "total_tokens": 4003,
+        "cached_input_tokens": 3840,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 16967,
+      "model_latency_ms": 1477.4101000512019,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "ee0da316-3aa6-4135-977d-d33ce8c920a9",
+          "status": "completed",
+          "arguments": "{\"tracking_id\": \"TRK-627\"}",
+          "call_id": "call_00_ET_VnsTnvZaUEjU3srbosSs4680",
+          "name": "shipment"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "shipment",
+          "result": {
+            "request_id": "4a2f0f4bcdd04130b4b15c7a9fc67935",
+            "session_id": "da1a39d2627e465e90d7b077504e7195",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_1c7275f6bf1fd60d0b23\", \"source_tool\": \"shipment\", \"data\": {\"tracking_id\": \"TRK-627\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_1c7275f6bf1fd60d0b23",
+              "source_tool": "shipment",
+              "data": {
+                "tracking_id": "TRK-627"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/334a08b5c86b4f14b8a9dce456dd8499",
+            "truncated": false,
+            "duration_ms": 327,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "706a5c37-3be2-4e9c-9030-9e52d1a62ab0",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 4251,
+        "output_tokens": 17,
+        "total_tokens": 4268,
+        "cached_input_tokens": 3968,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 17923,
+      "model_latency_ms": 1427.5302999885753,
+      "output": [
+        {
+          "type": "message",
+          "id": "5f40271a-e14e-44b9-8ded-443b6c775286",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_1c7275f6bf1fd60d0b23"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

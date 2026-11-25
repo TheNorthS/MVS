@@ -1,0 +1,135 @@
+{
+  "episode_id": "20_native_tools_task_03",
+  "size": 20,
+  "mode": "native_tools",
+  "task_id": "task_03",
+  "prompt": "Track a shipment by tracking ID. Use current data, not archives. Parameters: {\"tracking_id\": \"TRK-627\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "shipment",
+  "expected_arguments": {
+    "tracking_id": "TRK-627"
+  },
+  "expected_code": "v_1c7275f6bf1fd60d0b23",
+  "final_answer": "v_1c7275f6bf1fd60d0b23",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 1638,
+    "output_tokens": 42,
+    "total_tokens": 1680,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "shipment",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "shipment",
+      "arguments": {
+        "tracking_id": "TRK-627"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    698,
+    940
+  ],
+  "context_growth_tokens": 242,
+  "latency_ms": 9469.982400070876,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_0cfae5934deec513016b06bea43f4087d2b7888947b83b706a",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 698,
+        "output_tokens": 22,
+        "total_tokens": 720,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 6541,
+      "model_latency_ms": 4090.2762000914663,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0cfae5934deec513016b06bea6143087d2bda68594dfdb2aca",
+          "call_id": "call_c16cb67c78b7402696b18cfe8e8baeb3",
+          "name": "shipment",
+          "arguments": "{\"tracking_id\":\"TRK-627\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "shipment",
+          "result": {
+            "request_id": "e87c7c2974c149298ae0ae8053ff48fc",
+            "session_id": "a427fada50a645b9849ea9146edaa3b1",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_1c7275f6bf1fd60d0b23\", \"source_tool\": \"shipment\", \"data\": {\"tracking_id\": \"TRK-627\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_1c7275f6bf1fd60d0b23",
+              "source_tool": "shipment",
+              "data": {
+                "tracking_id": "TRK-627"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/440c9146950e430884574102bf7dc299",
+            "truncated": false,
+            "duration_ms": 329,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_0cfae5934deec513016b06bea8d60087d2b66d8cbbfb00c49f",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 940,
+        "output_tokens": 20,
+        "total_tokens": 960,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 7517,
+      "model_latency_ms": 5022.010399959981,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_0cfae5934deec513016b06beac5b1c87d2b74f3900c0a0c8c5",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_1c7275f6bf1fd60d0b23",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

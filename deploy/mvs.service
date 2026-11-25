@@ -1,0 +1,23 @@
+# 先按 docs/linux_deployment.md 安装解释器、依赖、配置与令牌。
+[Unit]
+Description=MCP Virtual Shell API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=mvs
+Group=mvs
+WorkingDirectory=/opt/mvs
+EnvironmentFile=/etc/mvs/api.env
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/opt/mvs/.venv/bin/python -m uvicorn examples.deploy_api:create_app_from_env --factory --host 127.0.0.1 --port 8080 --workers 1
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+UMask=0077
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

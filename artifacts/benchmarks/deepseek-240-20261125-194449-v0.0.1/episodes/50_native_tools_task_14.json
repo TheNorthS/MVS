@@ -1,0 +1,135 @@
+{
+  "episode_id": "50_native_tools_task_14",
+  "size": 50,
+  "mode": "native_tools",
+  "task_id": "task_14",
+  "prompt": "Read customer loyalty balance. Use current data, not archives. Parameters: {\"customer_id\": \"CUS-719\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "loyalty",
+  "expected_arguments": {
+    "customer_id": "CUS-719"
+  },
+  "expected_code": "v_daec3a1d7f7b87ddc921",
+  "final_answer": "v_daec3a1d7f7b87ddc921",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 8191,
+    "output_tokens": 66,
+    "total_tokens": 8257,
+    "cached_input_tokens": 7808,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "loyalty",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "loyalty",
+      "arguments": {
+        "customer_id": "CUS-719"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    3951,
+    4240
+  ],
+  "context_growth_tokens": 289,
+  "latency_ms": 3219.9589000083506,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "5ce09c6e-69bc-4d91-9f44-ad59d85a6dd7",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 3951,
+        "output_tokens": 49,
+        "total_tokens": 4000,
+        "cached_input_tokens": 3840,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 16965,
+      "model_latency_ms": 1487.7491000806913,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "7ee15bc4-2350-43b3-b095-173781fbb68b",
+          "status": "completed",
+          "arguments": "{\"customer_id\": \"CUS-719\"}",
+          "call_id": "call_00_ET_6zuTp4yRMKidInysyFPn4654",
+          "name": "loyalty"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "loyalty",
+          "result": {
+            "request_id": "1b9ab14bab074317a40dbdc7004dccc0",
+            "session_id": "8397ad97c50343dd82580383fd53fa7e",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_daec3a1d7f7b87ddc921\", \"source_tool\": \"loyalty\", \"data\": {\"customer_id\": \"CUS-719\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_daec3a1d7f7b87ddc921",
+              "source_tool": "loyalty",
+              "data": {
+                "customer_id": "CUS-719"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/dd4d65acb7f44ff4a07f130e8be97c1a",
+            "truncated": false,
+            "duration_ms": 359,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "3e800bea-cd4c-46f4-8997-59c61184e5e5",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 4240,
+        "output_tokens": 17,
+        "total_tokens": 4257,
+        "cached_input_tokens": 3968,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 17918,
+      "model_latency_ms": 1293.854400049895,
+      "output": [
+        {
+          "type": "message",
+          "id": "4103f311-9051-4317-bf80-7560814940a8",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_daec3a1d7f7b87ddc921"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

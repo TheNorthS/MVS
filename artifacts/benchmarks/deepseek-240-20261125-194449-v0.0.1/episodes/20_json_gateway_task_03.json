@@ -1,0 +1,308 @@
+{
+  "episode_id": "20_json_gateway_task_03",
+  "size": 20,
+  "mode": "json_gateway",
+  "task_id": "task_03",
+  "prompt": "Track a shipment by tracking ID. Use current data, not archives. Parameters: {\"tracking_id\": \"TRK-627\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "shipment",
+  "expected_arguments": {
+    "tracking_id": "TRK-627"
+  },
+  "expected_code": "v_1c7275f6bf1fd60d0b23",
+  "final_answer": "v_1c7275f6bf1fd60d0b23",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 3612,
+    "output_tokens": 224,
+    "total_tokens": 3836,
+    "cached_input_tokens": 2560,
+    "reasoning_output_tokens": 6
+  },
+  "interaction_rounds": 4,
+  "tool_selection_attempts": [
+    {
+      "tool": "shipment",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "shipment",
+      "arguments": {
+        "tracking_id": "TRK-627"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    441,
+    856,
+    989,
+    1326
+  ],
+  "context_growth_tokens": 885,
+  "latency_ms": 6619.73440006841,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "edae32ad-3eee-4beb-b8f3-7c939fb6a580",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 441,
+        "output_tokens": 53,
+        "total_tokens": 494,
+        "cached_input_tokens": 384,
+        "reasoning_output_tokens": 6
+      },
+      "context_bytes": 1045,
+      "model_latency_ms": 1122.8819000534713,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "97ea449e-a8c5-49c6-b4b2-f58cecfab10c",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "Let me list the tools."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "edae32ad-3eee-4beb-b8f3-7c939fb6a580-0"
+        },
+        {
+          "type": "function_call",
+          "id": "e37d3fc1-9aeb-4ccd-8d86-a71ae13971de",
+          "status": "completed",
+          "arguments": "{\"action\": \"list\"}",
+          "call_id": "call_00_yBE4BHPrp1mn6ofw040O3686",
+          "name": "mcp_gateway"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": [
+            {
+              "name": "tickets",
+              "description": "Fetch support tickets by a list of IDs"
+            },
+            {
+              "name": "exchange",
+              "description": "Convert a monetary amount between currencies"
+            },
+            {
+              "name": "loyalty",
+              "description": "Read customer loyalty balance"
+            },
+            {
+              "name": "invoice",
+              "description": "Get outstanding invoice balance"
+            },
+            {
+              "name": "customer",
+              "description": "Look up a customer account"
+            },
+            {
+              "name": "route",
+              "description": "Find route distance between two cities"
+            },
+            {
+              "name": "capacity",
+              "description": "Get current available capacity of a warehouse"
+            },
+            {
+              "name": "documents",
+              "description": "Search documents using a nested filter"
+            },
+            {
+              "name": "weather",
+              "description": "Fetch weather for a city and date"
+            },
+            {
+              "name": "tax",
+              "description": "Calculate invoice tax from net amount and rate"
+            },
+            {
+              "name": "appointments",
+              "description": "List free appointment slots for a doctor"
+            },
+            {
+              "name": "usage",
+              "description": "Summarize API usage for a project and month"
+            },
+            {
+              "name": "price",
+              "description": "Look up current product price in a currency"
+            },
+            {
+              "name": "subscription",
+              "description": "Read subscription status"
+            },
+            {
+              "name": "order",
+              "description": "Fetch current order status"
+            },
+            {
+              "name": "health",
+              "description": "Read current service health in a region"
+            },
+            {
+              "name": "employee",
+              "description": "Look up employee directory details"
+            },
+            {
+              "name": "repository",
+              "description": "Search software repositories by topic and minimum stars"
+            },
+            {
+              "name": "stock",
+              "description": "Check current warehouse stock"
+            },
+            {
+              "name": "shipment",
+              "description": "Track a shipment by tracking ID"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "abbc2b04-a229-45a0-a744-b79067a655c0",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 856,
+        "output_tokens": 64,
+        "total_tokens": 920,
+        "cached_input_tokens": 384,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 3287,
+      "model_latency_ms": 1526.3430000049993,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "47c5b49f-5ccf-4b46-abb9-ed4e4f8c6560",
+          "status": "completed",
+          "arguments": "{\"action\": \"help\", \"tool\": \"shipment\"}",
+          "call_id": "call_00_ET_GjzBKQGtobzNhIDJNm6O4506",
+          "name": "mcp_gateway"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": {
+            "name": "shipment",
+            "description": "Track a shipment by tracking ID",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "tracking_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "tracking_id"
+              ],
+              "additionalProperties": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "96b981e8-521b-4437-b415-217d8b211f2a",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 989,
+        "output_tokens": 90,
+        "total_tokens": 1079,
+        "cached_input_tokens": 768,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 3862,
+      "model_latency_ms": 1846.0093000903726,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "35543de7-ccac-49a7-9359-4fff14765b8a",
+          "status": "completed",
+          "arguments": "{\"action\": \"call\", \"tool\": \"shipment\", \"arguments\": {\"tracking_id\": \"TRK-627\"}}",
+          "call_id": "call_00_ET_566tZWFXGOOtRO9Udahb4031",
+          "name": "mcp_gateway"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "mcp_gateway",
+          "result": {
+            "request_id": "ad9bdda0fdf344e787896b32a9d0be3c",
+            "session_id": "46c7a2e030dd4ccba41a2a27d75c5a56",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_1c7275f6bf1fd60d0b23\", \"source_tool\": \"shipment\", \"data\": {\"tracking_id\": \"TRK-627\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_1c7275f6bf1fd60d0b23",
+              "source_tool": "shipment",
+              "data": {
+                "tracking_id": "TRK-627"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/87ba46f35c7d47e190c504cec8d6fe95",
+            "truncated": false,
+            "duration_ms": 327,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "bce5f281-d39a-452a-8ab9-cc6cfa6d0089",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1326,
+        "output_tokens": 17,
+        "total_tokens": 1343,
+        "cached_input_tokens": 1024,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 4884,
+      "model_latency_ms": 1762.3283000430092,
+      "output": [
+        {
+          "type": "message",
+          "id": "5a27ad79-d10a-4f99-b8ef-0de30e739526",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_1c7275f6bf1fd60d0b23"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

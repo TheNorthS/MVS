@@ -1,0 +1,138 @@
+{
+  "episode_id": "50_native_tools_task_10",
+  "size": 50,
+  "mode": "native_tools",
+  "task_id": "task_10",
+  "prompt": "Summarize API usage for a project and month. Use current data, not archives. Parameters: {\"project\": \"atlas\", \"month\": \"2026-10\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "usage",
+  "expected_arguments": {
+    "project": "atlas",
+    "month": "2026-10"
+  },
+  "expected_code": "v_c083b2ff7ec20a4b8b8f",
+  "final_answer": "v_c083b2ff7ec20a4b8b8f",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 3850,
+    "output_tokens": 45,
+    "total_tokens": 3895,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "usage",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "usage",
+      "arguments": {
+        "month": "2026-10",
+        "project": "atlas"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    1797,
+    2053
+  ],
+  "context_growth_tokens": 256,
+  "latency_ms": 7660.291100037284,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_078b4a4617a69a89016b06c2555e9087d1b9a46bd9ede852ab",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1797,
+        "output_tokens": 25,
+        "total_tokens": 1822,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 16997,
+      "model_latency_ms": 3685.605200007558,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_078b4a4617a69a89016b06c257201087d1890f807ae217f52b",
+          "call_id": "call_7e9f7ae01b4c4bafb00b8a788a08a23a",
+          "name": "usage",
+          "arguments": "{\"month\":\"2026-10\",\"project\":\"atlas\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "usage",
+          "result": {
+            "request_id": "d815fa2f92c6498ab6884fc4b0458661",
+            "session_id": "144db7bbd73445f88519f2156ef9cf66",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_c083b2ff7ec20a4b8b8f\", \"source_tool\": \"usage\", \"data\": {\"month\": \"2026-10\", \"project\": \"atlas\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_c083b2ff7ec20a4b8b8f",
+              "source_tool": "usage",
+              "data": {
+                "month": "2026-10",
+                "project": "atlas"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/f61804ba3da742ca9550a95c7883103b",
+            "truncated": false,
+            "duration_ms": 312,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_078b4a4617a69a89016b06c25961a087d194f39666526489c6",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 2053,
+        "output_tokens": 20,
+        "total_tokens": 2073,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 18024,
+      "model_latency_ms": 3517.649900051765,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_078b4a4617a69a89016b06c25aeab087d1b89e381bca09c514",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_c083b2ff7ec20a4b8b8f",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

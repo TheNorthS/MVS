@@ -1,0 +1,962 @@
+{
+  "100_json_gateway_task_00": {
+    "path": "episodes/100_json_gateway_task_00.json",
+    "sha256": "21c976ad2f4da290c51ba4e1f75fe88bbd15cddcc6d5b0b7d97ed6d649f438e0"
+  },
+  "100_json_gateway_task_01": {
+    "path": "episodes/100_json_gateway_task_01.json",
+    "sha256": "7848f71f1aabd84580ddc0fd58354ae876b278027daa33c6aa6d1ddd0228acdd"
+  },
+  "100_json_gateway_task_02": {
+    "path": "episodes/100_json_gateway_task_02.json",
+    "sha256": "8a423a4425e671eaf8722971bc706aff232ba3583993cfe24263b37ac60767a4"
+  },
+  "100_json_gateway_task_03": {
+    "path": "episodes/100_json_gateway_task_03.json",
+    "sha256": "207d6981ca580fe1134896a19e016eb4d631e281cdfaa553f663562b742baece"
+  },
+  "100_json_gateway_task_04": {
+    "path": "episodes/100_json_gateway_task_04.json",
+    "sha256": "5c1e07761a5c1c11d9369fb544030f8ce14e6179fcdfdacabe1a6b18fa6d022b"
+  },
+  "100_json_gateway_task_05": {
+    "path": "episodes/100_json_gateway_task_05.json",
+    "sha256": "e0eaa3b8e629035093e5b8508aa503a627d2079a9f2bd96cf326651a986e58d9"
+  },
+  "100_json_gateway_task_06": {
+    "path": "episodes/100_json_gateway_task_06.json",
+    "sha256": "b2c9faee432a4b78a8ab2d513868bed9f65eab67ef811604d7406243553acba7"
+  },
+  "100_json_gateway_task_07": {
+    "path": "episodes/100_json_gateway_task_07.json",
+    "sha256": "5c2a1cee59be6f717fcc6c9f91823310cb14b3cfd10107c2752e5194f2266b75"
+  },
+  "100_json_gateway_task_08": {
+    "path": "episodes/100_json_gateway_task_08.json",
+    "sha256": "0066bf02c48a60c6dfa3e2fa5fd6cba88b8d862b9643a8002d04be7b49e5e956"
+  },
+  "100_json_gateway_task_09": {
+    "path": "episodes/100_json_gateway_task_09.json",
+    "sha256": "91eaa7e70036292cf7b546333b26d0013e853c30ba874a54ae18746bb8073deb"
+  },
+  "100_json_gateway_task_10": {
+    "path": "episodes/100_json_gateway_task_10.json",
+    "sha256": "17877923fe0d320552710dde15c6736d9f76ae3df23a08b4ccb497cc3b7dd4ac"
+  },
+  "100_json_gateway_task_11": {
+    "path": "episodes/100_json_gateway_task_11.json",
+    "sha256": "7f914aa6384cb940079d320a00c0f448597caa3a6b76006c2121e62e28b91efc"
+  },
+  "100_json_gateway_task_12": {
+    "path": "episodes/100_json_gateway_task_12.json",
+    "sha256": "7f3e9a2b1e51898032e2066bbc72a98abd2a6f4e4e00b23ed45ee78df54b2a03"
+  },
+  "100_json_gateway_task_13": {
+    "path": "episodes/100_json_gateway_task_13.json",
+    "sha256": "c35fb98918b058ea8dd4fc8e18bb23a31f75aaf0e5b4fae16148175df00e3ebe"
+  },
+  "100_json_gateway_task_14": {
+    "path": "episodes/100_json_gateway_task_14.json",
+    "sha256": "56177cf2f4a66867e666063c633c7d077df1e7d12585af04dddd06c75f081bb8"
+  },
+  "100_json_gateway_task_15": {
+    "path": "episodes/100_json_gateway_task_15.json",
+    "sha256": "2a8708853197f659bdacdb2b9e195282dc6b5e9eac525cf3c22b7fee9a760daf"
+  },
+  "100_json_gateway_task_16": {
+    "path": "episodes/100_json_gateway_task_16.json",
+    "sha256": "048cebe4725f461628da11475922fb81c37058d902c2f0138c1dc8ce24d0eab0"
+  },
+  "100_json_gateway_task_17": {
+    "path": "episodes/100_json_gateway_task_17.json",
+    "sha256": "5d59955f1a400980cba64681052ab04904f2b9fe8d888d8869d26f7cfc54564d"
+  },
+  "100_json_gateway_task_18": {
+    "path": "episodes/100_json_gateway_task_18.json",
+    "sha256": "d00b1fa2c0f6fa51e51fc7c8893cc258b4ecb6c30d292f5657477bd3c81e8d15"
+  },
+  "100_json_gateway_task_19": {
+    "path": "episodes/100_json_gateway_task_19.json",
+    "sha256": "e657cefe82c3e9b6a43aaac094d0e847e762d1a3cea71f5de9105acac91afda6"
+  },
+  "100_mvs_shell_task_00": {
+    "path": "episodes/100_mvs_shell_task_00.json",
+    "sha256": "14ceabb1dca4c6f001a968af8de65b813257c7a3c75c64cd45816cdfc66c411b"
+  },
+  "100_mvs_shell_task_01": {
+    "path": "episodes/100_mvs_shell_task_01.json",
+    "sha256": "db8df52dad702f66587c4ef303dd0d5e52b4032c0bf6b6654f23df543a179ee0"
+  },
+  "100_mvs_shell_task_02": {
+    "path": "episodes/100_mvs_shell_task_02.json",
+    "sha256": "3bc94a59091846876e17fbb797576e2e6c7c5c2ab268275deac74f63ef28cac7"
+  },
+  "100_mvs_shell_task_03": {
+    "path": "episodes/100_mvs_shell_task_03.json",
+    "sha256": "e762f0d882b5156bd88d945b320da50c56ed9f35ec8d69a80c90ea276dc30051"
+  },
+  "100_mvs_shell_task_04": {
+    "path": "episodes/100_mvs_shell_task_04.json",
+    "sha256": "f5e7323e7ce4e1ae380ef2d9821b4a91a4fcc51b06dae6dc66aaaf841b00ba64"
+  },
+  "100_mvs_shell_task_05": {
+    "path": "episodes/100_mvs_shell_task_05.json",
+    "sha256": "1bbafe6249d1434f08fae328c89567258729798ddf9e3ca6abaab71d080cb595"
+  },
+  "100_mvs_shell_task_06": {
+    "path": "episodes/100_mvs_shell_task_06.json",
+    "sha256": "35b0b5afaf94da46acbcf9db06840ff9f9aa3cec0144db8ebd2df92f1a958501"
+  },
+  "100_mvs_shell_task_07": {
+    "path": "episodes/100_mvs_shell_task_07.json",
+    "sha256": "9b3edec80541eef50386fb9dce9a1fc6827522194855eb7ec0242b88ebee2093"
+  },
+  "100_mvs_shell_task_08": {
+    "path": "episodes/100_mvs_shell_task_08.json",
+    "sha256": "1586851cd7f63c3e76cc111efe4a200864900e43cba8b6e62d3c2bce6312bacd"
+  },
+  "100_mvs_shell_task_09": {
+    "path": "episodes/100_mvs_shell_task_09.json",
+    "sha256": "7ab78ab67b4224626a3a06e2e8f58a332c640a49496475a107009839f2a9e389"
+  },
+  "100_mvs_shell_task_10": {
+    "path": "episodes/100_mvs_shell_task_10.json",
+    "sha256": "154866f1ace1cc1ea4f157a7471494d599a9dc50454d1761e357705548ab8c1e"
+  },
+  "100_mvs_shell_task_11": {
+    "path": "episodes/100_mvs_shell_task_11.json",
+    "sha256": "535f9f0b75472cbc2552aaa32776e79b3bf1fb5b48f05f52287229e040798008"
+  },
+  "100_mvs_shell_task_12": {
+    "path": "episodes/100_mvs_shell_task_12.json",
+    "sha256": "bde0f1869d004edf20a0bfb78938b591560248db1086ab2d7756ac14341511e6"
+  },
+  "100_mvs_shell_task_13": {
+    "path": "episodes/100_mvs_shell_task_13.json",
+    "sha256": "7562fdeade69eed388664f9a2be082478d3f7da74e56590153fcdad217937a48"
+  },
+  "100_mvs_shell_task_14": {
+    "path": "episodes/100_mvs_shell_task_14.json",
+    "sha256": "2a28dfb00a4b706b83b3fd2e184a0273709d38df9d617c5e7397b2eb4e329e32"
+  },
+  "100_mvs_shell_task_15": {
+    "path": "episodes/100_mvs_shell_task_15.json",
+    "sha256": "6f13abbc39b65d3218357fbf09679b69b46abba468b986453fa1e6b9f0a6649c"
+  },
+  "100_mvs_shell_task_16": {
+    "path": "episodes/100_mvs_shell_task_16.json",
+    "sha256": "028e37b65bf1946a41d61951f5f1ad62001818ea6d72cf12580c4a5e5cbd55c8"
+  },
+  "100_mvs_shell_task_17": {
+    "path": "episodes/100_mvs_shell_task_17.json",
+    "sha256": "ab7a10adc93b6f56fe39c16ef9adb463c5b79fda70aa3f6899552a1d6ef668e3"
+  },
+  "100_mvs_shell_task_18": {
+    "path": "episodes/100_mvs_shell_task_18.json",
+    "sha256": "43a31686265516f639be43b84d54d8bc09c7bd84dae9a1f89c541dc582174b94"
+  },
+  "100_mvs_shell_task_19": {
+    "path": "episodes/100_mvs_shell_task_19.json",
+    "sha256": "03b030c5aa2710a43e439845cb610dff8c5e4a492264eb4d6dbba83d1eb5e39f"
+  },
+  "100_native_tools_task_00": {
+    "path": "episodes/100_native_tools_task_00.json",
+    "sha256": "20057b8f1faaa8c4da69f062e4bb1466df49aba04d61a36bd22f390ad9df3ada"
+  },
+  "100_native_tools_task_01": {
+    "path": "episodes/100_native_tools_task_01.json",
+    "sha256": "c9b718c215817fa17642a544cec2dcb5551cca89f6208f7f675eee81986fa67d"
+  },
+  "100_native_tools_task_02": {
+    "path": "episodes/100_native_tools_task_02.json",
+    "sha256": "bdca136443ac17e9908ac1b89253be5a721bb4d6210c2f91db70e6d8a0ecf777"
+  },
+  "100_native_tools_task_03": {
+    "path": "episodes/100_native_tools_task_03.json",
+    "sha256": "a5c2fbbb5ca7e4009fc896c3172c70848f1f14c6b6de33cb9475f784ca8a95ac"
+  },
+  "100_native_tools_task_04": {
+    "path": "episodes/100_native_tools_task_04.json",
+    "sha256": "1a6e0a8b17820227562b01666abeaa22ccdf73e76008b92a7cabb3fdd8a20a71"
+  },
+  "100_native_tools_task_05": {
+    "path": "episodes/100_native_tools_task_05.json",
+    "sha256": "387246a4adea54cb457956a160da3c350d50e9f865f2fbb8bb79d2ff80d8fc55"
+  },
+  "100_native_tools_task_06": {
+    "path": "episodes/100_native_tools_task_06.json",
+    "sha256": "a2c3d601388b2a612a6a16db2a6fdf83ccff4a22b35630ef851a540982771a37"
+  },
+  "100_native_tools_task_07": {
+    "path": "episodes/100_native_tools_task_07.json",
+    "sha256": "7d19612ff04740cce593762b53d0ab9c15e1e34585eb27162ae6d7889f08943c"
+  },
+  "100_native_tools_task_08": {
+    "path": "episodes/100_native_tools_task_08.json",
+    "sha256": "f4c44bc2f9902fe548f6444e9dab4499363b5c57e159807e8bffa7ae218d4791"
+  },
+  "100_native_tools_task_09": {
+    "path": "episodes/100_native_tools_task_09.json",
+    "sha256": "989d8f35f50060334e6ffb46f2ba9b8047f0e16e6401326593b3fbb154b2e35d"
+  },
+  "100_native_tools_task_10": {
+    "path": "episodes/100_native_tools_task_10.json",
+    "sha256": "1400bb84891e884e46b8078f0146e608b215fa9c91a4bcc983ec7f56b96af8a9"
+  },
+  "100_native_tools_task_11": {
+    "path": "episodes/100_native_tools_task_11.json",
+    "sha256": "9b98191397b331980ce4c221bf8564c4e3e39d864021d4689d05d07a43315891"
+  },
+  "100_native_tools_task_12": {
+    "path": "episodes/100_native_tools_task_12.json",
+    "sha256": "9d3a645164de9a28b96c41091105673cb853a884402f904541b598e6e9f85727"
+  },
+  "100_native_tools_task_13": {
+    "path": "episodes/100_native_tools_task_13.json",
+    "sha256": "14f88bb146d66d74762433b3c31f4ca838e589613c40826040baa6e03998b3c6"
+  },
+  "100_native_tools_task_14": {
+    "path": "episodes/100_native_tools_task_14.json",
+    "sha256": "989155b3db7bf13da6d72fedb8303326598675624b983a1f719c4dbd71cb6a79"
+  },
+  "100_native_tools_task_15": {
+    "path": "episodes/100_native_tools_task_15.json",
+    "sha256": "00e9e2f2c404f083845816ae51e85fc3a42a71a0b6e1a7a94886b0011162d659"
+  },
+  "100_native_tools_task_16": {
+    "path": "episodes/100_native_tools_task_16.json",
+    "sha256": "03cc17a55de3e30e08f3dcedb7542d7ab10adb1639dff7ec2f9a01729ac96a00"
+  },
+  "100_native_tools_task_17": {
+    "path": "episodes/100_native_tools_task_17.json",
+    "sha256": "e5529ca7c43ce995423282d91884057c15eac6c486f427cb897ca2d203809fb3"
+  },
+  "100_native_tools_task_18": {
+    "path": "episodes/100_native_tools_task_18.json",
+    "sha256": "36308ecf668217f92e6e49502d087071e519b4e26bce7a0e68de13458e7858de"
+  },
+  "100_native_tools_task_19": {
+    "path": "episodes/100_native_tools_task_19.json",
+    "sha256": "e0f8982599bf1a4ff3ad4850162866d54e7a3a84dbfd9eaaa45ae4ea13cf35ff"
+  },
+  "200_json_gateway_task_00": {
+    "path": "episodes/200_json_gateway_task_00.json",
+    "sha256": "7c5a47f2447ce6cc9b963f780ac5e8d317b5a91aa7df56dde338615dd2c36dbe"
+  },
+  "200_json_gateway_task_01": {
+    "path": "episodes/200_json_gateway_task_01.json",
+    "sha256": "047e0c86b96b1332ae41775e68d67a52df7aaa3e6d8597d221d79a9d5a1acf7f"
+  },
+  "200_json_gateway_task_02": {
+    "path": "episodes/200_json_gateway_task_02.json",
+    "sha256": "9892fcb37654f379c78abb4b98ef9e47f1485ebdc03c7d03dae43acebf4788a2"
+  },
+  "200_json_gateway_task_03": {
+    "path": "episodes/200_json_gateway_task_03.json",
+    "sha256": "28759faf8728f3abc1fc05c7d10b9d6bf93b5b14ea0dbaadfdbbf9769baf865d"
+  },
+  "200_json_gateway_task_04": {
+    "path": "episodes/200_json_gateway_task_04.json",
+    "sha256": "ac4079c74341723501022b988e11e96c1429aa724836363f4da0ffd9c46b2605"
+  },
+  "200_json_gateway_task_05": {
+    "path": "episodes/200_json_gateway_task_05.json",
+    "sha256": "d4032fefc3380117a5731ae830678d66ff59e30f2873aed68a57f2e246b4af85"
+  },
+  "200_json_gateway_task_06": {
+    "path": "episodes/200_json_gateway_task_06.json",
+    "sha256": "ed18c4e3ea5ed128161e1784daba40ddaec054d02ac3c6a49dc155e4b678d005"
+  },
+  "200_json_gateway_task_07": {
+    "path": "episodes/200_json_gateway_task_07.json",
+    "sha256": "27797116a969d6eed63cad64124e4467deeccb818443058d9a36692897161a1b"
+  },
+  "200_json_gateway_task_08": {
+    "path": "episodes/200_json_gateway_task_08.json",
+    "sha256": "d1713b65e4d7d274ce679fa5325536c63aeafd0dd260518be224e3569919979b"
+  },
+  "200_json_gateway_task_09": {
+    "path": "episodes/200_json_gateway_task_09.json",
+    "sha256": "0c20ca4dcaed85a2ba154aad1ce0d51ac74a1732a8859b748b932836dd0046d6"
+  },
+  "200_json_gateway_task_10": {
+    "path": "episodes/200_json_gateway_task_10.json",
+    "sha256": "95b0e165803c29e0cf9293096058266c0a3ed11bc4dd35304f6211ea824347bd"
+  },
+  "200_json_gateway_task_11": {
+    "path": "episodes/200_json_gateway_task_11.json",
+    "sha256": "d84d6ed39128afd02ae12de4386635f19f6a96ed50b26b4674e4de76eb74e51e"
+  },
+  "200_json_gateway_task_12": {
+    "path": "episodes/200_json_gateway_task_12.json",
+    "sha256": "d9b50ec37f17afe33727ac69a5c8a5dc40b736c6f835b2ff2776df78ca3e7246"
+  },
+  "200_json_gateway_task_13": {
+    "path": "episodes/200_json_gateway_task_13.json",
+    "sha256": "9bbde8bbe576196c6cb38cb666e0a3f8f455e1eb3a9de1cc49816cb1013213ad"
+  },
+  "200_json_gateway_task_14": {
+    "path": "episodes/200_json_gateway_task_14.json",
+    "sha256": "7beb5aae8a8fe29f70f010ab896411d55f8287b52595b3b75823450289feb3f5"
+  },
+  "200_json_gateway_task_15": {
+    "path": "episodes/200_json_gateway_task_15.json",
+    "sha256": "895d2ca52d39a34f4f18485fe696c002b3844576455758bb8eae325b76c792f0"
+  },
+  "200_json_gateway_task_16": {
+    "path": "episodes/200_json_gateway_task_16.json",
+    "sha256": "0909dfffae78514bd5b0a5cbb1d0279af637b460c3cbb4dc45857bb79d114a46"
+  },
+  "200_json_gateway_task_17": {
+    "path": "episodes/200_json_gateway_task_17.json",
+    "sha256": "7a30ea070fecfeb95bfc7b526cc57c4a1d5d52bb38dab0ce3190264e7d9d43ee"
+  },
+  "200_json_gateway_task_18": {
+    "path": "episodes/200_json_gateway_task_18.json",
+    "sha256": "99a9673d403aba7220a99e1e33d8d9dce8cf087b0fd71fa587cf2fcd0d4b6c7d"
+  },
+  "200_json_gateway_task_19": {
+    "path": "episodes/200_json_gateway_task_19.json",
+    "sha256": "5eb7a6bae338c28ac2dcf11e67e84ab8f5fbd6ddeffdc75f775f71c092fb0675"
+  },
+  "200_mvs_shell_task_00": {
+    "path": "episodes/200_mvs_shell_task_00.json",
+    "sha256": "703c07ec1746f4ea8dc082feae6ccadc000e6d95581088429e99e97658b0bdd6"
+  },
+  "200_mvs_shell_task_01": {
+    "path": "episodes/200_mvs_shell_task_01.json",
+    "sha256": "fbce2441a0ef09e22da08b6f4bda01517d693f0f9cb9f502b24d11986bdd55af"
+  },
+  "200_mvs_shell_task_02": {
+    "path": "episodes/200_mvs_shell_task_02.json",
+    "sha256": "bae112a2be1d4eb875c7a3fdc2bed3cacac25395db996be4adf42fc28d22feb2"
+  },
+  "200_mvs_shell_task_03": {
+    "path": "episodes/200_mvs_shell_task_03.json",
+    "sha256": "438b1c70268cd9ee254c83adaf2b4fbbc6284bbd5e05187698f905d66b95f46c"
+  },
+  "200_mvs_shell_task_04": {
+    "path": "episodes/200_mvs_shell_task_04.json",
+    "sha256": "1d33e44978d035b28fd469aba7bc3071aa86a0dcea16f6b0691fd7aa31ea1b98"
+  },
+  "200_mvs_shell_task_05": {
+    "path": "episodes/200_mvs_shell_task_05.json",
+    "sha256": "8c8e61a8ee40b06364d886a9154b090f51a9c603e18fed4dc3d371f76d863db3"
+  },
+  "200_mvs_shell_task_06": {
+    "path": "episodes/200_mvs_shell_task_06.json",
+    "sha256": "123a33d6deb0f982e4b46380ece9133210608a5827c38d5aff6014bf4e38e6b8"
+  },
+  "200_mvs_shell_task_07": {
+    "path": "episodes/200_mvs_shell_task_07.json",
+    "sha256": "0cfd47c6b95dacb2278cc55106a2307a9a7d49135a9dbbbcb46d5c4848454e43"
+  },
+  "200_mvs_shell_task_08": {
+    "path": "episodes/200_mvs_shell_task_08.json",
+    "sha256": "42fa2017fdd74daca6e1a6213d8a1838ea6436602be4541c4a2fd18a767b2a00"
+  },
+  "200_mvs_shell_task_09": {
+    "path": "episodes/200_mvs_shell_task_09.json",
+    "sha256": "3c1bb29158cbb938b9463648846780baba202aa7aeb7c227e2a7e9b08561dc40"
+  },
+  "200_mvs_shell_task_10": {
+    "path": "episodes/200_mvs_shell_task_10.json",
+    "sha256": "430b44ae8b439d3d4b1338f9bed125409338c8184a6f55f3ae62d0b1e43e164d"
+  },
+  "200_mvs_shell_task_11": {
+    "path": "episodes/200_mvs_shell_task_11.json",
+    "sha256": "c3728a0c732237763b25a282a6704a5b80b859da64d31fe435c9776245a8ba12"
+  },
+  "200_mvs_shell_task_12": {
+    "path": "episodes/200_mvs_shell_task_12.json",
+    "sha256": "35ce36eaadd4c79121c07e28c9e0ed97742d482de12bf7242430670fc0b2ed20"
+  },
+  "200_mvs_shell_task_13": {
+    "path": "episodes/200_mvs_shell_task_13.json",
+    "sha256": "03c018700e2c4d3aa14651e43ebd35187dc56e8dd6a5d7c55cf3f13064cceb7e"
+  },
+  "200_mvs_shell_task_14": {
+    "path": "episodes/200_mvs_shell_task_14.json",
+    "sha256": "ec5863de00ff838f6d8451476fcc5b356d19a2a0af696c2876d9f38e45fa3649"
+  },
+  "200_mvs_shell_task_15": {
+    "path": "episodes/200_mvs_shell_task_15.json",
+    "sha256": "29cc67bb7a9e2dd836cf0f164b65d43fe5cd400820b90b4c613563183779f515"
+  },
+  "200_mvs_shell_task_16": {
+    "path": "episodes/200_mvs_shell_task_16.json",
+    "sha256": "63461b8eaaf12e01d01e33ed889a51a029aa2e853045860342093760b98f24d5"
+  },
+  "200_mvs_shell_task_17": {
+    "path": "episodes/200_mvs_shell_task_17.json",
+    "sha256": "18ecece31ef2e96f9625f5737bfdc415bfb009cab21999732e81f49ab0706508"
+  },
+  "200_mvs_shell_task_18": {
+    "path": "episodes/200_mvs_shell_task_18.json",
+    "sha256": "cbbb4c611da62b5c9a1a36650e989a8dc311c25006cfba8d7e9cd89cb9cf15e7"
+  },
+  "200_mvs_shell_task_19": {
+    "path": "episodes/200_mvs_shell_task_19.json",
+    "sha256": "6ff138da73bfe0366f35876cdf16f8634e4e7c19c467166f001dbda7923b58ba"
+  },
+  "200_native_tools_task_00": {
+    "path": "episodes/200_native_tools_task_00.json",
+    "sha256": "83d49fadd9ff445324caee9b9a46c2768ef8e3bbb0c06e62f5b4390292f6b8de"
+  },
+  "200_native_tools_task_01": {
+    "path": "episodes/200_native_tools_task_01.json",
+    "sha256": "ddfb1de722621c97778fb70d8919c01c97668a262af3e08c05fcca6849a6af85"
+  },
+  "200_native_tools_task_02": {
+    "path": "episodes/200_native_tools_task_02.json",
+    "sha256": "3ca40fa0374ce2787f8abf049dd986c2db5af5aab00b8aaeb4ef1ab55830da43"
+  },
+  "200_native_tools_task_03": {
+    "path": "episodes/200_native_tools_task_03.json",
+    "sha256": "1a267bc2f750a344fa8434f59b322c683ec26918cbdeb1916fad1dce23f7e52c"
+  },
+  "200_native_tools_task_04": {
+    "path": "episodes/200_native_tools_task_04.json",
+    "sha256": "f66828d24c30aa86c91f44751e0d383002c07e3632326d4d56b5d820e4631827"
+  },
+  "200_native_tools_task_05": {
+    "path": "episodes/200_native_tools_task_05.json",
+    "sha256": "1f0942388a2446f60f67d0233d6832fcb6a6beeb44050cb8fbcf36ecae27ed93"
+  },
+  "200_native_tools_task_06": {
+    "path": "episodes/200_native_tools_task_06.json",
+    "sha256": "ea56c6c593ea01ca23184b805d8cd440aab9d3385028a1e90d0aa32392695347"
+  },
+  "200_native_tools_task_07": {
+    "path": "episodes/200_native_tools_task_07.json",
+    "sha256": "484ce52ffa2a400111e3089b7f1029ef1b2973d8c26faf56d6debf91a27b66c9"
+  },
+  "200_native_tools_task_08": {
+    "path": "episodes/200_native_tools_task_08.json",
+    "sha256": "82636ab7c5d3f07c76176aeefd359bea930c3c93be743c6243fdfe5fd45f846d"
+  },
+  "200_native_tools_task_09": {
+    "path": "episodes/200_native_tools_task_09.json",
+    "sha256": "d340f4ad0dcf8e238678edb8fc1d4d25a0ab701fb364cb566768b40c2963c323"
+  },
+  "200_native_tools_task_10": {
+    "path": "episodes/200_native_tools_task_10.json",
+    "sha256": "2d323118baea7ed4a2a55cdd54b48e389758f358d3ac2698061911cc4c27d7e0"
+  },
+  "200_native_tools_task_11": {
+    "path": "episodes/200_native_tools_task_11.json",
+    "sha256": "ab6c1ac0ca65c4d469b88abdc6c28fa4dee4c42c1900ef770cbe4a1b4481e3ba"
+  },
+  "200_native_tools_task_12": {
+    "path": "episodes/200_native_tools_task_12.json",
+    "sha256": "deb86c65a3fc0954e3d87168fd04bb75774c0fbeff5444a4543ea0f1e01c1aa5"
+  },
+  "200_native_tools_task_13": {
+    "path": "episodes/200_native_tools_task_13.json",
+    "sha256": "743747b64f882e1b103df246fc1192d369b36e8178e993d2f3b23e44e392e318"
+  },
+  "200_native_tools_task_14": {
+    "path": "episodes/200_native_tools_task_14.json",
+    "sha256": "0d83019a07c0e389ed455fd3cebc143d9405654ba2f9b209da73bf84f18f20c1"
+  },
+  "200_native_tools_task_15": {
+    "path": "episodes/200_native_tools_task_15.json",
+    "sha256": "043a541a8ae695c140c310d27f65b7f87f2b66057350a10ef27e97650e4d809e"
+  },
+  "200_native_tools_task_16": {
+    "path": "episodes/200_native_tools_task_16.json",
+    "sha256": "0da76ee73276c1fa5207b17e3bd443d242e984e4a8a2cf8d5c1e53b885dabd1a"
+  },
+  "200_native_tools_task_17": {
+    "path": "episodes/200_native_tools_task_17.json",
+    "sha256": "44960eb630b8cc4081a4dd97cb08c2be62315a801a372f603653043f5e562d36"
+  },
+  "200_native_tools_task_18": {
+    "path": "episodes/200_native_tools_task_18.json",
+    "sha256": "e925ec420e732717b7922fff5c2128d9a7b235da496b4c674bb5fc663b4fa6d4"
+  },
+  "200_native_tools_task_19": {
+    "path": "episodes/200_native_tools_task_19.json",
+    "sha256": "840b8cdbf11adcfb17a6bdde9f7ed1bac15897060d7221dd2fc3f399bdc306ef"
+  },
+  "20_json_gateway_task_00": {
+    "path": "episodes/20_json_gateway_task_00.json",
+    "sha256": "66e6304c167a1c4438af3fd2bd5ba84415fb1d6c0893d91a2b5ed631c168607f"
+  },
+  "20_json_gateway_task_01": {
+    "path": "episodes/20_json_gateway_task_01.json",
+    "sha256": "28c8ef43da9f8976930256f822c249702f4cb8510a9a7129ab32991af5e2caec"
+  },
+  "20_json_gateway_task_02": {
+    "path": "episodes/20_json_gateway_task_02.json",
+    "sha256": "237a0c7a0ee4874bde67bb41511a4148c2445c4ebf65eec574e019a42c31d3d1"
+  },
+  "20_json_gateway_task_03": {
+    "path": "episodes/20_json_gateway_task_03.json",
+    "sha256": "8288ae53e15b72a8a83359df9ff340cdc1f9f19703a115ec3124670cf0c6242c"
+  },
+  "20_json_gateway_task_04": {
+    "path": "episodes/20_json_gateway_task_04.json",
+    "sha256": "0556d41dd726d18fdb2feee741d16e46014169fab3a259dabfb80e3e7cb8250f"
+  },
+  "20_json_gateway_task_05": {
+    "path": "episodes/20_json_gateway_task_05.json",
+    "sha256": "0c880f2348aec30c11b1e5ac5b5f8381583b29da48ba5f32391c04a9e61db146"
+  },
+  "20_json_gateway_task_06": {
+    "path": "episodes/20_json_gateway_task_06.json",
+    "sha256": "a9f0349a2eb07609e81fc2ec392bd44f0abd6716081cdab93c7026c775010da7"
+  },
+  "20_json_gateway_task_07": {
+    "path": "episodes/20_json_gateway_task_07.json",
+    "sha256": "e0c594428c2f6e270bc3fee8170489eba3573beec64d9a298afc2f05aa6eda4e"
+  },
+  "20_json_gateway_task_08": {
+    "path": "episodes/20_json_gateway_task_08.json",
+    "sha256": "a2d342548c3723698bee691f27b0c21bd17c79d62ebf6efda0e103d64041c2d7"
+  },
+  "20_json_gateway_task_09": {
+    "path": "episodes/20_json_gateway_task_09.json",
+    "sha256": "5fe08fade34a3f27054eca383ef75ad327b130098eda61e9d0f57da288702216"
+  },
+  "20_json_gateway_task_10": {
+    "path": "episodes/20_json_gateway_task_10.json",
+    "sha256": "b96b3e19a400252c0367631c636467b3d4ada8efa7fbc3d8137793b76a7a9408"
+  },
+  "20_json_gateway_task_11": {
+    "path": "episodes/20_json_gateway_task_11.json",
+    "sha256": "7097ec46e2754598663dce3d2d29209ecb42ce001a17ace8d915188550205bb4"
+  },
+  "20_json_gateway_task_12": {
+    "path": "episodes/20_json_gateway_task_12.json",
+    "sha256": "3b29662d6032fe9b0c3faa90f79f47acb9b351a67a626b857c0de304c08b4024"
+  },
+  "20_json_gateway_task_13": {
+    "path": "episodes/20_json_gateway_task_13.json",
+    "sha256": "8956f88a9e58163474408d70877e50337fa7005937d2f6d49bf988583d1984bf"
+  },
+  "20_json_gateway_task_14": {
+    "path": "episodes/20_json_gateway_task_14.json",
+    "sha256": "7d24df14051520252cd73ef225ef866634048e1301b75849af0d931b27e0a30b"
+  },
+  "20_json_gateway_task_15": {
+    "path": "episodes/20_json_gateway_task_15.json",
+    "sha256": "3c5fe64e498cd52d8ea2f2840aa3b0286eba290768bc0be2030aa74b6a6b6c89"
+  },
+  "20_json_gateway_task_16": {
+    "path": "episodes/20_json_gateway_task_16.json",
+    "sha256": "dc0c67619be3d937fdef23dd269009003130c5a7a91bab3c10fc0b20624ecf04"
+  },
+  "20_json_gateway_task_17": {
+    "path": "episodes/20_json_gateway_task_17.json",
+    "sha256": "f625e22296836868221ab0377590c2ae77ee60a6d4d69dc848796fb27e7f924f"
+  },
+  "20_json_gateway_task_18": {
+    "path": "episodes/20_json_gateway_task_18.json",
+    "sha256": "ac6eb27635c6525cf1f6c2f45d2b88ee9d6ddde74a948cea6b55778aa7b19ecf"
+  },
+  "20_json_gateway_task_19": {
+    "path": "episodes/20_json_gateway_task_19.json",
+    "sha256": "06ed6e6ce2a306c45a73eb1dbd3bb9c1ecba3db7ddc2f114b0df1f1fdd61975b"
+  },
+  "20_mvs_shell_task_00": {
+    "path": "episodes/20_mvs_shell_task_00.json",
+    "sha256": "273a191b8c14aa6ff7f934d8bae6f9be953ae9e47cfaf9ea2e7ec94c42c11579"
+  },
+  "20_mvs_shell_task_01": {
+    "path": "episodes/20_mvs_shell_task_01.json",
+    "sha256": "9cf7f4e33a7be8591bfd7ca05690ec2a8d6b1e30cef6fffef6472eeea2a734e8"
+  },
+  "20_mvs_shell_task_02": {
+    "path": "episodes/20_mvs_shell_task_02.json",
+    "sha256": "4ba9daaa2e71875f0080be65c8d90b8a3499a4e2a5b36b2af5e08e6eda7cd57a"
+  },
+  "20_mvs_shell_task_03": {
+    "path": "episodes/20_mvs_shell_task_03.json",
+    "sha256": "2a2bfdff13899fc40f48c105e4a09f342c6c271a4990a632843ca725b6ab443a"
+  },
+  "20_mvs_shell_task_04": {
+    "path": "episodes/20_mvs_shell_task_04.json",
+    "sha256": "5271e393a18f2fd973c8e6095cdea5894ac8d75eaea6924064105f1a131e19c2"
+  },
+  "20_mvs_shell_task_05": {
+    "path": "episodes/20_mvs_shell_task_05.json",
+    "sha256": "8d0b2aba0d1ce587232d1f72d6d780eb95ec532fab18cd9f29acc5fa56287743"
+  },
+  "20_mvs_shell_task_06": {
+    "path": "episodes/20_mvs_shell_task_06.json",
+    "sha256": "45addf6f56558aa08360206570be62d46a5cfe3a879666f6ea88df579fef6d9d"
+  },
+  "20_mvs_shell_task_07": {
+    "path": "episodes/20_mvs_shell_task_07.json",
+    "sha256": "56b19a298312a80392fb432610b8fdd33e27148a5df481339519737507d69740"
+  },
+  "20_mvs_shell_task_08": {
+    "path": "episodes/20_mvs_shell_task_08.json",
+    "sha256": "39978c94d4adf56b030f3c84d38606628d020847146f9ad548bfefc94d25df80"
+  },
+  "20_mvs_shell_task_09": {
+    "path": "episodes/20_mvs_shell_task_09.json",
+    "sha256": "b1488c5de04ae4a4223c2bbd9c1a02f910894582e574cafd1b6d1f9db93db8da"
+  },
+  "20_mvs_shell_task_10": {
+    "path": "episodes/20_mvs_shell_task_10.json",
+    "sha256": "d97899c9f905694249b4664fad43788ea94bf273cb3fe0ae5f4b84c764747626"
+  },
+  "20_mvs_shell_task_11": {
+    "path": "episodes/20_mvs_shell_task_11.json",
+    "sha256": "19bb9c5c10d9aaf31691dd2eed7f9b9267e13b917fb5bc617fef75b1d638961d"
+  },
+  "20_mvs_shell_task_12": {
+    "path": "episodes/20_mvs_shell_task_12.json",
+    "sha256": "3608fae8ab3083ca373998328b96d17c953b7157bfa8eaf767a5bf4913d98e27"
+  },
+  "20_mvs_shell_task_13": {
+    "path": "episodes/20_mvs_shell_task_13.json",
+    "sha256": "98a76e51ac01118da21b9d414f63718223be25d23125c5b31c32420568acd0a9"
+  },
+  "20_mvs_shell_task_14": {
+    "path": "episodes/20_mvs_shell_task_14.json",
+    "sha256": "c644c60b81cec627246bb1b81de78ad95de32a762b0a3b8db26619bdb7970762"
+  },
+  "20_mvs_shell_task_15": {
+    "path": "episodes/20_mvs_shell_task_15.json",
+    "sha256": "874db1e2bb58a21d14505e72e06b2df4546a7f77a8bb09497f9326712b3b12a4"
+  },
+  "20_mvs_shell_task_16": {
+    "path": "episodes/20_mvs_shell_task_16.json",
+    "sha256": "8a046a34f6e33d6e8321608991c8848325f912d3da49a0330df702a48cc032ff"
+  },
+  "20_mvs_shell_task_17": {
+    "path": "episodes/20_mvs_shell_task_17.json",
+    "sha256": "b4378328564f3ba67a7ef018815de245f9226e2e26f96688eba011838cc15183"
+  },
+  "20_mvs_shell_task_18": {
+    "path": "episodes/20_mvs_shell_task_18.json",
+    "sha256": "9ec45065d2836ffd922273c4823dcc5918edb40ce2f2f2def632776f60fde2ae"
+  },
+  "20_mvs_shell_task_19": {
+    "path": "episodes/20_mvs_shell_task_19.json",
+    "sha256": "f462a553165df004405decdfa0673b16f62d781311a6ecc8969f53e87209aaa1"
+  },
+  "20_native_tools_task_00": {
+    "path": "episodes/20_native_tools_task_00.json",
+    "sha256": "80caabb94d636715de40b41cb80e4bbec98b31872f44d917fa42d9be4e772ee3"
+  },
+  "20_native_tools_task_01": {
+    "path": "episodes/20_native_tools_task_01.json",
+    "sha256": "96a7377cdf5df904059891222348bfd12397782a9f2945e2c21e63509c8a2653"
+  },
+  "20_native_tools_task_02": {
+    "path": "episodes/20_native_tools_task_02.json",
+    "sha256": "a3922cddbb13adb8fbc86715d32d43c2aefe0ef9a125435b2c19a1e3ade6038f"
+  },
+  "20_native_tools_task_03": {
+    "path": "episodes/20_native_tools_task_03.json",
+    "sha256": "295e3fa285342b3997da0c1bb1725d8032971d7ba4bd0fff8cf64f5f830a3573"
+  },
+  "20_native_tools_task_04": {
+    "path": "episodes/20_native_tools_task_04.json",
+    "sha256": "d458d2a1887161cb95c5a88b05e6a1871cab506e393e487d2a5779a0c94a2cfe"
+  },
+  "20_native_tools_task_05": {
+    "path": "episodes/20_native_tools_task_05.json",
+    "sha256": "701d02154ed38a0794f7d806e7002bf3bab2ae6349cb3735c66a4508be92542b"
+  },
+  "20_native_tools_task_06": {
+    "path": "episodes/20_native_tools_task_06.json",
+    "sha256": "240f04c2b492912929625751b08140c714751817b0ff9ad5482c30193e34ca5f"
+  },
+  "20_native_tools_task_07": {
+    "path": "episodes/20_native_tools_task_07.json",
+    "sha256": "c93b556e949e5f300f2015d19ef82f951ad060fa0294d4c6663860b02145ddca"
+  },
+  "20_native_tools_task_08": {
+    "path": "episodes/20_native_tools_task_08.json",
+    "sha256": "4c27e3791dba3d6fa98af80ccce5b65d165ed722acb6118973c4c4152e8f9cb0"
+  },
+  "20_native_tools_task_09": {
+    "path": "episodes/20_native_tools_task_09.json",
+    "sha256": "7544e964ffa3b2f43e47ab31720aa304049926a6d9e08d6bc525d4506c9165ed"
+  },
+  "20_native_tools_task_10": {
+    "path": "episodes/20_native_tools_task_10.json",
+    "sha256": "2bacf5052db78b7e739ced5f0d56e2836e601ddf9ee0f2c949ada8aa5c40437c"
+  },
+  "20_native_tools_task_11": {
+    "path": "episodes/20_native_tools_task_11.json",
+    "sha256": "7aa3e1cac4d89bccbdb2e14f724f4b6540d1a4f82de6bed0ac995ae7ac05fb24"
+  },
+  "20_native_tools_task_12": {
+    "path": "episodes/20_native_tools_task_12.json",
+    "sha256": "5eb8b4f9599310a02765af42c0c15e98c15f35d8970207af622bc81abcfa71de"
+  },
+  "20_native_tools_task_13": {
+    "path": "episodes/20_native_tools_task_13.json",
+    "sha256": "8d8198d63bdf4c12730ff91be859791cb8591961efd52620b806a9240edf0f90"
+  },
+  "20_native_tools_task_14": {
+    "path": "episodes/20_native_tools_task_14.json",
+    "sha256": "4768650372f5c8ff6454cc817259bae3b155790ad21e422747c2ffbd6e6742c7"
+  },
+  "20_native_tools_task_15": {
+    "path": "episodes/20_native_tools_task_15.json",
+    "sha256": "2319c820036f8797c259c996723ae7e30fcdf18ea5ba9efb91aa25802277f5ce"
+  },
+  "20_native_tools_task_16": {
+    "path": "episodes/20_native_tools_task_16.json",
+    "sha256": "8402d2cb155975ac156c9655f515db6fb2d2c3823ab7c8c0522da8ba0a1bc116"
+  },
+  "20_native_tools_task_17": {
+    "path": "episodes/20_native_tools_task_17.json",
+    "sha256": "d31f80fe5b2d8976b2de47835cf6a490e8653b23ec41821ffbfe231870874d2d"
+  },
+  "20_native_tools_task_18": {
+    "path": "episodes/20_native_tools_task_18.json",
+    "sha256": "bf7052d46c2cd231c241ef352a64a9bc317f41ee54531c99f052bf5626e11b66"
+  },
+  "20_native_tools_task_19": {
+    "path": "episodes/20_native_tools_task_19.json",
+    "sha256": "f5378845f38d8aca25a21416985319e20db2ebed4f831e9fe5eefe3884a3caf9"
+  },
+  "50_json_gateway_task_00": {
+    "path": "episodes/50_json_gateway_task_00.json",
+    "sha256": "58b02d63578b256d72cef503548c8b4163d904ce30f5e2cc78d797218587fa16"
+  },
+  "50_json_gateway_task_01": {
+    "path": "episodes/50_json_gateway_task_01.json",
+    "sha256": "9c8aa854537a4ea4225d78c72d5f0708b5b1be67f98b9c31b8b6b0c015497631"
+  },
+  "50_json_gateway_task_02": {
+    "path": "episodes/50_json_gateway_task_02.json",
+    "sha256": "1c2afc2351ad8ada5aea317c3ba2ab5a24ff01113d06e5c21f93d246ba64c840"
+  },
+  "50_json_gateway_task_03": {
+    "path": "episodes/50_json_gateway_task_03.json",
+    "sha256": "6365ee4bde05663067d90ac5b03ae84470be403f06af4b9ac1bab73c23d39923"
+  },
+  "50_json_gateway_task_04": {
+    "path": "episodes/50_json_gateway_task_04.json",
+    "sha256": "415dc87e14316c1e62986a55898db89d6f84b0f37e9359831a73b915464cb2ac"
+  },
+  "50_json_gateway_task_05": {
+    "path": "episodes/50_json_gateway_task_05.json",
+    "sha256": "51617fa3eb69482e68197457e53b9bcf14c8ee5d2604c349eeaf4046d3172ba1"
+  },
+  "50_json_gateway_task_06": {
+    "path": "episodes/50_json_gateway_task_06.json",
+    "sha256": "0f87763603a3b2c72e17f53be27a7ce62f56d17574b80ff0316f4395b0591b19"
+  },
+  "50_json_gateway_task_07": {
+    "path": "episodes/50_json_gateway_task_07.json",
+    "sha256": "788bba1bbbfdd612e0e8d39294b453eb4fa3d3c238d44656b9a7c27d6fcb75a8"
+  },
+  "50_json_gateway_task_08": {
+    "path": "episodes/50_json_gateway_task_08.json",
+    "sha256": "e992c8e333f2edfff70f009da1bbce8c4783a85694e3e5fca3bb0b43dc2d9f03"
+  },
+  "50_json_gateway_task_09": {
+    "path": "episodes/50_json_gateway_task_09.json",
+    "sha256": "67354b3cc24ef5836243ad414f03fbac37eb16dffb303068117fe73b386bf022"
+  },
+  "50_json_gateway_task_10": {
+    "path": "episodes/50_json_gateway_task_10.json",
+    "sha256": "b8731674204641e911c1ac8359c34d016687b197c0722e7e0cdc705207ddb244"
+  },
+  "50_json_gateway_task_11": {
+    "path": "episodes/50_json_gateway_task_11.json",
+    "sha256": "4de64e2eb8444bcca0eed91796d14c2c886226066f6abf7f73f764c578546faa"
+  },
+  "50_json_gateway_task_12": {
+    "path": "episodes/50_json_gateway_task_12.json",
+    "sha256": "1277fd8fc6fa8bbd58856890d5b8e41d9057171e50e121d4de21a96c75838276"
+  },
+  "50_json_gateway_task_13": {
+    "path": "episodes/50_json_gateway_task_13.json",
+    "sha256": "18fb6a4831276bbf3832c6bb3e875749ed3db334a1f236e93be86217b8209e4d"
+  },
+  "50_json_gateway_task_14": {
+    "path": "episodes/50_json_gateway_task_14.json",
+    "sha256": "e95d1e547b543c6451c2cab32b3a96fd94902b56d81c16de1c50782df6b3c518"
+  },
+  "50_json_gateway_task_15": {
+    "path": "episodes/50_json_gateway_task_15.json",
+    "sha256": "c667f338bc66381ac583d68354da56834024d7a45d662d98f7394d3d6a77edad"
+  },
+  "50_json_gateway_task_16": {
+    "path": "episodes/50_json_gateway_task_16.json",
+    "sha256": "2ea4c99785d8dd9581322925ce2420d8ce2d3dc8c30354ba2c898903edb3a1f2"
+  },
+  "50_json_gateway_task_17": {
+    "path": "episodes/50_json_gateway_task_17.json",
+    "sha256": "f1f122e41c05d1aa7acd23fa8b93b5d2c46c7a1ec4343d0ce0aaafde941b60db"
+  },
+  "50_json_gateway_task_18": {
+    "path": "episodes/50_json_gateway_task_18.json",
+    "sha256": "65399eafbd3155ee39be62316d7dab18c241827b9de4934d009fa594aafd08dc"
+  },
+  "50_json_gateway_task_19": {
+    "path": "episodes/50_json_gateway_task_19.json",
+    "sha256": "6c13de12679c0d7be43575b1cf13bc8f6e4253555704d7c13a44fa08885533d4"
+  },
+  "50_mvs_shell_task_00": {
+    "path": "episodes/50_mvs_shell_task_00.json",
+    "sha256": "a895eb0ab03c79621800c6087b259e41302e210dbc2419e14dea664379a282d6"
+  },
+  "50_mvs_shell_task_01": {
+    "path": "episodes/50_mvs_shell_task_01.json",
+    "sha256": "e3736f92ff7727310d76e7648111e11b1e6ea1c6235aeb2f2d6b5010b2fb7fc6"
+  },
+  "50_mvs_shell_task_02": {
+    "path": "episodes/50_mvs_shell_task_02.json",
+    "sha256": "7ce20882f11028cdfce588063513845dfb987ff988b328cbff884e9c730415e5"
+  },
+  "50_mvs_shell_task_03": {
+    "path": "episodes/50_mvs_shell_task_03.json",
+    "sha256": "4f3dbcf74929d99a20753eecc11a5917c9aa1258ba28b87ed972935c0122cb90"
+  },
+  "50_mvs_shell_task_04": {
+    "path": "episodes/50_mvs_shell_task_04.json",
+    "sha256": "2a83356765e056772819d78f78eb08f0f1854b9a5595ce4c5744cc3a83625473"
+  },
+  "50_mvs_shell_task_05": {
+    "path": "episodes/50_mvs_shell_task_05.json",
+    "sha256": "f8054325ed83f2ac485715f0b971281b2e780df7996045af5c9d75eb00aba255"
+  },
+  "50_mvs_shell_task_06": {
+    "path": "episodes/50_mvs_shell_task_06.json",
+    "sha256": "4c3e667d997d4e99839664cf1c24aa5fe2c21f77de519bffc4db4fc7ca57b7c9"
+  },
+  "50_mvs_shell_task_07": {
+    "path": "episodes/50_mvs_shell_task_07.json",
+    "sha256": "d12d1ccf6167c9817597d3c663a6880ecf382cb092517fae9d1510969be9c1f9"
+  },
+  "50_mvs_shell_task_08": {
+    "path": "episodes/50_mvs_shell_task_08.json",
+    "sha256": "d7d6bec59b22c163687423764833a6711246b38ea73ba8db2e9daf1399cff1c0"
+  },
+  "50_mvs_shell_task_09": {
+    "path": "episodes/50_mvs_shell_task_09.json",
+    "sha256": "6b923543531079bb3b40026b9d7b7460d164789438279c1dcc811f83cf7ee028"
+  },
+  "50_mvs_shell_task_10": {
+    "path": "episodes/50_mvs_shell_task_10.json",
+    "sha256": "24cda3d294122db7d8bb3b6ff9810bb60a5b16bacdb89d40a4a64e71a2eb64ec"
+  },
+  "50_mvs_shell_task_11": {
+    "path": "episodes/50_mvs_shell_task_11.json",
+    "sha256": "3a9ee2812a1c4a7f0f0051ca3d81384e823aa6429986e1972dcdae766bddd1d6"
+  },
+  "50_mvs_shell_task_12": {
+    "path": "episodes/50_mvs_shell_task_12.json",
+    "sha256": "d961467bac210cdcc4d7ab004bb9265dab2caed3b97ff0cfc637cef0e16e8d58"
+  },
+  "50_mvs_shell_task_13": {
+    "path": "episodes/50_mvs_shell_task_13.json",
+    "sha256": "04ab238665144cd960118fbb91d8de065ddac8e8172f02d06809f51c38325c11"
+  },
+  "50_mvs_shell_task_14": {
+    "path": "episodes/50_mvs_shell_task_14.json",
+    "sha256": "ed87fdcea2f63af8c62918392819d4840864d0b01804975fbc7e409dbe3aa1f4"
+  },
+  "50_mvs_shell_task_15": {
+    "path": "episodes/50_mvs_shell_task_15.json",
+    "sha256": "ec51a7c028688054977966a12d96fae235f0dac495093f92bce1ee5ebbe74afc"
+  },
+  "50_mvs_shell_task_16": {
+    "path": "episodes/50_mvs_shell_task_16.json",
+    "sha256": "80f17130c5dfb756242f05036689bfa9a3b2a95f550d53a2cf3a7fbd2a352920"
+  },
+  "50_mvs_shell_task_17": {
+    "path": "episodes/50_mvs_shell_task_17.json",
+    "sha256": "af4b9ae99a656705b6cc8ee02c03ee40592bf7e27f66baa336d23b8239fd2165"
+  },
+  "50_mvs_shell_task_18": {
+    "path": "episodes/50_mvs_shell_task_18.json",
+    "sha256": "a3a229ea45d6cc59d83902b49647d7821242250a42fad0b4027790b40caf9639"
+  },
+  "50_mvs_shell_task_19": {
+    "path": "episodes/50_mvs_shell_task_19.json",
+    "sha256": "9fce8d6a4535b834351ba08f097d6cd14d062b25d1c121a2affe84884e3c0932"
+  },
+  "50_native_tools_task_00": {
+    "path": "episodes/50_native_tools_task_00.json",
+    "sha256": "c8ade657cf079a6a789d838cc19d70697ebd351ce554c6688eba5198f73afaf1"
+  },
+  "50_native_tools_task_01": {
+    "path": "episodes/50_native_tools_task_01.json",
+    "sha256": "b173b4c087419f19504caca8a24594509585b9ebe8ce1cb22a92bdf23b337d63"
+  },
+  "50_native_tools_task_02": {
+    "path": "episodes/50_native_tools_task_02.json",
+    "sha256": "af952c76701a537ff2ccee33d72d04cb963a845201cbc00fe5c61bc52a1acfd9"
+  },
+  "50_native_tools_task_03": {
+    "path": "episodes/50_native_tools_task_03.json",
+    "sha256": "6d50d45dc33b409a35bedbc9f96b2b8d036f07694f9a5733d4fd425f3563f84e"
+  },
+  "50_native_tools_task_04": {
+    "path": "episodes/50_native_tools_task_04.json",
+    "sha256": "fa2675d22fbdef8b6f6a363e27335096228d124ef9bb0b28f702df2306f7e1a7"
+  },
+  "50_native_tools_task_05": {
+    "path": "episodes/50_native_tools_task_05.json",
+    "sha256": "99b78725a5e0c873c13c080d21c7bb28c2b33acdc02dbadf828850092e699e89"
+  },
+  "50_native_tools_task_06": {
+    "path": "episodes/50_native_tools_task_06.json",
+    "sha256": "541a6fc796973e4fdb251c84ba8f42fdb4bea2e7ffe7be01b376efbb58c41171"
+  },
+  "50_native_tools_task_07": {
+    "path": "episodes/50_native_tools_task_07.json",
+    "sha256": "5c64711aba201cf5fcb19e3241805c256bb1b59226fac854a17b759a4a747ba2"
+  },
+  "50_native_tools_task_08": {
+    "path": "episodes/50_native_tools_task_08.json",
+    "sha256": "fb1bfbb01fedda857448d2670cde1da131b0f45ee76b8ea0470433b330178102"
+  },
+  "50_native_tools_task_09": {
+    "path": "episodes/50_native_tools_task_09.json",
+    "sha256": "6ca6fdeff7d02aaa2ad67682cb9f96290bf15b777a87ec785565400e7d81a982"
+  },
+  "50_native_tools_task_10": {
+    "path": "episodes/50_native_tools_task_10.json",
+    "sha256": "d2b3a37e7c7ceac83818290aa22b932ac98b50dd8bc5cdbb6eb86d1bbb1c60f3"
+  },
+  "50_native_tools_task_11": {
+    "path": "episodes/50_native_tools_task_11.json",
+    "sha256": "edf52ebe7010e4ab849616753577706807bdb1bd63291a7994a598acbec870d1"
+  },
+  "50_native_tools_task_12": {
+    "path": "episodes/50_native_tools_task_12.json",
+    "sha256": "8a4c5a02af9c0da63368c8c9e84dcebbd4d7708974bd2c20acb5493bd94b2cdb"
+  },
+  "50_native_tools_task_13": {
+    "path": "episodes/50_native_tools_task_13.json",
+    "sha256": "d8ce5614354c723ab5e5f35ec7befffaf34cf7b88ed18bb2b00fab1bd400c8ea"
+  },
+  "50_native_tools_task_14": {
+    "path": "episodes/50_native_tools_task_14.json",
+    "sha256": "3af5a68709c8e29080de3b2665fa58e11297ed54b58820202c9cf478e07b4698"
+  },
+  "50_native_tools_task_15": {
+    "path": "episodes/50_native_tools_task_15.json",
+    "sha256": "42045abb421ba23820506619d3520a51911b204ef9be4f2b4b08d6263f58e732"
+  },
+  "50_native_tools_task_16": {
+    "path": "episodes/50_native_tools_task_16.json",
+    "sha256": "ee28ba2ee1850a890b6c4f8214ddf69a0e5895c928479af4372b1f80847bb697"
+  },
+  "50_native_tools_task_17": {
+    "path": "episodes/50_native_tools_task_17.json",
+    "sha256": "6b8a8e9843b487b59a874ba478713e98861a54adea09b12254884f37f7d42686"
+  },
+  "50_native_tools_task_18": {
+    "path": "episodes/50_native_tools_task_18.json",
+    "sha256": "aa2523b30a7b0b750702149b31d807b2fc04f26614b2f999625f1fa34a79bcfe"
+  },
+  "50_native_tools_task_19": {
+    "path": "episodes/50_native_tools_task_19.json",
+    "sha256": "07e7845089c5aea92013474113af2a1a113816a39820898a01a36a2ca6e7cd2f"
+  }
+}

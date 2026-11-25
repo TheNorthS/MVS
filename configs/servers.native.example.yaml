@@ -1,0 +1,42 @@
+# 真实原生命令示例。不会启用任意 Shell；管理员固定 executable、argv 和 cwd。
+# 根据实际安装位置调整路径。仅选择当前系统对应的实现，缺少实现的工具不展示。
+servers:
+  - id: host
+    transport: native
+    enabled: true
+    allowed_tools: [hostname, identity]
+    max_concurrency: 2
+    call_timeout_seconds: 15
+    native_commands:
+      - name: hostname
+        description: 读取运行 MVS 主机的计算机名
+        input_schema:
+          type: object
+          additionalProperties: false
+        implementations:
+          linux:
+            executable: /bin/hostname
+            cwd: /tmp
+          darwin:
+            executable: /bin/hostname
+            cwd: /tmp
+          win32:
+            executable: C:\Windows\System32\hostname.exe
+            cwd: C:\Windows
+            encoding: cp936
+      - name: identity
+        description: 读取运行 MVS 进程的系统身份
+        input_schema:
+          type: object
+          additionalProperties: false
+        implementations:
+          linux:
+            executable: /usr/bin/id
+            cwd: /tmp
+          darwin:
+            executable: /usr/bin/id
+            cwd: /tmp
+          win32:
+            executable: C:\Windows\System32\whoami.exe
+            cwd: C:\Windows
+            encoding: cp936

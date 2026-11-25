@@ -1,0 +1,151 @@
+{
+  "episode_id": "200_native_tools_task_12",
+  "size": 200,
+  "mode": "native_tools",
+  "task_id": "task_12",
+  "prompt": "Calculate invoice tax from net amount and rate. Use current data, not archives. Parameters: {\"net_amount\": 1200.5, \"rate\": 0.13}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "tax",
+  "expected_arguments": {
+    "net_amount": 1200.5,
+    "rate": 0.13
+  },
+  "expected_code": "v_2fb6bce006e8debe7c24",
+  "final_answer": "v_2fb6bce006e8debe7c24",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 31859,
+    "output_tokens": 93,
+    "total_tokens": 31952,
+    "cached_input_tokens": 31360,
+    "reasoning_output_tokens": 12
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "tax",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "tax",
+      "arguments": {
+        "net_amount": 1200.5,
+        "rate": 0.13
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    15766,
+    16093
+  ],
+  "context_growth_tokens": 327,
+  "latency_ms": 3525.924199959263,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "1c0ce5f7-1708-40b3-8adc-49199b9e3112",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 15766,
+        "output_tokens": 77,
+        "total_tokens": 15843,
+        "cached_input_tokens": 15616,
+        "reasoning_output_tokens": 12
+      },
+      "context_bytes": 70115,
+      "model_latency_ms": 1767.4411000916734,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "1d1b4913-25b9-47f9-bc08-1a296397c74f",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "I need to use the current tax tool, not archive."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "1c0ce5f7-1708-40b3-8adc-49199b9e3112-0"
+        },
+        {
+          "type": "function_call",
+          "id": "d70bbb5e-435b-4e8f-aeb2-7f26bd14a001",
+          "status": "completed",
+          "arguments": "{\"net_amount\": 1200.5, \"rate\": 0.13}",
+          "call_id": "call_00_LMrZCJOBcOO48Bnx3wna1088",
+          "name": "tax"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "tax",
+          "result": {
+            "request_id": "5ca5f28f2975452db740a92f5aa514d4",
+            "session_id": "b8146a3785e749409dde4c793a5a8ab7",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_2fb6bce006e8debe7c24\", \"source_tool\": \"tax\", \"data\": {\"net_amount\": 1200.5, \"rate\": 0.13}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_2fb6bce006e8debe7c24",
+              "source_tool": "tax",
+              "data": {
+                "net_amount": 1200.5,
+                "rate": 0.13
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/27390000afb744ac9c67d04b821b05bd",
+            "truncated": false,
+            "duration_ms": 405,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "3d16643b-8625-41c9-bf40-13f0d6f40769",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 16093,
+        "output_tokens": 16,
+        "total_tokens": 16109,
+        "cached_input_tokens": 15744,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 71351,
+      "model_latency_ms": 1067.0121000148356,
+      "output": [
+        {
+          "type": "message",
+          "id": "60eaae84-fec1-4886-8872-5826a6edf235",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_2fb6bce006e8debe7c24"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

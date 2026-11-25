@@ -1,0 +1,138 @@
+{
+  "episode_id": "20_native_tools_task_02",
+  "size": 20,
+  "mode": "native_tools",
+  "task_id": "task_02",
+  "prompt": "Fetch current order status. Use current data, not archives. Parameters: {\"order_id\": \"ORD-931\", \"include_items\": true}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "order",
+  "expected_arguments": {
+    "order_id": "ORD-931",
+    "include_items": true
+  },
+  "expected_code": "v_8d989a5cfa9dda4bbc35",
+  "final_answer": "v_8d989a5cfa9dda4bbc35",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 1660,
+    "output_tokens": 43,
+    "total_tokens": 1703,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "order",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "order",
+      "arguments": {
+        "include_items": true,
+        "order_id": "ORD-931"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    700,
+    960
+  ],
+  "context_growth_tokens": 260,
+  "latency_ms": 6390.824900008738,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_00db7d63ced087c0016b06bebc3f6487d199e10903a42c0e24",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 700,
+        "output_tokens": 25,
+        "total_tokens": 725,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 6558,
+      "model_latency_ms": 2563.968400005251,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_00db7d63ced087c0016b06bebd610c87d185d38d5d5bacae85",
+          "call_id": "call_4c1634ca49d4495e8d43abb7a55a041c",
+          "name": "order",
+          "arguments": "{\"include_items\":true,\"order_id\":\"ORD-931\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "order",
+          "result": {
+            "request_id": "f994789a8722459d8e3ab638d6b61890",
+            "session_id": "973bbc0a31a7424ea92a31cf6de202a7",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_8d989a5cfa9dda4bbc35\", \"source_tool\": \"order\", \"data\": {\"include_items\": true, \"order_id\": \"ORD-931\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_8d989a5cfa9dda4bbc35",
+              "source_tool": "order",
+              "data": {
+                "include_items": true,
+                "order_id": "ORD-931"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/54a8b3c4508a4802b0a2d57aa7e81a3c",
+            "truncated": false,
+            "duration_ms": 344,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_00db7d63ced087c0016b06bebf56a487d1aa20701d827eeb18",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 960,
+        "output_tokens": 18,
+        "total_tokens": 978,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 7593,
+      "model_latency_ms": 3434.6693000989035,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_00db7d63ced087c0016b06bec13ff887d19c37de703fbb467f",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_8d989a5cfa9dda4bbc35",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

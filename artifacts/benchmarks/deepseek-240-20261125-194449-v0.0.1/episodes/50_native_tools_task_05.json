@@ -1,0 +1,141 @@
+{
+  "episode_id": "50_native_tools_task_05",
+  "size": 50,
+  "mode": "native_tools",
+  "task_id": "task_05",
+  "prompt": "Convert a monetary amount between currencies. Use current data, not archives. Parameters: {\"amount\": 123.45, \"source\": \"USD\", \"target\": \"EUR\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "exchange",
+  "expected_arguments": {
+    "amount": 123.45,
+    "source": "USD",
+    "target": "EUR"
+  },
+  "expected_code": "v_e73abbdf62bde8db6e05",
+  "final_answer": "v_e73abbdf62bde8db6e05",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 8252,
+    "output_tokens": 91,
+    "total_tokens": 8343,
+    "cached_input_tokens": 7808,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "exchange",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "exchange",
+      "arguments": {
+        "amount": 123.45,
+        "source": "USD",
+        "target": "EUR"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    3963,
+    4289
+  ],
+  "context_growth_tokens": 326,
+  "latency_ms": 3602.346900035627,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "d8b06a8f-7744-4612-81d2-51442714b92c",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 3963,
+        "output_tokens": 77,
+        "total_tokens": 4040,
+        "cached_input_tokens": 3840,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 17012,
+      "model_latency_ms": 2125.47780002933,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "b5266538-229b-4624-b0b6-081abaa9667a",
+          "status": "completed",
+          "arguments": "{\"amount\": 123.45, \"source\": \"USD\", \"target\": \"EUR\"}",
+          "call_id": "call_00_ET_YsT5fK37xs823CziR6gM8131",
+          "name": "exchange"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "exchange",
+          "result": {
+            "request_id": "46536ba40a81487987750152af273a2a",
+            "session_id": "e45376495cf04e2c9765561310d5c90f",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_e73abbdf62bde8db6e05\", \"source_tool\": \"exchange\", \"data\": {\"amount\": 123.45, \"source\": \"USD\", \"target\": \"EUR\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_e73abbdf62bde8db6e05",
+              "source_tool": "exchange",
+              "data": {
+                "amount": 123.45,
+                "source": "USD",
+                "target": "EUR"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/9a4a7a5dbd264d3ebf8cace44850213b",
+            "truncated": false,
+            "duration_ms": 375,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "ec080be4-e7df-4a44-a7c1-4c94c2d4e176",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 4289,
+        "output_tokens": 14,
+        "total_tokens": 4303,
+        "cached_input_tokens": 3968,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 18076,
+      "model_latency_ms": 1016.3048999384046,
+      "output": [
+        {
+          "type": "message",
+          "id": "b4425ad5-7592-48c1-8a8e-2d010e47ba2c",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_e73abbdf62bde8db6e05"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

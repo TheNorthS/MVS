@@ -1,0 +1,135 @@
+{
+  "episode_id": "50_native_tools_task_09",
+  "size": 50,
+  "mode": "native_tools",
+  "task_id": "task_09",
+  "prompt": "Look up a customer account. Use current data, not archives. Parameters: {\"customer_id\": \"CUS-325\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "customer",
+  "expected_arguments": {
+    "customer_id": "CUS-325"
+  },
+  "expected_code": "v_2e9a1ed3bc1d4368cebb",
+  "final_answer": "v_2e9a1ed3bc1d4368cebb",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 3814,
+    "output_tokens": 40,
+    "total_tokens": 3854,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "customer",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "customer",
+      "arguments": {
+        "customer_id": "CUS-325"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    1786,
+    2028
+  ],
+  "context_growth_tokens": 242,
+  "latency_ms": 14734.568899963051,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_07e2144fa9b17d5c016b06bfcf172c87d0ab12cda0b8d410ea",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1786,
+        "output_tokens": 20,
+        "total_tokens": 1806,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 16962,
+      "model_latency_ms": 5836.362599977292,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_07e2144fa9b17d5c016b06bfd150fc87d0abe40c4e708c42c0",
+          "call_id": "call_4a05fbea96aa41358ead5e2a5ea91098",
+          "name": "customer",
+          "arguments": "{\"customer_id\":\"CUS-325\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "customer",
+          "result": {
+            "request_id": "2c362435bd6d472fb91ec01d84f901f7",
+            "session_id": "429263405ae74e7eb7b62ac61d9ae790",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_2e9a1ed3bc1d4368cebb\", \"source_tool\": \"customer\", \"data\": {\"customer_id\": \"CUS-325\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_2e9a1ed3bc1d4368cebb",
+              "source_tool": "customer",
+              "data": {
+                "customer_id": "CUS-325"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/caf1b7f94b00411b8ae6e955ed8fd81a",
+            "truncated": false,
+            "duration_ms": 436,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_07e2144fa9b17d5c016b06bfd542ec87d0b4504e31b211c621",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 2028,
+        "output_tokens": 20,
+        "total_tokens": 2048,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 17938,
+      "model_latency_ms": 8354.818499996327,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_07e2144fa9b17d5c016b06bfdb8a3c87d0bae6bcf852f453cc",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_2e9a1ed3bc1d4368cebb",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "episode_id": "50_native_tools_task_17",
+  "size": 50,
+  "mode": "native_tools",
+  "task_id": "task_17",
+  "prompt": "List free appointment slots for a doctor. Use current data, not archives. Parameters: {\"doctor_id\": \"DOC-912\", \"date\": \"2026-11-21\", \"limit\": 3}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "appointments",
+  "expected_arguments": {
+    "doctor_id": "DOC-912",
+    "date": "2026-11-21",
+    "limit": 3
+  },
+  "expected_code": "v_6f8a2fecd1b3cc8ba719",
+  "final_answer": "v_6f8a2fecd1b3cc8ba719",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 3895,
+    "output_tokens": 54,
+    "total_tokens": 3949,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "appointments",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "appointments",
+      "arguments": {
+        "date": "2026-11-21",
+        "doctor_id": "DOC-912",
+        "limit": 3
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    1804,
+    2091
+  ],
+  "context_growth_tokens": 287,
+  "latency_ms": 7380.605299957097,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_08e3c38125f21526016b06bee1431c87d0ac68abc4d959ea69",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1804,
+        "output_tokens": 34,
+        "total_tokens": 1838,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 17014,
+      "model_latency_ms": 3580.771000008099,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_08e3c38125f21526016b06bee2a0e087d0afd958bcf6416d0d",
+          "call_id": "call_0cefa1289b1346c981eea82f6c62250a",
+          "name": "appointments",
+          "arguments": "{\"date\":\"2026-11-21\",\"doctor_id\":\"DOC-912\",\"limit\":3}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "appointments",
+          "result": {
+            "request_id": "8af6cc66048c4ba58f302560f2fe3e24",
+            "session_id": "f4bd972abefe402db8d033fc22fae6ec",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_6f8a2fecd1b3cc8ba719\", \"source_tool\": \"appointments\", \"data\": {\"date\": \"2026-11-21\", \"doctor_id\": \"DOC-912\", \"limit\": 3}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_6f8a2fecd1b3cc8ba719",
+              "source_tool": "appointments",
+              "data": {
+                "date": "2026-11-21",
+                "doctor_id": "DOC-912",
+                "limit": 3
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/57d627448da146f2adc08f79d141a113",
+            "truncated": false,
+            "duration_ms": 359,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_08e3c38125f21526016b06bee5359c87d0925f84dc19889430",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 2091,
+        "output_tokens": 20,
+        "total_tokens": 2111,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 18124,
+      "model_latency_ms": 2797.9121999815106,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_08e3c38125f21526016b06bee61a0487d0a184f5f2d81bff53",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_6f8a2fecd1b3cc8ba719",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

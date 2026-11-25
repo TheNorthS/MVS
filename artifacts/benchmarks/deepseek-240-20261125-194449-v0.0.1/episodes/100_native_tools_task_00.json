@@ -1,0 +1,138 @@
+{
+  "episode_id": "100_native_tools_task_00",
+  "size": 100,
+  "mode": "native_tools",
+  "task_id": "task_00",
+  "prompt": "Check current warehouse stock. Use current data, not archives. Parameters: {\"sku\": \"SKU-482\", \"warehouse\": \"north\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "stock",
+  "expected_arguments": {
+    "sku": "SKU-482",
+    "warehouse": "north"
+  },
+  "expected_code": "v_f96ab48f3ca0ac56bfb8",
+  "final_answer": "v_f96ab48f3ca0ac56bfb8",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 16153,
+    "output_tokens": 79,
+    "total_tokens": 16232,
+    "cached_input_tokens": 15744,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "stock",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "stock",
+      "arguments": {
+        "sku": "SKU-482",
+        "warehouse": "north"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    7922,
+    8231
+  ],
+  "context_growth_tokens": 309,
+  "latency_ms": 4371.891999966465,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "96d9ce64-bbff-4139-8a25-d12bedaa90f4",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 7922,
+        "output_tokens": 64,
+        "total_tokens": 7986,
+        "cached_input_tokens": 7808,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 34801,
+      "model_latency_ms": 1659.266100032255,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "ae68c703-1a96-404d-8623-416dde2ed5d9",
+          "status": "completed",
+          "arguments": "{\"sku\": \"SKU-482\", \"warehouse\": \"north\"}",
+          "call_id": "call_00_ET_5SteJxC4RYHIxoIAPgK44210",
+          "name": "stock"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "stock",
+          "result": {
+            "request_id": "fc5966e745074dc58ae15b6944dcf08f",
+            "session_id": "f57f7dcfe49d41aca5193fbbc6ca9ac1",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_f96ab48f3ca0ac56bfb8\", \"source_tool\": \"stock\", \"data\": {\"sku\": \"SKU-482\", \"warehouse\": \"north\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_f96ab48f3ca0ac56bfb8",
+              "source_tool": "stock",
+              "data": {
+                "sku": "SKU-482",
+                "warehouse": "north"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/a5319ceca82e4d3daeaf005f06af8079",
+            "truncated": false,
+            "duration_ms": 655,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "f30a9825-eb19-4c3a-891f-12c4989288f3",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 8231,
+        "output_tokens": 15,
+        "total_tokens": 8246,
+        "cached_input_tokens": 7936,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 35810,
+      "model_latency_ms": 1492.4994999310002,
+      "output": [
+        {
+          "type": "message",
+          "id": "b2853775-fcf9-40e5-8a4e-a25cb8488b51",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_f96ab48f3ca0ac56bfb8"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "episode_id": "20_mvs_shell_task_01",
+  "size": 20,
+  "mode": "mvs_shell",
+  "task_id": "task_01",
+  "prompt": "Look up current product price in a currency. Use current data, not archives. Parameters: {\"sku\": \"SKU-317\", \"currency\": \"EUR\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "price",
+  "expected_arguments": {
+    "sku": "SKU-317",
+    "currency": "EUR"
+  },
+  "expected_code": "v_670f2694ecabbcedfdfd",
+  "final_answer": "v_670f2694ecabbcedfdfd",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 2626,
+    "output_tokens": 108,
+    "total_tokens": 2734,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 4,
+  "tool_selection_attempts": [
+    {
+      "tool": "price",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "price",
+      "arguments": {
+        "sku": "SKU-317",
+        "currency": "EUR"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    287,
+    531,
+    769,
+    1039
+  ],
+  "context_growth_tokens": 752,
+  "latency_ms": 30714.24370002933,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_0607ac1acfed1e6d016b06c01a270087d289b68f5836b7ce60",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 287,
+        "output_tokens": 24,
+        "total_tokens": 311,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 1076,
+      "model_latency_ms": 8080.082900007255,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0607ac1acfed1e6d016b06c020c8fc87d28e65e00f3ac141d8",
+          "call_id": "call_ab4f9a0619124e099841d9f7b6297408",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"ls /mcp/bench/tools\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "8052fbe2c84e417f98d0cf2c0e46d969",
+            "session_id": "ca285739c8d44e52a4b51a548b5170d6",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "appointments\ncapacity\ncustomer\ndocuments\nemployee\nexchange\nhealth\ninvoice\nloyalty\norder\nprice\nrepository\nroute\nshipment\nstock\nsubscription\ntax\ntickets\nusage\nweather",
+            "stderr": "",
+            "data": [
+              "appointments",
+              "capacity",
+              "customer",
+              "documents",
+              "employee",
+              "exchange",
+              "health",
+              "invoice",
+              "loyalty",
+              "order",
+              "price",
+              "repository",
+              "route",
+              "shipment",
+              "stock",
+              "subscription",
+              "tax",
+              "tickets",
+              "usage",
+              "weather"
+            ],
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_0607ac1acfed1e6d016b06c0223bd487d29a3829a9fe40c46e",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 531,
+        "output_tokens": 26,
+        "total_tokens": 557,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 2167,
+      "model_latency_ms": 7173.105699941516,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0607ac1acfed1e6d016b06c027f7f487d28335d3c3277fddbc",
+          "call_id": "call_a2599cc929594e39a4c357545812d562",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"help /mcp/bench/tools/price\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "02219d8192b3474f8a413723e37c288d",
+            "session_id": "ca285739c8d44e52a4b51a548b5170d6",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "price\nLook up current product price in a currency\n--params-json <JSON object>\n--sku {\"type\": \"string\"} required\n--currency {\"type\": \"string\"} required",
+            "stderr": "",
+            "data": {
+              "input_schema": {
+                "type": "object",
+                "properties": {
+                  "sku": {
+                    "type": "string"
+                  },
+                  "currency": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "sku",
+                  "currency"
+                ],
+                "additionalProperties": false
+              },
+              "untrusted": true,
+              "backend": "mcp"
+            },
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "resp_0607ac1acfed1e6d016b06c029799087d2975c2ffe93df5ef8",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 769,
+        "output_tokens": 42,
+        "total_tokens": 811,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 3227,
+      "model_latency_ms": 6665.561000001617,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0607ac1acfed1e6d016b06c02e4b0487d2aa3939e7a39223f7",
+          "call_id": "call_c9304ee92cf74839b528cda5b3800e86",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"run /mcp/bench/tools/price --params-json '{\\\"sku\\\":\\\"SKU-317\\\",\\\"currency\\\":\\\"EUR\\\"}'\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "9fcfb94848dc44c0a1a080adffd38f1e",
+            "session_id": "ca285739c8d44e52a4b51a548b5170d6",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_670f2694ecabbcedfdfd\", \"source_tool\": \"price\", \"data\": {\"sku\": \"SKU-317\", \"currency\": \"EUR\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_670f2694ecabbcedfdfd",
+              "source_tool": "price",
+              "data": {
+                "sku": "SKU-317",
+                "currency": "EUR"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/73e264fbd1f04746b85df256d6e0686c",
+            "truncated": false,
+            "duration_ms": 375,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "resp_0607ac1acfed1e6d016b06c030717c87d2996a0e8f77b0bfb7",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1039,
+        "output_tokens": 16,
+        "total_tokens": 1055,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 4330,
+      "model_latency_ms": 8376.934300060384,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_0607ac1acfed1e6d016b06c037795087d2ab4350c92b592859",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_670f2694ecabbcedfdfd",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

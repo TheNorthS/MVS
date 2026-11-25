@@ -1,0 +1,352 @@
+{
+  "episode_id": "20_mvs_shell_task_00",
+  "size": 20,
+  "mode": "mvs_shell",
+  "task_id": "task_00",
+  "prompt": "Check current warehouse stock. Use current data, not archives. Parameters: {\"sku\": \"SKU-482\", \"warehouse\": \"north\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "stock",
+  "expected_arguments": {
+    "sku": "SKU-482",
+    "warehouse": "north"
+  },
+  "expected_code": "v_f96ab48f3ca0ac56bfb8",
+  "final_answer": "v_f96ab48f3ca0ac56bfb8",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 4894,
+    "output_tokens": 265,
+    "total_tokens": 5159,
+    "cached_input_tokens": 3584,
+    "reasoning_output_tokens": 26
+  },
+  "interaction_rounds": 5,
+  "tool_selection_attempts": [
+    {
+      "tool": "stock",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "stock",
+      "arguments": {
+        "sku": "SKU-482",
+        "warehouse": "north"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    450,
+    736,
+    949,
+    1226,
+    1533
+  ],
+  "context_growth_tokens": 1083,
+  "latency_ms": 11206.1252000276,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "ec5a8105-b557-4013-8c69-e3fb72eafc65",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 450,
+        "output_tokens": 59,
+        "total_tokens": 509,
+        "cached_input_tokens": 384,
+        "reasoning_output_tokens": 7
+      },
+      "context_bytes": 1065,
+      "model_latency_ms": 3244.7182999458164,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "087fd5ea-d8cd-4730-9278-9785ce9f87af",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "Let me discover the tools available."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "ec5a8105-b557-4013-8c69-e3fb72eafc65-0"
+        },
+        {
+          "type": "function_call",
+          "id": "ff284e2b-3480-4781-8e26-1cfbf62f097d",
+          "status": "completed",
+          "arguments": "{\"command\": \"ls /mcp/bench/tools\"}",
+          "call_id": "call_00_hZ1fHN2CmRiNvw1t3yG44086",
+          "name": "virtual_shell"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "cee8ab78302e42b9984eb07534174515",
+            "session_id": "83ee461ea48a46f7a61701a3e4de4d5f",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "appointments\ncapacity\ncustomer\ndocuments\nemployee\nexchange\nhealth\ninvoice\nloyalty\norder\nprice\nrepository\nroute\nshipment\nstock\nsubscription\ntax\ntickets\nusage\nweather",
+            "stderr": "",
+            "data": [
+              "appointments",
+              "capacity",
+              "customer",
+              "documents",
+              "employee",
+              "exchange",
+              "health",
+              "invoice",
+              "loyalty",
+              "order",
+              "price",
+              "repository",
+              "route",
+              "shipment",
+              "stock",
+              "subscription",
+              "tax",
+              "tickets",
+              "usage",
+              "weather"
+            ],
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "09a3c473-0191-4b46-89a9-65d439017f03",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 736,
+        "output_tokens": 68,
+        "total_tokens": 804,
+        "cached_input_tokens": 384,
+        "reasoning_output_tokens": 14
+      },
+      "context_bytes": 2389,
+      "model_latency_ms": 1657.0756000000983,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "384e924b-05f9-4ace-b10e-4141a96718e6",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "There's a \"stock\" tool. Let me inspect its help."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "09a3c473-0191-4b46-89a9-65d439017f03-0"
+        },
+        {
+          "type": "function_call",
+          "id": "05872048-3c5d-4498-ad4a-885c2d2404c8",
+          "status": "completed",
+          "arguments": "{\"command\": \"cat /mcp/bench/tools/stock\"}",
+          "call_id": "call_00_CSDLqCMfHQB2uyIM60xp5845",
+          "name": "virtual_shell"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "a24f76f9c7ee4509858066763a6eddf5",
+            "session_id": "83ee461ea48a46f7a61701a3e4de4d5f",
+            "status": "error",
+            "exit_code": 1,
+            "stdout": "",
+            "stderr": "INVALID_PATH: Expected a resource or prompt node",
+            "data": null,
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": {
+              "code": "INVALID_PATH",
+              "message": "Expected a resource or prompt node"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "c56f4c62-ec16-4d35-891b-2cd4611289f4",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 949,
+        "output_tokens": 59,
+        "total_tokens": 1008,
+        "cached_input_tokens": 640,
+        "reasoning_output_tokens": 5
+      },
+      "context_bytes": 3394,
+      "model_latency_ms": 2048.3801999362186,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "be1c7807-4f13-49b3-9e00-f53ff6fc76f0",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "Let me inspect help."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "c56f4c62-ec16-4d35-891b-2cd4611289f4-0"
+        },
+        {
+          "type": "function_call",
+          "id": "127b1fdc-111e-4616-b5b6-53bbe00311d4",
+          "status": "completed",
+          "arguments": "{\"command\": \"help /mcp/bench/tools/stock\"}",
+          "call_id": "call_00_n733uwgCOG0KkFzgbvyh0808",
+          "name": "virtual_shell"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "28b69416cfd143fbb4af5613c9b84761",
+            "session_id": "83ee461ea48a46f7a61701a3e4de4d5f",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "stock\nCheck current warehouse stock\n--params-json <JSON object>\n--sku {\"type\": \"string\"} required\n--warehouse {\"type\": \"string\"} required",
+            "stderr": "",
+            "data": {
+              "input_schema": {
+                "type": "object",
+                "properties": {
+                  "sku": {
+                    "type": "string"
+                  },
+                  "warehouse": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "sku",
+                  "warehouse"
+                ],
+                "additionalProperties": false
+              },
+              "untrusted": true,
+              "backend": "mcp"
+            },
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "42da283b-2f57-4598-9205-94e82cda1577",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1226,
+        "output_tokens": 64,
+        "total_tokens": 1290,
+        "cached_input_tokens": 896,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 4660,
+      "model_latency_ms": 1633.8770999573171,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "9f651d7e-554e-4003-870d-34c6140a2799",
+          "status": "completed",
+          "arguments": "{\"command\": \"run /mcp/bench/tools/stock --sku SKU-482 --warehouse north\"}",
+          "call_id": "call_00_ET_dlcq1rc3jRhUuqgx0vRq2266",
+          "name": "virtual_shell"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "f49e73dbddc04aa693efd34cc00ab577",
+            "session_id": "83ee461ea48a46f7a61701a3e4de4d5f",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_f96ab48f3ca0ac56bfb8\", \"source_tool\": \"stock\", \"data\": {\"sku\": \"SKU-482\", \"warehouse\": \"north\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_f96ab48f3ca0ac56bfb8",
+              "source_tool": "stock",
+              "data": {
+                "sku": "SKU-482",
+                "warehouse": "north"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/a090632b6eba46d383195000d14863ce",
+            "truncated": false,
+            "duration_ms": 422,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "response_id": "9a5b4627-e2f8-4cbd-a8e2-21585a9b6caa",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1533,
+        "output_tokens": 15,
+        "total_tokens": 1548,
+        "cached_input_tokens": 1280,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 5706,
+      "model_latency_ms": 1156.7288000369444,
+      "output": [
+        {
+          "type": "message",
+          "id": "9c0b89e4-d2d9-4023-a2e3-3185c880ac69",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_f96ab48f3ca0ac56bfb8"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

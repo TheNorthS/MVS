@@ -1,0 +1,138 @@
+{
+  "episode_id": "200_native_tools_task_15",
+  "size": 200,
+  "mode": "native_tools",
+  "task_id": "task_15",
+  "prompt": "Get current available capacity of a warehouse. Use current data, not archives. Parameters: {\"warehouse\": \"south\", \"unit\": \"pallet\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "capacity",
+  "expected_arguments": {
+    "warehouse": "south",
+    "unit": "pallet"
+  },
+  "expected_code": "v_efcc6c0f00fdd51486ac",
+  "final_answer": "v_efcc6c0f00fdd51486ac",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 31831,
+    "output_tokens": 77,
+    "total_tokens": 31908,
+    "cached_input_tokens": 31360,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "capacity",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "capacity",
+      "arguments": {
+        "warehouse": "south",
+        "unit": "pallet"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    15763,
+    16068
+  ],
+  "context_growth_tokens": 305,
+  "latency_ms": 3514.8016000166535,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "872b645a-6011-442f-89c8-91fefcb565cc",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 15763,
+        "output_tokens": 62,
+        "total_tokens": 15825,
+        "cached_input_tokens": 15616,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 70122,
+      "model_latency_ms": 1556.3910999335349,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "c7cd1dcc-f9cc-4083-be44-d8e734b3c15c",
+          "status": "completed",
+          "arguments": "{\"warehouse\": \"south\", \"unit\": \"pallet\"}",
+          "call_id": "call_00_ET_Z5cXTiFveBiMSD6w3yJD7629",
+          "name": "capacity"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "capacity",
+          "result": {
+            "request_id": "1449bf5965124a4d99198c98385eb9f3",
+            "session_id": "ec9a57dc4b6a429189ba8b6f5bfe99fa",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_efcc6c0f00fdd51486ac\", \"source_tool\": \"capacity\", \"data\": {\"warehouse\": \"south\", \"unit\": \"pallet\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_efcc6c0f00fdd51486ac",
+              "source_tool": "capacity",
+              "data": {
+                "warehouse": "south",
+                "unit": "pallet"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/3cf44771b877401380e6d4185278e8db",
+            "truncated": false,
+            "duration_ms": 530,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "bd3d95b1-00a1-4780-a70f-7e757941715f",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 16068,
+        "output_tokens": 15,
+        "total_tokens": 16083,
+        "cached_input_tokens": 15744,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 71140,
+      "model_latency_ms": 1125.9333998896182,
+      "output": [
+        {
+          "type": "message",
+          "id": "56834b1d-b6cf-4d46-bb6a-666ad389cb93",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_efcc6c0f00fdd51486ac"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

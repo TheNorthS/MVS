@@ -1,0 +1,266 @@
+{
+  "episode_id": "20_mvs_shell_task_12",
+  "size": 20,
+  "mode": "mvs_shell",
+  "task_id": "task_12",
+  "prompt": "Calculate invoice tax from net amount and rate. Use current data, not archives. Parameters: {\"net_amount\": 1200.5, \"rate\": 0.13}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "tax",
+  "expected_arguments": {
+    "net_amount": 1200.5,
+    "rate": 0.13
+  },
+  "expected_code": "v_2fb6bce006e8debe7c24",
+  "final_answer": "v_2fb6bce006e8debe7c24",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 2650,
+    "output_tokens": 114,
+    "total_tokens": 2764,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 4,
+  "tool_selection_attempts": [
+    {
+      "tool": "tax",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "tax",
+      "arguments": {
+        "net_amount": 1200.5,
+        "rate": 0.13
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    290,
+    530,
+    773,
+    1057
+  ],
+  "context_growth_tokens": 767,
+  "latency_ms": 12651.001299964264,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_0be9577fef74bbc7016b06be9d088087d09d3faf9c8b1c74f4",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 290,
+        "output_tokens": 24,
+        "total_tokens": 314,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 1074,
+      "model_latency_ms": 3042.896300088614,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0be9577fef74bbc7016b06be9e7c9887d09c65459a87b6bb4c",
+          "call_id": "call_fe8dd5378d1a4da3a83d01525b549a6e",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"ls /mcp/bench/tools\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "8c970a5dbaa943799084e3af3a4ed051",
+            "session_id": "e3a6961817f94a7997ff7857dc02fcb5",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "appointments\ncapacity\ncustomer\ndocuments\nemployee\nexchange\nhealth\ninvoice\nloyalty\norder\nprice\nrepository\nroute\nshipment\nstock\nsubscription\ntax\ntickets\nusage\nweather",
+            "stderr": "",
+            "data": [
+              "appointments",
+              "capacity",
+              "customer",
+              "documents",
+              "employee",
+              "exchange",
+              "health",
+              "invoice",
+              "loyalty",
+              "order",
+              "price",
+              "repository",
+              "route",
+              "shipment",
+              "stock",
+              "subscription",
+              "tax",
+              "tickets",
+              "usage",
+              "weather"
+            ],
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_0be9577fef74bbc7016b06bea0337887d0a96a357945ca7303",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 530,
+        "output_tokens": 26,
+        "total_tokens": 556,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 2165,
+      "model_latency_ms": 3549.7414999408647,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0be9577fef74bbc7016b06bea1f51c87d082dcc059973461bf",
+          "call_id": "call_331487c0502544d79c650c8bcc3b8768",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"help /mcp/bench/tools/tax\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "dc9ccee3b2be4cbe8f0f1441142872d4",
+            "session_id": "e3a6961817f94a7997ff7857dc02fcb5",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "tax\nCalculate invoice tax from net amount and rate\n--params-json <JSON object>\n--net_amount {\"type\": \"number\"} required\n--rate {\"type\": \"number\"} required",
+            "stderr": "",
+            "data": {
+              "input_schema": {
+                "type": "object",
+                "properties": {
+                  "net_amount": {
+                    "type": "number"
+                  },
+                  "rate": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "net_amount",
+                  "rate"
+                ],
+                "additionalProperties": false
+              },
+              "untrusted": true,
+              "backend": "mcp"
+            },
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "resp_0be9577fef74bbc7016b06bea3ab8087d0a9ec2d5dca9b11d7",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 773,
+        "output_tokens": 45,
+        "total_tokens": 818,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 3233,
+      "model_latency_ms": 3184.544099960476,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0be9577fef74bbc7016b06bea5089087d0b6a4f34edbc09c4c",
+          "call_id": "call_8918168f32d04ad4bb9b0c3781e298dc",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"run /mcp/bench/tools/tax --params-json '{\\\"net_amount\\\":1200.5,\\\"rate\\\":0.13}'\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "e8c78271493b4d9ba72259dc2847bff7",
+            "session_id": "e3a6961817f94a7997ff7857dc02fcb5",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_2fb6bce006e8debe7c24\", \"source_tool\": \"tax\", \"data\": {\"net_amount\": 1200.5, \"rate\": 0.13}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_2fb6bce006e8debe7c24",
+              "source_tool": "tax",
+              "data": {
+                "net_amount": 1200.5,
+                "rate": 0.13
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/28e148188f244f2e9848b5279be7941b",
+            "truncated": false,
+            "duration_ms": 531,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "resp_0be9577fef74bbc7016b06bea75c2487d0b833497dd720d188",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1057,
+        "output_tokens": 19,
+        "total_tokens": 1076,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 4299,
+      "model_latency_ms": 2312.6015999587253,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_0be9577fef74bbc7016b06bea866f887d0b85b13ed31b4d51b",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_2fb6bce006e8debe7c24",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

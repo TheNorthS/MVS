@@ -1,0 +1,138 @@
+{
+  "episode_id": "50_native_tools_task_12",
+  "size": 50,
+  "mode": "native_tools",
+  "task_id": "task_12",
+  "prompt": "Calculate invoice tax from net amount and rate. Use current data, not archives. Parameters: {\"net_amount\": 1200.5, \"rate\": 0.13}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "tax",
+  "expected_arguments": {
+    "net_amount": 1200.5,
+    "rate": 0.13
+  },
+  "expected_code": "v_2fb6bce006e8debe7c24",
+  "final_answer": "v_2fb6bce006e8debe7c24",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 3860,
+    "output_tokens": 46,
+    "total_tokens": 3906,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "tax",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "tax",
+      "arguments": {
+        "net_amount": 1200.5,
+        "rate": 0.13
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    1797,
+    2063
+  ],
+  "context_growth_tokens": 266,
+  "latency_ms": 6966.699699987657,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_03b9a5d90f710dff016b06bea9176887d093bed0bd52da0e81",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1797,
+        "output_tokens": 27,
+        "total_tokens": 1824,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 16992,
+      "model_latency_ms": 3025.0394999748096,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_03b9a5d90f710dff016b06beaa3c1087d085ad1cf71021f2d8",
+          "call_id": "call_3ddccad51f324d219d284c66f48f61c3",
+          "name": "tax",
+          "arguments": "{\"net_amount\":1200.5,\"rate\":0.13}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "tax",
+          "result": {
+            "request_id": "a1edd92f01fe45b89e9d8c1c4d17723f",
+            "session_id": "0c476b8128244189a8023ffdabde6ea8",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_2fb6bce006e8debe7c24\", \"source_tool\": \"tax\", \"data\": {\"net_amount\": 1200.5, \"rate\": 0.13}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_2fb6bce006e8debe7c24",
+              "source_tool": "tax",
+              "data": {
+                "net_amount": 1200.5,
+                "rate": 0.13
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/b42ed0367d1641cdb8a016e0b0711874",
+            "truncated": false,
+            "duration_ms": 327,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_03b9a5d90f710dff016b06beac78c087d08d73e7b7928ef47c",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 2063,
+        "output_tokens": 19,
+        "total_tokens": 2082,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 17981,
+      "model_latency_ms": 3119.845599983819,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_03b9a5d90f710dff016b06beadd5bc87d0bfa9eafc0d01582e",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_2fb6bce006e8debe7c24",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

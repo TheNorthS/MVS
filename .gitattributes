@@ -1,0 +1,12 @@
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.png binary
+*.jpg binary
+*.zip binary
+*.whl binary
+# 实验和验收文件按原始字节保存，避免Git换行转换破坏已记录的哈希。
+artifacts/**/*.json -text whitespace=cr-at-eol
+artifacts/**/*.jsonl -text whitespace=cr-at-eol
+artifacts/**/*.xml -text whitespace=cr-at-eol
+*.md whitespace=-blank-at-eol

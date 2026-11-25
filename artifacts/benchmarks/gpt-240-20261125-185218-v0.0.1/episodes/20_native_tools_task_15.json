@@ -1,0 +1,138 @@
+{
+  "episode_id": "20_native_tools_task_15",
+  "size": 20,
+  "mode": "native_tools",
+  "task_id": "task_15",
+  "prompt": "Get current available capacity of a warehouse. Use current data, not archives. Parameters: {\"warehouse\": \"south\", \"unit\": \"pallet\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "capacity",
+  "expected_arguments": {
+    "warehouse": "south",
+    "unit": "pallet"
+  },
+  "expected_code": "v_efcc6c0f00fdd51486ac",
+  "final_answer": "v_efcc6c0f00fdd51486ac",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 1647,
+    "output_tokens": 40,
+    "total_tokens": 1687,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "capacity",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "capacity",
+      "arguments": {
+        "unit": "pallet",
+        "warehouse": "south"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    702,
+    945
+  ],
+  "context_growth_tokens": 243,
+  "latency_ms": 6631.702100043185,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_0e0f00b66a9939ef016b06bea8cb7087d08007b6b9e83fa1fa",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 702,
+        "output_tokens": 22,
+        "total_tokens": 724,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 6573,
+      "model_latency_ms": 2513.610600028187,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_0e0f00b66a9939ef016b06bea9cc0087d0ac8628d8459ad850",
+          "call_id": "call_7ea7a9622f5b40e6a0a6a033c3d88cf0",
+          "name": "capacity",
+          "arguments": "{\"unit\":\"pallet\",\"warehouse\":\"south\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "capacity",
+          "result": {
+            "request_id": "056122f2e36b47af84c268e16ae78d99",
+            "session_id": "14d13286298749559594a6f8eb32f2cd",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_efcc6c0f00fdd51486ac\", \"source_tool\": \"capacity\", \"data\": {\"unit\": \"pallet\", \"warehouse\": \"south\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_efcc6c0f00fdd51486ac",
+              "source_tool": "capacity",
+              "data": {
+                "unit": "pallet",
+                "warehouse": "south"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/9fe58012f100436789241182f5460a56",
+            "truncated": false,
+            "duration_ms": 342,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_0e0f00b66a9939ef016b06beab91b887d083406dfe23d80360",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 945,
+        "output_tokens": 18,
+        "total_tokens": 963,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 7609,
+      "model_latency_ms": 2757.3471000650898,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_0e0f00b66a9939ef016b06beac6a3087d0a2858908f27ad927",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_efcc6c0f00fdd51486ac",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

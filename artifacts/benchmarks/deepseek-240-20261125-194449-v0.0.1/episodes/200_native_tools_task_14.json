@@ -1,0 +1,148 @@
+{
+  "episode_id": "200_native_tools_task_14",
+  "size": 200,
+  "mode": "native_tools",
+  "task_id": "task_14",
+  "prompt": "Read customer loyalty balance. Use current data, not archives. Parameters: {\"customer_id\": \"CUS-719\"}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "loyalty",
+  "expected_arguments": {
+    "customer_id": "CUS-719"
+  },
+  "expected_code": "v_daec3a1d7f7b87ddc921",
+  "final_answer": "v_daec3a1d7f7b87ddc921",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "deepseek-v4-pro"
+  ],
+  "usage": {
+    "input_tokens": 31825,
+    "output_tokens": 94,
+    "total_tokens": 31919,
+    "cached_input_tokens": 31360,
+    "reasoning_output_tokens": 28
+  },
+  "interaction_rounds": 2,
+  "tool_selection_attempts": [
+    {
+      "tool": "loyalty",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "loyalty",
+      "arguments": {
+        "customer_id": "CUS-719"
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    15755,
+    16070
+  ],
+  "context_growth_tokens": 315,
+  "latency_ms": 4488.276500022039,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "88e6d703-dee5-4113-be14-ac21b030354e",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 15755,
+        "output_tokens": 77,
+        "total_tokens": 15832,
+        "cached_input_tokens": 15616,
+        "reasoning_output_tokens": 28
+      },
+      "context_bytes": 70088,
+      "model_latency_ms": 2185.031099943444,
+      "output": [
+        {
+          "type": "reasoning",
+          "id": "92d04f56-febe-4698-8cb9-c909ce5b4d71",
+          "status": "completed",
+          "content": [
+            {
+              "type": "reasoning_text",
+              "text": "I need to read customer loyalty balance using current data. The tool is \"loyalty\" with customer_id \"CUS-719\"."
+            }
+          ],
+          "summary": [],
+          "encrypted_content": "88e6d703-dee5-4113-be14-ac21b030354e-0"
+        },
+        {
+          "type": "function_call",
+          "id": "3accec19-16d7-4424-86cd-5ef876e7cfb3",
+          "status": "completed",
+          "arguments": "{\"customer_id\": \"CUS-719\"}",
+          "call_id": "call_00_E9CluOtXWrCVhMvrtQs99939",
+          "name": "loyalty"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "loyalty",
+          "result": {
+            "request_id": "8dc9bfd761d5429e8a69ffe81de89235",
+            "session_id": "bf07988da7e24673a5e8320e311a9166",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_daec3a1d7f7b87ddc921\", \"source_tool\": \"loyalty\", \"data\": {\"customer_id\": \"CUS-719\"}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_daec3a1d7f7b87ddc921",
+              "source_tool": "loyalty",
+              "data": {
+                "customer_id": "CUS-719"
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/c49c608c091945e09cc5a12ce8045cdd",
+            "truncated": false,
+            "duration_ms": 453,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "7998502f-bc63-4d1b-a0ef-9749a8ddd67b",
+      "returned_model": "deepseek-v4-pro",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 16070,
+        "output_tokens": 17,
+        "total_tokens": 16087,
+        "cached_input_tokens": 15744,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 71371,
+      "model_latency_ms": 1563.659599982202,
+      "output": [
+        {
+          "type": "message",
+          "id": "860fdc4b-17af-4746-8439-420325f8dcbe",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "v_daec3a1d7f7b87ddc921"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}

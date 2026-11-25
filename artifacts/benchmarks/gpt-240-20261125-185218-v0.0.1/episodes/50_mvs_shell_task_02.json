@@ -1,0 +1,296 @@
+{
+  "episode_id": "50_mvs_shell_task_02",
+  "size": 50,
+  "mode": "mvs_shell",
+  "task_id": "task_02",
+  "prompt": "Fetch current order status. Use current data, not archives. Parameters: {\"order_id\": \"ORD-931\", \"include_items\": true}. Call the appropriate tool. Return only its verification_code as the final answer.",
+  "expected_tool": "order",
+  "expected_arguments": {
+    "order_id": "ORD-931",
+    "include_items": true
+  },
+  "expected_code": "v_8d989a5cfa9dda4bbc35",
+  "final_answer": "v_8d989a5cfa9dda4bbc35",
+  "success": true,
+  "failure": null,
+  "usage_complete": true,
+  "returned_models": [
+    "gpt-6-astra"
+  ],
+  "usage": {
+    "input_tokens": 3446,
+    "output_tokens": 109,
+    "total_tokens": 3555,
+    "cached_input_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "interaction_rounds": 4,
+  "tool_selection_attempts": [
+    {
+      "tool": "order",
+      "correct_tool": true,
+      "arguments_valid": true,
+      "correct_arguments": true
+    }
+  ],
+  "mcp_calls": [
+    {
+      "name": "order",
+      "arguments": {
+        "order_id": "ORD-931",
+        "include_items": true
+      }
+    }
+  ],
+  "mcp_call_count": 1,
+  "context_input_tokens": [
+    283,
+    803,
+    1044,
+    1316
+  ],
+  "context_growth_tokens": 1033,
+  "latency_ms": 13403.927100007422,
+  "rounds": [
+    {
+      "round": 1,
+      "response_id": "resp_07b0671ab7b11bef016b06bfb1331087d083ae392a8b76d1c1",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 283,
+        "output_tokens": 24,
+        "total_tokens": 307,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 1066,
+      "model_latency_ms": 2901.4845000347123,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_07b0671ab7b11bef016b06bfb26d2487d0b1dbd24e156f0ce2",
+          "call_id": "call_2fe110104146442b99470522e2bd74d1",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"ls /mcp/bench/tools\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "81fa275fd352497584d886b0ff433fb7",
+            "session_id": "5a591ee6c7bc439cbf5c3419bea04b9a",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "appointments\narchive1_appointments\narchive1_capacity\narchive1_customer\narchive1_documents\narchive1_employee\narchive1_exchange\narchive1_health\narchive1_invoice\narchive1_loyalty\narchive1_order\narchive1_price\narchive1_repository\narchive1_route\narchive1_shipment\narchive1_stock\narchive1_subscription\narchive1_tax\narchive1_tickets\narchive1_usage\narchive1_weather\narchive2_customer\narchive2_employee\narchive2_exchange\narchive2_invoice\narchive2_order\narchive2_price\narchive2_repository\narchive2_shipment\narchive2_stock\narchive2_weather\ncapacity\ncustomer\ndocuments\nemployee\nexchange\nhealth\ninvoice\nloyalty\norder\nprice\nrepository\nroute\nshipment\nstock\nsubscription\ntax\ntickets\nusage\nweather",
+            "stderr": "",
+            "data": [
+              "appointments",
+              "archive1_appointments",
+              "archive1_capacity",
+              "archive1_customer",
+              "archive1_documents",
+              "archive1_employee",
+              "archive1_exchange",
+              "archive1_health",
+              "archive1_invoice",
+              "archive1_loyalty",
+              "archive1_order",
+              "archive1_price",
+              "archive1_repository",
+              "archive1_route",
+              "archive1_shipment",
+              "archive1_stock",
+              "archive1_subscription",
+              "archive1_tax",
+              "archive1_tickets",
+              "archive1_usage",
+              "archive1_weather",
+              "archive2_customer",
+              "archive2_employee",
+              "archive2_exchange",
+              "archive2_invoice",
+              "archive2_order",
+              "archive2_price",
+              "archive2_repository",
+              "archive2_shipment",
+              "archive2_stock",
+              "archive2_weather",
+              "capacity",
+              "customer",
+              "documents",
+              "employee",
+              "exchange",
+              "health",
+              "invoice",
+              "loyalty",
+              "order",
+              "price",
+              "repository",
+              "route",
+              "shipment",
+              "stock",
+              "subscription",
+              "tax",
+              "tickets",
+              "usage",
+              "weather"
+            ],
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 0,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "response_id": "resp_07b0671ab7b11bef016b06bfb46dd887d097e17086a367994b",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 803,
+        "output_tokens": 25,
+        "total_tokens": 828,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 3399,
+      "model_latency_ms": 3500.805800082162,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_07b0671ab7b11bef016b06bfb5d31087d0858c845d6596a03c",
+          "call_id": "call_232095c1c5154f498baef807ddb89a6a",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"help /mcp/bench/tools/order\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "a83b2cd688fc44a7a1f059e6330e5795",
+            "session_id": "5a591ee6c7bc439cbf5c3419bea04b9a",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "order\nFetch current order status\n--params-json <JSON object>\n--order_id {\"type\": \"string\"} required\n--include_items {\"type\": \"boolean\"} required",
+            "stderr": "",
+            "data": {
+              "input_schema": {
+                "type": "object",
+                "properties": {
+                  "order_id": {
+                    "type": "string"
+                  },
+                  "include_items": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "order_id",
+                  "include_items"
+                ],
+                "additionalProperties": false
+              },
+              "untrusted": true,
+              "backend": "mcp"
+            },
+            "result_ref": null,
+            "truncated": false,
+            "duration_ms": 15,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "response_id": "resp_07b0671ab7b11bef016b06bfb79e7487d084c8d181fa1a095d",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1044,
+        "output_tokens": 42,
+        "total_tokens": 1086,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 4475,
+      "model_latency_ms": 3690.3693999629468,
+      "output": [
+        {
+          "type": "function_call",
+          "id": "fc_07b0671ab7b11bef016b06bfb9809887d0a0eb4a1b816174c0",
+          "call_id": "call_b6a10305dd57496487c03a96719176c5",
+          "name": "virtual_shell",
+          "arguments": "{\"command\":\"run /mcp/bench/tools/order --params-json '{\\\"order_id\\\":\\\"ORD-931\\\",\\\"include_items\\\":true}'\"}",
+          "status": "completed"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "virtual_shell",
+          "result": {
+            "request_id": "fa6ce60d653f4c4c9293472997431089",
+            "session_id": "5a591ee6c7bc439cbf5c3419bea04b9a",
+            "status": "success",
+            "exit_code": 0,
+            "stdout": "{\"verification_code\": \"v_8d989a5cfa9dda4bbc35\", \"source_tool\": \"order\", \"data\": {\"order_id\": \"ORD-931\", \"include_items\": true}, \"untrusted\": true}",
+            "stderr": "",
+            "data": {
+              "verification_code": "v_8d989a5cfa9dda4bbc35",
+              "source_tool": "order",
+              "data": {
+                "order_id": "ORD-931",
+                "include_items": true
+              },
+              "untrusted": true
+            },
+            "result_ref": "/results/8418d44f0e58436bae6797103b977f9f",
+            "truncated": false,
+            "duration_ms": 359,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "response_id": "resp_07b0671ab7b11bef016b06bfbc082c87d0b966ed1348a95e93",
+      "returned_model": "gpt-6-astra",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1316,
+        "output_tokens": 18,
+        "total_tokens": 1334,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "context_bytes": 5591,
+      "model_latency_ms": 2744.2592000588775,
+      "output": [
+        {
+          "type": "message",
+          "id": "msg_07b0671ab7b11bef016b06bfbd10a087d093b45d3e8a072fc5",
+          "role": "assistant",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "v_8d989a5cfa9dda4bbc35",
+              "annotations": [],
+              "logprobs": []
+            }
+          ],
+          "phase": "final_answer"
+        }
+      ],
+      "tool_results": []
+    }
+  ]
+}
