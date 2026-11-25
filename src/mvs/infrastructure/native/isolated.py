@@ -1,5 +1,7 @@
 import asyncio
 import json
+import os
+import signal
 import sys
 from pathlib import Path
 from typing import Any
@@ -18,6 +20,7 @@ async def isolated_operation(payload: dict) -> object:
         job = WindowsJob(256, 3)
         options["creationflags"] = 0x08000000 | 0x00000004
     else:
+        options["start_new_session"] = True
         argv = [
             sys.executable,
             str(Path(__file__).with_name("posix_launcher.py")),
@@ -58,6 +61,11 @@ async def isolated_operation(payload: dict) -> object:
         if job:
             job.close()
         if process:
+            if sys.platform != "win32":
+                try:
+                    os.killpg(process.pid, signal.SIGKILL)
+                except ProcessLookupError:
+                    pass
             if process.returncode is None:
                 process.kill()
             await process.communicate()

@@ -75,11 +75,16 @@ async def test_powershell_fixed_script(tmp_path):
                 ("-NoProfile", "-NonInteractive", "-File", str(PS_SCRIPT)),
             )
         },
+        timeout_seconds=25,  # CI冷启动PowerShell/CIM可能超过默认10秒；超时行为另有专用测试。
     )
     service = ShellService(
         {
             "host": ServerConfig(
-                "host", transport="native", native_commands=(cmd,), allowed_tools=("system_info",)
+                "host",
+                transport="native",
+                native_commands=(cmd,),
+                allowed_tools=("system_info",),
+                call_timeout_seconds=28,
             )
         },
         storage_root=tmp_path / "store",

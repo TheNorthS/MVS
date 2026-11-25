@@ -104,7 +104,9 @@ Docker引擎现已恢复，可按[Docker验收教程](docker_acceptance.md)创�
 ## 资源与网络边界
 
 原生命令新增memory_limit_mb、cpu_time_seconds。Windows Job聚合限制，POSIX启动器设置
-RLIMIT_AS/RLIMIT_CPU。`MVS_ISOLATED_VALIDATION=1`把参数Schema、结果Schema及管道交给
+RLIMIT_AS/RLIMIT_CPU；macOS拒绝RLIMIT_AS，改为每50ms检查独立进程组的RSS总量，
+超限或监测失败终止整组。macOS内存监测有采样窗口，不是内核硬上限，需要硬约束时使用Docker。
+`MVS_ISOLATED_VALIDATION=1`把参数Schema、结果Schema及管道交给
 独立固定操作进程，限制5秒、256MiB、CPU3秒；注册表Schema格式检查也可隔离。
 细粒度权限规则采用受限Schema子集，拒绝正则和递归引用，支持enum/const/长度/数值范围等。
 这避免了授权复核路径中同步执行不受控正则，但也不宣称支持任意复杂权限Schema。
