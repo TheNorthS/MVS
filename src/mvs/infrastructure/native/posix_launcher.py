@@ -11,6 +11,8 @@ from typing import Any
 
 def darwin_supervise(argv: list[str], memory_mb: int) -> int:
     """macOS不支持RLIMIT_AS；按50ms间隔监测同一进程组的RSS总量。"""
+    if sys.platform == "win32":
+        raise OSError("POSIX进程组监测不能在Windows运行")
     # 调用方通过start_new_session创建独立组，禁止误伤启动器所在的用户Shell。
     if os.getpgrp() != os.getpid():
         os.setsid()
