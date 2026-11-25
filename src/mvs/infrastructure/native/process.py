@@ -93,6 +93,29 @@ async def run_process(
         if name in os.environ
     }
     env["PYTHONIOENCODING"] = impl.encoding
+    if sys.platform == "win32":
+        # Windows系统组件需要这些已知目录/架构变量完成初始化；不继承任意应用凭据。
+        for name in (
+            "SYSTEMDRIVE",
+            "COMSPEC",
+            "PATHEXT",
+            "PROGRAMDATA",
+            "ALLUSERSPROFILE",
+            "PROGRAMFILES",
+            "PROGRAMFILES(X86)",
+            "PROGRAMW6432",
+            "COMMONPROGRAMFILES",
+            "COMMONPROGRAMFILES(X86)",
+            "COMMONPROGRAMW6432",
+            "PROCESSOR_ARCHITECTURE",
+            "PROCESSOR_ARCHITEW6432",
+            "NUMBER_OF_PROCESSORS",
+            "USERPROFILE",
+            "APPDATA",
+            "LOCALAPPDATA",
+        ):
+            if name in os.environ:
+                env[name] = os.environ[name]
     try:
         env.update(
             {

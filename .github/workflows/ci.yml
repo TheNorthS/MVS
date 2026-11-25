@@ -40,7 +40,8 @@ jobs:
           executable = str(Path(os.environ['SystemRoot']) / 'System32/WindowsPowerShell/v1.0/powershell.exe')
           minimum = {k: os.environ[k] for k in ('SystemRoot', 'WINDIR', 'TEMP', 'TMP', 'LANG', 'LC_ALL') if k in os.environ}
           expanded = {**minimum, **{k: os.environ[k] for k in ('USERPROFILE', 'APPDATA', 'LOCALAPPDATA', 'PSModulePath', 'PATH') if k in os.environ}}
-          for label, environment in [('inherited', dict(os.environ)), ('minimum', minimum), ('expanded', expanded)]:
+          system = {**minimum, **{k: os.environ[k] for k in ('SYSTEMDRIVE','COMSPEC','PATHEXT','PROGRAMDATA','ALLUSERSPROFILE','PROGRAMFILES','PROGRAMFILES(X86)','PROGRAMW6432','COMMONPROGRAMFILES','COMMONPROGRAMFILES(X86)','COMMONPROGRAMW6432','PROCESSOR_ARCHITECTURE','PROCESSOR_ARCHITEW6432','NUMBER_OF_PROCESSORS','USERPROFILE','APPDATA','LOCALAPPDATA') if k in os.environ}}
+          for label, environment in [('system', system), ('system-policy', {**system, **{k:os.environ[k] for k in ('PSExecutionPolicyPreference',) if k in os.environ}})]:
               started = time.monotonic()
               try:
                   result = subprocess.run([executable, '-NoProfile', '-NonInteractive', '-File', 'examples/native/system_info.ps1'], env=environment, capture_output=True, timeout=12)
