@@ -113,6 +113,10 @@ async def run_process(
             "USERPROFILE",
             "APPDATA",
             "LOCALAPPDATA",
+            "PATH",
+            "PSModulePath",
+            "OS",
+            "COMPUTERNAME",
         ):
             if name in os.environ:
                 env[name] = os.environ[name]
