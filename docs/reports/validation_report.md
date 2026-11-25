@@ -1,5 +1,26 @@
 # 验收报告（2026-11-14）
 
+## 2026-11-26：真实GitHub CI与跨平台修复
+
+源码已推送`TheNorthS/MVS`的main，版本保持0.0.1。首次远程检查发现并修复：
+Windows专用类型在POSIX类型检查中未隔离、测试Python路径resolve绕过虚拟环境、Windows输出
+默认非UTF-8、后台未停止导致uv缓存锁阻塞、MinIO公共镜像不可获取，以及macOS不支持RLIMIT_AS。
+
+MinIO测试镜像改从固定上游提交构建，保留AGPL许可，且不包含在MVS的PyPI包中。
+macOS使用独立进程组RSS监测并保留CPU/超时约束，采样上限不等同内核硬限制；已增加实际内存
+超限回归。Windows原生命令显式传递系统目录、架构与模块发现变量，仍不继承任意应用凭据。
+固定PowerShell测试允许25秒冷启动，实际超时清理另有专用回归。
+
+远程Windows/Linux/macOS的Python3.12/3.13测试分别取得通过；最新Windows两项均166通过、
+13跳过。浏览器、依赖安全、S3/Redis/PostgreSQL集成、纯构建发布工作流均已取得成功记录。
+本地新MinIO镜像的12项专项全部通过（99.43秒），临时容器全部清理。
+最终提交的排队/完成状态应以[Actions](https://github.com/TheNorthS/MVS/actions)为准。
+可核对[跨平台任务](https://github.com/TheNorthS/MVS/actions/runs/45659736390)、
+[外部集成](https://github.com/TheNorthS/MVS/actions/runs/45657379342)及
+[发布构建](https://github.com/TheNorthS/MVS/actions/runs/45657584199)。
+
+PyPI上传尚未执行；发布构建选用build-only，未创建GitHub Release或上传包索引。
+
 ## 2026-11-26：GitHub与PyPI发布准备（0.0.1）
 
 按维护者确认采用MIT许可，仓库为`https://github.com/TheNorthS/MVS`，项目和前后端锁文件
