@@ -31,6 +31,22 @@ jobs:
         run: uv pip install --python .tools/git-mcp/bin/python mcp-server-git==2026.11.11
       - run: uv run ruff check .
       - run: uv run mypy
+      - if: runner.os == 'Windows'
+        name: 检查PowerShell运行环境
+        shell: python
+        run: |
+          import os, subprocess, time
+          from pathlib import Path
+          executable = str(Path(os.environ['SystemRoot']) / 'System32/WindowsPowerShell/v1.0/powershell.exe')
+          minimum = {k: os.environ[k] for k in ('SystemRoot', 'WINDIR', 'TEMP', 'TMP', 'LANG', 'LC_ALL') if k in os.environ}
+          expanded = {**minimum, **{k: os.environ[k] for k in ('USERPROFILE', 'APPDATA', 'LOCALAPPDATA', 'PSModulePath', 'PATH') if k in os.environ}}
+          for label, environment in [('inherited', dict(os.environ)), ('minimum', minimum), ('expanded', expanded)]:
+              started = time.monotonic()
+              try:
+                  result = subprocess.run([executable, '-NoProfile', '-NonInteractive', '-File', 'examples/native/system_info.ps1'], env=environment, capture_output=True, timeout=12)
+                  print(label, result.returncode, round(time.monotonic()-started, 2), result.stdout.decode(errors='replace'), result.stderr.decode(errors='replace')[-1000:])
+              except subprocess.TimeoutExpired:
+                  print(label, 'TIMEOUT', round(time.monotonic()-started, 2))
       - if: runner.os == 'macOS'
         name: 检查macOS资源限制启动器
         run: uv run python src/mvs/infrastructure/native/posix_launcher.py 256 3 .venv/bin/python -c 'print("resource launcher ready")'
