@@ -144,7 +144,7 @@ GIT_PYTHON = Path(
         if sys.platform == "win32"
         else ".tools/git-mcp/bin/python",
     )
-).resolve()
+).absolute()
 
 
 @pytest.fixture

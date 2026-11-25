@@ -1,5 +1,8 @@
 name: checks
 on: [push, pull_request]
+env:
+  PYTHONUTF8: '1'
+  PYTHONIOENCODING: utf-8
 jobs:
   test:
     strategy:
@@ -28,6 +31,9 @@ jobs:
         run: uv pip install --python .tools/git-mcp/bin/python mcp-server-git==2026.11.11
       - run: uv run ruff check .
       - run: uv run mypy
+      - if: runner.os == 'macOS'
+        name: 检查macOS资源限制启动器
+        run: uv run python src/mvs/infrastructure/native/posix_launcher.py 256 3 .venv/bin/python -c 'print("resource launcher ready")'
       - run: uv run pytest --cov=src/mvs --cov-report=term-missing
   console:
     runs-on: ubuntu-latest

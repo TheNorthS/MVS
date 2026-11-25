@@ -16,7 +16,8 @@ LEGACY = Path(
         else ".tools/legacy/bin/python",
     )
 )
-LEGACY = LEGACY.resolve()
+# POSIX虚拟环境的python通常是符号链接，resolve会绕过pyvenv.cfg而使用系统环境。
+LEGACY = LEGACY.absolute()
 LEGACY_SERVER = Path("tests/fixtures/legacy_server.py").resolve()
 LEGACY_CLIENT = Path("tests/fixtures/legacy_client.py").resolve()
 
