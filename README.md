@@ -199,12 +199,22 @@ flowchart TB
 
 ## 🚀 快速开始
 
-当前版本为 **0.0.1**，已生成本地安装产物，尚未发布到公共包索引。请使用维护者提供的文件或源码；不要假设公共 `pip install mcp-virtual-shell` 已经可用。
+当前版本 **0.0.1** 已发布到[PyPI](https://pypi.org/project/mcp-virtual-shell/0.0.1/)，可直接安装包含中文后台的工具：
+
+```bash
+uv tool install --python 3.12 'mcp-virtual-shell[console]==0.0.1'
+mvs init
+mvs token show
+mvs serve --open
+```
+
+已有Python虚拟环境也可使用`python -m pip install 'mcp-virtual-shell[console]==0.0.1'`。
 
 版本暂时固定为0.0.1；历史报告保留当时的开发标签。目录分类与版本维护规则见[维护约定](docs/development/repository_layout.md)。
 
 | 使用方式             | 所需环境                                 | 适用场景                                          |
 | -------------------- | ---------------------------------------- | ------------------------------------------------- |
+| PyPI安装（推荐）     | uv，或Python 3.12+虚拟环境               | 直接从公开索引安装当前版本                        |
 | 标准安装 ZIP         | 联网下载 Python / uv / 依赖              | 在其他用户机器上安装 CLI 与内置后台               |
 | Windows 完整离线 ZIP | 匹配的 Windows x86_64 环境               | 包内携带 Python、uv 和核心 / 控制台依赖，离线安装 |
 | 源码 CLI             | Python 3.12+、uv                         | 开发、调试和命令行体验                            |
@@ -728,7 +738,7 @@ uv run python scripts/test_docker.py --coverage tests
 | Redis 与长请求       | 同步接口可能阻塞事件循环；长请求锁租期与生产容量仍需专项改进及测试                         |
 | 自动升级与数据库降级 | 已有显式检查、安装和 wheel 回滚；无人值守升级调度与任意版本数据库降级尚未完成              |
 | 细粒度权限与资源隔离 | 权限 Schema 采用受限子集；进程限制和容器行为依赖目标系统，不能等同于全部部署环境的隔离保证 |
-| 公共发布             | GitHub源码仓库为TheNorthS/MVS；0.0.1分发物已准备，PyPI上传状态以包索引为准                 |
+| 公共发布             | GitHub源码仓库为TheNorthS/MVS；0.0.1已发布至PyPI，后续可信发布配置见发布指南               |
 
 真实模型实验也仅覆盖当前模型接口与合成任务集，后续仍需复杂多步任务、多模型和重复采样，才能评价更广泛的收益。[逐项完成跟踪](docs/development/completion_tracker.md)
 

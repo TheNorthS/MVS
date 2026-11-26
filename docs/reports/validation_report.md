@@ -1,5 +1,20 @@
 # 验收报告（2026-11-14）
 
+## 2026-11-26：PyPI正式上传与公开索引安装验收
+
+`mcp-virtual-shell==0.0.1`已于北京时间11:16上传wheel与sdist，公开页面为
+[PyPI 0.0.1](https://pypi.org/project/mcp-virtual-shell/0.0.1/)。上传来自已通过全部CI的提交
+`8983edc`对应分发物。PyPI返回的两个SHA256与本地发布包完全一致。
+
+可信发布工作流构建通过，但PyPI返回`invalid-publisher`。随后经用户明确授权，使用仅保留在
+上传进程环境中的token完成Twine上传，未保存凭证到仓库、配置文件或GitHub Secret。
+后续OIDC自动发布仍需配置可信发布者。
+
+从`https://pypi.org/simple`在空缓存、全新虚拟环境安装`[console]==0.0.1`成功。后台页面
+返回200，doctor确认实例初始化与内置页面，真实demo MCP计算12+30返回42。
+本次验证安装的是真正公开下载的包，不是本地wheel或editable源码。
+结果与哈希见[上传验收JSON](../../artifacts/tests/pypi-publication-0.0.1-2026-11-26.json)。
+
 ## 2026-11-26：真实GitHub CI与跨平台修复
 
 源码已推送`TheNorthS/MVS`的main，版本保持0.0.1。首次远程检查发现并修复：
@@ -19,7 +34,7 @@ macOS使用独立进程组RSS监测并保留CPU/超时约束，采样上限不�
 [外部集成](https://github.com/TheNorthS/MVS/actions/runs/45657379342)及
 [发布构建](https://github.com/TheNorthS/MVS/actions/runs/45657584199)。
 
-PyPI上传尚未执行；发布构建选用build-only，未创建GitHub Release或上传包索引。
+该阶段尚未上传PyPI，发布构建选用build-only；后续正式上传与验收见上节。
 
 ## 2026-11-26：GitHub与PyPI发布准备（0.0.1）
 

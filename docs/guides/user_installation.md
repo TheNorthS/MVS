@@ -2,12 +2,23 @@
 
 > 当前版本固定为0.0.1，治理与生产配置见[生产能力说明](production_features.md)。
 > wheel/ZIP统一使用0.0.1版本号。Windows完整离线包另含Python、uv与wheel依赖，运行根目录
-> install.cmd，无需访问包索引；必须保留包内Python目录。公共发布尚未执行。
+> install.cmd，无需访问包索引；必须保留包内Python目录。0.0.1已发布到PyPI。
 
 这一版本把管理功能集成进 Python 安装包。用户不需要下载源码、编辑 YAML 或安装 Node.js。
 管理页面基于 React、Vite、Tailwind CSS 和 **shadcn/ui 官方组件**，随 wheel 一起安装。
 
 ## 1. 获得发布包
+
+推荐直接从[PyPI](https://pypi.org/project/mcp-virtual-shell/0.0.1/)安装：
+
+```bash
+uv tool install --python 3.12 'mcp-virtual-shell[console]==0.0.1'
+mvs init
+mvs token show
+mvs serve --open
+```
+
+已有虚拟环境时可运行`python -m pip install 'mcp-virtual-shell[console]==0.0.1'`。
 
 项目维护者运行 `python scripts/build_release.py`，生成：
 
@@ -16,10 +27,9 @@
 - `dist/release/0.0.1/installers/mcp_virtual_shell-0.0.1-installer.zip`：wheel、安装脚本和教程。
 - `dist/release/0.0.1/SHA256SUMS.json`：分发文件哈希。
 
-本次只在本地构建，没有上传 PyPI 或 GitHub Release，因此不要假设公共包名已经可安装。
+0.0.1的wheel与源码包已公开上传PyPI；GitHub Release与安装ZIP可另行分发。
 源码仓库为[TheNorthS/MVS](https://github.com/TheNorthS/MVS)，维护者按[发布指南](../development/publishing.md)上传包。
 把 installer.zip 分发给其他用户即可；安装依赖时仍需要联网，**不是完全离线安装包**。
-未来发布到包索引后可用 `uv tool install 'mcp-virtual-shell[console]==0.0.1'`，发布前不要使用它。
 
 ## 2. 一条命令安装并初始化
 

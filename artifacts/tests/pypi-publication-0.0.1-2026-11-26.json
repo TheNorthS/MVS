@@ -1,0 +1,28 @@
+{
+  "project": "mcp-virtual-shell",
+  "version": "0.0.1",
+  "project_url": "https://pypi.org/project/mcp-virtual-shell/0.0.1/",
+  "repository_commit": "8983edc4131fab742a55eca3d27f48b0eb16bfca",
+  "artifacts": [
+    {
+      "filename": "mcp_virtual_shell-0.0.1-py3-none-any.whl",
+      "sha256": "88ce76c30dc56fcf22a39d13b004c0c31c9840aaad1541b0c2a170757d0573b0",
+      "upload_time_utc": "2026-11-26T03:16:41.006659Z"
+    },
+    {
+      "filename": "mcp_virtual_shell-0.0.1.tar.gz",
+      "sha256": "8d364e288e3007f3708f96bdd04904432e26de9c06fd927ad33bd732dc771188",
+      "upload_time_utc": "2026-11-26T03:16:42.745930Z"
+    }
+  ],
+  "remote_hashes_match_local": true,
+  "fresh_cache": true,
+  "installed_from": "https://pypi.org/simple",
+  "validation": {
+    "installed_version": "0.0.1",
+    "ui_bundled": true,
+    "real_mcp_result": 42,
+    "doctor_initialized": true
+  },
+  "credentials_persisted": false
+}

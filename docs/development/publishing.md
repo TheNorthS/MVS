@@ -4,6 +4,11 @@
 Python包名为`mcp-virtual-shell`，命令为`mvs`、`mvs-agent`、`mvs-benchmark`。
 当前版本固定为 **0.0.1**，构建和工作流不会自动递增版本。
 
+**0.0.1已于2026-11-26发布到[PyPI](https://pypi.org/project/mcp-virtual-shell/0.0.1/)。**
+本次从提交`8983edc`构建的wheel与sdist，经用户授权用仅传给上传进程的token发布；未将token
+写入仓库或GitHub Secret。此前可信发布返回`invalid-publisher`，所以下文的PyPI可信发布者
+仍需配置后才能用于后续自动发布。已上传的0.0.1文件不能覆盖。
+
 ## 1. 提交哪些文件
 
 提交源码、前端源码、测试、示例配置、文档、许可证、锁文件与已保留的研究记录。
